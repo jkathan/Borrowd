@@ -13,7 +13,7 @@ const initialState = {
 export const loanReducer = (state=initialState, action) => {
     if (action.type === actions.ADD_LOAN_CARD) {
         return Object.assign({}, state, {
-            loanList: [...state.loanList], 
+            loanList: [...state.loanList, 
               loancard
               ]
             });
