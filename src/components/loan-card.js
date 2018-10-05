@@ -2,7 +2,7 @@ import React from 'react';
 
 import RenewLoanForm from './components/loan-renew-form';
 
-export default function LoanCard(props) {
+export default class LoanCard extends React.Component  {
     goToLoansList(event) {
         event.preventDefault();
         this.props.history.push(`/items/loans`);
@@ -27,7 +27,7 @@ render() {
     	);
 	};
 }
-/*
+
 LoanCard.defaultProps = {
     type: ''
     item: '' 
@@ -36,5 +36,5 @@ LoanCard.defaultProps = {
     phone: ''
     returnDate: ''
 };
-*/
+
 
