@@ -29,11 +29,11 @@ render() {
 }
 
 LoanCard.defaultProps = {
-    type: ''
-    item: '' 
-    loanee: ''
-    email: ''
-    phone: ''
+    type: '',
+    item: '' ,
+    loanee: '',
+    email: '',
+    phone: '',
     returnDate: ''
 };
 
