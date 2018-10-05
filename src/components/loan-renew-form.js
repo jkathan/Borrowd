@@ -21,7 +21,7 @@ export default class RenewLoanForm extends React.Component {
         }
 
         this.dateInput.value = '';
-         this.props.dispatch(
+         //this.props.dispatch(
         //addLoanCard(date, this.props.listId)
         //);
         this.setEditing(false)
