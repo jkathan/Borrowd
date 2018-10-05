@@ -27,7 +27,7 @@ render() {
     	);
 	};
 }
-
+/*
 LoanCard.defaultProps = {
     type: ''
     item: '' 
@@ -36,5 +36,5 @@ LoanCard.defaultProps = {
     phone: ''
     returnDate: ''
 };
-
+*/
 
