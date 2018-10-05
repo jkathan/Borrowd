@@ -1,5 +1,7 @@
 import React from 'react';
 
+//import {addLoanCard} from '../actions';
+
 export default class RenewLoanForm extends React.Component {
 	constructor(props) {
         super(props);
@@ -20,8 +22,8 @@ export default class RenewLoanForm extends React.Component {
 
         this.dateInput.value = '';
          this.props.dispatch(
-        addLoanCard(date, this.props.listId, this.props.index)
-        );
+        //addLoanCard(date, this.props.listId)
+        //);
         this.setEditing(false)
     }
 	render() {
