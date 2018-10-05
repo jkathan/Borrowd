@@ -1,6 +1,6 @@
 import React from 'react';
 
-export class RenewLoanForm extends React.Component {
+export default class RenewLoanForm extends React.Component {
 	constructor(props) {
         super(props);
         this.state = {
