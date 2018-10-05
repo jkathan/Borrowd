@@ -39,6 +39,7 @@ export class RenewLoanForm extends React.Component {
 	        </form>
 	    );
 	}
+}
 
 
-export default connect()(RenewLoanForm);
+//export default connect()(RenewLoanForm);
