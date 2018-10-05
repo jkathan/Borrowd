@@ -1,7 +1,5 @@
 import React from 'react';
 
-import './card.css';
-
 import RenewLoanForm from './components/loan-renew-form';
 
 export default function LoanCard(props) {
@@ -9,7 +7,7 @@ export default function LoanCard(props) {
         super(props);
         this.state = {
             editing: false
-        }
+        };
     }
 
     setEditing(editing) {
