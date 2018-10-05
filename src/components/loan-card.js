@@ -3,17 +3,9 @@ import React from 'react';
 import RenewLoanForm from './components/loan-renew-form';
 
 export default function LoanCard(props) {
-	    constructor(props) {
-        super(props);
-        this.state = {
-            editing: false
-        };
-    }
-
-    setEditing(editing) {
-        this.setState({
-            editing
-        });
+    goToLoansList(event) {
+        event.preventDefault();
+        this.props.history.push(`/items/loans`);
     }
 //dont understand how i could update Return Date from other component
 //my thoughts: set state of return date, have an action handler that 
