@@ -7,7 +7,7 @@ export default function App(props) {
     return (
         <Router>
                 <Switch>
-                    <Redirect exact from="/" to="/inbox" />
+                    <Redirect exact from="/" to="/items/loans" />
                     <Route exact path='/items/loans' component={LoanList} />
                     <Route exact path='/items/loanform' component={LoanForm} />
                   </Switch>
