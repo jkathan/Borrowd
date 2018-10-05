@@ -1,6 +1,6 @@
 import React from 'react';
 
-import RenewLoanForm from './components/loan-renew-form';
+import RenewLoanForm from './loan-renew-form';
 
 export default class LoanCard extends React.Component  {
     goToLoansList(event) {
