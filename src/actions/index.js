@@ -6,5 +6,4 @@ export const addLoanCard = (text, boardId, listIndex) => ({
     phone, 
     date,
     listId,
-    listIndex
 });

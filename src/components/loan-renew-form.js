@@ -1,6 +1,6 @@
 import React from 'react';
 
-class RenewLoanForm extends React.Component {
+export class RenewLoanForm extends React.Component {
 	constructor(props) {
         super(props);
         this.state = {
@@ -19,6 +19,10 @@ class RenewLoanForm extends React.Component {
         }
 
         this.dateInput.value = '';
+         this.props.dispatch(
+        addLoanCard(date, this.props.listId, this.props.index)
+        );
+        this.setEditing(false)
     }
 	render() {
 		if (!this.state.editing) {
@@ -31,7 +35,10 @@ class RenewLoanForm extends React.Component {
 				<label>New Return Date:</label>
 				<input name="returnDate" type="date" ref={input => this.dateInput = input}/>
 	        	<button onClick={() => this.setEditing(false)}>Cancel</button>
-	        	<button onClick={() => this.setEditing(false)}>Submit</button>
+	        	<button>Update</button>
 	        </form>
 	    );
 	}
+
+
+export default connect()(RenewLoanForm);

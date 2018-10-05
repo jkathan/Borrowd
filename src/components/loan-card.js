@@ -47,3 +47,4 @@ LoanCard.defaultProps = {
     returnDate: ''
 };
 
+

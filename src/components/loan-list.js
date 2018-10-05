@@ -4,27 +4,13 @@ import {connect} from 'react-redux';
 import LoanCard from './loan-card';
 import LoanForm from './loan-form';
 
-import {addLoanCard} from '../actions';
-
 export class LoanList extends React.Component {
-    addLoanCard(borrower, email, phone, date) {
-        this.props.dispatch(
-            //wahat is boardID and why is it necessary?
-            addLoanCard(borrower, email, phone, date, this.props.listId, this.props.index)
-        );
-    }
-
-    goToLoansList(event) {
-        event.preventDefault();
-        this.props.history.push(`/items/loanform`);
-    }
 
     render() {
-        const loancards = this.props.loans.map((loan, index) => (
+        const loancards = this.props.loansList.map((loan, index) => (
             <li key={index}>
                 <LoanCard 
-                index={index}
-                listId = {this.props.match.params.listId}
+                listId={index}
                 {...loan} />
             </li>
         ));
@@ -33,15 +19,7 @@ export class LoanList extends React.Component {
                 <ul className="list">
                     
                     <li>
-                        <button onClick={e => this.goToLoansForm(e)}>
-                            <AddForm
-                                type="card"
-                                onAdd={borower => this.addLoanCard(borrower)}
-                                onAdd={email => this.addLoanCard(email)}
-                                onAdd={phone => this.addLoanCard(phone)}
-                                onAdd={date => this.addLoanCard(date)}
-                                />
-                        </button>
+                        <h2><link to = {`/items/loanform`} >Loan out an item</link></h2>
                     </li>
                     {loancards}
                 </ul>
@@ -52,11 +30,16 @@ export class LoanList extends React.Component {
 
 const mapStateToProps = (state, props) => {
     const loansList = Object.assign(
-        //{},
+        {},
         {
-            loancards: []
+            loanList: []
         },
-        state.loanslist[props.match.params.loanId]
+        state.loanList
     );
+    return {
+        loansList: loansList
+    };
+
+}
 
 export default connect(mapStateToProps)(LoanList);

@@ -1,4 +1,5 @@
 import React from 'react';
+import {connect} from 'react-redux';
 
 //how do I 
 export default class LoanForm extends React.Component {
@@ -9,9 +10,6 @@ export default class LoanForm extends React.Component {
         const email = this.emailInput.value.trim();
         const phone = this.phoneInput.value.trim();
         const date = this.dateInput.value.trim();
-        if (borrower && email && phone && date && this.props.onAdd) {
-            this.props.onAdd(borrower, email, phone, date);
-        }
         this.borrowerInput.value = '';
         this.emailInput.value = '';
         this.phoneInput.value = '';
@@ -19,6 +17,11 @@ export default class LoanForm extends React.Component {
         //will have to put more info here depeding on the selection of item
         //also will have to add new item to item list. is this done in new 
         //on submit?
+        this.props.dispatch(
+            //wahat is boardID and why is it necessary?
+        addLoanCard(borrower, email, phone, date, null)
+        );
+        this.props.history.push(`/items/loans`);
     }
 
 
@@ -48,7 +51,7 @@ render() {
                         <input name="phone" type="tel" ref={input => this.phoneInput = input} />
                         <label>Return Date:</label>
                         <input name="returnDate" type="date" ref={input => this.dateInput = input} />
-                    <button onClick={e => this.goToLoanList(e)}>Add</button>
+                    <button>Add</button>
                     <button type="button" onClick={e => this.goToLoanList(e)}>
                         Cancel
                     </button>
