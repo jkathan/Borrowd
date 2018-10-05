@@ -25,7 +25,7 @@ export class LoanList extends React.Component {
                 </ul>
             </div>
         );
-    }
+    };
 }
 
 const mapStateToProps = (state, props) => {
@@ -40,6 +40,6 @@ const mapStateToProps = (state, props) => {
         loansList: loansList
     };
 
-}
+};
 
 export default connect(mapStateToProps)(LoanList);
