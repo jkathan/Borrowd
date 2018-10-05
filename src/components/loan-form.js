@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
+import {addLoanCard} from '../actions';
 //how do I 
 export default class LoanForm extends React.Component {
     //in order to communicate between the two, do i need to set state?
@@ -36,12 +37,7 @@ render() {
 //for the find in item list. maybe it just makes sense to item pag
         return (
             <div>
-                    <div>
-                        <LoanFormFromItem />}
-                    </div>
-                    <div>
-                        <AddItemLoanForm />}
-                    </div>
+
                 <form className="card add-form" onSubmit={this.onSubmit}>
                         <label>Borrower:</label>
                         <input name="loanee" type="text" ref={input => this.borrowerInput = input} />
@@ -60,3 +56,12 @@ render() {
         );
     }
 }
+
+/*
+                    <div>
+                        <LoanFormFromItem />}
+                    </div>
+                    <div>
+                        <AddItemLoanForm />}
+                    </div>
+                    */
