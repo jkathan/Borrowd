@@ -1,8 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import LoanCard from './card';
-import LoanForm from './add-form';
+import LoanCard from './loan-card';
+import LoanForm from './loan-form';
 
 import {addLoanCard} from '../actions';
 
