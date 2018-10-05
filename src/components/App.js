@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {BrowserRouter as Router, Route, Link, Redirect, Switch} from 'react-router-dom';
-import LoanList from './components/loan-list';
-import LoanForm from './components/loan-form'
+import LoanList from './loan-list';
+import LoanForm from './loan-form'
 
 export default function App(props) {
     return (
