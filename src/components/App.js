@@ -11,7 +11,6 @@ export default function App(props) {
                     <Route exact path='/items/loans' component={LoanList} />
                     <Route exact path='/items/loanform' component={LoanForm} />
                   </Switch>
-            </div>
         </Router>
     );
 }
