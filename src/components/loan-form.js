@@ -68,7 +68,7 @@ render() {
     }
 }
 
-export default connect()(LoanList);
+export default connect()(LoanForm);
 /*
                     <div>
                         <LoanFormFromItem />}
