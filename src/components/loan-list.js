@@ -17,10 +17,9 @@ export class LoanList extends React.Component {
         return (
             <div>
                 <ul className="list">
-                    
-                    <li>
-                        <h2><link to = {`/items/loanform`} >Loan out an item</link></h2>
-                    </li>
+                   <div>
+                        <LoanForm />
+                    </div>
                     {loancards}
                 </ul>
             </div>
@@ -43,3 +42,8 @@ const mapStateToProps = (state, props) => {
 }
 
 export default connect(mapStateToProps)(LoanList);
+
+/*<li>
+                        <h2><link to = {`/items/loanform`} >Loan out an item</link></h2>
+                    </li>
+                    */

@@ -7,10 +7,14 @@ export default class LoanForm extends React.Component {
     //in order to communicate between the two, do i need to set state?
     onSubmit(event) {
         event.preventDefault();
+        const type = this.typeInput.value.trim();
+        const item = this.itemInput.value.trim();
         const borrower = this.borrowerInput.value.trim();
         const email = this.emailInput.value.trim();
         const phone = this.phoneInput.value.trim();
         const date = this.dateInput.value.trim();
+        this.typeInput.value = '';
+        this.itemInput.value = '';
         this.borrowerInput.value = '';
         this.emailInput.value = '';
         this.phoneInput.value = '';
@@ -20,7 +24,7 @@ export default class LoanForm extends React.Component {
         //on submit?
         this.props.dispatch(
             //wahat is boardID and why is it necessary?
-        addLoanCard(borrower, email, phone, date, null)
+        addLoanCard(type, item, borrower, email, phone, date, null)
         );
         this.props.history.push(`/items/loans`);
     }
@@ -39,6 +43,10 @@ render() {
             <div>
 
                 <form className="card add-form" onSubmit={this.onSubmit}>
+                        <label>type:</label>
+                        <input name="loanee" type="text" ref={input => this.typeInput = input} />
+                        <label>item:</label>
+                        <input name="loanee" type="text" ref={input => this.itemInput = input} />
                         <label>Borrower:</label>
                         <input name="loanee" type="text" ref={input => this.borrowerInput = input} />
                         <label>Email:</label>
