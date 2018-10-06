@@ -13,6 +13,7 @@ export default class LoanForm extends React.Component {
         const email = this.emailInput.value.trim();
         const phone = this.phoneInput.value.trim();
         const date = this.dateInput.value.trim();
+        console.log(type);
         this.typeInput.value = '';
         this.itemInput.value = '';
         this.borrowerInput.value = '';
@@ -26,14 +27,14 @@ export default class LoanForm extends React.Component {
             //wahat is boardID and why is it necessary?
         addLoanCard(type, item, borrower, email, phone, date, null)
         );
-        this.props.history.push(`/items/loans`);
+        //this.props.history.push(`/items/loans`);
     }
 
-
+/*
     goToLoansList(event) {
         event.preventDefault();
         this.props.history.push(`/items/loans`);
-    }
+    }*/
 render() {
 //within components i can render the buttons
 //heres what i want to do here. once the element is chosen or added. I want the 
@@ -55,8 +56,8 @@ render() {
                         <input name="phone" type="tel" ref={input => this.phoneInput = input} />
                         <label>Return Date:</label>
                         <input name="returnDate" type="date" ref={input => this.dateInput = input} />
-                    <button>Add</button>
-                    <button type="button" onClick={e => this.goToLoanList(e)}>
+                    <button>Submit</button>
+                    <button type="button" /*onClick={e => this.goToLoanList(e)}*/>
                         Cancel
                     </button>
                 </form>
