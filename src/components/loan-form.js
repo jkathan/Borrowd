@@ -7,7 +7,7 @@ export default class LoanForm extends React.Component {
     //in order to communicate between the two, do i need to set state?
     onSubmit(event) {
         event.preventDefault();
-        console.log(typeInput.value.trim());
+        //console.log(typeInput.value.trim());
         console.log(this.typeInput.value.trim());
         const type = this.typeInput.value.trim();
         const item = this.itemInput.value.trim();
