@@ -26,7 +26,7 @@ export default class LoanForm extends React.Component {
         //this.props.dispatch(
             //wahat is boardID and why is it necessary?
         //addLoanCard(type, item, borrower, email, phone, date, null)
-        );
+        //);
         //this.props.history.push(`/items/loans`);
     }
 
