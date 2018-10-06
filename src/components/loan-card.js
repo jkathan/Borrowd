@@ -28,13 +28,5 @@ render() {
 	};
 }
 
-LoanCard.defaultProps = {
-    type: '',
-    item: '' ,
-    loanee: '',
-    email: '',
-    phone: '',
-    returnDate: ''
-};
 
 
