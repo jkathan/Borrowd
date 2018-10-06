@@ -39,7 +39,7 @@ export class LoanList extends React.Component {
 }
 
 const mapStateToProps = state => ({
-/*    const loansList = Object.assign(
+    const loansList = Object.assign(
         {},
         {
             loanList: []
@@ -48,7 +48,7 @@ const mapStateToProps = state => ({
     );
     return {*/
         loansList: state.loanList
-    //};
+    };
 
 })
 
