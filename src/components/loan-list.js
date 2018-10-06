@@ -8,6 +8,14 @@ export class LoanList extends React.Component {
     constructor(props) {
         super(props);
     }
+
+    addCard((type, item, borrower, email, phone, date) {
+        this.props.dispatch(
+            addCard((type, item, borrower, email, phone, date, null)
+        );
+    }
+
+
     render() {
         const loancards = this.props.loansList.map((loan, index) => (
             <li key={index}>
@@ -20,7 +28,7 @@ export class LoanList extends React.Component {
             <div>
                 <ul className="list">
                    <div>
-                        <LoanForm />
+                        <LoanForm onAdd{(type, item, borrower, email, phone, date) => this.addCard(type, item, borrower, email, phone, date)}/>
                     </div>
                     {loancards}
                 </ul>

@@ -15,13 +15,21 @@ export default class LoanForm extends React.Component {
         const email = this.emailInput.value.trim();
         const phone = this.phoneInput.value.trim();
         const date = this.dateInput.value.trim();
+        if (type && item && borrower && email && phone && date && this.props.onAdd) {
+            this.props.onAdd(this.typeInput.value);
+            this.props.onAdd(this.itemInput.value);
+            this.props.onAdd(this.borrowerInput.value);
+            this.props.onAdd(this.emailInput.value);
+            this.props.onAdd(this.phoneInput.value);
+            this.props.onAdd(this.dateInput.value);
+        }
         console.log(type);
-        this.typeInput.value = '';
-        this.itemInput.value = '';
-        this.borrowerInput.value = '';
-        this.emailInput.value = '';
-        this.phoneInput.value = '';
-        this.dateInput.value = '';
+        //this.typeInput.value = '';
+        //this.itemInput.value = '';
+        //this.borrowerInput.value = '';
+        //this.emailInput.value = '';
+        //this.phoneInput.value = '';
+        //this.dateInput.value = '';
         //will have to put more info here depeding on the selection of item
         //also will have to add new item to item list. is this done in new 
         //on submit?
@@ -47,11 +55,11 @@ render() {
 
                 <form className="card add-form" onSubmit={this.onSubmit}>
                         <label>type:</label>
-                        <input name="loanee" type="text" ref={input => this.typeInput = input} />
+                        <input name="type" type="text" ref={input => this.typeInput = input} />
                         <label>item:</label>
-                        <input name="loanee" type="text" ref={input => this.itemInput = input} />
+                        <input name="item" type="text" ref={input => this.itemInput = input} />
                         <label>Borrower:</label>
-                        <input name="loanee" type="text" ref={input => this.borrowerInput = input} />
+                        <input name="borrower" type="text" ref={input => this.borrowerInput = input} />
                         <label>Email:</label>
                         <input name="email" type="email" ref={input => this.emailInput = input} />
                         <label>Phone:</label>
