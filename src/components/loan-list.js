@@ -9,7 +9,7 @@ export class LoanList extends React.Component {
         super(props);
     }
 
-    addCard((type, item, borrower, email, phone, date) {
+    addCard(type, item, borrower, email, phone, date) {
         this.props.dispatch(
             addCard(type, item, borrower, email, phone, date, null)
         );
