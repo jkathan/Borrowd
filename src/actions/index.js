@@ -1,4 +1,4 @@
-/*export const ADD_LOAN_CARD = 'ADD_LOAN_CARD';
+export const ADD_LOAN_CARD = 'ADD_LOAN_CARD';
 export const addLoanCard = (borrower, email, phone, date, listId) => ({
     type: ADD_LOAN_CARD,
     type,
@@ -8,4 +8,4 @@ export const addLoanCard = (borrower, email, phone, date, listId) => ({
     phone, 
     date,
     listId,
-});*/
+});
