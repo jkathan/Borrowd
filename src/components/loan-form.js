@@ -13,26 +13,29 @@ export class LoanForm extends React.Component {
         event.preventDefault();
         //console.log(typeInput.value.trim());
         console.log(this.typeInput.value.trim());
-        const type = this.typeInput.value.trim();
+        const itemType = this.typeInput.value.trim();
         const item = this.itemInput.value.trim();
         const borrower = this.borrowerInput.value.trim();
         const email = this.emailInput.value.trim();
         const phone = this.phoneInput.value.trim();
         const date = this.dateInput.value.trim();
-        console.log(type);
-        //this.typeInput.value = '';
-        //this.itemInput.value = '';
-        //this.borrowerInput.value = '';
-        //this.emailInput.value = '';
-        //this.phoneInput.value = '';
-        //this.dateInput.value = '';
+        console.log(itemType);
+        if (itemType && item && borrower && email && phone && date && this.props.onAdd) {
+            this.props.onAdd(itemType, item, borrower, email, phone, date);
+        }
+        this.typeInput.value = '';
+        this.itemInput.value = '';
+        this.borrowerInput.value = '';
+        this.emailInput.value = '';
+        this.phoneInput.value = '';
+        this.dateInput.value = '';
         //will have to put more info here depeding on the selection of item
         //also will have to add new item to item list. is this done in new 
         //on submit?
-        this.props.dispatch(
+        //this.props.dispatch(
             //wahat is boardID and why is it necessary?
-        addLoanCard(type, item, borrower, email, phone, date, null)
-        );
+        //addLoanCard(itemType, item, borrower, email, phone, date, null)
+        //);
         //this.props.history.push(`/items/loans`);
     }
 
