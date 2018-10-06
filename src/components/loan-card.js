@@ -13,7 +13,7 @@ export default class LoanCard extends React.Component  {
 render() {    
     return (
         <ul>
-        	 <li>Id: {this.props.index}</li>
+        	 <li>Id: {this.props.listId}</li>
 			 <li>Type: {this.props.itemType}</li>
 			 <li>Item: {this.props.item}</li>
 			 <li>Loanee: {this.props.borrower}</li>
