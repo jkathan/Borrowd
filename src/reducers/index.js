@@ -10,18 +10,20 @@ const initialState = {
   {type: 'tool', item: 'Wrench', borrower: 'greta', email: 'fake@email.com', phone: '301-555-555', returnDate: '12/8/19'}
 ]};
 
-export const loanReducer = (state=initialState, action) => {
-    if (action.type === actions.ADD_LOAN_CARD) {
+export const loanReducer = (state=initialState) => {
+    /*if (action.type === actions.ADD_LOAN_CARD) {
         return Object.assign({}, state, {
             loanList: [...state.loanList, {
+                  type: action.type,
+                  item: action.item,
                   borrower: action.borrower, 
                   email: action.email, 
                   phone: action.phone, 
                   date: action.date,
                   listId: action.listId,
             }]
-            });
-    }
+            });, action
+    }*/
     return state;
 };
 

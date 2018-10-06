@@ -5,7 +5,9 @@ import LoanCard from './loan-card';
 import LoanForm from './loan-form';
 
 export class LoanList extends React.Component {
-
+    constructor(props) {
+        super(props);
+    }
     render() {
         const loancards = this.props.loansList.map((loan, index) => (
             <li key={index}>
@@ -36,7 +38,7 @@ const mapStateToProps = (state, props) => {
         state.loanList
     );
     return {
-        loansList: loansList.loanList
+        loansList: loansList
     };
 
 }
