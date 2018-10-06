@@ -15,7 +15,7 @@ render() {
         <ul>
 			 <li>Type: {this.props.type}</li>
 			 <li>Item: {this.props.item}</li>
-			 <li>Loanee: {this.props.loanee}</li>
+			 <li>Loanee: {this.props.borrower}</li>
 			 <li>Email: {this.props.email}</li>
 			 <li>Phone: {this.props.phone}</li>
 			 <li>Return Date: {this.props.returnDate}</li>
