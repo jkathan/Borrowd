@@ -29,10 +29,10 @@ export class LoanForm extends React.Component {
         //will have to put more info here depeding on the selection of item
         //also will have to add new item to item list. is this done in new 
         //on submit?
-        //this.props.dispatch(
+        this.props.dispatch(
             //wahat is boardID and why is it necessary?
-        //addLoanCard(type, item, borrower, email, phone, date, null)
-        //);
+        addLoanCard(type, item, borrower, email, phone, date, null)
+        );
         //this.props.history.push(`/items/loans`);
     }
 
