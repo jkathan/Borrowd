@@ -24,13 +24,18 @@ export default class RenewLoanForm extends React.Component {
          //this.props.dispatch(
         //addLoanCard(date, this.props.listId)
         //);
-        this.setEditing(false)
     }
+       setEditing(editing) {
+        this.setState({
+            editing
+        });
+    }
+
 	render() {
 		if (!this.state.editing) {
             return (
             	<div>
-                	<button onClick={() => this.setEditing(true)}>Return</button>
+                	<button onClick={() => this.setEditing(true)}>Renew</button>
             	</div>
             );
         }
