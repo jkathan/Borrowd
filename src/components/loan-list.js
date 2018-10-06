@@ -41,7 +41,7 @@ const mapStateToProps = state => ({
         loansList: state.loanList
     //};
 
-}
+})
 
 export default connect(mapStateToProps)(LoanList);
 
