@@ -10,10 +10,10 @@ export class LoanList extends React.Component {
     constructor(props) {
         super(props);
     }
-
-       addCard(itemType, item, borrower, email, phone, date) {
         const listId = this.props.key;
         console.log(listId);
+       addCard(itemType, item, borrower, email, phone, date, listId) {
+
         this.props.dispatch(
             addLoanCard(itemType, item, borrower, email, phone, date, listId)
         );
