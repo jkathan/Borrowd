@@ -3,7 +3,8 @@ import {BrowserRouter as Router, Route, Link, Redirect, Switch} from 'react-rout
 import LoanList from './loan-list';
 import LoanForm from './loan-form'
 
-export default function App(props) {
+export default class App extends React.Component {
+  render() {
     return (
         <Router>
                 <Switch>
@@ -12,4 +13,5 @@ export default function App(props) {
                   </Switch>
         </Router>
     );
+  }
 }
