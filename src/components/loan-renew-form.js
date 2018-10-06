@@ -29,7 +29,9 @@ export default class RenewLoanForm extends React.Component {
 	render() {
 		if (!this.state.editing) {
             return (
-                <button onClick={() => this.setEditing(true)}></button>
+            	<div>
+                	<button onClick={() => this.setEditing(true)}>Return</button>
+            	</div>
             );
         }
 		return (
