@@ -4,6 +4,8 @@ import {connect} from 'react-redux';
 import LoanCard from './loan-card';
 import LoanForm from './loan-form';
 
+import {addLoanCard} from '../actions';
+
 export class LoanList extends React.Component {
     constructor(props) {
         super(props);
