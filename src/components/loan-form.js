@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 
 import {addLoanCard} from '../actions';
 //how do I 
-export default class LoanForm extends React.Component {
+export class LoanForm extends React.Component {
     //in order to communicate between the two, do i need to set state?
     onSubmit(event) {
         event.preventDefault();
@@ -15,14 +15,6 @@ export default class LoanForm extends React.Component {
         const email = this.emailInput.value.trim();
         const phone = this.phoneInput.value.trim();
         const date = this.dateInput.value.trim();
-        if (type && item && borrower && email && phone && date && this.props.onAdd) {
-            this.props.onAdd(this.typeInput.value);
-            this.props.onAdd(this.itemInput.value);
-            this.props.onAdd(this.borrowerInput.value);
-            this.props.onAdd(this.emailInput.value);
-            this.props.onAdd(this.phoneInput.value);
-            this.props.onAdd(this.dateInput.value);
-        }
         console.log(type);
         //this.typeInput.value = '';
         //this.itemInput.value = '';
@@ -59,7 +51,7 @@ render() {
                         <label>item:</label>
                         <input name="item" type="text" ref={input => this.itemInput = input} />
                         <label>Borrower:</label>
-                        <input name="borrower" type="text" ref={input => this.borrowerInput = input} />
+                        <input name="loanee" type="text" ref={input => this.borrowerInput = input} />
                         <label>Email:</label>
                         <input name="email" type="email" ref={input => this.emailInput = input} />
                         <label>Phone:</label>
@@ -76,6 +68,7 @@ render() {
     }
 }
 
+export default connect()(LoanList);
 /*
                     <div>
                         <LoanFormFromItem />}
