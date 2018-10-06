@@ -14,13 +14,13 @@ export const loanReducer = (state=initialState, action) => {
     if (action.type === actions.ADD_LOAN_CARD) {
         return Object.assign({}, state, {
             loanList: [...state.loanList, {
-                  itemType: action.type,
+                  itemType: action.itemType,
                   item: action.item,
                   borrower: action.borrower, 
                   email: action.email, 
                   phone: action.phone, 
                   date: action.date,
-                  listId: action.listId,
+                  listId,
             }]
             });
     }
