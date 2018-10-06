@@ -51,12 +51,6 @@ render() {
 //for the find in item list. maybe it just makes sense to item pag
         return (
             <div>
-                <div>
-                    <LoanFormFromItem />}
-                </div>
-                <div>
-                    <AddItemLoanForm />}
-                </div>
                 <form className="card add-form" onSubmit={this.onSubmit}>
                         <label>type:</label>
                         <input name="type" type="text" ref={input => this.typeInput = input} />
