@@ -29,19 +29,19 @@ export class LoanList extends React.Component {
     };
 }
 
-const mapStateToProps = (state, props) => {
-    const loansList = Object.assign(
+const mapStateToProps = state => ({
+/*    const loansList = Object.assign(
         {},
         {
             loanList: []
         },
         state.loanList
     );
-    return {
-        loansList: loansList
-    };
+    return {*/
+        loansList: state.loanList
+    //};
 
-}
+})
 
 export default connect(mapStateToProps)(LoanList);
 
