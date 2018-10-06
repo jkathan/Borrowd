@@ -13,12 +13,12 @@ export default class LoanCard extends React.Component  {
 render() {    
     return (
         <ul>
-			 <li>Type: {this.props.loan.type}</li>
-			 <li>Item: {this.props.loan.item}</li>
-			 <li>Loanee: {this.props.loan.loanee}</li>
-			 <li>Email: {this.props.loan.email}</li>
-			 <li>Phone: {this.props.loan.phone}</li>
-			 <li>Return Date: {this.props.loan.returnDate}</li>
+			 <li>Type: {loan.type}</li>
+			 <li>Item: {loan.item}</li>
+			 <li>Loanee: {loan.loanee}</li>
+			 <li>Email: {loan.email}</li>
+			 <li>Phone: {loan.phone}</li>
+			 <li>Return Date: {loan.returnDate}</li>
 			 <button onClick={e => this.goToLoanList(e)}>Return</button>
 			 <div>
 			 	<RenewLoanForm />
