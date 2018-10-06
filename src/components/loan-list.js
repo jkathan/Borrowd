@@ -47,7 +47,7 @@ const mapStateToProps = state => ({
         state.loanList
     );
     return {*/
-        loansList: state.loanList
+        loansList: loanList
     };
 
 })
