@@ -8,7 +8,7 @@ import './index.css';
 
 ReactDOM.render(
   <Provider store={store}>
-      <App />
+      <LoanList />
   </Provider>,
   document.getElementById('root')
 );
