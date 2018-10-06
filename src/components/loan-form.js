@@ -5,6 +5,7 @@ import {addLoanCard} from '../actions';
 //how do I 
 export class LoanForm extends React.Component {
     constructor(props) {
+        super(props);
         this.onSubmit = this.onSubmit.bind(this);
     }
     //in order to communicate between the two, do i need to set state?
