@@ -24,6 +24,6 @@ export const loanReducer = (state=initialState, action) => {
             }]
             });
     }*/
-    return state.loanList;
+    return state;
 };
 
