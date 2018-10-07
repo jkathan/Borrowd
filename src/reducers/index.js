@@ -23,6 +23,9 @@ export const loanReducer = (state=initialState, action) => {
             }]
             });
     }
+    else if (action.type === actions.RETURN_ITEM) {
+      return state.filter(({ id }) => id !== action.itemId);
+      }
     return state;
 };
 

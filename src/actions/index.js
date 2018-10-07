@@ -8,3 +8,9 @@ export const addLoanCard = (itemType, item, borrower, email, phone, date) => ({
     phone, 
     date,
 });
+
+export const RETURN_ITEM = 'RETURN_ITEM';
+export const returnLoanItem = (itemId) => ({
+    type: ADD_LOAN_CARD,
+    itemId
+});
