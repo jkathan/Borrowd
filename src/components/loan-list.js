@@ -25,7 +25,7 @@ export class LoanList extends React.Component {
 
 
     render() {
-        const loanlist = this.props.loanList.map((loan, index) => (
+        const loanlist = this.props.loansList.map((loan, index) => (
             <li key={index}>
                 <LoanCard 
                 listId={index}
