@@ -6,7 +6,6 @@ export default class LoanCard extends React.Component  {
 //dont understand how i could update Return Date from other component
 //my thoughts: set state of return date, have an action handler that 
 //listens to onsubmit and sets state to that new state 
-console.log(this.props.listId);
 render() {    
     return (
         <ul>
