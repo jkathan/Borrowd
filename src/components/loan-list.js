@@ -27,7 +27,7 @@ export class LoanList extends React.Component {
                 this.state.searchTerm.toLowerCase()
             )   
         )
-        console.log(loanslist);
+        console.log(loansList);
         return (
             <div>
                 <SearchBar onChange={searchTerm => this.setState({searchTerm})} />
