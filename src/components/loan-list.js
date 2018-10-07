@@ -4,7 +4,7 @@ import SearchBar from './loan-search-bar';
 //import LoanCard from './loan-card';
 import LoanForm from './loan-form';
 import LoanSearchList from './loan-searchable-cards-list';
-
+import LoanCard from './loan-card';
 import {addLoanCard} from '../actions';
 
 export class LoanList extends React.Component {
