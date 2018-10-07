@@ -39,7 +39,7 @@ export class LoanList extends React.Component {
             )
         )*/
 
-        console.log(loanList);
+        console.log(loanlist);
         return (
             <ul className="list">
                    <div>
