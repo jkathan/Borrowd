@@ -10,9 +10,9 @@ import {addLoanCard} from '../actions';
 export class LoanList extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            searchTerm: ''
-        }
+        //this.state = {
+        //    searchTerm: ''
+        //}
     }
 
        addCard(itemType, item, borrower, email, phone, date) {
