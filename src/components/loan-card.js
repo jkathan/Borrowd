@@ -7,7 +7,10 @@ export default class LoanCard extends React.Component  {
 //my thoughts: set state of return date, have an action handler that 
 //listens to onsubmit and sets state to that new state 
     handleClick(index, event) {
-        alert(index);
+        this.props.dispatch(
+            returnLoanItem(index)
+        );
+
     }
 
 render() {    
