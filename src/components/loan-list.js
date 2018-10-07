@@ -22,9 +22,17 @@ export class LoanList extends React.Component {
         );
     }
 
-    
+
 
     render() {
+        const loanlist = this.props.loansList.map((loan, index) => (
+            <li key={index}>
+                <LoanCard 
+                listId={index}
+                {...loan} />
+            </li>
+        )
+    )
         let loansList = this.props.loansList.filter(loan =>
             loan.item.toString().toLowerCase().includes(
                 this.state.searchTerm.toString().toLowerCase()
@@ -35,11 +43,13 @@ export class LoanList extends React.Component {
         return (
             <div>
                 <SearchBar onChange={searchTerm => this.setState({searchTerm})} />
+                <LoanSearchList loansList = {loansList} />
                 <ul className="list">
                    <div>
                         <LoanForm onAdd={(itemType, item, borrower, email, phone, date) => this.addCard(itemType, item, borrower, email, phone, date)}/>
+                        {loanlist}
                     </div>
-                    <LoanSearchList loansList = {loansList} />
+                    
                 </ul>
             </div>
         );
