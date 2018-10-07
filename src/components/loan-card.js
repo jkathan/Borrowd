@@ -19,7 +19,7 @@ render() {
 			 <li>Email: {this.props.email}</li>
 			 <li>Phone: {this.props.phone}</li>
 			 <li>Return Date: {this.props.returnDate}</li>
-			 <button onClick={this.handleClick.bind(this, this.props.indexId)}>Return</button>
+			 <button onClick={this.handleClick.bind(this, this.props.listId)}>Return</button>
 			 <div>
 			 	<RenewLoanForm />
 			 </div>
