@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import {addLoanCard} from '../actions';
+//import {addLoanCard} from '../actions';
 //how do I 
 export class LoanForm extends React.Component {
     constructor(props) {
