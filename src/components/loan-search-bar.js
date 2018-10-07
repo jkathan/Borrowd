@@ -4,6 +4,7 @@ export default class SearchBar extends React.Component {
 	    constructor(props) {
         super(props);
         this.onSubmit = this.onSubmit.bind(this);
+        this.onChange = this.onchange.bind(this);
     }
   render() {
     return (
