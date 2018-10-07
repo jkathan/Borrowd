@@ -10,7 +10,7 @@ class LoanSearchList extends React.Component {
                 listId={index}
                 {...loan} />
             </li>
-        );
+        )
     return (
         <ul className="character-list" aria-live="polite">
             {loancards}
