@@ -53,11 +53,11 @@ render() {
             <div>
                 <form className="card add-form" onSubmit={this.props.onSubmit}>
                         <label>type:</label>
-                        <input name="type" type="text" ref={input => this.typeInput = input} />
+                        <input name="itemType" type="text" ref={input => this.typeInput = input} />
                         <label>item:</label>
                         <input name="item" type="text" ref={input => this.itemInput = input} />
                         <label>Borrower:</label>
-                        <input name="loanee" type="text" ref={input => this.borrowerInput = input} />
+                        <input name="borrower" type="text" ref={input => this.borrowerInput = input} />
                         <label>Email:</label>
                         <input name="email" type="email" ref={input => this.emailInput = input} />
                         <label>Phone:</label>
