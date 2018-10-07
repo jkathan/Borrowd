@@ -6,6 +6,7 @@ import LoanForm from './loan-form';
 //import LoanSearchList from './loan-searchable-cards-list';
 import LoanCard from './loan-card';
 import {addLoanCard} from '../actions';
+import {returnLoanItem} from '../actions';
 
 export class LoanList extends React.Component {
     constructor(props) {
@@ -22,14 +23,18 @@ export class LoanList extends React.Component {
         );
     }
 
-
+    returnItem(index) {
+        this.props.dispatch(
+            returnLoanItem(index) 
+            );
+    }
 
     render() {
         const loanlist = this.props.loansList.map((loan, index) => (
             <li key={index} >
                 <LoanCard 
                 listId={index}
-                {...loan} />
+                {...loan} onReturn{(index) => this.returnItem(index)}/>
             </li>
         )
     )
