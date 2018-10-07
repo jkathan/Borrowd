@@ -11,6 +11,7 @@ class LoanSearchList extends React.Component {
                 {...loan} />
             </li>
         )
+    )
     return (
         <ul className="character-list" aria-live="polite">
             {loancards}
