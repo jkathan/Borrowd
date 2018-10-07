@@ -18,3 +18,4 @@ class LoanSearchList extends React.Component {
         </ul>
     );
 }
+}
