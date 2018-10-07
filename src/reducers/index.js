@@ -27,7 +27,7 @@ export const loanReducer = (state=initialState, action) => {
       return Object.assign({}, state, {
         loanList: [...state.loanList.filter(loan => loan.listId !== action.itemId)]
       })
-   //   }
+      }
     return state;
 //};
 }
