@@ -26,9 +26,9 @@ export class LoanList extends React.Component {
         const loanslist = this.props.loansList.filter(loan =>
             loan.item.toLowerCase().includes(
                 this.state.searchTerm.toLowerCase()
-            )
-            console.log(loanslist);
+            )   
         )
+        console.log(loanslist);
         return (
             <div>
                 <SearchBar onChange={searchTerm => this.setState({searchTerm})} />
