@@ -28,4 +28,4 @@ export const loanReducer = (state=initialState, action) => {
       }
     return state;
 };
-
+}
