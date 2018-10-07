@@ -22,13 +22,11 @@ export class LoanList extends React.Component {
         );
     }
 
-    handleClick(index, event) {
-        alert(index);
-    }
+
 
     render() {
         const loanlist = this.props.loansList.map((loan, index) => (
-            <li key={index} onClick={this.handleClick.bind(this, index)}>
+            <li key={index} >
                 <LoanCard 
                 listId={index}
                 {...loan} />
