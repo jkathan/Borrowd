@@ -21,6 +21,9 @@ export class LoanList extends React.Component {
             addLoanCard(itemType, item, borrower, email, phone, date, null)
         );
     }
+
+    
+
     render() {
         let loansList = this.props.loansList.filter(loan =>
             loan.item.toString().toLowerCase().includes(
