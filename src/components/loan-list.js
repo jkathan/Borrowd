@@ -26,9 +26,8 @@ export class LoanList extends React.Component {
             loan.item.toString().toLowerCase().includes(
                 this.state.searchTerm.toString().toLowerCase()
             )
-            console.log(loan.item);
         )
-        
+
         console.log(loansList);
         return (
             <div>
