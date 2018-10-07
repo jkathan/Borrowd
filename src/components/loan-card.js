@@ -7,17 +7,17 @@ export class LoanCard extends React.Component  {
 //my thoughts: set state of return date, have an action handler that 
 //listens to onsubmit and sets state to that new state 
     handleClick(index, event) {
-    	const index = index;
+    	const itemId = index;
         this.props.dispatch(
-            returnLoanItem(index)
+            returnLoanItem(itemId)
         );
 /*    handleClick(index, event) {
     	const index = index;
         if (index && this.props.onReturn) {
             this.props.onReturn(index);
-        }*/console.log(index);
+        }*/console.log(itemId);
     }
-    
+
 //would rather do handleclick in parent but cant specifiy button
 render() {    
     return (
