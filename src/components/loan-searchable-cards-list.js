@@ -15,6 +15,7 @@ export default class LoanSearchList extends React.Component {
             </li>
         )
     )
+    console.log(loancards);
     return (
         <ul className="character-list" aria-live="polite">
             {loancards}
