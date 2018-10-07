@@ -22,7 +22,7 @@ export class LoanList extends React.Component {
         );
     }
 
-    handleclick(index, event) {
+    handleClick(index, event) {
         alert(index);
     }
 
