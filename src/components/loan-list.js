@@ -24,13 +24,14 @@ export class LoanList extends React.Component {
     render() {
         const loansList = this.props.loansList.filter(loan =>
             loan.item.toString().toLowerCase().includes(
-                this.props.state.searchTerm
-            )   
+                this.state.searchTerm.toString().toLowerCase()
+            );
+            console.log(loan.item);
         )
         console.log(loansList);
         return (
             <div>
-                <SearchBar onChange={searchTerm => this.setState({searchTerm: searchTerm.toString().toLowerCase()})} />
+                <SearchBar onChange={searchTerm => this.setState({searchTerm})} />
                 <ul className="list">
                    <div>
                         <LoanForm onAdd={(itemType, item, borrower, email, phone, date) => this.addCard(itemType, item, borrower, email, phone, date)}/>
