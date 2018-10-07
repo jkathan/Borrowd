@@ -2,7 +2,7 @@ import React from 'react';
 
 import LoanCard from './loan-card';
 
-default export class LoanSearchList extends React.Component {
+export default class LoanSearchList extends React.Component {
  render() {
 	const loancards = props.loansList.map((loan, index) => (
             <li key={index}>
