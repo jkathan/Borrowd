@@ -27,7 +27,7 @@ export class LoanList extends React.Component {
     //    this.props.dispatch(
     //        returnLoanItem(index) 
     //        );
-   // } onReturn{(index) => this.returnItem(index)}
+   // }onReturn{(index) => this.returnItem(index)}
 
     render() {
         const loanlist = this.props.loansList.map((loan, index) => (
@@ -57,16 +57,16 @@ export class LoanList extends React.Component {
 } 
 
 const mapStateToProps = state => ({
-   const loansList = Object.assign(
+/*    const loansList = Object.assign(
         {},
         {
             loanList: []
         },
         state.loanList
     );
-    return {
-        loansList: loansList
-    };
+    return {*/
+        loansList: state.loanList
+    //};
 
 })
 
