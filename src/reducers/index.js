@@ -20,7 +20,6 @@ export const loanReducer = (state=initialState, action) => {
                   email: action.email, 
                   phone: action.phone, 
                   date: action.date,
-                  listId: action.listId
             }]
             });
     }
