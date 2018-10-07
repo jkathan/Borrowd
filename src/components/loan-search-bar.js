@@ -20,7 +20,7 @@ export default class SearchBar extends React.Component {
     return (
       <form onSubmit={e => e.preventDefault()}>
       		<label>Search by Item</label>
-	        <input type="text" placeholder="Search..." 
+	        <input type="text" placeholder="Search..." value={this.state.value}
 	        onChange={this.props.onChange} />
       </form>
     );
