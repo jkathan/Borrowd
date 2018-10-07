@@ -9,7 +9,10 @@ export default class SearchBar extends React.Component {
         event.preventDefault();
     }
     onSubmit={e => e.preventDefault()}*/
-
+    onChange(event) {
+    	event.preventDefault();
+    	searchTerm = this.props.onChange(event.target.value)
+    }
 
   render() {
     return (
