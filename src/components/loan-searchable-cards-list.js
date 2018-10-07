@@ -7,7 +7,7 @@ export default class LoanSearchList extends React.Component {
         super(props);
     }
  render() {
-	const loancards = this.props.loansLists.map((loan, index) => (
+	const loancards = this.props.loansList.map((loan, index) => (
             <li key={index}>
                 <LoanCard 
                 listId={index}
