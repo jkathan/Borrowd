@@ -11,15 +11,16 @@ export default class SearchBar extends React.Component {
     onSubmit={e => e.preventDefault()}*/
     onChange(event) {
     	event.preventDefault();
-    	searchTerm = this.props.onChange(event.target.value)
-    }
+    	const searchTerm = (event.target.value);
+    	this.props.onChange(searchTerm);
+}
 
   render() {
     return (
       <form >
       		<label>Search by Item</label>
 	        <input type="text" placeholder="Search..." 
-	        onChange={e => this.props.onChange(e.target.value)} />
+	        onChange={this.props.onChange} />
       </form>
     );
   }
