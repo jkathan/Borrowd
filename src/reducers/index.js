@@ -24,7 +24,7 @@ export const loanReducer = (state=initialState, action) => {
             });
     }
     else if (action.type === actions.RETURN_ITEM) {
-       return {...state, loanList: state.loanList.filter(({ loan }) => loan.itemId !== action.itemId)
+       return {...state, loanList: state.loanList.filter(( loan ) => loan.itemId !== action.itemId)
       }
     return state;
 };
