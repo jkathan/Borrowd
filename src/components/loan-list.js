@@ -22,12 +22,13 @@ export class LoanList extends React.Component {
         );
     }
     render() {
-        const loansList = this.props.loansList.filter(loan =>
+        let loansList = this.props.loansList.filter(loan =>
             loan.item.toString().toLowerCase().includes(
                 this.state.searchTerm.toString().toLowerCase()
-            );
+            )
             console.log(loan.item);
         )
+        
         console.log(loansList);
         return (
             <div>
