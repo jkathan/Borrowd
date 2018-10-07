@@ -13,6 +13,7 @@ export default class SearchBar extends React.Component {
     	event.preventDefault();
     	const searchTerm = (event.target.value);
     	this.props.onChange(searchTerm);
+    	console.log(searchTerm);
 }
 
   render() {
