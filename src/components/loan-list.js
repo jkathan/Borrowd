@@ -22,7 +22,7 @@ export class LoanList extends React.Component {
         );
     }
     render() {
-        const loanslist = this.props.loansList.filter(loan =>
+        const loansList = this.props.loansList.filter(loan =>
             loan.item.toLowerCase().includes(
                 this.state.searchTerm.toLowerCase()
             )   
@@ -35,7 +35,7 @@ export class LoanList extends React.Component {
                    <div>
                         <LoanForm onAdd={(itemType, item, borrower, email, phone, date) => this.addCard(itemType, item, borrower, email, phone, date)}/>
                     </div>
-                    <LoanSearchList loanslist = {loanslist} />
+                    <LoanSearchList loansList = {loansList} />
                 </ul>
             </div>
         );
