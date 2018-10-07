@@ -1,14 +1,18 @@
 import React from 'react';
 import {connect} from 'react-redux';
-
-import LoanCard from './loan-card';
+import SearchBar from './loan-search-bar';
+//import LoanCard from './loan-card';
 import LoanForm from './loan-form';
+import LoanSearchList from './loan-searchable-cards-list';
 
 import {addLoanCard} from '../actions';
 
 export class LoanList extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            searchTerm: ''
+        }
     }
 
        addCard(itemType, item, borrower, email, phone, date) {
@@ -18,20 +22,21 @@ export class LoanList extends React.Component {
         );
     }
     render() {
-        const loancards = this.props.loansList.map((loan, index) => (
-            <li key={index}>
-                <LoanCard 
-                listId={index}
-                {...loan} />
-            </li>
-        ));
+        const loanslist = this.props.loanslist.filter(loan =>
+            loan.item.toLowerCase().includes(
+                this.state.searchTerm.toLowerCase()
+            )
+        );
+
+        );
         return (
             <div>
+                <SearchBar onChange={searchTerm => this.setState({searchTerm})} />
                 <ul className="list">
                    <div>
                         <LoanForm onAdd={(itemType, item, borrower, email, phone, date) => this.addCard(itemType, item, borrower, email, phone, date)}/>
                     </div>
-                    {loancards}
+                    <LoanSearchList loanslist = {loanslist} />
                 </ul>
             </div>
         );
@@ -39,17 +44,18 @@ export class LoanList extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    const loansList = Object.assign(
+/*    const loansList = Object.assign(
         {},
         {
             loanList: []
         },
         state.loanList
     );
-    return {
-        loansList: loanList
-    };
-};
+    return {*/
+        loansList: state.loanList
+    //};
+
+})
 
 export default connect(mapStateToProps)(LoanList);
 
