@@ -16,6 +16,6 @@ class LoanSearchList extends React.Component {
         <ul className="character-list" aria-live="polite">
             {loancards}
         </ul>
-    );
-}
+    	);
+	};
 }
