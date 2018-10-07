@@ -8,10 +8,10 @@ export class LoanCard extends React.Component  {
 //listens to onsubmit and sets state to that new state 
     handleClick(index, event) {
     	const itemId = index;
-/*        this.props.dispatch(
+        this.props.dispatch(
             returnLoanItem(itemId)
         );
-    handleClick(index, event) {
+/*    handleClick(index, event) {
     	const index = index;
         if (index && this.props.onReturn) {
             this.props.onReturn(index);
