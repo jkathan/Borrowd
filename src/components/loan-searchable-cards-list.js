@@ -8,8 +8,7 @@ export default class LoanSearchList extends React.Component {
     }
  render() {
 	const loancards = this.props.loansList.map((loan, index) => (
-            <li key={index}>
-               <ul>
+            <ul key={index}>
 	        	 <li>Type: {this.props.itemType}</li>
 				 <li>Item: {this.props.item}</li>
 				 <li>Loanee: {this.props.borrower}</li>
@@ -20,8 +19,8 @@ export default class LoanSearchList extends React.Component {
 				 <div>
 				 	<RenewLoanForm />
 				 </div>
-				</ul>
-            </li>
+
+            </ul>
         )
     )
     console.log(loancards);
