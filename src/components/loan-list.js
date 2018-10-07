@@ -48,7 +48,7 @@ export class LoanList extends React.Component {
             </div>
         );
     };
-}
+} 
 
 const mapStateToProps = state => ({
 /*    const loansList = Object.assign(
