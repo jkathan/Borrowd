@@ -30,7 +30,7 @@ export class LoanList extends React.Component {
         console.log(loansList);
         return (
             <div>
-                <SearchBar onChange={searchTerm => this.setState({searchTerm})} />
+                <SearchBar onChange={searchTerm => this.setState({searchTerm: searchTerm.toLowerCase()})} />
                 <ul className="list">
                    <div>
                         <LoanForm onAdd={(itemType, item, borrower, email, phone, date) => this.addCard(itemType, item, borrower, email, phone, date)}/>
