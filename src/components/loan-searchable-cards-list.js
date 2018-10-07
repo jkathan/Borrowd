@@ -1,5 +1,5 @@
 import React from 'react';
-
+import RenewLoanForm from './loan-renew-form';
 import LoanCard from './loan-card';
 
 export default class LoanSearchList extends React.Component {
