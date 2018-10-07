@@ -23,8 +23,10 @@ export const loanReducer = (state=initialState, action) => {
             }]
             });
     }
-   // else if (action.type === actions.RETURN_ITEM) {
-   //    return {...state, loanList: state.loanList.filter(( loan ) => loan.itemId !== action.itemId)
+   else if (action.type === actions.RETURN_ITEM) {
+      return Object.assign({}, state, {
+        loanList: [...state.loanList.filter(loan => loan.listId !== action.itemId)]
+      })
    //   }
     return state;
 //};
