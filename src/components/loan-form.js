@@ -23,12 +23,12 @@ export class LoanForm extends React.Component {
         if (itemType && item && borrower && email && phone && date && this.props.onAdd) {
             this.props.onAdd(itemType, item, borrower, email, phone, date);
         }
-        this.typeInput.value = '';
-        this.itemInput.value = '';
-        this.borrowerInput.value = '';
-        this.emailInput.value = '';
-        this.phoneInput.value = '';
-        this.dateInput.value = '';
+        //this.typeInput.value = '';
+        //this.itemInput.value = '';
+        //this.borrowerInput.value = '';
+        //this.emailInput.value = '';
+        //this.phoneInput.value = '';
+        //this.dateInput.value = '';
         //will have to put more info here depeding on the selection of item
         //also will have to add new item to item list. is this done in new 
         //on submit?

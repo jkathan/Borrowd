@@ -7,5 +7,5 @@ export const addLoanCard = (itemType, item, borrower, email, phone, date, listId
     email, 
     phone, 
     date,
-    listId,
+    listId
 });
