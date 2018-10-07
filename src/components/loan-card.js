@@ -8,12 +8,16 @@ export class LoanCard extends React.Component  {
 //listens to onsubmit and sets state to that new state 
     handleClick(index, event) {
     	const index = index;
+        this.props.dispatch(
+            returnLoanItem(index)
+        );
+/*    handleClick(index, event) {
+    	const index = index;
         if (index && this.props.onReturn) {
             this.props.onReturn(index);
-        }
-        );
-
+        }*/
     }
+    console.log(index);
 //would rather do handleclick in parent but cant specifiy button
 render() {    
     return (
