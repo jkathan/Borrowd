@@ -24,7 +24,7 @@ export class LoanList extends React.Component {
     render() {
         const loansList = this.props.loansList.filter(loan =>
             loan.item.toString().toLowerCase().includes(
-                this.state.searchTerm
+                this.props.state.searchTerm
             )   
         )
         console.log(loansList);
