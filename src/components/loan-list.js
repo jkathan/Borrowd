@@ -1,9 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import SearchBar from './loan-search-bar';
+//import SearchBar from './loan-search-bar';
 //import LoanCard from './loan-card';
 import LoanForm from './loan-form';
-import LoanSearchList from './loan-searchable-cards-list';
+//import LoanSearchList from './loan-searchable-cards-list';
 import LoanCard from './loan-card';
 import {addLoanCard} from '../actions';
 
@@ -18,7 +18,7 @@ export class LoanList extends React.Component {
        addCard(itemType, item, borrower, email, phone, date) {
 
         this.props.dispatch(
-            addLoanCard(itemType, item, borrower, email, phone, date, null)
+            addLoanCard(itemType, item, borrower, email, phone, date)
         );
     }
 
