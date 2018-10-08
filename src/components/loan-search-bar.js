@@ -1,10 +1,7 @@
 import React from 'react';
 
 export default class SearchBar extends React.Component {
-	constructor(props) {
-        super(props);
-       this.onChange = this.onChange.bind(this);
- }
+
   render() {
     return (
       <form onSubmit={e => e.preventDefault()}>
