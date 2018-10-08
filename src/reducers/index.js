@@ -8,7 +8,10 @@ const initialState = {
   {itemType: 'tool', item: 'Wrench', borrower: 'ian', email: 'fake@email.com', phone: '301-555-555', returnDate: '12/8/19'},
   {itemType: 'tool', item: 'Wrench', borrower: 'janet', email: 'fake@email.com', phone: '301-555-555', returnDate: '12/8/19'},
   {itemType: 'tool', item: 'Wrench', borrower: 'greta', email: 'fake@email.com', phone: '301-555-555', returnDate: '12/8/19'}
-]};
+],
+  type: [],
+  returnDate: [],
+};
 
 export const loanReducer = (state=initialState, action) => {
     if (action.type === actions.ADD_LOAN_CARD) {
@@ -24,10 +27,8 @@ export const loanReducer = (state=initialState, action) => {
             });
     }
    else if (action.type === actions.RETURN_ITEM) {
-      return Object.assign({}, state, {
-        loanList: [...state.loanList.filter(loan => loan.listId !== action.itemId.toString())]
-      })
-      }
+      return state.loanList.filter((data, i) => i !== action.itemId);
+    };
     return state;
 //};
 }

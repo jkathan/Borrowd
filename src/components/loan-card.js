@@ -14,14 +14,14 @@ export class LoanCard extends React.Component  {
 //would rather do handleclick in parent but cant specifiy button
 render() {    
     return (
-        <ul key={listId}>
+        <ul key={this.props.listId}>
         	 <li>Type: {this.props.itemType}</li>
 			 <li>Item: {this.props.item}</li>
 			 <li>Loanee: {this.props.borrower}</li>
 			 <li>Email: {this.props.email}</li>
 			 <li>Phone: {this.props.phone}</li>
 			 <li>Return Date: {this.props.returnDate}</li>
-			 <button onClick={(e) => this.returnLoanItem(e, listId)}>Return</button>
+			 <button onClick={(e) => this.returnLoanItem(e, this.props.listId)}>Return</button>
 			 <div>
 			 	<RenewLoanForm />
 			 </div>
