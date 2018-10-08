@@ -10,7 +10,7 @@ export class LoanCard extends React.Component  {
   returnLoanItem(e, index){
     e.preventDefault();
     console.log(index);
-   props.returnLoanItem(index);
+   dispatch(returnLoanItem(index));
 }
 //would rather do handleclick in parent but cant specifiy button
 render() {    
@@ -31,11 +31,11 @@ render() {
 	};
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    returnLoanItem: index =>dispatch(indexAction.returnLoanItem(index))
-  }
-};
+//const mapDispatchToProps = (dispatch) => {
+//  return {
+//    returnLoanItem: index =>dispatch(indexAction.returnLoanItem(index))
+//  }
+//};
 
-export default connect(mapDispatchToProps)(LoanCard);
+export default connect()(LoanCard);
 
