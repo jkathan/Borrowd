@@ -7,8 +7,10 @@ export class LoanCard extends React.Component  {
 //dont understand how i could update Return Date from other component
 //my thoughts: set state of return date, have an action handler that 
 //listens to onsubmit and sets state to that new state 
-  returnLoanItem(index){
-    this.props.returnLoanItem(index);
+  returnLoanItem(e, index){
+    e.preventDefault();
+    console.log(index);
+   //this.props.returnLoanItem(index);
 }
 //would rather do handleclick in parent but cant specifiy button
 render() {    
@@ -20,7 +22,7 @@ render() {
 			 <li>Email: {this.props.email}</li>
 			 <li>Phone: {this.props.phone}</li>
 			 <li>Return Date: {this.props.returnDate}</li>
-			 <button onClick={() => this.returnLoanItem(this.props.listId)}>Return</button>
+			 <button onClick={(e) => this.returnLoanItem(e, this.props.listId)}>Return</button>
 			 <div>
 			 	<RenewLoanForm />
 			 </div>
