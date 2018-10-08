@@ -44,7 +44,7 @@ export const loanReducer = (state=initialState, action) => {
 
   else if (action.type === actions.SEARCH_LIST) {
     return Object.assign({}, state, {
-      loanList: state.loanList.filter((search) => search.item.toLowerCase().includes( action.searchTerm.toLowerCase()))
+      loanList: state.loanList.filter((search) => search.item.toLowerCase().includes( action.searchTerm))
     })
   }
     return state;
