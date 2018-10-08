@@ -27,7 +27,7 @@ export const loanReducer = (state=initialState, action) => {
             });
     }
    else if (action.type === actions.RETURN_ITEM) {
-      return state.loanList.filter((data, i) => i !== action.itemId);
+      return state.filter((data, i) => i !== action.itemId);
     };
     return state;
 //};
