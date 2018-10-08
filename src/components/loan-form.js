@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-//import {addLoanCard} from '../actions';
+import {addLoanCard} from '../actions';
 //how do I 
 export class LoanForm extends React.Component {
     constructor(props) {
@@ -20,9 +20,9 @@ export class LoanForm extends React.Component {
         const phone = this.phoneInput.value.trim();
         const date = this.dateInput.value.trim();
         console.log(itemType);
-        if (itemType && item && borrower && email && phone && date && this.props.onAdd) {
+        //if (itemType && item && borrower && email && phone && date && this.props.onAdd) {
             this.props.onAdd(itemType, item, borrower, email, phone, date);
-        }
+        //}
         this.typeInput.value = '';
         this.itemInput.value = '';
         this.borrowerInput.value = '';
