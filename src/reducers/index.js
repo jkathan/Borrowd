@@ -22,7 +22,7 @@ export const loanReducer = (state=initialState, action) => {
                   borrower: action.borrower, 
                   email: action.email, 
                   phone: action.phone, 
-                  date: action.date.toString()
+                  returnDate: action.date.toString()
             }]
             });
     }
