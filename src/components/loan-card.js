@@ -10,14 +10,15 @@ export class LoanCard extends React.Component  {
     	        event.preventDefault();
 
     	const itemId = index;
-        this.props.dispatch(
+    	console.log(itemId);
+        /* this.props.dispatch(
             returnLoanItem(itemId)
         );
-/*    handleClick(index, event) {
-    	const index = index;
-        if (index && this.props.onReturn) {
-            this.props.onReturn(index);
-        }*/console.log(itemId);
+   handleClick(index, event) {
+    	const index = index;*/
+        if (itemId && this.props.onReturn) {
+            this.props.onReturn(itemId);
+        }
     }
 
 //would rather do handleclick in parent but cant specifiy button

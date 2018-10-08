@@ -23,15 +23,16 @@ export class LoanList extends React.Component {
         );
     }
 
-    //returnItem(index) {
-    //    this.props.dispatch(
-    //        returnLoanItem(index) 
-    //        );
-   // }onReturn{(index) => this.returnItem(index)}
+    returnItem(index) {
+        console.log(index);
+        this.props.dispatch(
+           returnLoanItem(index) 
+            );
+   // }
 
     render() {
         const loanlist = this.props.loansList.map((loan, index) => (
-            <li key={index} >
+            <li key={index} onReturn = {(itemId) => this.returnItem(itemId)} >
                 <LoanCard 
                 listId={index}
                 {...loan} />
