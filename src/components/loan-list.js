@@ -32,10 +32,10 @@ export class LoanList extends React.Component {
 
     render() {
         const loanlist = this.props.loansList.map((loan, index) => (
-            <li key={index} onReturn = {(itemId) => this.returnItem(itemId)} >
+            <li key={index}  >
                 <LoanCard 
                 listId={index}
-                {...loan} />
+                {...loan} onReturn = {(itemId) => this.returnItem(itemId)}/>
             </li>
         )
     )
