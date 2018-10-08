@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import RenewLoanForm from './loan-renew-form';
 import {returnLoanItem} from '../actions';
-import * as indexAction from './actions/index';
+import * as indexAction from './actions';
 export class LoanCard extends React.Component  {
 //dont understand how i could update Return Date from other component
 //my thoughts: set state of return date, have an action handler that 
