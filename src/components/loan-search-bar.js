@@ -4,7 +4,7 @@ export default class SearchBar extends React.Component {
  
  onChange(event) {
     event.preventDefault();
- 	let searchTerm = this.searchInput.value().toLowerCase();
+ 	let searchTerm = this.searchInput.value.toLowerCase();
  	console.log(searchTerm);
  }
   render() {
