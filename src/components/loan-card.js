@@ -19,9 +19,10 @@ export class LoanCard extends React.Component  {
     console.log(index);
    this.props.dispatch(returnLoanItem(index));
 }
-	renewLoanItem(date) {
-		console.log(this.props.listId);
-		this.props.dispatch(renewLoanItem(date))
+	renewLoanItem(e, date, index) {
+		   e.preventDefault();
+		console.log(index);
+		this.props.dispatch(renewLoanItem(date, index))
 	}
 //would rather do handleclick in parent but cant specifiy button
 render() {    
@@ -35,7 +36,7 @@ render() {
 			 <li>Return Date: {this.props.returnDate}</li>
 			 <button onClick={(e) => this.returnLoanItem(e, this.props.listId)}>Return</button>
 			 <div>
-			 	<RenewLoanForm onAdd={(date) => this.returnLoanItem(date)}/>
+			 	<RenewLoanForm onAdd={(e) => this.returnLoanItem(e, date, this.props.listId)}/>
 			 </div>
 		</ul>
     	);
