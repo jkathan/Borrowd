@@ -41,5 +41,12 @@ export const loanReducer = (state=initialState, action) => {
         {...i, returnDate: action.returnDate} : i))
     })
   }
+
+  else if (action.type === actions.SEARCH_LIST) {
+    return return Object.assign({}, state, {
+      loanList: state.loanList.filter((search) => search.item === action.searchTerm)
+    })
+  }
     return state;
+  }
 }

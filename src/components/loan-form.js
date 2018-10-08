@@ -45,6 +45,10 @@ export class LoanForm extends React.Component {
         this.props.history.push(`/items/loans`);
     }*/
 render() {
+    //loan from list will have to be a search bar that shows values
+    //this will then autofill the item and on submit will update item as 
+    //checked out
+    
 //within components i can render the buttons
 //heres what i want to do here. once the element is chosen or added. I want the 
 //element to appear and buttons to disappear. maybe not necessary for the add, but
@@ -52,6 +56,7 @@ render() {
         return (
             <div>
                 <form className="card add-form" onSubmit={this.onSubmit}>
+
                         <label>type:</label>
                         <input name="itemType" type="text" ref={input => this.typeInput = input} />
                         <label>item:</label>
@@ -75,11 +80,11 @@ render() {
 }
 
 export default connect()(LoanForm);
-/*
-                    <div>
+/*                    <div>
                         <LoanFormFromItem />}
                     </div>
                     <div>
                         <AddItemLoanForm />}
                     </div>
+
                     */
