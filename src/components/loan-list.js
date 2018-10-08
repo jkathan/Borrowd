@@ -28,7 +28,7 @@ export class LoanList extends React.Component {
         this.props.dispatch(
            returnLoanItem(index) 
             );
-   // }
+    }
 
     render() {
         const loanlist = this.props.loansList.map((loan, index) => (
