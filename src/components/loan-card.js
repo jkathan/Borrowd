@@ -10,7 +10,7 @@ export class LoanCard extends React.Component  {
     	        event.preventDefault();
 
     	const itemId = index;
-    	console.log(itemId);
+    	//console.log(itemId);
         /* this.props.dispatch(
             returnLoanItem(itemId)
         );
