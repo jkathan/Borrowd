@@ -66,8 +66,8 @@ const mapStateToProps = state => ({
 })
 
 export default connect(mapStateToProps)(LoanList);
-/*onAdd={(itemType, item, borrower, email, phone, date) => this.addCard(itemType, item, borrower, email, phone, date)}*//
-/*                                <SearchBar onChange={searchTerm => this.setState({searchTerm})} />
+/*onAdd={(itemType, item, borrower, email, phone, date) => this.addCard(itemType, item, borrower, email, phone, date)}
+                            <SearchBar onChange={searchTerm => this.setState({searchTerm})} />
                 <LoanSearchList loansList = {loansList} />
 
                 <li>
