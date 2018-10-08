@@ -49,7 +49,7 @@ export class LoanList extends React.Component {
         return (
             <ul className="list">
                    <div>
-                        <LoanForm onAdd={(itemType, item, borrower, email, phone, date) => this.addCard(itemType, item, borrower, email, phone, date)}/>
+                        <LoanForm /*onAdd={(itemType, item, borrower, email, phone, date) => this.addCard(itemType, item, borrower, email, phone, date)}*//>
                         {loanlist}
                     </div>
                 </ul>
