@@ -9,7 +9,7 @@ const initialState = {
   {listId: 4, itemType: 'tool', item: 'Wrench', borrower: 'janet', email: 'fake@email.com', phone: '301-555-555', returnDate: '12/8/19'},
   {listId: 5, itemType: 'tool', item: 'Wrench', borrower: 'greta', email: 'fake@email.com', phone: '301-555-555', returnDate: '12/8/19'}
 ],
-  type: [],
+  searchType: '',
   returnDate: [],
 };
 
@@ -43,9 +43,7 @@ export const loanReducer = (state=initialState, action) => {
   }
 
   else if (action.type === actions.SEARCH_LIST) {
-    return Object.assign({}, state, {
-      loanList: state.loanList.filter((search) => search.item.toLowerCase().includes( action.searchTerm))
-    })
+    
   }
     return state;
   }
