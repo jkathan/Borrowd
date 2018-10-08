@@ -19,8 +19,7 @@ export class LoanCard extends React.Component  {
     console.log(index);
    this.props.dispatch(returnLoanItem(index));
 }
-	renewLoanItem(date) {
-		   e.preventDefault();
+	renewLoanItem(date, index) {
 		console.log(index);
 		this.props.dispatch(renewLoanItem(date, index))
 	}
@@ -38,7 +37,7 @@ render() {
 			 <div>
 			 	<RenewLoanForm 
 			 	index ={this.props.listId} 
-			 	onAdd={(date) => this.renewLoanItem(date)}/>
+			 	onAdd={(date, index) => this.renewLoanItem(date, index)}/>
 			 </div>
 		</ul>
     	);
