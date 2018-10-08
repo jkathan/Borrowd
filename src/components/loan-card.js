@@ -19,7 +19,7 @@ export class LoanCard extends React.Component  {
     console.log(index);
    this.props.dispatch(returnLoanItem(index));
 }
-	renewLoanItem(e, date, index) {
+	renewLoanItem(date) {
 		   e.preventDefault();
 		console.log(index);
 		this.props.dispatch(renewLoanItem(date, index))
@@ -36,7 +36,9 @@ render() {
 			 <li>Return Date: {this.props.returnDate}</li>
 			 <button onClick={(e) => this.returnLoanItem(e, this.props.listId)}>Return</button>
 			 <div>
-			 	<RenewLoanForm onAdd={(e) => this.returnLoanItem(e, date, this.props.listId)}/>
+			 	<RenewLoanForm 
+			 	index ={this.props.listId} 
+			 	onAdd={(date) => this.renewLoanItem(date)}/>
 			 </div>
 		</ul>
     	);
