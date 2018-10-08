@@ -21,7 +21,7 @@ export class LoanForm extends React.Component {
         const date = this.dateInput.value.trim();
         console.log(itemType);
         //if (itemType && item && borrower && email && phone && date && this.props.onAdd) {
-            this.props.onAdd(itemType, item, borrower, email, phone, date);
+            //this.props.onAdd(itemType, item, borrower, email, phone, date);
         //}
         this.typeInput.value = '';
         this.itemInput.value = '';
