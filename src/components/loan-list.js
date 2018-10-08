@@ -16,13 +16,6 @@ export class LoanList extends React.Component {
         //}
     }
 
-      // addCard(itemType, item, borrower, email, phone, date) {
-
-        //this.props.dispatch(
-          //  addLoanCard(itemType, item, borrower, email, phone, date)
-        //);
-    //}
-
     returnItem(index) {
         console.log(index);
         this.props.dispatch(
@@ -32,11 +25,9 @@ export class LoanList extends React.Component {
 
     render() {
         const loanlist = this.props.loansList.map((loan, index) => (
-            <li key={index}  >
                 <LoanCard 
                 listId={index}
                 {...loan} />
-            </li>
         )
     )
         /*let loansList = this.props.loansList.filter(loan =>
@@ -44,13 +35,16 @@ export class LoanList extends React.Component {
                 this.state.searchTerm.toString().toLowerCase()
             )
         )*/
-
+//loan form will be link after routers
         console.log(loanlist);
         return (
             <ul className="list">
                    <div>
-                        <LoanForm /*onAdd={(itemType, item, borrower, email, phone, date) => this.addCard(itemType, item, borrower, email, phone, date)}*//>
-                        {loanlist}
+                   <SearchBar onChange={searchTerm => this.dispatch(searchList({searchTerm}))} />
+                        <ul>
+                            <li><LoanForm /></li>
+                            <li>{loanlist}</li> 
+                        </ul>
                     </div>
                 </ul>
         );
@@ -72,7 +66,7 @@ const mapStateToProps = state => ({
 })
 
 export default connect(mapStateToProps)(LoanList);
-
+/*onAdd={(itemType, item, borrower, email, phone, date) => this.addCard(itemType, item, borrower, email, phone, date)}*//
 /*                                <SearchBar onChange={searchTerm => this.setState({searchTerm})} />
                 <LoanSearchList loansList = {loansList} />
 
