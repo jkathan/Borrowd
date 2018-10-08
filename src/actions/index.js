@@ -15,3 +15,10 @@ export const returnLoanItem = (itemId) => ({
     type: RETURN_ITEM,
     itemId
 });
+
+export const RENEW_ITEM = 'RENEW_ITEM';
+export const renewLoanItem = (returnDate, itemId) => ({
+	type: RETURN_ITEM,
+	returnDate
+    itemId
+});

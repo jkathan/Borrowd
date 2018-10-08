@@ -4,14 +4,25 @@ import RenewLoanForm from './loan-renew-form';
 import {returnLoanItem} from '../actions';
 import * as indexAction from '../actions';
 export class LoanCard extends React.Component  {
+		constructor(props) {
+        super(props);
+        this.state = {
+            editing: false,
+            index: ''
+        }
 //dont understand how i could update Return Date from other component
 //my thoughts: set state of return date, have an action handler that 
 //listens to onsubmit and sets state to that new state 
   returnLoanItem(e, index){
     e.preventDefault();
     console.log(index);
+    this.setState(index: index)
    this.props.dispatch(returnLoanItem(index));
 }
+
+	renewLoanItem() {
+
+	}
 //would rather do handleclick in parent but cant specifiy button
 render() {    
     return (
@@ -24,7 +35,7 @@ render() {
 			 <li>Return Date: {this.props.returnDate}</li>
 			 <button onClick={(e) => this.returnLoanItem(e, this.props.listId)}>Return</button>
 			 <div>
-			 	<RenewLoanForm />
+			 	<RenewLoanForm onAdd={(date) => this.returnLoanItem(date)}/>
 			 </div>
 		</ul>
     	);
@@ -34,7 +45,7 @@ render() {
 //const mapDispatchToProps = (dispatch) => {
 //  return {
 //    returnLoanItem: index =>dispatch(indexAction.returnLoanItem(index))
-//  }
+//  } onAdd={(itemType, item, borrower, email, phone, date) => this.addCard(itemType, item, borrower, email, phone, date)}
 //};
 
 export default connect()(LoanCard);
