@@ -21,7 +21,7 @@ export class LoanCard extends React.Component  {
     this.setState(index: index)
    this.props.dispatch(returnLoanItem(index));
 }
-	renewLoanItem(e, date) {
+	renewLoanItem(date) {
 		//e.preventDefault();
 		let index = this.state.index;
 		this.props.dispatch(renewLoanItem(date, index))
