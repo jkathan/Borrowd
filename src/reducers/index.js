@@ -38,6 +38,7 @@ export const loanReducer = (state=initialState, action) => {
         i.listId === action.itemId ? 
         {...i, returnDate: action.returnDate}: i));
     }
+  }
     return state;
 //};
 }
