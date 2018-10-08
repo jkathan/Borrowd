@@ -62,10 +62,10 @@ const mapStateToProps = state => ({
         },
         state.loanList
     );*/
-    //return {
-      filteredList: state.loanList.filter((search) => search.toLowerCase().includes(state.searchTerm))
-    //};
-
+    return {
+      filteredList: state.loanList.filter((search) => search.item.toLowerCase().includes(state.searchTerm)))
+    };
+}
 })
 
 
