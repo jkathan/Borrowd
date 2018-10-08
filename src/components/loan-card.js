@@ -20,7 +20,6 @@ export class LoanCard extends React.Component  {
     this.setState(index: index)
    this.props.dispatch(returnLoanItem(index));
 }
-	console.log(this.state.index);
 	renewLoanItem(e, date) {
 		e.preventDefault();
 		let index = this.state.index;
