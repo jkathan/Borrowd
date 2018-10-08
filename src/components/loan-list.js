@@ -35,7 +35,7 @@ export class LoanList extends React.Component {
             <li key={index}  >
                 <LoanCard 
                 listId={index}
-                {...loan} onReturn = {(itemId) => this.returnItem(itemId)}/>
+                {...loan} />
             </li>
         )
     )
