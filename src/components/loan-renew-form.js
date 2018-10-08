@@ -15,7 +15,7 @@ export default class RenewLoanForm extends React.Component {
     onSubmit(event) {
         event.preventDefault();
         const index = this.props.index;
-        console.log(listId);
+        console.log(index);
         const date = this.dateInput.value.trim();
         if ( date && this.props.onAdd) {
             this.props.onAdd(date);
