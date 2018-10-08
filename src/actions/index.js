@@ -18,7 +18,7 @@ export const returnLoanItem = (itemId) => ({
 
 export const RENEW_ITEM = 'RENEW_ITEM';
 export const renewLoanItem = (returnDate, itemId) => ({
-	type: RETURN_ITEM,
-	returnDate
+	type: RENEW_ITEM,
+	returnDate,
     itemId
 });
