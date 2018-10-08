@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {searchList} from '../actions';
 export default class SearchBar extends React.Component {
  
  onChange(event) {
