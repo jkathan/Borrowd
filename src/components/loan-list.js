@@ -16,12 +16,12 @@ export class LoanList extends React.Component {
         //}
     }
 
-       addCard(itemType, item, borrower, email, phone, date) {
+      // addCard(itemType, item, borrower, email, phone, date) {
 
-        this.props.dispatch(
-            addLoanCard(itemType, item, borrower, email, phone, date)
-        );
-    }
+        //this.props.dispatch(
+          //  addLoanCard(itemType, item, borrower, email, phone, date)
+        //);
+    //}
 
     returnItem(index) {
         console.log(index);
