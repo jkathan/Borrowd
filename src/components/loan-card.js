@@ -9,7 +9,6 @@ export class LoanCard extends React.Component  {
         super(props);
         this.state = {
             editing: false,
-            index: ''
         }
     }
 //dont understand how i could update Return Date from other component
@@ -18,12 +17,10 @@ export class LoanCard extends React.Component  {
   returnLoanItem(e, index){
     e.preventDefault();
     console.log(index);
-    this.setState(index: index)
    this.props.dispatch(returnLoanItem(index));
 }
 	renewLoanItem(date) {
-		//e.preventDefault();
-		let index = this.state.index;
+		console.log(this.props.listId);
 		this.props.dispatch(renewLoanItem(date, index))
 	}
 //would rather do handleclick in parent but cant specifiy button
