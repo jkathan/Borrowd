@@ -20,4 +20,5 @@ export default class SearchBar extends React.Component {
   }
 }
 
+export default connect()(SearchBar);
 //ref={input => this.searchInput = input}
