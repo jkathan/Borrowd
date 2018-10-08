@@ -25,7 +25,7 @@ export class LoanList extends React.Component {
     }
 
     render() {
-        const loanlist = this.props.loansList.map((loan, index) => (
+        const loanlist = this.props.filteredList.map((loan, index) => (
                 <LoanCard 
                 listId={index}
                 {...loan} />
@@ -53,18 +53,23 @@ export class LoanList extends React.Component {
 } 
 
 const mapStateToProps = state => ({
+    const { loanList, searchTerm } = state.searchList;
 /*    const loansList = Object.assign(
         {},
         {
             loanList: []
         },
         state.loanList
-    );
-    return {*/
+    );*/
+    return {
         loansList: state.loanList
     //};
 
 })
+
+return Object.assign({}, state, {
+      filteredList: loanList.filter((search) => search.item.toLowerCase().includes(searchTerm))
+    })
 
 export default connect(mapStateToProps)(LoanList);
 /*onAdd={(itemType, item, borrower, email, phone, date) => this.addCard(itemType, item, borrower, email, phone, date)}
