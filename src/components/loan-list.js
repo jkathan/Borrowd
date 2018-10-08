@@ -41,7 +41,7 @@ export class LoanList extends React.Component {
         return (
             <ul className="list">
                    <div>
-                   <SearchBar onChange={searchTerm => this.props.dispatch(searchList({searchTerm}))} />
+                   <SearchBar /*onChange={searchTerm => this.props.dispatch(searchList({searchTerm}))}*/ />
                         <ul>
                             <li><LoanForm /></li>
                             <li>{loanlist}</li> 
