@@ -25,6 +25,7 @@ export class LoanCard extends React.Component  {
 render() {    
     return (
         <ul>
+        	<li> {this.props.listId}</li>	
         	 <li>Type: {this.props.itemType}</li>
 			 <li>Item: {this.props.item}</li>
 			 <li>Loanee: {this.props.borrower}</li>
