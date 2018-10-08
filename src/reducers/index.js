@@ -30,7 +30,7 @@ export const loanReducer = (state=initialState, action) => {
    else if (action.type === actions.RETURN_ITEM) {
       return Object.assign({}, state, {
         loanList: state.loanList.filter((id) => id.listId !== action.itemId)
-      };
+      })
     }
     
 
