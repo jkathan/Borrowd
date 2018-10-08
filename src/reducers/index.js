@@ -26,13 +26,15 @@ export const loanReducer = (state=initialState, action) => {
             }]
             });
     }
+
    else if (action.type === actions.RETURN_ITEM) {
       return {loanList: state.loanList.filter((id) => id.listId !== action.itemId)};
-    };
+    }
+
     else if (action.type === actions.RENEW_ITEM) {
       return state.loanList.map((i) => (
-        i.listId === action.itemId ? {...i, returnDate: action.returnDate}: i))
-    };
+        i.listId === action.itemId ? {...i, returnDate: action.returnDate}: i));
+    }
     return state;
 //};
 }
