@@ -54,7 +54,7 @@ export class LoanList extends React.Component {
 
 
 const mapStateToProps = state => ({
-    const { loanList, searchTerm } = state.searchList;
+
 /*    const loansList = Object.assign(
         {},
         {
@@ -62,8 +62,8 @@ const mapStateToProps = state => ({
         },
         state.loanList
     );*/
-    return {
-      filteredList: loanList.filter((search) => search.item.toLowerCase().includes(searchTerm))
+    //return {
+      filteredList: state.loanList.filter((search) => search.item.toLowerCase().includes(state.searchTerm))
     //};
 
 })
