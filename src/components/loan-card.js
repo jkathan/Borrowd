@@ -21,7 +21,7 @@ export class LoanCard extends React.Component  {
 }
 	renewLoanItem(date) {
 		console.log(this.props.listId);
-		this.props.dispatch(renewLoanItem(date, index))
+		this.props.dispatch(renewLoanItem(date))
 	}
 //would rather do handleclick in parent but cant specifiy button
 render() {    
