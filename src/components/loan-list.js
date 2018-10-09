@@ -36,14 +36,14 @@ export class LoanList extends React.Component {
         /*let loansList = this.props.loansList.filter(loan =>
             loan.item.toString().toLowerCase().includes(
                 this.state.searchTerm.toString().toLowerCase()
-            )
+            )                   <SearchBar onChange={searchTerm => this.props.dispatch(searchList({searchTerm}))} />
+
         )*/
 //loan form will be link after routers
         console.log(loanlist);
         return (
             <ul className="list">
                    <div>
-                   <SearchBar onChange={searchTerm => this.props.dispatch(searchList({searchTerm}))} />
                         <ul>
                             <li><LoanForm /></li>
                             <li>{loanlist}</li> 

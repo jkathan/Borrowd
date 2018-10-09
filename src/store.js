@@ -1,6 +1,6 @@
 import {createStore, combineReducers} from 'redux'
 
-import {loanReducer} from './reducers/loan';
+import {loanReducer} from './reducers/index';
 import {filtersReducer} from './reducers/filters';
 //export default createStore(loanReducer);
 
