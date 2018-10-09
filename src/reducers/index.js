@@ -2,7 +2,7 @@ import * as actions from '../actions/index';
 
 const initialState = {
     loanList: [
-  {listId: 0, itemType: 'Tool', item: 'Wrench', borrower: 'Bob', email: 'fake@email.com', phone: '301-555-555', returnDate: '12-8-19', dateAdded: '2018-06-14'},
+  {listId: 0, itemType: 'Tool', item: 'Wrench', borrower: 'Bob', email: 'fake@email.com', phone: '301-555-555', returnDate: '12-9-19', dateAdded: '2018-06-14'},
   {listId: 1, itemType: 'Money', item: '$300', borrower: 'John', email: 'fake@email.com', phone: '301-555-555', returnDate: '12-8-19', dateAdded: '2018-06-13'},
   {listId: 2, itemType: 'Tool', item: 'Tablesaw', borrower: 'Bill', email: 'fake@email.com', phone: '301-555-555', returnDate: '12-8-19', dateAdded: '2018-06-12'},
   {listId: 3, itemType: 'Clothing', item: 'Jean Jacket', borrower: 'Ian', email: 'fake@email.com', phone: '301-555-555', returnDate: '12-8-19', dateAdded: '2018-06-11'},
