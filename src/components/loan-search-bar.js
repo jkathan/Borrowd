@@ -1,5 +1,5 @@
 import React from 'react';
-//import {searchList} from '../actions';
+import {filterText} from '../actions/filter';
 import {connect} from 'react-redux';
 
 export class SearchBar extends React.Component {
@@ -9,7 +9,7 @@ export class SearchBar extends React.Component {
  	const searchTerm = event.target.value.toLowerCase();
  	console.log(searchTerm);
  	this.props.dispatch(
- 		searchList(searchTerm))
+ 		filterText(searchTerm))
  }
   render() {
     return (
