@@ -46,7 +46,7 @@ export default class RenewLoanForm extends React.Component {
 				<label>New Return Date:</label>
 				<input name="returnDate" type="date" ref={input => this.dateInput = input}/>
 	        	<button onClick={() => this.setEditing(false)}>Cancel</button>
-	        	<button>Update</button>
+	        	<button onClick={() => this.setEditing(false)}>Update</button>
 	        </form>
 	    );
 	}

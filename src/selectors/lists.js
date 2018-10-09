@@ -2,7 +2,7 @@
 
 export default function getVisibleItem(loanList, sortFilter/*text*/) {
 	//console.log(sortFilter.sortFilter);
-    return loanList.loanList
+    return loanList.loanList.returnDate
 
     /*.filter(item => {
         const textMatch =
@@ -11,7 +11,7 @@ export default function getVisibleItem(loanList, sortFilter/*text*/) {
         })*/
     .sort((a, b) => {
     	if (sortFilter === "Due Date") {
-    		return a.sortFilter.returnDate - b.sortFilter.returnDate;
+    		return a - b ;
     	}
     })
 }
