@@ -8,9 +8,7 @@ const initialState = {
   {listId: 3, itemType: 'Clothing', item: 'Jean Jacket', borrower: 'Ian', email: 'fake@email.com', phone: '301-555-555', returnDate: '12/8/19'},
   {listId: 4, itemType: 'Electronic', item: 'Headphones', borrower: 'Janet', email: 'fake@email.com', phone: '301-555-555', returnDate: '12/8/19'},
   {listId: 5, itemType: 'Other', item: 'Bike', borrower: 'Greta', email: 'fake@email.com', phone: '301-555-555', returnDate: '12/8/19'}
-],
-  searchType: '',
-  returnDate: [],
+]
 };
 
 export const loanReducer = (state=initialState, action) => {
