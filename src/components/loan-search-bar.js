@@ -1,5 +1,5 @@
 import React from 'react';
-import {searchList} from '../actions';
+//import {searchList} from '../actions';
 import {connect} from 'react-redux';
 
 export class SearchBar extends React.Component {
