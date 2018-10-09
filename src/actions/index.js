@@ -24,8 +24,8 @@ export const renewLoanItem = (returnDate, itemId) => ({
     itemId
 });
 /*
-export const SEARCH_LIST = 'SEARCH_LIST';
-export const searchList = (searchTerm) => ({
-	type: SEARCH_LIST,
-	searchTerm
+export const CURRENT_DATE = 'CURRENT_DATE';
+export const currentDate = (currentDate) => ({
+	type: CURRENT_DATE,
+	currentDate
 })*/

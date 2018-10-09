@@ -32,7 +32,6 @@ export class LoanForm extends React.Component {
         this.phoneInput.value = '';
         this.dateInput.value = '';
         const dateAdded = moment().format('YYYY-MM-DD');
-        console.log(dateAdded);
         //will have to put more info here depeding on the selection of item
         //also will have to add new item to item list. is this done in new 
         //on submit?

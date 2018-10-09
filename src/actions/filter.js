@@ -3,10 +3,9 @@ export const filterText = (text) => ({
     type: 'FILTER_TEXT',
     text
 });
-/*
-export const FILTER_DATE = 'FILTER_DATE';
+
+export const SORT_ITEMS = 'SORT_ITEMS';
 export const filterDate = (date) => ({
-    type: 'FILTER_DATE',
-    date
+    type: 'SORT_ITEMS',
+    sortFilter
 });
-*/

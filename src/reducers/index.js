@@ -2,13 +2,14 @@ import * as actions from '../actions/index';
 
 const initialState = {
     loanList: [
-  {listId: 0, itemType: 'Tool', item: 'Wrench', borrower: 'Bob', email: 'fake@email.com', phone: '301-555-555', returnDate: '12/8/19', dateAdded: '2018-06-14'},
-  {listId: 1, itemType: 'Money', item: '$300', borrower: 'John', email: 'fake@email.com', phone: '301-555-555', returnDate: '12/8/19', dateAdded: '2018-06-13'},
-  {listId: 2, itemType: 'Tool', item: 'Tablesaw', borrower: 'Bill', email: 'fake@email.com', phone: '301-555-555', returnDate: '12/8/19', dateAdded: '2018-06-12'},
-  {listId: 3, itemType: 'Clothing', item: 'Jean Jacket', borrower: 'Ian', email: 'fake@email.com', phone: '301-555-555', returnDate: '12/8/19', dateAdded: '2018-06-11'},
-  {listId: 4, itemType: 'Electronic', item: 'Headphones', borrower: 'Janet', email: 'fake@email.com', phone: '301-555-555', returnDate: '12/8/19', dateAdded: '2018-06-10'},
-  {listId: 5, itemType: 'Other', item: 'Bike', borrower: 'Greta', email: 'fake@email.com', phone: '301-555-555', returnDate: '12/8/19', dateAdded: '2018-06-09'}
+  {listId: 0, itemType: 'Tool', item: 'Wrench', borrower: 'Bob', email: 'fake@email.com', phone: '301-555-555', returnDate: '12-8-19', dateAdded: '2018-06-14'},
+  {listId: 1, itemType: 'Money', item: '$300', borrower: 'John', email: 'fake@email.com', phone: '301-555-555', returnDate: '12-8-19', dateAdded: '2018-06-13'},
+  {listId: 2, itemType: 'Tool', item: 'Tablesaw', borrower: 'Bill', email: 'fake@email.com', phone: '301-555-555', returnDate: '12-8-19', dateAdded: '2018-06-12'},
+  {listId: 3, itemType: 'Clothing', item: 'Jean Jacket', borrower: 'Ian', email: 'fake@email.com', phone: '301-555-555', returnDate: '12-8-19', dateAdded: '2018-06-11'},
+  {listId: 4, itemType: 'Electronic', item: 'Headphones', borrower: 'Janet', email: 'fake@email.com', phone: '301-555-555', returnDate: '12-8-19', dateAdded: '2018-06-10'},
+  {listId: 5, itemType: 'Other', item: 'Bike', borrower: 'Greta', email: 'fake@email.com', phone: '301-555-555', returnDate: '12-8-19', dateAdded: '2018-06-09'}
 ]
+  //currentDate: ''
 };
 
 export const loanReducer = (state=initialState, action) => {
@@ -41,13 +42,12 @@ export const loanReducer = (state=initialState, action) => {
     })
   }
 /*
-  else if (action.type === actions.SEARCH_LIST) {
-    return Object.assign({}, state, {
-        loanList: state.loanList.filter(item => {
-          return item.item.toLowerCase().includes(searchTerm.toLowerCase()) 
-        })
-    })
-  }*/
+  else if (action.type === actions.CURRENT_DATE) {
+      return {
+          ...state,
+        currentDate: action.currentDate 
+        }
+    }*/
     return state;
   }
 
