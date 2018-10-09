@@ -3,6 +3,10 @@ import {filterText} from '../actions/filter';
 import {connect} from 'react-redux';
 
 export class SearchBar extends React.Component {
+	    constructor(props) {
+        super(props);
+        this.onChange = this.onChange.bind(this);
+    }
  
  onChange(event) {
     event.preventDefault();
