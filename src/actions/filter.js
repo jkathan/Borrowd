@@ -5,7 +5,7 @@ export const filterText = (text) => ({
 });
 
 export const SORT_ITEMS = 'SORT_ITEMS';
-export const filterDate = (date) => ({
+export const filterDate = (sortFilter) => ({
     type: 'SORT_ITEMS',
     sortFilter
 });
