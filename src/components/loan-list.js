@@ -10,7 +10,7 @@ import {returnLoanItem} from '../actions/index';
 import {searchList} from '../actions/index';
 import {filterText} from '../actions/filter';
 import getVisibleItem from '../selectors/lists';
-
+import {filterDate} from '../actions/filter';
 
 
 export class LoanList extends React.Component {
@@ -33,6 +33,8 @@ export class LoanList extends React.Component {
     onChange(event) {
         const sortFilter = this.menu.value;
         console.log(sortFilter);
+        this.props.dispatch(
+            filterDate(sortFilter));
     }
 
     render() {
