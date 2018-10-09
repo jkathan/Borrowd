@@ -7,7 +7,7 @@ export const filtersReducer = (state = filtersReducerDefaultState, action) => {
     if (action.type === actions.FILTER_TEXT) {
             return {
                 ...state,
-                searchTerm: action.text
+                searchTerm: action.text.toLowerCase()
             };
         }
             return state;
