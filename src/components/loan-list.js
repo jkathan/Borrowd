@@ -65,7 +65,7 @@ const mapStateToProps = state => ({
         state.loanList
     );*/
     //return {
-        loansList: getVisibleItem(state.loanList, state.filter)
+        loansList: getVisibleItem(state.loanList, state.filters)
     //};
 
 })
