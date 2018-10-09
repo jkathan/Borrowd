@@ -1,13 +1,13 @@
 const filtersReducerDefaultState = {
 	searchTerm: ''
 }
-
-export default (state = filtersReducerDefaultState, action) => {
+export const fildersReducer = ((state = filtersReducerDefaultState, action) => {
+export default  => {
     switch (action.type) {
         case 'FILTER_TEXT':
             return {
                 ...state,
-                text: action.text
+                searchTerm: action.text
             };
         default:
             return state;
