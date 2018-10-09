@@ -1,9 +1,7 @@
-export default (item, { text }) => {
-    return item.filter(book => {
+export default (loanList, { text }) => {
+    return LoanList.filter(item => {
         const textMatch =
-            item.title.toLowerCase().includes(text.toLowerCase()) ||
-            item.description.toLowerCase().includes(text.toLowerCase());
-
+            item.item.toLowerCase().includes(text.toLowerCase()) 
             return textMatch;
         })
 }
