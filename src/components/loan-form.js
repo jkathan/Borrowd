@@ -31,7 +31,7 @@ export class LoanForm extends React.Component {
         this.emailInput.value = '';
         this.phoneInput.value = '';
         this.dateInput.value = '';
-        const dateAdded = moment()
+        const dateAdded = moment().format('YYYY/MM/D')
         console.log(dateAdded);
         //will have to put more info here depeding on the selection of item
         //also will have to add new item to item list. is this done in new 
