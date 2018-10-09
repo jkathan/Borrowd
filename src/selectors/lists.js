@@ -1,6 +1,6 @@
 //import moment from 'moment'
 
-export default function getVisibleItem(loanList, {text}) {
+export default function getVisibleItem(loanList, text) {
 	console.log(text.searchTerm);
 	//console.log(sortFilter.sortFilter);
     return loanList.loanList.filter(item => {
