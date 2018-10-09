@@ -1,5 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import moment from 'moment'
+
 
 import {addLoanCard} from '../actions/index';
 //how do I 
@@ -29,8 +31,8 @@ export class LoanForm extends React.Component {
         this.emailInput.value = '';
         this.phoneInput.value = '';
         this.dateInput.value = '';
-        const dateAdded = Date.now();
-        console.log(dateAdded.toLocaleDateString());
+        const dateAdded = moment()
+        console.log(dateAdded);
         //will have to put more info here depeding on the selection of item
         //also will have to add new item to item list. is this done in new 
         //on submit?
