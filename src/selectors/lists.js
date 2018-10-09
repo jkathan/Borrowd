@@ -6,5 +6,7 @@ export default function getVisibleItem(loanList, text) {
         const textMatch =
             item.item.toLowerCase().includes(text.toLowerCase()) 
             return textMatch;
+            console.log(textMatch);
+
         })
 }
