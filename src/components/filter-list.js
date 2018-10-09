@@ -21,9 +21,9 @@ class ListFilters extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    //return {
+    return {
         filters: state.filters
-    //}
+    }
 }
 
 export default connect(mapStateToProps)(ListFilters);
