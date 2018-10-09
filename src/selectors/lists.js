@@ -1,4 +1,4 @@
-export default (loanList, { text }) => {
+export default getVisibleItem(loanList, { text }) => {
     return LoanList.filter(item => {
         const textMatch =
             item.item.toLowerCase().includes(text.toLowerCase()) 
