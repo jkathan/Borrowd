@@ -1,16 +1,17 @@
 //import moment from 'moment'
 
-export default function getVisibleItem(loanList, text) {
-	console.log(text.searchTerm);
+export default function getVisibleItem(loanList, sortFilter/*text*/) {
 	//console.log(sortFilter.sortFilter);
-    return loanList.loanList.filter(item => {
+    return loanList.loanList
+
+    /*.filter(item => {
         const textMatch =
             item.item.toString().toLowerCase().includes(text.searchTerm) 
             return textMatch;
-        })
-    /*.sort((a, b) => {
+        })*/
+    .sort((a, b) => {
     	if (sortFilter === "Due Date") {
     		return a.sortFilter.returnDate - b.sortFilter.returnDate;
     	}
-    })*/
+    })
 }
