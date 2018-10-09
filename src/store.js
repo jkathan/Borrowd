@@ -2,13 +2,13 @@ import {createStore, combineReducers} from 'redux'
 
 import {loanReducer} from './reducers/index';
 import {filtersReducer} from './reducers/filter';
-//export default createStore(loanReducer);
 
-export default () => {
-    return createStore(
+
+const rootReducer =
         combineReducers({
             loanList: loanReducer,
             filters: filtersReducer
         }
-    ));
-};
+    );
+
+export default createStore(rootReducer);
