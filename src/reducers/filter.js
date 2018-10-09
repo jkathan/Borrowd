@@ -1,7 +1,8 @@
 import * as actions from '../actions/filter';
 
 const filtersReducerDefaultState = {
-	searchTerm: ''
+	searchTerm: '',
+	todaysDate: ''
 }
 export const filtersReducer = (state = filtersReducerDefaultState, action) => {
     if (action.type === actions.FILTER_TEXT) {
@@ -10,5 +11,12 @@ export const filtersReducer = (state = filtersReducerDefaultState, action) => {
                 searchTerm: action.text.toLowerCase()
             };
         }
+    if (action.type === actions.FILTER_DATE) {
+            return {
+                ...state,
+                todaysDate: Date.now()
+            };
+        }
+
             return state;
     }
