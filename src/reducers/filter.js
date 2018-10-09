@@ -11,7 +11,7 @@ export const filtersReducer = (state = filtersReducerDefaultState, action) => {
                 searchTerm: action.text.toLowerCase()
             };
         }
-    if (action.type === actions.SORT_FILTER) {
+    if (action.type === actions.SORT_ITEMS) {
             return {
                 ...state,
                 sortFilter: action.sortFilter
