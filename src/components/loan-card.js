@@ -1,9 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import RenewLoanForm from './loan-renew-form';
-import {returnLoanItem} from '../actions';
-import {renewLoanItem} from '../actions';
-import * as indexAction from '../actions';
+import {returnLoanItem} from '../actions/index';
+import {renewLoanItem} from '../actions/index';
+//import * as indexAction from '../actions';
 export class LoanCard extends React.Component  {
 		constructor(props) {
         super(props);

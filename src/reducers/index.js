@@ -2,12 +2,12 @@ import * as actions from '../actions';
 
 const initialState = {
     loanList: [
-  {listId: 0, itemType: 'tool', item: 'Wrench', borrower: 'Bob', email: 'fake@email.com', phone: '301-555-555', returnDate: '12/8/19'},
-  {listId: 1, itemType: 'tool', item: 'Hammer', borrower: 'john', email: 'fake@email.com', phone: '301-555-555', returnDate: '12/8/19'},
-  {listId: 2, itemType: 'tool', item: 'Tablesaw', borrower: 'bill', email: 'fake@email.com', phone: '301-555-555', returnDate: '12/8/19'},
-  {listId: 3, itemType: 'tool', item: 'Wrench', borrower: 'ian', email: 'fake@email.com', phone: '301-555-555', returnDate: '12/8/19'},
-  {listId: 4, itemType: 'tool', item: 'Wrench', borrower: 'janet', email: 'fake@email.com', phone: '301-555-555', returnDate: '12/8/19'},
-  {listId: 5, itemType: 'tool', item: 'Wrench', borrower: 'greta', email: 'fake@email.com', phone: '301-555-555', returnDate: '12/8/19'}
+  {listId: 0, itemType: 'Tool', item: 'Wrench', borrower: 'Bob', email: 'fake@email.com', phone: '301-555-555', returnDate: '12/8/19'},
+  {listId: 1, itemType: 'Money', item: '$300', borrower: 'John', email: 'fake@email.com', phone: '301-555-555', returnDate: '12/8/19'},
+  {listId: 2, itemType: 'Tool', item: 'Tablesaw', borrower: 'Bill', email: 'fake@email.com', phone: '301-555-555', returnDate: '12/8/19'},
+  {listId: 3, itemType: 'Clothing', item: 'Jean Jacket', borrower: 'Ian', email: 'fake@email.com', phone: '301-555-555', returnDate: '12/8/19'},
+  {listId: 4, itemType: 'Electronic', item: 'Headphones', borrower: 'Janet', email: 'fake@email.com', phone: '301-555-555', returnDate: '12/8/19'},
+  {listId: 5, itemType: 'Other', item: 'Bike', borrower: 'Greta', email: 'fake@email.com', phone: '301-555-555', returnDate: '12/8/19'}
 ],
   searchType: '',
   returnDate: [],

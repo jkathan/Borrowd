@@ -5,9 +5,9 @@ import SearchBar from './loan-search-bar';
 import LoanForm from './loan-form';
 //import LoanSearchList from './loan-searchable-cards-list';
 import LoanCard from './loan-card';
-import {addLoanCard} from '../actions';
-import {returnLoanItem} from '../actions';
-import {searchList} from '../actions';
+//import {addLoanCard} from '../actions/index';
+import {returnLoanItem} from '../actions/index';
+//import {searchList} from '../actions/index';
 import getVisibleItem from '../selectors/lists';
 
 

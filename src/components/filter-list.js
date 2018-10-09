@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { filterText } from '../actions/filters';
+import { filterText } from '../actions/filter';
 
 class ListFilters extends React.Component {
     constructor(props) {

@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import {addLoanCard} from '../actions';
+import {addLoanCard} from '../actions/index';
 //how do I 
 export class LoanForm extends React.Component {
     constructor(props) {
@@ -48,7 +48,7 @@ render() {
     //loan from list will have to be a search bar that shows values
     //this will then autofill the item and on submit will update item as 
     //checked out
-    
+
 //within components i can render the buttons
 //heres what i want to do here. once the element is chosen or added. I want the 
 //element to appear and buttons to disappear. maybe not necessary for the add, but
