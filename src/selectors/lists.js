@@ -1,7 +1,7 @@
 export default function getVisibleItem(loanList, text) {
 
 	console.log(loanList.loanList);
-	console.log(text);
+	console.log(text.searchTerm);
     return loanList.loanList.filter(item => {
     	console.log(item.item.toString().toLowerCase());
         const textMatch =
