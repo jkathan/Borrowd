@@ -11,12 +11,12 @@ export const filtersReducer = (state = filtersReducerDefaultState, action) => {
                 searchTerm: action.text.toLowerCase()
             };
         }
-    if (action.type === actions.FILTER_DATE) {
+    /*if (action.type === actions.FILTER_DATE) {
             return {
                 ...state,
-                todaysDate: Date.now()
+                todaysDate: action.date
             };
-        }
+        }*/
 
             return state;
     }
