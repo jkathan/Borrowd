@@ -29,7 +29,7 @@ export class LoanList extends React.Component {
     }
 
     onChange(event) {
-        const sortFilter = event.target.value;
+        const sortFilter = this.menu.value;
         console.log(sortFilter);
     }
 
@@ -51,7 +51,7 @@ export class LoanList extends React.Component {
         return (
             <ul className="list">
                   <SearchBar onChange={searchTerm => this.props.dispatch(filterText({searchTerm}))} />
-                    <select onChange={this.onChange} value={this.state.value}>
+                    <select onChange={this.onChange} ref = {(input)=> this.menu = input}>
                         <option value="Due Date">Due Date</option>
                         <option value="Recently Added">Recently Added</option>
                     </select>
