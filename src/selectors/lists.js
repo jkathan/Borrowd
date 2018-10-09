@@ -1,3 +1,5 @@
+import moment from 'moment'
+
 export default function getVisibleItem(loanList, {text, sortFilter}) {
 	const today = moment().format('YYYY-MM-DD');
     console.log(today);
