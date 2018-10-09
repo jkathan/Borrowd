@@ -1,7 +1,7 @@
 import * as actions from '../actions/filter';
 
 const filtersReducerDefaultState = {
-	searchTerm: 'Wrench'
+	searchTerm: ''
 }
 export const filtersReducer = (state = filtersReducerDefaultState, action) => {
     if (action.type === actions.FILTER_TEXT) {
