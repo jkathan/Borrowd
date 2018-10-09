@@ -22,9 +22,9 @@ export const renewLoanItem = (returnDate, itemId) => ({
 	returnDate,
     itemId
 });
-
+/*
 export const SEARCH_LIST = 'SEARCH_LIST';
 export const searchList = (searchTerm) => ({
 	type: SEARCH_LIST,
 	searchTerm
-});
+})*/
