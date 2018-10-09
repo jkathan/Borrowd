@@ -1,7 +1,7 @@
 const filtersReducerDefaultState = {
 	searchTerm: ''
 }
-export const fildersReducer = ((state = filtersReducerDefaultState, action) => {
+export const filtersReducer = (state = filtersReducerDefaultState, action) => {
     if (action.type === FILTER_TEXT) {
             return {
                 ...state,
@@ -10,4 +10,3 @@ export const fildersReducer = ((state = filtersReducerDefaultState, action) => {
         }
             return state;
     }
-)
