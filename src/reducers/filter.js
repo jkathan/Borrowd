@@ -1,10 +1,10 @@
-import * as actions from '../actions';
+import * as actions from '../actions/filter';
 
 const filtersReducerDefaultState = {
 	searchTerm: ''
 }
 export const filtersReducer = (state = filtersReducerDefaultState, action) => {
-    if (action.type === FILTER_TEXT) {
+    if (action.type === actions.FILTER_TEXT) {
             return {
                 ...state,
                 searchTerm: action.text
