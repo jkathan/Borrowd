@@ -9,7 +9,7 @@ import './index.css';
 
 ReactDOM.render(
   <Provider store={store}>
-      <LoanPage />
+      <LoanList />
   </Provider>,
   document.getElementById('root')
 );

@@ -7,7 +7,8 @@ import LoanForm from './loan-form';
 import LoanCard from './loan-card';
 //import {addLoanCard} from '../actions/index';
 import {returnLoanItem} from '../actions/index';
-//import {searchList} from '../actions/index';
+import {searchList} from '../actions/index';
+import {filterText} from '../actions/filter';
 import getVisibleItem from '../selectors/lists';
 
 
@@ -36,13 +37,14 @@ export class LoanList extends React.Component {
         /*let loansList = this.props.loansList.filter(loan =>
             loan.item.toString().toLowerCase().includes(
                 this.state.searchTerm.toString().toLowerCase()
-            )                   <SearchBar onChange={searchTerm => this.props.dispatch(searchList({searchTerm}))} />
+            )                    />
 
         )*/
 //loan form will be link after routers
         console.log(loanlist);
         return (
             <ul className="list">
+                  <SearchBar onChange={searchTerm => this.props.dispatch(filterText({searchTerm}))} />
                    <div>
                         <ul>
                             <li><LoanForm /></li>
@@ -63,8 +65,8 @@ const mapStateToProps = state => ({
         state.loanList
     );*/
     //return {
-        loansList: getVisibleItem(state.loanList, state.filters)
-   // };
+        loansList: getVisibleItem(state.loanList, state.filter)
+    //};
 
 })
 
