@@ -12,6 +12,7 @@ import {filterText} from '../actions/filter';
 import getVisibleItem from '../selectors/lists';
 
 
+
 export class LoanList extends React.Component {
     constructor(props) {
         super(props);
@@ -25,6 +26,11 @@ export class LoanList extends React.Component {
         this.props.dispatch(
            returnLoanItem(index) 
             );
+    }
+
+    onChange(event) {
+        const sortFilter = event.target.value;
+        console.log(sortFilter);
     }
 
     render() {
@@ -45,6 +51,10 @@ export class LoanList extends React.Component {
         return (
             <ul className="list">
                   <SearchBar onChange={searchTerm => this.props.dispatch(filterText({searchTerm}))} />
+                    <select onChange={this.onChange} value={this.state.value}>
+                        <option value="Due Date">Due Date</option>
+                        <option value="Recently Added">Recently Added</option>
+                    </select>
                    <div>
                         <ul>
                             <li><LoanForm /></li>

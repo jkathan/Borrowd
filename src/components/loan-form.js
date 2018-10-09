@@ -31,14 +31,14 @@ export class LoanForm extends React.Component {
         this.emailInput.value = '';
         this.phoneInput.value = '';
         this.dateInput.value = '';
-        const dateAdded = moment().format('YYYY/MM/D')
+        const dateAdded = moment().format('YYYY-MM-DD');
         console.log(dateAdded);
         //will have to put more info here depeding on the selection of item
         //also will have to add new item to item list. is this done in new 
         //on submit?
         this.props.dispatch(
             //wahat is boardID and why is it necessary?
-        addLoanCard(itemType, item, borrower, email, phone, date, null)
+        addLoanCard(itemType, item, borrower, email, phone, date, dateAdded, null)
         );
         //this.props.history.push(`/items/loans`);
     }
