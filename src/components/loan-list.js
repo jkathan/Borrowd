@@ -8,6 +8,8 @@ import LoanCard from './loan-card';
 import {addLoanCard} from '../actions';
 import {returnLoanItem} from '../actions';
 import {searchList} from '../actions';
+import getVisibleItem from '../selectors/lists';
+
 
 export class LoanList extends React.Component {
     constructor(props) {
@@ -25,7 +27,7 @@ export class LoanList extends React.Component {
     }
 
     render() {
-        const loanlist = this.props.filteredList.map((loan, index) => (
+        const loanlist = this.props.loansList.map((loan, index) => (
                 <LoanCard 
                 listId={index}
                 {...loan} />
@@ -41,7 +43,7 @@ export class LoanList extends React.Component {
         return (
             <ul className="list">
                    <div>
-                   <SearchBar /*onChange={searchTerm => this.props.dispatch(searchList({searchTerm}))}*/ />
+                   <SearchBar onChange={searchTerm => this.props.dispatch(searchList({searchTerm}))} />
                         <ul>
                             <li><LoanForm /></li>
                             <li>{loanlist}</li> 
@@ -52,9 +54,7 @@ export class LoanList extends React.Component {
     };
 } 
 
-
 const mapStateToProps = state => ({
-
 /*    const loansList = Object.assign(
         {},
         {
@@ -62,13 +62,11 @@ const mapStateToProps = state => ({
         },
         state.loanList
     );*/
-    //return {
-      filteredList: state.loanList.filter((search) => search.item.toLowerCase().includes(state.searchTerm))
-    //};
-//}
+    return {
+        loansList: getVisibleItem(state.loanList, state.filters)
+    };
+
 })
-
-
 
 export default connect(mapStateToProps)(LoanList);
 /*onAdd={(itemType, item, borrower, email, phone, date) => this.addCard(itemType, item, borrower, email, phone, date)}
@@ -77,7 +75,8 @@ export default connect(mapStateToProps)(LoanList);
 
                 <li>
                         <h2><link to = {`/items/loanform`} >Loan out an item</link></h2>
-                    </li>return Object.assign({}, state, {
-      filteredList: loanList.filter((search) => search.item.toLowerCase().includes(searchTerm))
-    })
+                    </li>
+
+                          filteredList: state.loanList.filter((search) => search.item.toLowerCase().includes(state.searchTerm)))
+
                     */
