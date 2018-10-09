@@ -47,7 +47,7 @@ export const loanReducer = (state=initialState, action) => {
         loanList: state.loanList.filter(item => {
           return item.item.toLowerCase().includes(searchTerm.toLowerCase()) 
         })
-    }
+    })
   }
     return state;
   }
