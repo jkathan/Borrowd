@@ -1,3 +1,5 @@
+import * as actions from '../actions';
+
 const filtersReducerDefaultState = {
 	searchTerm: ''
 }
