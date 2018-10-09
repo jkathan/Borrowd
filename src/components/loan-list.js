@@ -19,6 +19,8 @@ export class LoanList extends React.Component {
         //this.state = {
         //    searchTerm: ''
         //}
+                this.onChange = this.onChange.bind(this);
+
     }
 
     returnItem(index) {
