@@ -11,6 +11,11 @@ export const addCard = (itemType, item, borrower, email, phone, date, dateAdded,
     listId
 });
 
+export const ADD_ITEM = 'ADD_ITEM';
+export const addItem = () => ({
+    type: ADD_ITEM,
+});
+
 export const RETURN_ITEM = 'RETURN_ITEM';
 export const returnLoanItem = (itemId) => ({
     type: RETURN_ITEM,

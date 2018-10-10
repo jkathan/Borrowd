@@ -9,7 +9,7 @@ const initialState = {
   {listId: 4, itemType: 'Electronic', item: 'Headphones', borrower: 'Janet', email: 'fake@email.com', phone: '301-555-555', returnDate: '2019-09-15', dateAdded: '2018-06-10', checkedOut: true},
   {listId: 5, itemType: 'Other', item: 'Bike', borrower: 'Greta', email: 'fake@email.com', phone: '301-555-555', returnDate: '2019-09-14', dateAdded: '2018-06-09', checkedOut: true}
 ]
-  items: []
+  //items: []
 };
 
 export const loanReducer = (state=initialState, action) => {
@@ -26,7 +26,7 @@ export const loanReducer = (state=initialState, action) => {
             }]
             });
     }
-
+/*
   else if (action.type === actions.ADD_ITEM) {
     return return Object.assign({}, state, {
       items: [...state.loanList, {
@@ -36,7 +36,7 @@ export const loanReducer = (state=initialState, action) => {
       }]
     })
   } 
-
+*/
    else if (action.type === actions.RETURN_ITEM) {
       return Object.assign({}, state, {
         loanList: state.loanList.filter((id) => id.listId !== action.itemId)
