@@ -3,9 +3,9 @@ import {connect} from 'react-redux';
 import moment from 'moment'
 
 
-import {addCard} from '.../actions/index';
+import {addCard} from '../actions/index';
 //how do I 
-export class LoanForm extends React.Component {
+export class BorrowForm extends React.Component {
     constructor(props) {
         super(props);
         this.onSubmit = this.onSubmit.bind(this);
@@ -17,7 +17,7 @@ export class LoanForm extends React.Component {
         console.log(this.typeInput.value.trim());
         const itemType = this.typeInput.value.trim();
         const item = this.itemInput.value.trim();
-        const borrower = this.borrowerInput.value.trim();
+        const loaner = this.loanerInput.value.trim();
         const email = this.emailInput.value.trim();
         const phone = this.phoneInput.value.trim();
         const date = this.dateInput.value.trim();
@@ -27,7 +27,7 @@ export class LoanForm extends React.Component {
         //}
         this.typeInput.value = '';
         this.itemInput.value = '';
-        this.borrowerInput.value = '';
+        this.loanerInput.value = '';
         this.emailInput.value = '';
         this.phoneInput.value = '';
         this.dateInput.value = '';
@@ -37,7 +37,7 @@ export class LoanForm extends React.Component {
         //on submit?
         this.props.dispatch(
             //wahat is boardID and why is it necessary?
-        addCard(itemType, item, borrower, email, phone, date, dateAdded, null)
+        addCard(itemType, item, loaner, email, phone, date, dateAdded, null)
         );
         //this.props.history.push(`/items/loans`);
     }
@@ -64,8 +64,8 @@ render() {
                         <input name="itemType" type="text" ref={input => this.typeInput = input} />
                         <label>item:</label>
                         <input name="item" type="text" ref={input => this.itemInput = input} />
-                        <label>Borrower:</label>
-                        <input name="borrower" type="text" ref={input => this.borrowerInput = input} />
+                        <label>Loaner:</label>
+                        <input name="borrower" type="text" ref={input => this.loanerInput = input} />
                         <label>Email:</label>
                         <input name="email" type="email" ref={input => this.emailInput = input} />
                         <label>Phone:</label>
@@ -82,12 +82,4 @@ render() {
     }
 }
 
-export default connect()(LoanForm);
-/*                    <div>
-                        <LoanFormFromItem />}
-                    </div>
-                    <div>
-                        <AddItemLoanForm />}
-                    </div>
-
-                    */
+export default connect()(BorrowForm);

@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import SearchBar from '../loan-search-bar';
+import SearchBar from './loan-search-bar';
 //import LoanCard from './loan-card';
 import BorrowForm from './borrow-form';
 //import LoanSearchList from './loan-searchable-cards-list';
@@ -8,9 +8,9 @@ import BorrowCard from './borrow-card';
 //import {addLoanCard} from '../actions/index';
 //import {returnBorrowItem} from '.../actions/index';
 //import {searchList} from '.../actions/index';
-import {filterText} from '.../actions/filter';
-import getVisibleItem from '.../selectors/lists';
-import {filterDate} from '.../actions/filter';
+import {filterText} from '../actions/filter';
+import getVisibleItem from '../selectors/lists';
+import {filterDate} from '../actions/filter';
 
 
 export class BorrowList extends React.Component {

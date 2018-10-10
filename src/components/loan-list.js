@@ -1,16 +1,16 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import SearchBar from '../loan-search-bar';
+import SearchBar from './loan-search-bar';
 //import LoanCard from './loan-card';
 import LoanForm from './loan-form';
 //import LoanSearchList from './loan-searchable-cards-list';
 import LoanCard from './loan-card';
 //import {addLoanCard} from '../actions/index';
-import {returnItem} from '.../actions/index';
-import {searchList} from '.../actions/index';
-import {filterText} from '.../actions/filter';
-import getVisibleItem from '.../selectors/lists';
-import {filterDate} from '.../actions/filter';
+import {returnItem} from '../actions/index';
+import {searchList} from '../actions/index';
+import {filterText} from '../actions/filter';
+import getVisibleItem from '../selectors/lists';
+import {filterDate} from '../actions/filter';
 
 
 export class LoanList extends React.Component {
