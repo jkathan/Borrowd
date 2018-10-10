@@ -19,17 +19,17 @@ export class ItemList extends React.Component {
         //this.state = {
         //    searchTerm: ''
         //}
-                this.onChange = this.onChange.bind(this);
+        //this.onChange = this.onChange.bind(this);
 
     }
-
+/*
     onChange(event) {
         const sortFilter = this.menu.value;
         console.log(sortFilter);
         this.props.dispatch(
             filterDate(sortFilter));
     }
-
+*/
     render() {
         const checkedOutItems = this.props.loanList.checkedOut.filter(Boolean);
         console.log(checkedOutItems);
