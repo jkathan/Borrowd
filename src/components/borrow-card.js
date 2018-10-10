@@ -1,8 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import RenewForm from './loan-renew-form';
-import {returnItem} from '../actions/index';
-import {renewItem} from '../actions/index';
+import {returnLoanItem} from '../actions/index';
+import {renewLoanItem} from '../actions/index';
 //import * as indexAction from '../actions';
 export class BorrowCard extends React.Component  {
 		constructor(props) {
@@ -17,11 +17,11 @@ export class BorrowCard extends React.Component  {
   returnItem(e, index){
     e.preventDefault();
     console.log(index);
-   this.props.dispatch(returnItem(index));
+   this.props.dispatch(returnLoanItem(index));
 }
 	renewItem(date, index) {
 		console.log(index);
-		this.props.dispatch(renewItem(date, index))
+		this.props.dispatch(renewLoanItem(date, index))
 	}
 //would rather do handleclick in parent but cant specifiy button
 render() {    
