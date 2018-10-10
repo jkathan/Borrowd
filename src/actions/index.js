@@ -1,6 +1,6 @@
-export const ADD_LOAN_CARD = 'ADD_LOAN_CARD';
+export const ADD_CARD = 'ADD_CARD';
 export const addLoanCard = (itemType, item, borrower, email, phone, date, dateAdded, listId) => ({
-    type: ADD_LOAN_CARD,
+    type: ADD_CARD,
     itemType,
     item,
     borrower, 
