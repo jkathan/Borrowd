@@ -31,7 +31,7 @@ export class ItemList extends React.Component {
     }
 */
     render() {
-        const checkedOutItems = this.props.loanList
+        const checkedOutItems = this.props.loanList.loanList
         console.log(checkedOutItems);
         /*const itemCheckedOutList = this.props.loanList.map((item, index) => (
                 <ItemCheckoutCard 
