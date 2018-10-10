@@ -23,6 +23,11 @@ export const renewLoanItem = (returnDate, itemId) => ({
 	returnDate,
     itemId
 });
+
+export const UPDATE_CHECKOUT_STATUS = 'UPDATE_CHECKOUT_STATUS';
+export const updateCheckoutStatus = () => ({
+	type: UPDATE_CHECKOUT_STATUS,
+});
 /*
 export const CURRENT_DATE = 'CURRENT_DATE';
 export const currentDate = (currentDate) => ({

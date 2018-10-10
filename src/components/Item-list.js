@@ -1,16 +1,16 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import SearchBar from './loan-search-bar';
+//import SearchBar from './loan-search-bar';
 //import LoanCard from './loan-card';
-import BorrowForm from './borrow-form';
+//import ItemForm from './item-form';
 //import LoanSearchList from './loan-searchable-cards-list';
-import BorrowCard from './borrow-card';
+//import itemCard from './item-card';
 //import {addLoanCard} from '../actions/index';
 //import {returnBorrowItem} from '.../actions/index';
 //import {searchList} from '.../actions/index';
-import {filterText} from '../actions/filter';
-import getVisibleBorrowItem from '../selectors/borrows';
-import {filterDate} from '../actions/filter';
+//import {filterText} from '../actions/filter';
+//import getVisibleListItem from '../selectors/items';
+//import {filterDate} from '../actions/filter';
 
 
 export class BorrowList extends React.Component {
@@ -31,20 +31,26 @@ export class BorrowList extends React.Component {
     }
 
     render() {
-        const borrowlist = this.props.borrowsList.map((borrow, index) => (
-                <BorrowCard 
+        const checkedOutItems = this.props.loanList.checkedOut.filter(Boolean);
+        
+        /*const itemCheckedOutList = this.props.loanList.map((item, index) => (
+                <ItemCheckoutCard 
                 listId={index}
-                {...borrow} />
+                {...item} />
         )
     )
-        /*let loansList = this.props.loansList.filter(loan =>
+        const itemRepo = this.props.itemList.map((item, index) => (
+                <ItemRepo
+                listId={index}
+                {...borrow} />
+            ))
+        let loansList = this.props.loansList.filter(loan =>
             loan.item.toString().toLowerCase().includes(
                 this.state.searchTerm.toString().toLowerCase()
             )                    />
 
-        )*/
+        )*/console.log(checkedOutItems);
 //loan form will be link after routers
-        console.log(borrowlist);
         return (
             <ul className="list">
                   <SearchBar onChange={searchTerm => this.props.dispatch(filterText({searchTerm}))} />
@@ -73,7 +79,8 @@ const mapStateToProps = state => ({
         state.loanList
     );*/
     //return {
-        borrowsList: getVisibleBorrowItem(state.borrowList, state.filters)
+        loanList: state.loanList
+        //borrowsList: getVisibleBorrowItem(state.borrowList, state.filters)
     //};
 
 })

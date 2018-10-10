@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import RenewForm from './loan-renew-form';
 import {returnLoanItem} from '../actions/index';
 import {renewLoanItem} from '../actions/index';
+import (updateCheckoutStatus) from '../actions/index'
 //import * as indexAction from '../actions';
 export class LoanCard extends React.Component  {
 		constructor(props) {
@@ -18,6 +19,7 @@ export class LoanCard extends React.Component  {
     e.preventDefault();
     console.log(index);
    this.props.dispatch(returnLoanItem(index));
+   this.props.dispatch(updateCheckoutStatus());
 }
 	renewLoanItem(date, index) {
 		console.log(index);
