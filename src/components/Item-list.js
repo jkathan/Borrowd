@@ -32,7 +32,7 @@ export class ItemList extends React.Component {
 
     render() {
         const checkedOutItems = this.props.loanList.checkedOut.filter(Boolean);
-        
+        console.log(checkedOutItems);
         /*const itemCheckedOutList = this.props.loanList.map((item, index) => (
                 <ItemCheckoutCard 
                 listId={index}
@@ -49,9 +49,9 @@ export class ItemList extends React.Component {
                 this.state.searchTerm.toString().toLowerCase()
             )                    />
 
-        )*/console.log(checkedOutItems);
+        )*/
 //loan form will be link after routers
-        return (
+        return ()
            /* <ul className="list">
                   <SearchBar onChange={searchTerm => this.props.dispatch(filterText({searchTerm}))} />
                     <label>Sort by:</label>
@@ -67,7 +67,7 @@ export class ItemList extends React.Component {
                     </div>
                 </ul>
         );*/
-    };
+    }
 } 
 
 const mapStateToProps = state => ({
