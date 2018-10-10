@@ -49,10 +49,7 @@ export class ItemList extends React.Component {
                 this.state.searchTerm.toString().toLowerCase()
             )                    />
 
-        )*/
-//loan form will be link after routers
-        return ()
-           /* <ul className="list">
+        )*//* <ul className="list">
                   <SearchBar onChange={searchTerm => this.props.dispatch(filterText({searchTerm}))} />
                     <label>Sort by:</label>
                     <select onChange={this.onChange} ref = {(input)=> this.menu = input}>
@@ -67,7 +64,11 @@ export class ItemList extends React.Component {
                     </div>
                 </ul>
         );*/
-    }
+//loan form will be link after routers
+        return (
+            <h1>title</h1>);
+           
+    };
 } 
 
 const mapStateToProps = state => ({
