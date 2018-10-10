@@ -7,7 +7,7 @@ import {borrowReducer} from './reducers/filter';
 const rootReducer =
         combineReducers({
             loanList: loanReducer,
-            filters: filtersReducer
+            filters: filtersReducer,
             borrowList: borrowReducer
         }
     );
