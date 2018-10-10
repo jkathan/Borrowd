@@ -31,7 +31,10 @@ export class ItemList extends React.Component {
     }
 */
     render() {
-        const checkedOutItems = this.props.loanList.loanList.filter(Boolean)
+        var activeCheck = "false";
+        const checkedOutItems = this.props.loanList.loanList.filter((item) => {
+            return item.checkedOut === activeCheck
+        })
         console.log(checkedOutItems);
         /*const itemCheckedOutList = this.props.loanList.map((item, index) => (
                 <ItemCheckoutCard 
