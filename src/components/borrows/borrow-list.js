@@ -8,9 +8,9 @@ import BorrowCard from './borrow-card';
 //import {addLoanCard} from '../actions/index';
 //import {returnBorrowItem} from '.../actions/index';
 //import {searchList} from '.../actions/index';
-import {filterText} from '..../actions/filter';
-import getVisibleItem from '..../selectors/lists';
-import {filterDate} from '..../actions/filter';
+import {filterText} from '.../actions/filter';
+import getVisibleItem from '.../selectors/lists';
+import {filterDate} from '.../actions/filter';
 
 
 export class BorrowList extends React.Component {
