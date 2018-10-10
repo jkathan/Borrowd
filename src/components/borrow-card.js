@@ -14,14 +14,14 @@ export class BorrowCard extends React.Component  {
 //dont understand how i could update Return Date from other component
 //my thoughts: set state of return date, have an action handler that 
 //listens to onsubmit and sets state to that new state 
-  returnBorrowItem(e, index){
+  returnItem(e, index){
     e.preventDefault();
     console.log(index);
-   this.props.dispatch(returnLoanItem(index));
+   this.props.dispatch(returnItem(index));
 }
-	renewBorrowItem(date, index) {
+	renewItem(date, index) {
 		console.log(index);
-		this.props.dispatch(renewBorrowItem(date, index))
+		this.props.dispatch(renewItem(date, index))
 	}
 //would rather do handleclick in parent but cant specifiy button
 render() {    
@@ -37,7 +37,7 @@ render() {
 			 <div>
 			 	<RenewForm 
 			 	index ={this.props.listId} 
-			 	onAdd={(date, index) => this.renewBorrowItem(date, index)}/>
+			 	onAdd={(date, index) => this.renewItem(date, index)}/>
 			 </div>
 		</ul>
     	);
