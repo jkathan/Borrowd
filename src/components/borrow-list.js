@@ -9,7 +9,7 @@ import BorrowCard from './borrow-card';
 //import {returnBorrowItem} from '.../actions/index';
 //import {searchList} from '.../actions/index';
 import {filterText} from '../actions/filter';
-import getVisibleItem from '../selectors/lists';
+import getVisibleBorrowItem from '../selectors/borrows';
 import {filterDate} from '../actions/filter';
 
 
