@@ -44,7 +44,7 @@ export class BorrowList extends React.Component {
 
         )*/
 //loan form will be link after routers
-        console.log(loanlist);
+        console.log(borrowlist);
         return (
             <ul className="list">
                   <SearchBar onChange={searchTerm => this.props.dispatch(filterText({searchTerm}))} />
@@ -54,8 +54,8 @@ export class BorrowList extends React.Component {
                     </select>
                    <div>
                         <ul>
-                            <li><LoanForm /></li>
-                            <li>{loanlist}</li> 
+                            <li><BorrowForm /></li>
+                            <li>{borrowlist}</li> 
                         </ul>
                     </div>
                 </ul>
