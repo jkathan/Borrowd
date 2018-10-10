@@ -29,7 +29,7 @@ render() {
         <ul key={this.props.listId}>
         	 <li>Type: {this.props.itemType}</li>
 			 <li>Item: {this.props.item}</li>
-			 <li>Loanee: {this.props.borrower}</li>
+			 <li>Loaner: {this.props.borrower}</li>
 			 <li>Email: {this.props.email}</li>
 			 <li>Phone: {this.props.phone}</li>
 			 <li>Return Date: {this.props.returnDate}</li>
