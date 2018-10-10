@@ -42,7 +42,7 @@ export const loanReducer = (state=initialState, action) => {
         loanList: state.loanList.filter((id) => id.listId !== action.itemId)
       })
     }
-    
+    /*
     else if (action.type === actions.UPDATE_CHECKOUT_STATUS) {
       return Object.assign({}, state, {
         loanList: state.loanList.map((i) => (
@@ -50,7 +50,7 @@ export const loanReducer = (state=initialState, action) => {
         {...i, !checkedOut} : i))
     })
   }
-
+*/
     else if (action.type === actions.RENEW_ITEM) {
       return Object.assign({}, state, {
         loanList: state.loanList.map((i) => (
