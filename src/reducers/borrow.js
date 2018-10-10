@@ -1,4 +1,4 @@
-import * as actions from '../actions/filter';
+import * as actions from '../actions/index';
 
 const initialState = {
 
