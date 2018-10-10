@@ -33,7 +33,7 @@ export class ItemList extends React.Component {
     render() {
         var activeCheck = "false";
         const checkedOutItems = this.props.loanList.loanList.filter((item) => {
-            return item.checkedOut === activeCheck
+            return item.checkedOut.includes(activeCheck)
         })
         console.log(checkedOutItems);
         /*const itemCheckedOutList = this.props.loanList.map((item, index) => (
