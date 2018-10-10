@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Link, Redirect, Switch} from 'react-router-dom';
-import LoanPage from './loans/loan-page';
-import BorrowPage from './borrows/borrow-page';
+import LoanPage from './loan-page';
+import BorrowPage from './borrow-page';
 
 export default class App extends React.Component {
   render() {
