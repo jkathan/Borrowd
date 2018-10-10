@@ -31,7 +31,7 @@ export class ItemList extends React.Component {
     }
 */
     render() {
-        const checkedOutItems = this.props.loanList.checkedOut.filter(Boolean);
+        const checkedOutItems = this.props.loanList.filter(Boolean);
         console.log(checkedOutItems);
         /*const itemCheckedOutList = this.props.loanList.map((item, index) => (
                 <ItemCheckoutCard 
