@@ -2,16 +2,16 @@ import React from 'react';
 import {connect} from 'react-redux';
 //import SearchBar from './loan-search-bar';
 //import LoanCard from './loan-card';
-//import ItemForm from './item-form';
+import AddItemForm from './add-item-form';
 //import LoanSearchList from './loan-searchable-cards-list';
 import ItemCheckoutCard from './item-loan-card';
 import ItemRepo from './item-checkout-card';
 import ItemCheckoutCard from './item-checkout-card';
-
-//import {addLoanCard} from '../actions/index';
-//import {returnBorrowItem} from '.../actions/index';
-//import {searchList} from '.../actions/index';
-//import {filterText} from '../actions/filter';
+import ItemBorrowCard from './item-borrow-card'
+import {borrowList} from '../actions/index';
+import {returnBorrowItem} from '.../actions/index';
+import {loanList} from '.../actions/index';
+import {filterText} from '../actions/filter';
 //import getVisibleListItem from '../selectors/items';
 import {filterDate} from '../actions/filter';
 
@@ -36,19 +36,19 @@ export class ItemList extends React.Component {
     render() {
         
         
-        const itemCheckedOutList = this.props.loanList.map((item, index) => (
+        const itemCheckedOutList = this.props.loanList..loanlist.map((item, index) => (
                 <ItemCheckoutCard 
                 listId={index}
                 {...item} />
         )
     )
-        const itemRepo = this.props.itemList.map((item, index) => (
+        const itemRepo = this.props.itemList.itemList.map((item, index) => (
                 <ItemRepo
                 listId={index}
                 {...item} />
             )               
         )
-            const borrowlist = this.props.borrowList.map((item, index) => (
+            const borrowlist = this.props.borrowList.borrowList.map((item, index) => (
                 <ItemBorrowCard 
                 listId={index}
                 {...item} />
@@ -82,9 +82,9 @@ const mapStateToProps = state => ({
         state.loanList
     );*/
     
-        borrowlist: borrowList,
-        loanList: loanList,
-        itemList: items
+        borrowlist: state.borrowList,
+        loanList: state.loanList,
+        itemList: state.items
         //borrowsList: getVisibleBorrowItem(state.borrowList, state.filters)
     //};
 
