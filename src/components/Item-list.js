@@ -4,7 +4,6 @@ import {connect} from 'react-redux';
 //import LoanCard from './loan-card';
 import AddItemForm from './add-item-form';
 //import LoanSearchList from './loan-searchable-cards-list';
-import ItemCheckoutCard from './item-loan-card';
 import ItemRepo from './item-checkout-card';
 import ItemCheckoutCard from './item-checkout-card';
 import ItemBorrowCard from './item-borrow-card'
