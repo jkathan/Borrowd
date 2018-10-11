@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import moment from 'moment'
-import './add-form';
+import './add-form.css';
 
 import {addCard} from '../actions/index';
 //how do I 
