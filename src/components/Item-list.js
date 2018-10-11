@@ -4,13 +4,15 @@ import {connect} from 'react-redux';
 //import LoanCard from './loan-card';
 //import ItemForm from './item-form';
 //import LoanSearchList from './loan-searchable-cards-list';
-//import itemCard from './item-card';
+import ItemCheckoutCard from './item-loan-card';
+import ItemRepo from './item-checkout-card';
+import ItemCheckoutCard from './item-checkout-card';
 //import {addLoanCard} from '../actions/index';
 //import {returnBorrowItem} from '.../actions/index';
 //import {searchList} from '.../actions/index';
 //import {filterText} from '../actions/filter';
 //import getVisibleListItem from '../selectors/items';
-//import {filterDate} from '../actions/filter';
+import {filterDate} from '../actions/filter';
 
 
 export class ItemList extends React.Component {
@@ -19,24 +21,21 @@ export class ItemList extends React.Component {
         //this.state = {
         //    searchTerm: ''
         //}
-        //this.onChange = this.onChange.bind(this);
+                this.onChange = this.onChange.bind(this);
 
     }
-/*
+
     onChange(event) {
         const sortFilter = this.menu.value;
         console.log(sortFilter);
         this.props.dispatch(
             filterDate(sortFilter));
     }
-*/
+
     render() {
-        var activeCheck = "false";
-        const checkedOutItems = this.props.loanList.loanList.filter((item) => {
-            return item.checkedOut.includes(activeCheck)
-        })
-        console.log(checkedOutItems);
-        /*const itemCheckedOutList = this.props.loanList.map((item, index) => (
+        
+        
+        const itemCheckedOutList = this.props.loanList.map((item, index) => (
                 <ItemCheckoutCard 
                 listId={index}
                 {...item} />
@@ -45,32 +44,31 @@ export class ItemList extends React.Component {
         const itemRepo = this.props.itemList.map((item, index) => (
                 <ItemRepo
                 listId={index}
-                {...borrow} />
-            ))
-        let loansList = this.props.loansList.filter(loan =>
-            loan.item.toString().toLowerCase().includes(
-                this.state.searchTerm.toString().toLowerCase()
-            )                    />
-
-        )*//* <ul className="list">
-                  <SearchBar onChange={searchTerm => this.props.dispatch(filterText({searchTerm}))} />
-                    <label>Sort by:</label>
-                    <select onChange={this.onChange} ref = {(input)=> this.menu = input}>
-                        <option value="Due Date">Due Date</option>
-                        <option value="Recently Added">Recently Added</option>
-                    </select>
+                {...item} />
+            )               
+        )
+            const borrowlist = this.props.borrowList.map((item, index) => (
+                <ItemBorrowCard 
+                listId={index}
+                {...item} />
+        )
+    )
+//loan form will be link after routers
+        return (
+            <ul className="list">
                    <div>
+                        <h2>Your Borrowed Items</h2>                     
+                        {borrowList}
+                        <h2>Your Loaned Items</h2>                     
+                        {itemCheckedOutList}
+                        <h2>Your Available Items</h2>
                         <ul>
-                            <li><BorrowForm /></li>
-                            <li>{borrowlist}</li> 
+                            <li><AddItemForm /></li>
+                            <li>{itemRepo}</li>
                         </ul>
                     </div>
                 </ul>
-        );*/
-//loan form will be link after routers
-        return (
-            <h1>title</h1>);
-           
+        );
     };
 } 
 
@@ -82,8 +80,10 @@ const mapStateToProps = state => ({
         },
         state.loanList
     );*/
-    //return {
-        loanList: state.loanList
+    return {
+        borrowlist: borrowList,
+        loanList: loanList,
+        itemList: items
         //borrowsList: getVisibleBorrowItem(state.borrowList, state.filters)
     //};
 

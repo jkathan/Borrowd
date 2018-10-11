@@ -12,8 +12,11 @@ export const addCard = (itemType, item, borrower, email, phone, date, dateAdded,
 });
 
 export const ADD_ITEM = 'ADD_ITEM';
-export const addItem = () => ({
+export const addItem = (itemType, item, condition) => ({
     type: ADD_ITEM,
+    itemType,
+    item,
+    condition
 });
 
 export const RETURN_ITEM = 'RETURN_ITEM';
@@ -29,9 +32,19 @@ export const renewLoanItem = (returnDate, itemId) => ({
     itemId
 });
 
-export const UPDATE_CHECKOUT_STATUS = 'UPDATE_CHECKOUT_STATUS';
-export const updateCheckoutStatus = () => ({
-	type: UPDATE_CHECKOUT_STATUS,
+export const REMOVE_ITEM_FROM_LIST = 'REMOVE_ITEM_FROM_LIST';
+export const removeItemFromList = (itemId) => ({
+	type: REMOVE_ITEM_FROM_LIST,
+	itemId
+});
+
+export const EDIT_ITEM = 'EDIT_ITEM';
+export const editItem = (itemType, item, condition, itemId) => ({
+	type: RENEW_ITEM,
+	itemType,
+	item,
+	condition,
+    itemId
 });
 /*
 export const CURRENT_DATE = 'CURRENT_DATE';
