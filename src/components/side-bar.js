@@ -20,7 +20,7 @@ export class Sidebar extends React.Component {
                         </Link>
                     </li>
                     <li className="folder-menu-list-item">
-                        <Link to= '/items/loans'>
+                        <Link to= '/items/borrows'>
                             Borrows
                         </Link>
                     </li>
