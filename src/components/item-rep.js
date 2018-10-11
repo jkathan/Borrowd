@@ -11,13 +11,13 @@ class ItemRepo extends React.Component {
 	returnItem(e, index){
 	    e.preventDefault();
 	    console.log(index);
-	   this.props.dispatch(removeItemFromList(index));
+	    this.props.dispatch(removeItemFromList(index));
 }
 /*	goToCheckoutBoard(event) {
         event.preventDefault();
         this.props.history.push(`/items/itemedit`);
     }*/
-    addCard(borrower, email, phone, date) {
+    onAdd(borrower, email, phone, date) {
     	itemType = this.props.itemType;
     	item = this.props.item;
     	this.props.dispatch(
@@ -25,6 +25,11 @@ class ItemRepo extends React.Component {
         addCard(itemType, item, borrower, email, phone, date, dateAdded, null)
         );
     }
+    returnItem(e, index){
+	    e.preventDefault();
+	    console.log(index);
+	    this.props.dispatch(returnLoanItem(index));
+}
 //edit button should be a link
 //new form form for borrow and forms
 	render() {
