@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import moment from 'moment'
+import {addCard} from '../actions/index';
 
 //how do I 
 export class ItemLoanForm extends React.Component {
@@ -87,4 +88,4 @@ render() {
     }
 }
 
-export default connect()(LoanForm);
+export default connect()(ItemLoanFormS);
