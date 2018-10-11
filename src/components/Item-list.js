@@ -36,11 +36,11 @@ export class ItemList extends React.Component {
         
         console.log(this.props.borrowlist.borrowList);
         const itemCheckedOutList = this.props.loanList.loanList.map((item, index) => (
-             <li className="list-wrapper">   
+             <ul className="list-wrapper">   
                 <ItemCheckoutCard 
                 listId={index}
                 {...item} />
-            </li>
+            </ul>
         )
     )
 
@@ -51,11 +51,11 @@ export class ItemList extends React.Component {
             )               
         )
             const borrowList = this.props.borrowlist.borrowList.map((item, index) => (
-            <li className="list-wrapper">    
+            <ul className="list-wrapper">    
                 <ItemBorrowCard 
                 listId={index}
                 {...item} />
-            </li>
+            </ul>
         )
     )
 //loan form will be link after routers

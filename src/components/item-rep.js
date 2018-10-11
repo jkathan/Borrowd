@@ -39,18 +39,20 @@ class ItemRepo extends React.Component {
 //new form form for borrow and forms
 	render() {
 		return (
-			<div>
-				<ul>
-				 	<li>Type: {this.props.itemType}</li>
-				 	<li>Item: {this.props.item}</li>
-				</ul>
-				<button>Edit</button>
-				<ItemLoanForm
-				index = {this.props.listId}
-				onAdd= {(borrower, email, phone, date) => this.addCard(borrower, email, phone, date)}
-				/>
-				<button onClick={(e) => this.returnItem(e, this.props.listId)}>Delete</button>
-			</div>
+			<li>
+				<div>
+					<ul>
+					 	<li>Type: {this.props.itemType}</li>
+					 	<li>Item: {this.props.item}</li>
+					</ul>
+					<button>Edit</button>
+					<ItemLoanForm
+					index = {this.props.listId}
+					onAdd= {(borrower, email, phone, date) => this.addCard(borrower, email, phone, date)}
+					/>
+					<button onClick={(e) => this.returnItem(e, this.props.listId)}>Delete</button>
+				</div>
+			</li>
 		);
 	}
 }
