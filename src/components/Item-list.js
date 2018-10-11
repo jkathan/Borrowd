@@ -62,16 +62,21 @@ export class ItemList extends React.Component {
         return (
             <div className="lists">
                 <ul className="lists">
-                       <div>
-                            <h2>Your Borrowed Items</h2>                     
+                       <h2>Your Borrowed Items</h2>                     
+                        <div className="flex-list">
                             {borrowList}
-                            <h2>Your Loaned Items</h2>                     
-                            {itemCheckedOutList}
+                        </div>
+                            <h2>Your Loaned Items</h2> 
+                            <div className="flex-list">                    
+                                {itemCheckedOutList}
+                             </div>
                             <h2>Your Available Items</h2>
-                            <ul className="lists">
-                                <li><AddItemForm /></li>
-                                <li>{itemRepo}</li>
-                            </ul>
+                            <div className="flex-list">
+                                <ul className="lists">
+                                    <li><AddItemForm /></li>
+                                    <li>{itemRepo}</li>
+                                </ul>
+                             </div>
                         </div>
                     </ul>
             </div>
