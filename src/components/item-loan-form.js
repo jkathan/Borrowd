@@ -32,8 +32,8 @@ export class ItemLoanForm extends React.Component {
         this.phoneInput.value = '';
         this.dateInput.value = '';
         const dateAdded = moment().format('YYYY-MM-DD');
-        const listId = this.props.index
-            this.props.dispatch(removeItemFromList(listId));
+        const listId = this.props.index;
+        this.props.dispatch(removeItemFromList(listId));
         //will have to put more info here depeding on the selection of item
         //also will have to add new item to item list. is this done in new 
         //on submit?
