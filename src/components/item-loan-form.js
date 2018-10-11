@@ -34,7 +34,7 @@ export class ItemLoanForm extends React.Component {
         const dateAdded = moment().format('YYYY-MM-DD');
         const listId = this.props.index;
         this.props.dispatch(removeItemFromList(listId));
-        this.setEditing(false)}
+        this.setEditing(false);
         //will have to put more info here depeding on the selection of item
         //also will have to add new item to item list. is this done in new 
         //on submit?
