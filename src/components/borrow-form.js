@@ -60,9 +60,14 @@ render() {
             <div>
                 <form className="card add-form" onSubmit={this.onSubmit}>
 
-                        <label>type:</label>
-                        <input name="itemType" type="text" ref={input => this.typeInput = input} />
-                        <label>item:</label>
+                        <select ref={input => this.typeInput = input}>
+                            <option>Tool</option>
+                            <option>Money</option>
+                            <option>Clothing</option>
+                            <option>Electronics</option>
+                            <option>Other</option>
+                        </select>
+                        <label>Item:</label>
                         <input name="item" type="text" ref={input => this.itemInput = input} />
                         <label>Loaner:</label>
                         <input name="borrower" type="text" ref={input => this.loanerInput = input} />

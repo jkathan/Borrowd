@@ -12,11 +12,10 @@ export const addCard = (itemType, item, borrower, email, phone, date, dateAdded,
 });
 
 export const ADD_ITEM = 'ADD_ITEM';
-export const addItem = (itemType, item, condition) => ({
+export const addItem = (itemType, item) => ({
     type: ADD_ITEM,
     itemType,
-    item,
-    condition
+    item
 });
 
 export const RETURN_ITEM = 'RETURN_ITEM';

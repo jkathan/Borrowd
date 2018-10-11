@@ -19,7 +19,7 @@ export class BorrowList extends React.Component {
         //this.state = {
         //    searchTerm: ''
         //}
-                this.onChange = this.onChange.bind(this);
+        this.onChange = this.onChange.bind(this);
 
     }
 

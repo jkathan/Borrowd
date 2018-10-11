@@ -39,7 +39,6 @@ export const loanReducer = (state=initialState, action) => {
       items: [...state.loanList, {
         itemType: action.type,
         item: action.item,
-        condition: action.condition
       }]
     })
   } 
