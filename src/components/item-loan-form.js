@@ -49,7 +49,7 @@ export class ItemLoanForm extends React.Component {
             editing
         });
     }
-        }
+
 /*
     goToLoansList(event) {
         event.preventDefault();
