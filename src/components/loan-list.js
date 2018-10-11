@@ -53,9 +53,9 @@ export class LoanList extends React.Component {
                         <option value="Recently Added">Recently Added</option>
                     </select>
                    <div>
-                        <ul className="list">
+                        <ul className="flex-list">
                             <li><LoanForm /></li>
-                            <li>{loanlist}</li> 
+                            <ul className="list-wrapper flex-list">{loanlist}</ul> 
                         </ul>
                     </div>
                 </ul>

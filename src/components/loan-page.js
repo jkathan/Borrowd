@@ -6,8 +6,10 @@ export default class LoanPage extends React.Component {
 	render() {    
     return (
 
-    <div className='container__list'>
-        <Sidebar />
+    <div className='listPage'>
+        <div className="sidebar">
+        	<Sidebar />
+        </div>	
         <LoanList />
     </div>
 )}

@@ -54,10 +54,10 @@ export class BorrowList extends React.Component {
                         <option value="Due Date">Due Date</option>
                         <option value="Recently Added">Recently Added</option>
                     </select>
-                   <div>
-                        <ul className="list">
+                   <div className="lists">
+                        <ul className="flex-list">
                             <li><BorrowForm /></li>
-                            <li>{borrowlist}</li> 
+                            <ul>{borrowlist}</ul> 
                         </ul>
                     </div>
                 </div>

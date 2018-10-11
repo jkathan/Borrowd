@@ -42,7 +42,7 @@ class ItemRepo extends React.Component {
 			<li>
 				<div>
 					<ul>
-					 	<li>Type: {this.props.itemType}</li>
+					 	<li className="card">Type: {this.props.itemType}</li>
 					 	<li>Item: {this.props.item}</li>
 					</ul>
 					<button>Edit</button>
