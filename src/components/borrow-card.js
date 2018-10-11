@@ -17,7 +17,7 @@ export class BorrowCard extends React.Component  {
   returnItem(e, index){
     e.preventDefault();
     console.log(index);
-   this.props.dispatch(returnLoanItem(index));
+   this.props.dispatch(returnBorrowItem(index));
 }
 	renewItem(date, index) {
 		console.log(index);
