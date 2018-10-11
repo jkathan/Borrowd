@@ -32,7 +32,7 @@ export const renewLoanItem = (returnDate, itemId) => ({
 });
 
 export const RETURN_BORROW_ITEM = 'RETURN_BORROW_ITEM';
-export const renewBorrowItem = (returnDate, itemId) => ({
+export const returnBorrowItem = (itemId) => ({
     type: RETURN_BORROW_ITEM,
     itemId
 });
