@@ -12,7 +12,7 @@ export const addCard = (itemType, item, borrower, email, phone, date, dateAdded,
 });
 
 export const ADD_BORROW_CARD = 'ADD_BORROW_CARD';
-export const addBorrrowCard = (itemType, item, borrower, email, phone, date, dateAdded, listId) => ({
+export const addBorrowCard = (itemType, item, borrower, email, phone, date, dateAdded, listId) => ({
     type: ADD_BORROW_CARD,
     itemType,
     item,
