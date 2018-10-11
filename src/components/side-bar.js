@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 //import './sidebar.css';
 
-class Sidebar extends React.Component {
+export class Sidebar extends React.Component {
     render () {
     return (
         <div className="sidebar sidebar-left">
