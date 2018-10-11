@@ -17,14 +17,16 @@ class ItemBorrowCard extends React.Component {
 	render() {
 		itemId = this.props.itemId
 		return (
-			<ul>
-				<li>Borrowed From: {this.props.loaner}</li>
-			 	<li>Type: {this.props.itemType}</li>
-			 	<li>Item: {this.props.item}</li>
-			</ul>
-			<button onClick={(e) => this.returnItem(e, this.props.listId)}>
-			Return
-			</button>
+			<div>
+				<ul>
+					<li>Borrowed From: {this.props.loaner}</li>
+				 	<li>Type: {this.props.itemType}</li>
+				 	<li>Item: {this.props.item}</li>
+				</ul>
+				<button onClick={(e) => this.returnItem(e, this.props.listId)}>
+				Return
+				</button>
+			</div>
 		);
 	}
 }
