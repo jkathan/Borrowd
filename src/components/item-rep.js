@@ -45,6 +45,7 @@ class ItemRepo extends React.Component {
 				</ul>
 				<button>Edit</button>
 				<ItemLoanForm
+				index = {this.props.listId}
 				onAdd= {(borrower, email, phone, date) => this.addCard(borrower, email, phone, date)}
 				/>
 				<button onClick={(e) => this.returnItem(e, this.props.listId)}>Delete</button>

@@ -59,8 +59,8 @@ render() {
                     <button onClick={() => this.setEditing(true)}>Checkout</button>
                 </div>
             );
-        }
-
+        };
+        console.log(index);
     //loan from list will have to be a search bar that shows values
     //this will then autofill the item and on submit will update item as 
     //checked out
@@ -80,7 +80,7 @@ render() {
                         <input name="phone" type="tel" ref={input => this.phoneInput = input} />
                         <label>Return Date:</label>
                         <input name="returnDate" type="date" ref={input => this.dateInput = input} />
-                    <button>Submit</button>
+                    <button onClick={(e) => this.returnItem(e, this.props.listId)}>Submit</button>
                     <button onClick={() => this.setEditing(false)} >
                         Cancel
                     </button>
