@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
-import './sidebar.css';
+//import './sidebar.css';
 
 class Sidebar extends React.Component {
     render () {

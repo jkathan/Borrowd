@@ -1,6 +1,6 @@
 import React from 'react';
 import LoanList from './loan-list';
-import Sidebar from './sidebar.js';
+import Sidebar from './sidebar';
 
 const LoanPage = () => (
     <div className='container__list'>
