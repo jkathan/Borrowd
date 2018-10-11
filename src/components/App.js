@@ -9,13 +9,13 @@ export default class App extends React.Component {
   render() {
     return (
         <Router>
-            <Route path ="/items" component={Sidebar} /> 
+            
             <main>
                 <Switch>
-
+                    <Route path ="/" component={Sidebar} /> 
                     <Route exact path='/items/loans' component={LoanPage} />
                     <Route exact path = '/items/borrows' component={BorrowPage} />
-                    <Route exact path = '/items' component={ItemPage} />
+                    <Route exact path = '/' component={ItemPage} />
                   </Switch>
             </main>
         </Router>

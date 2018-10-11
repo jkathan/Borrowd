@@ -13,12 +13,12 @@ borrowList: [
 };
 
 export const borrowReducer = (state=initialState, action) => {
-    if (action.type === actions.ADD_CARD) {
+    if (action.type === actions.ADD_BORROW_CARD) {
         return Object.assign({}, state, {
             borrowList: [...state.loanList, {
                   itemType: action.itemType,
                   item: action.item,
-                  loaner: action.loaner, 
+                  loaner: action.borrower, 
                   email: action.email, 
                   phone: action.phone, 
                   returnDate: action.date.toString(),

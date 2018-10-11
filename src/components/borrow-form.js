@@ -37,7 +37,7 @@ export class BorrowForm extends React.Component {
         //on submit?
         this.props.dispatch(
             //wahat is boardID and why is it necessary?
-        addCard(itemType, item, loaner, email, phone, date, dateAdded, null)
+        addBorrowCard(itemType, item, loaner, email, phone, date, dateAdded, null)
         );
         //this.props.history.push(`/items/loans`);
     }
