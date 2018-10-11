@@ -60,19 +60,21 @@ export class ItemList extends React.Component {
     )
 //loan form will be link after routers
         return (
-            <ul className="list">
-                   <div>
-                        <h2>Your Borrowed Items</h2>                     
-                        {borrowList}
-                        <h2>Your Loaned Items</h2>                     
-                        {itemCheckedOutList}
-                        <h2>Your Available Items</h2>
-                        <ul className="list">
-                            <li><AddItemForm /></li>
-                            <li>{itemRepo}</li>
-                        </ul>
-                    </div>
-                </ul>
+            <div className="lists">
+                <ul className="lists">
+                       <div>
+                            <h2>Your Borrowed Items</h2>                     
+                            {borrowList}
+                            <h2>Your Loaned Items</h2>                     
+                            {itemCheckedOutList}
+                            <h2>Your Available Items</h2>
+                            <ul className="lists">
+                                <li><AddItemForm /></li>
+                                <li>{itemRepo}</li>
+                            </ul>
+                        </div>
+                    </ul>
+            </div>
         );
     };
 } 

@@ -3,7 +3,8 @@ import {addCard} from '../actions/index';
 import {removeItemFromList} from '../actions/index';
 import ItemLoanForm from './item-loan-form';
 import {connect} from 'react-redux';
-import moment from 'moment'
+import moment from 'moment';
+import './card.css';
 
 class ItemRepo extends React.Component {
 	constructor(props) {
