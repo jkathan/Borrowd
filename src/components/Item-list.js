@@ -41,7 +41,7 @@ export class ItemList extends React.Component {
                 {...item} />
         )
     )
-        console.log
+
         const itemRepo = this.props.loanList.items.map((item, index) => (
                 <ItemRepo
                 listId={index}
