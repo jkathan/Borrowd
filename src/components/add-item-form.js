@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import moment from 'moment'
-import {addCard} from '../actions/index';
+import {addItem} from '../actions/index';
 //how do I 
 export class AddItemForm extends React.Component {
     constructor(props) {
@@ -16,9 +16,9 @@ export class AddItemForm extends React.Component {
         console.log(itemType);
         this.typeInput.value = '';
         this.itemInput.value = '';
-        const dateAdded = moment().format('YYYY-MM-DD');
+        //const dateAdded = moment().format('YYYY-MM-DD');
         this.props.dispatch(
-        addCard(itemType, item, null)
+        addItem(itemType, item, null)
         );
     }
 
@@ -26,7 +26,6 @@ render() {
         return (
             <div>
                 <form className="card add-form" onSubmit={this.onSubmit}>
-
                         <label>Type:</label>
                         <select ref={input => this.typeInput = input}>
                             <option>Tool</option>
@@ -38,9 +37,6 @@ render() {
                         <label>Item:</label>
                         <input name="item" type="text" ref={input => this.itemInput = input} />
                     <button>Submit</button>
-                    <button type="button" >
-                        Cancel
-                    </button>
                 </form>
             </div>
         );
