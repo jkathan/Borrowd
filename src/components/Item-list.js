@@ -7,10 +7,10 @@ import AddItemForm from './add-item-form';
 import ItemRepo from './item-rep';
 import ItemCheckoutCard from './item-loan-card';
 import ItemBorrowCard from './item-borrow-card'
-import {borrowList} from '../actions/index';
-import {returnBorrowItem} from '../actions/index';
-import {loanList} from '../actions/index';
-import {filterText} from '../actions/filter';
+//import {borrowList} from '../actions/index';
+//import {returnBorrowItem} from '../actions/index';
+//import {loanList} from '../actions/index';
+//import {filterText} from '../actions/filter';
 //import getVisibleListItem from '../selectors/items';
 import {filterDate} from '../actions/filter';
 
