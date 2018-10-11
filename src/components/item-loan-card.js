@@ -19,13 +19,15 @@ class ItemCheckoutCard extends React.Component {
 	render() {
 		itemId = this.props.itemId
 		return (
-			<ul>
-			 	<li>Type: {this.props.itemType}</li>
-			 	<li>Item: {this.props.item}</li>
-			</ul>
-			<button onClick={(e) => this.returnItem(e, this.props.listId)}>
-			Return
-			</button>
+			<div>
+				<ul>
+				 	<li>Type: {this.props.itemType}</li>
+				 	<li>Item: {this.props.item}</li>
+				</ul>
+				<button onClick={(e) => this.returnItem(e, this.props.listId)}>
+				Return
+				</button>
+			</div>
 		);
 	}
 }
