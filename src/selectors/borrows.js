@@ -7,8 +7,9 @@ export default function getVisibleBorrowItem(borrowList, text) {
         const textMatch =
             item.item.toString().toLowerCase().includes(text.searchTerm) 
             return textMatch;
+            console.log(textMatch);
         })
-    console.loc(textMatch);
+
     /*.sort((a, b) => {
     	var key1 = a.returnDate;
     	var key2 = b.returnDate;
