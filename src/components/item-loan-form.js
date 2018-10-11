@@ -47,6 +47,11 @@ export class ItemLoanForm extends React.Component {
             editing
         });
     }
+        returnItem(e, index){
+        e.preventDefault();
+        console.log(index);
+        this.props.dispatch(removeItemFromList(index));
+}
 /*
     goToLoansList(event) {
         event.preventDefault();
@@ -60,7 +65,7 @@ render() {
                 </div>
             );
         };
-        console.log(this.props.index);
+
     //loan from list will have to be a search bar that shows values
     //this will then autofill the item and on submit will update item as 
     //checked out
@@ -80,7 +85,7 @@ render() {
                         <input name="phone" type="tel" ref={input => this.phoneInput = input} />
                         <label>Return Date:</label>
                         <input name="returnDate" type="date" ref={input => this.dateInput = input} />
-                    <button onClick={(e) => this.returnItem(e, this.props.listId)}>Submit</button>
+                    <button onClick={(e) => this.returnItem(e, this.props.index)}>Submit</button>
                     <button onClick={() => this.setEditing(false)} >
                         Cancel
                     </button>
