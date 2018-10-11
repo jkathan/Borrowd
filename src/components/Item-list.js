@@ -41,13 +41,13 @@ export class ItemList extends React.Component {
                 {...item} />
         )
     )
-        const itemRepo = this.props.itemList.map((item, index) => (
+        const itemRepo = this.props.itemList.itemList.map((item, index) => (
                 <ItemRepo
                 listId={index}
                 {...item} />
             )               
         )
-            const borrowList = this.props.borrowList.map((item, index) => (
+            const borrowList = this.props.borrowList.borrowList.map((item, index) => (
                 <ItemBorrowCard 
                 listId={index}
                 {...item} />
