@@ -9,7 +9,7 @@ export default class App extends React.Component {
   render() {
     return (
         <Router>
-            <Sidebar /> 
+            <Route path ="/" component{Sidebar} /> 
             <main>
                 <Switch>
 

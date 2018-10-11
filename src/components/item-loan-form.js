@@ -2,6 +2,8 @@ import React from 'react';
 import {connect} from 'react-redux';
 import moment from 'moment'
 import {addCard} from '../actions/index';
+import {BrowserRouter as  Link} from 'react-router-dom';
+
 
 //how do I 
 export class ItemLoanForm extends React.Component {
@@ -40,7 +42,7 @@ export class ItemLoanForm extends React.Component {
         //this.props.history.push(`/items/loans`);
     }
        setEditing(editing) {
-        this.props.history.push(`/items/loans`);
+        //this.props.history.push(`/items/loans`);
         this.setState({
             editing
         });
@@ -78,7 +80,7 @@ render() {
                         <input name="phone" type="tel" ref={input => this.phoneInput = input} />
                         <label>Return Date:</label>
                         <input name="returnDate" type="date" ref={input => this.dateInput = input} />
-                    <button onClick={() => this.setEditing(false)}>Submit</button>
+                    <Link to = `/items/loans` >Submit</Link>
                     <button onClick={() => this.setEditing(false)} >
                         Cancel
                     </button>

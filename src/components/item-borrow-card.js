@@ -11,7 +11,7 @@ class ItemBorrowCard extends React.Component {
 	returnItem(e, index){
 	    e.preventDefault();
 	    console.log(index);
-	   this.props.dispatch(returnLoanItem(index));
+	   this.props.dispatch(returnBorrowItem(index));
 }
 //edit button should be a link
 //new form form for borrow and forms

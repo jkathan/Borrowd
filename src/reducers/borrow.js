@@ -27,7 +27,7 @@ export const borrowReducer = (state=initialState, action) => {
             });
     }
 
-   else if (action.type === actions.RETURN_ITEM) {
+   else if (action.type === actions.RETURN_BORROW_ITEM) {
       return Object.assign({}, state, {
         borrowList: state.borrowList.filter((id) => id.listId !== action.itemId)
       })

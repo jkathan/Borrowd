@@ -31,6 +31,13 @@ export const renewLoanItem = (returnDate, itemId) => ({
     itemId
 });
 
+export const RENEW_BORROW_ITEM = 'RENEW_BORROW_ITEM';
+export const renewBorrowItem = (returnDate, itemId) => ({
+    type: RENEW_ITEM,
+    returnDate,
+    itemId
+});
+
 export const REMOVE_ITEM_FROM_LIST = 'REMOVE_ITEM_FROM_LIST';
 export const removeItemFromList = (itemId) => ({
 	type: REMOVE_ITEM_FROM_LIST,
