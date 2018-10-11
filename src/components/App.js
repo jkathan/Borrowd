@@ -12,7 +12,6 @@ export default class App extends React.Component {
             
             <main>
                 <Switch>
-                    <Route path ="/" component={Sidebar} /> 
                     <Route exact path='/items/loans' component={LoanPage} />
                     <Route exact path = '/items/borrows' component={BorrowPage} />
                     <Route exact path = '/' component={ItemPage} />
