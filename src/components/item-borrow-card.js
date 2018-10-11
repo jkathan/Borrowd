@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import React from 'react';
-import {returnLoanItem} from '../actions/index';
+import {returnBorrowItem} from '../actions/index';
 
 class ItemBorrowCard extends React.Component {
 	constructor(props) {
