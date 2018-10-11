@@ -18,7 +18,7 @@ export const borrowReducer = (state=initialState, action) => {
             borrowList: [...state.loanList, {
                   itemType: action.itemType,
                   item: action.item,
-                  loaner: action.borrower, 
+                  loaner: action.loaner, 
                   email: action.email, 
                   phone: action.phone, 
                   returnDate: action.date.toString(),
