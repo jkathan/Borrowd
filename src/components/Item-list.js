@@ -7,6 +7,7 @@ import {connect} from 'react-redux';
 import ItemCheckoutCard from './item-loan-card';
 import ItemRepo from './item-checkout-card';
 import ItemCheckoutCard from './item-checkout-card';
+
 //import {addLoanCard} from '../actions/index';
 //import {returnBorrowItem} from '.../actions/index';
 //import {searchList} from '.../actions/index';
@@ -80,7 +81,7 @@ const mapStateToProps = state => ({
         },
         state.loanList
     );*/
-    return {
+    
         borrowlist: borrowList,
         loanList: loanList,
         itemList: items
