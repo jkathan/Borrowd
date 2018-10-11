@@ -10,7 +10,7 @@ import './index.css';
 
 ReactDOM.render(
   <Provider store={store}>
-      <ItemList />
+      <App />
   </Provider>,
   document.getElementById('root')
 );
