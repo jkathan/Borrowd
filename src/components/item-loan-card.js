@@ -17,7 +17,6 @@ class ItemCheckoutCard extends React.Component {
 //edit button should be a link
 //new form form for borrow and forms
 	render() {
-		itemId = this.props.itemId
 		return (
 			<div>
 				<ul>

@@ -1,3 +1,4 @@
+import {connect} from 'react-redux';
 import React from 'react';
 import {returnLoanItem} from '../actions/index';
 
@@ -15,7 +16,6 @@ class ItemBorrowCard extends React.Component {
 //edit button should be a link
 //new form form for borrow and forms
 	render() {
-		itemId = this.props.itemId
 		return (
 			<div>
 				<ul>
