@@ -21,6 +21,7 @@ class ItemCheckoutCard extends React.Component {
 		return (
 			<div>
 				<ul>
+					<li>Loaned to: {this.props.borrower}</li>
 				 	<li>Type: {this.props.itemType}</li>
 				 	<li>Item: {this.props.item}</li>
 				</ul>
