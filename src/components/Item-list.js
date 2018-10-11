@@ -74,15 +74,13 @@ export class ItemList extends React.Component {
                             {itemCheckedOutList}
                         </div>
                     </li>
-                    <li className="lists">
-                        <h2>Your Available Items</h2>
-                        <div className="flex-list">
-                            <ul className="lists">
-                                <li><AddItemForm /></li>
-                                <li>{itemRepo}</li>
-                            </ul>
-                        </div>
-                    </li>
+                    <h2>Your Available Items</h2>
+                    <div>
+                        <ul className="flex-list">
+                            <li><AddItemForm /></li>
+                            <li>{itemRepo}</li>
+                        </ul>
+                    </div>
                 </ul>
             </div>
         );
