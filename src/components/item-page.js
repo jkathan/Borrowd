@@ -4,7 +4,7 @@ import Sidebar from './side-bar';
 
 const LoanPage = () => (
     <div className='container__list'>
-        <SideBar />
+        <Sidebar />
         <ItemList />
     </div>
 );
