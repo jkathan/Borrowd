@@ -15,12 +15,12 @@ class Sidebar extends React.Component {
                         </Link>
                     </li>                                
                     <li className="folder-menu-list-item">
-                        <Link to= '/items/loans'}>
+                        <Link to= '/items/loans'>
                             Loans
                         </Link>
                     </li>
                     <li className="folder-menu-list-item">
-                        <Link to= '/items/loans'}>
+                        <Link to= '/items/loans'>
                             Borrows
                         </Link>
                     </li>
