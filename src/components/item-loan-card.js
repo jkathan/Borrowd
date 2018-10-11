@@ -1,5 +1,6 @@
 import React from 'react';
 import {returnLoanItem} from '../actions/index';
+import {connect} from 'react-redux';
 
 class ItemCheckoutCard extends React.Component {
 	constructor(props) {
