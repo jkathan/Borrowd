@@ -10,7 +10,7 @@ class Sidebar extends React.Component {
             <nav className="folder-menu">
                 <ul className="folder-menu-list">
                     <li className="folder-menu-list-item">
-                        <Link to= '/'}>
+                        <Link to= '/'>
                             Dashboard
                         </Link>
                     </li>                                
