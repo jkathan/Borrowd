@@ -41,7 +41,8 @@ export class ItemList extends React.Component {
                 {...item} />
         )
     )
-        const itemRepo = this.props.itemList.itemList.map((item, index) => (
+        console.log
+        const itemRepo = this.props.loanList.items.map((item, index) => (
                 <ItemRepo
                 listId={index}
                 {...item} />
@@ -82,8 +83,7 @@ const mapStateToProps = state => ({
     );*/
     
         borrowlist: state.borrowList,
-        loanList: state.loanList,
-        itemList: state.items
+        loanList: state.loanList
         //borrowsList: getVisibleBorrowItem(state.borrowList, state.filters)
     //};
 
