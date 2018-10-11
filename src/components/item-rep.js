@@ -20,7 +20,7 @@ class ItemRepo extends React.Component {
         event.preventDefault();
         this.props.history.push(`/items/itemedit`);
     }*/
-    onAdd(borrower, email, phone, date) {
+    addCard(borrower, email, phone, date) {
     	var itemType = this.props.itemType.value.trim();
     	var item = this.props.item.value.trim();
     	const dateAdded = moment().format('YYYY-MM-DD');
