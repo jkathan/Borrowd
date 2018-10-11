@@ -3,7 +3,6 @@ import {BrowserRouter as Router, Route, Link, Redirect, Switch} from 'react-rout
 import LoanPage from './loan-page';
 import BorrowPage from './borrow-page';
 import ItemPage from './item-page';
-import Sidebar from './sidebar';
 
 export default class App extends React.Component {
   render() {
