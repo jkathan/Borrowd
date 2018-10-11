@@ -88,4 +88,4 @@ render() {
     }
 }
 
-export default connect()(ItemLoanFormS);
+export default connect()(ItemLoanForm);
