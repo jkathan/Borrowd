@@ -60,7 +60,7 @@ render() {
                 </div>
             );
         };
-        console.log(index);
+        console.log(this.props.index);
     //loan from list will have to be a search bar that shows values
     //this will then autofill the item and on submit will update item as 
     //checked out
