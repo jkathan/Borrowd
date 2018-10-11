@@ -34,7 +34,7 @@ export class ItemList extends React.Component {
 
     render() {
         
-        console.log(this.props.borrowList.borrowList);
+        console.log(this.props.borrowlist.borrowList);
         const itemCheckedOutList = this.props.loanList.loanList.map((item, index) => (
                 <ItemCheckoutCard 
                 listId={index}
@@ -48,7 +48,7 @@ export class ItemList extends React.Component {
                 {...item} />
             )               
         )
-            const borrowList = this.props.borrowList.borrowList.map((item, index) => (
+            const borrowList = this.props.borrowlist.borrowList.map((item, index) => (
                 <ItemBorrowCard 
                 listId={index}
                 {...item} />
