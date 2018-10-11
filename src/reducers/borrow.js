@@ -7,8 +7,8 @@ borrowList: [
   {listId: 1, itemType: 'Money', item: '$300', loaner: 'john', email: 'fake@email.com', phone: '301-555-555', returnDate: '2019-09-18', dateAdded: '2018-06-13'},
   {listId: 2, itemType: 'Tool', item: 'Tablesaw', loaner: 'bill', email: 'fake@email.com', phone: '301-555-555', returnDate: '2019-09-17', dateAdded: '2018-06-12'},
   {listId: 3, itemType: 'Clothing', item: 'Jean Jacket', loaner: 'ian', email: 'fake@email.com', phone: '301-555-555', returnDate: '2019-09-16', dateAdded: '2018-06-11'},
-  {listId: 4, itemType: 'Electronic', item: 'Headphones', borrower: 'janet', email: 'fake@email.com', phone: '301-555-555', returnDate: '2019-09-15', dateAdded: '2018-06-10'},
-  {listId: 5, itemType: 'Other', item: 'Bike', borrower: 'greta', email: 'fake@email.com', phone: '301-555-555', returnDate: '2019-09-14', dateAdded: '2018-06-09'}
+  {listId: 4, itemType: 'Electronic', item: 'Headphones', loaner: 'janet', email: 'fake@email.com', phone: '301-555-555', returnDate: '2019-09-15', dateAdded: '2018-06-10'},
+  {listId: 5, itemType: 'Other', item: 'Bike', loaner: 'greta', email: 'fake@email.com', phone: '301-555-555', returnDate: '2019-09-14', dateAdded: '2018-06-09'}
 ]
 };
 
@@ -18,7 +18,7 @@ export const borrowReducer = (state=initialState, action) => {
             borrowList: [...state.loanList, {
                   itemType: action.itemType,
                   item: action.item,
-                  borrower: action.loaner, 
+                  loaner: action.loaner, 
                   email: action.email, 
                   phone: action.phone, 
                   returnDate: action.date.toString(),
