@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import moment from 'moment'
 
 //how do I 
-export class LoanForm extends React.Component {
+export class ItemLoanForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {

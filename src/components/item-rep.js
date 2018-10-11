@@ -1,6 +1,7 @@
 import React from 'react';
 import {addCard} from '../actions/index';
 import {removeItemFromList} from '../actions/index';
+import ItemLoanForm from './item-loan-form';
 
 class ItemRepo extends React.Component {
 	constructor(props) {
@@ -40,7 +41,7 @@ class ItemRepo extends React.Component {
 				 	<li>Item: {this.props.item}</li>
 				</ul>
 				<button>Edit</button>
-				<ItemCheckoutForm 
+				<ItemLoanForm
 				onAdd{(borrower, email, phone, date) => this.addCard(borrower, email, phone, date)}
 				/>
 				<button onClick={(e) => this.returnItem(e, this.props.listId)}>Delete</button>
