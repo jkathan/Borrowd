@@ -78,7 +78,7 @@ export class ItemList extends React.Component {
                     <div>
                         <ul className="flex-list">
                             <li><AddItemForm /></li>
-                            <li>{itemRepo}</li>
+                            <ul className="flex-list">{itemRepo}</ul>
                         </ul>
                     </div>
                 </ul>
