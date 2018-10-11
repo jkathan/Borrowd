@@ -21,8 +21,8 @@ class ItemRepo extends React.Component {
         this.props.history.push(`/items/itemedit`);
     }*/
     addCard(borrower, email, phone, date) {
-    	var itemType = this.props.itemType.value.trim();
-    	var item = this.props.item.value.trim();
+    	var itemType = this.props.itemType;
+    	var item = this.props.item;
     	const dateAdded = moment().format('YYYY-MM-DD');
     	this.props.dispatch(
             //wahat is boardID and why is it necessary?
