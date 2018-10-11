@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import moment from 'moment'
 import {addCard} from '../actions/index';
 import {BrowserRouter as  Link} from 'react-router-dom';
-
+import {removeItemFromList} from '../actions/index';
 
 //how do I 
 export class ItemLoanForm extends React.Component {
