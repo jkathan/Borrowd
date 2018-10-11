@@ -1,6 +1,8 @@
 import {connect} from 'react-redux';
 import React from 'react';
 import {returnBorrowItem} from '../actions/index';
+import './card.css';
+
 
 class ItemBorrowCard extends React.Component {
 	constructor(props) {
@@ -18,7 +20,7 @@ class ItemBorrowCard extends React.Component {
 	render() {
 		return (
 			<div>
-				<ul>
+				<ul className="card">
 					<li>Borrowed From: {this.props.loaner}</li>
 				 	<li>Type: {this.props.itemType}</li>
 				 	<li>Item: {this.props.item}</li>

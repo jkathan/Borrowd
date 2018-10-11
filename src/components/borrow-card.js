@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import RenewForm from './loan-renew-form';
 import {returnBorrowItem} from '../actions/index';
 import {renewLoanItem} from '../actions/index';
+import './card.css';
 //import * as indexAction from '../actions';
 export class BorrowCard extends React.Component  {
 		constructor(props) {
@@ -26,7 +27,7 @@ export class BorrowCard extends React.Component  {
 //would rather do handleclick in parent but cant specifiy button
 render() {    
     return (
-        <ul key={this.props.listId}>
+        <ul key={this.props.listId} className="card">
         	 <li>Type: {this.props.itemType}</li>
 			 <li>Item: {this.props.item}</li>
 			 <li>Loaner: {this.props.borrower}</li>

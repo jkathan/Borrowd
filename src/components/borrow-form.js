@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import moment from 'moment'
-
+import './add-form';
 
 import {addBorrowCard} from '../actions/index';
 //how do I 
@@ -59,7 +59,6 @@ render() {
         return (
             <div>
                 <form className="card add-form" onSubmit={this.onSubmit}>
-
                         <select ref={input => this.typeInput = input}>
                             <option>Tool</option>
                             <option>Money</option>

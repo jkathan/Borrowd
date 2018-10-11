@@ -11,7 +11,7 @@ import BorrowCard from './borrow-card';
 import {filterText} from '../actions/filter';
 import getVisibleBorrowItem from '../selectors/borrows';
 import {filterDate} from '../actions/filter';
-
+import './lists.css';
 
 export class BorrowList extends React.Component {
     constructor(props) {
@@ -47,7 +47,7 @@ export class BorrowList extends React.Component {
 //loan form will be link after routers
         console.log(borrowlist);
         return (
-            <ul className="list">
+            <div>
                   <SearchBar onChange={searchTerm => this.props.dispatch(filterText({searchTerm}))} />
                     <label>Sort by:</label>
                     <select onChange={this.onChange} ref = {(input)=> this.menu = input}>
@@ -55,12 +55,12 @@ export class BorrowList extends React.Component {
                         <option value="Recently Added">Recently Added</option>
                     </select>
                    <div>
-                        <ul>
+                        <ul className="list">
                             <li><BorrowForm /></li>
                             <li>{borrowlist}</li> 
                         </ul>
                     </div>
-                </ul>
+                </div>
         );
     };
 } 

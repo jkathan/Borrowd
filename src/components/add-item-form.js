@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import moment from 'moment'
 import {addItem} from '../actions/index';
+import './add-form';
 //how do I 
 export class AddItemForm extends React.Component {
     constructor(props) {

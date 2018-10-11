@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './add-form';
 //import {addLoanCard} from '../actions';
 
 export default class RenewForm extends React.Component {

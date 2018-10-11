@@ -13,7 +13,7 @@ import ItemBorrowCard from './item-borrow-card'
 //import {filterText} from '../actions/filter';
 //import getVisibleListItem from '../selectors/items';
 import {filterDate} from '../actions/filter';
-
+import './lists.css';
 
 export class ItemList extends React.Component {
     constructor(props) {
@@ -36,9 +36,11 @@ export class ItemList extends React.Component {
         
         console.log(this.props.borrowlist.borrowList);
         const itemCheckedOutList = this.props.loanList.loanList.map((item, index) => (
+             <li className="list-wrapper">   
                 <ItemCheckoutCard 
                 listId={index}
                 {...item} />
+            </li>
         )
     )
 
@@ -49,9 +51,11 @@ export class ItemList extends React.Component {
             )               
         )
             const borrowList = this.props.borrowlist.borrowList.map((item, index) => (
+            <li className="list-wrapper">    
                 <ItemBorrowCard 
                 listId={index}
                 {...item} />
+            </li>
         )
     )
 //loan form will be link after routers
@@ -63,7 +67,7 @@ export class ItemList extends React.Component {
                         <h2>Your Loaned Items</h2>                     
                         {itemCheckedOutList}
                         <h2>Your Available Items</h2>
-                        <ul>
+                        <ul className="list">
                             <li><AddItemForm /></li>
                             <li>{itemRepo}</li>
                         </ul>
