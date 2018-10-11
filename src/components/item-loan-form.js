@@ -80,7 +80,7 @@ render() {
                         <input name="phone" type="tel" ref={input => this.phoneInput = input} />
                         <label>Return Date:</label>
                         <input name="returnDate" type="date" ref={input => this.dateInput = input} />
-                    <Link to = `/items/loans` >Submit</Link>
+                    <Link to = '/items/loans' >Submit</Link>
                     <button onClick={() => this.setEditing(false)} >
                         Cancel
                     </button>
