@@ -62,13 +62,13 @@ export class ItemList extends React.Component {
         return (
             <div className="lists">
                 <ul className="lists">
-                    <li className="lists">
+                    <li>
                         <h2>Your Borrowed Items</h2>                     
                         <div className="flex-list">
                             {borrowList}
                         </div>
                     </li>
-                    <li className="lists">
+                    <li>
                         <h2>Your Loaned Items</h2> 
                         <div className="flex-list">                    
                             {itemCheckedOutList}
