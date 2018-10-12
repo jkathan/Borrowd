@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import RenewLoanForm from './loan-renew-form';
 import {returnLoanItem} from '../actions/index';
-import {renewLoanItem} from '../actions/index';
+import {renewItem} from '../actions/index';
 import './card.css';
 
 //import {updateCheckoutStatus} from '../actions/index'
@@ -23,10 +23,6 @@ export class LoanCard extends React.Component  {
    this.props.dispatch(returnLoanItem(index));
   //this.props.dispatch(updateCheckoutStatus());
 }
-	renewLoanItem(date, index) {
-		console.log(index);
-		this.props.dispatch(renewLoanItem(date, index))
-	}
 //would rather do handleclick in parent but cant specifiy button
 render() {    
     return (
@@ -41,7 +37,7 @@ render() {
 			 <div>
 			 	<RenewLoanForm 
 			 	index ={this.props.listId} 
-			 	onAdd={(date, index) => this.renewItem(date, index)}/>
+			 	/>
 			 </div>
 		</ul>
     	);

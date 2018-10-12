@@ -1,6 +1,7 @@
 import React from 'react';
 import './add-form.css';
 import {connect} from 'react-redux';
+import {renewItem} from '../actions/index';
 //import {addLoanCard} from '../actions';
 
 export class RenewLoanForm extends React.Component {
@@ -19,14 +20,13 @@ export class RenewLoanForm extends React.Component {
         console.log(index);
         const date = this.dateInput.value.trim();
         console.log(date);
-        if ( date && index && this.props.onAdd) {
-            this.props.onAdd(date, index);
-        }
-
+        
         this.dateInput.value = '';
          //this.props.dispatch(
         //addLoanCard(date, this.props.listId)
         //);
+        this.props.dispatch(renewItem(date, index))
+        this.setEditing(false)
     }
        setEditing(editing) {
         this.setState({
@@ -38,7 +38,7 @@ export class RenewLoanForm extends React.Component {
 		if (!this.state.editing) {
             return (
             	<div>
-                	<button onClick={() => this.setEditing(true)}>Renew</button>
+                	<button onClick={(this.onSubmit}>Renew</button>
             	</div>
             );
         }
@@ -47,7 +47,7 @@ export class RenewLoanForm extends React.Component {
 				<label>New Return Date:</label>
 				<input name="returnDate" type="date" ref={input => this.dateInput = input}/>
 	        	<button onClick={() => this.setEditing(false)}>Cancel</button>
-	        	<button onClick={() => this.setEditing(false)}>Update</button>
+	        	<button>Submit</button>
 	        </form>
 	    );
 	}
