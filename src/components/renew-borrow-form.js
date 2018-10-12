@@ -42,7 +42,7 @@ export class RenewBorrowForm extends React.Component {
             );
         }
 		return (
-			<form onSubmit={(e) => this.onSubmitThis(e)}>
+			<form onSubmit={this.onSubmitThis}>
 				<label>New Return Date:</label>
 				<input name="returnDate" type="date" ref={input => this.dateInput = input}/>
 	        	<button onClick={() => this.setEditing(false)}>Cancel</button>
