@@ -1,6 +1,6 @@
 import React from 'react';
 import {addCard} from '../actions/index';
-import {edititem} from '../actions/index';
+import {editItem} from '../actions/index';
 import {removeItemFromList} from '../actions/index';
 import ItemLoanForm from './item-loan-form';
 import {connect} from 'react-redux';
