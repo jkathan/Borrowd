@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import RenewBorrowForm from './loan-renew-form';
+import RenewBorrowForm from './renew-borrow-form';
 import {returnBorrowItem} from '../actions/index';
 import {renewBorrowItem} from '../actions/index';
 import './card.css';
