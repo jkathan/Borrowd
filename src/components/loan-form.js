@@ -57,7 +57,7 @@ render() {
 //element to appear and buttons to disappear. maybe not necessary for the add, but
 //for the find in item list. maybe it just makes sense to item pag
         return (
-            <div>
+            <div className="list-wrapper">
                 <form className="card add-form" onSubmit={this.onSubmit}>
 
                         <label>type:</label>

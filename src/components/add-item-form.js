@@ -25,7 +25,8 @@ export class AddItemForm extends React.Component {
 
 render() {
         return (
-            <div>
+            <div className="list-wrapper">
+                <h2>Add New Item</h2>
                 <form className="card add-form" onSubmit={this.onSubmit}>
                         <label>Type:</label>
                         <select ref={input => this.typeInput = input}>
@@ -35,6 +36,7 @@ render() {
                             <option>Electronics</option>
                             <option>Other</option>
                         </select>
+                        <br />
                         <label>Item:</label>
                         <input name="item" type="text" ref={input => this.itemInput = input} />
                     <button>Submit</button>

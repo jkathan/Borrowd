@@ -80,7 +80,7 @@ export class ItemList extends React.Component {
                     <li className="floats">
                     <h2>Your Available Items</h2>
                     <div>
-                        <li><AddItemForm /></li>
+                        <li className="floats"><AddItemForm /></li>
                         <ul className="flex-list">{itemRepo}</ul>
                     </div>
                     </li>

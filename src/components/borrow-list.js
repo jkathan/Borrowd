@@ -55,8 +55,8 @@ export class BorrowList extends React.Component {
                         <option value="Recently Added">Recently Added</option>
                     </select>
                    <div className="lists">
-                        <ul className="flex-list">
-                            <li><BorrowForm /></li>
+                        <ul className="floats">
+                            <li className="floats"><BorrowForm /></li>
                             <ul>{borrowlist}</ul> 
                         </ul>
                     </div>
