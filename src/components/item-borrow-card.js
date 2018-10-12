@@ -19,7 +19,7 @@ class ItemBorrowCard extends React.Component {
 //new form form for borrow and forms
 	render() {
 		return (
-			<li className="lists">
+			<li>
 				<div>
 					<ul className="card">
 						<li>Borrowed From: {this.props.loaner}</li>

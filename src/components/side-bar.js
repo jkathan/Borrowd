@@ -32,17 +32,17 @@ toggleList(){
             </div>
             {listOpen &&
                     <ul className="folder-menu-list">
-                        <li className="folder-menu-list-item">
+                        <li className=" .dd-list-item folder-menu-list-item">
                             <Link to= '/'>
                                 Dashboard
                             </Link>
                         </li>                                
-                        <li className="folder-menu-list-item">
+                        <li className=" .dd-list-itemfolder-menu-list-item">
                             <Link to= '/items/loans'>
                                 Loans
                             </Link>
                         </li>
-                        <li className="folder-menu-list-item">
+                        <li className=" .dd-list-item folder-menu-list-item">
                             <Link to= '/items/borrows'>
                                 Borrows
                             </Link>

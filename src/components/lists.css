@@ -9,10 +9,11 @@
     width: 25%;
     height: 30%;
     max-width: 800px;
+    float: left;
 }
 
 .flex-list {
-	display: flex;
+
 }
 
 .lists {

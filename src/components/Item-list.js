@@ -45,9 +45,11 @@ export class ItemList extends React.Component {
     )
 
         const itemRepo = this.props.loanList.items.map((item, index) => (
+            <ul className="list-wrapper">   
                 <ItemRepo
                 listId={index}
                 {...item} />
+            </ul>
             )               
         )
             const borrowList = this.props.borrowlist.borrowList.map((item, index) => (
@@ -63,25 +65,25 @@ export class ItemList extends React.Component {
         return (
             <div >
                 <ul className="lists">
-                    <li>
+                    <li className="floats">
                         <h2>Your Borrowed Items</h2>                     
                         <div className="flex-list">
                             {borrowList}
                         </div>
                     </li>
-                    <li>
+                    <li className="floats">
                         <h2>Your Loaned Items</h2> 
                         <div className="flex-list">                    
                             {itemCheckedOutList}
                         </div>
                     </li>
+                    <li className="floats">
                     <h2>Your Available Items</h2>
                     <div>
-                        <ul className="flex-list">
-                            <li><AddItemForm /></li>
-                            <ul className="flex-list">{itemRepo}</ul>
-                        </ul>
+                        <li><AddItemForm /></li>
+                        <ul className="flex-list">{itemRepo}</ul>
                     </div>
+                    </li>
                 </ul>
             </div>
         );
