@@ -45,8 +45,8 @@ class ItemRepo extends React.Component {
     }
 	editItem(e, index) {
 		e.preventDefault();
-		const itemType = this.state.itemType;
-        const item = this.state.item;
+		const itemType = this.state.itemType.toString();
+        const item = this.state.item.toString();
         const itemtest = this.itemInput.value.trim();
         console.log(itemtest);
         console.log(item);
