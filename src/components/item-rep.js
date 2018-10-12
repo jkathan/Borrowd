@@ -57,7 +57,7 @@ class ItemRepo extends React.Component {
 						<label>Type:</label>
 						<input type="text" ref={input => this.typeInput = input} value = {this.props.itemType} />
 						<label>Item:</label>
-						<input type="text" ref={input => this.itemInput = input} value = {this.props.item}
+						<input type="text" ref={input => this.itemInput = input} value = {this.props.item} />
 						<button onClick={(e) => this.editItem(e, this.props.listId)}>Submit</button>
 					</form>
 					}
