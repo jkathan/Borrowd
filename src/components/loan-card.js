@@ -43,7 +43,7 @@ render() {
 			 <button onClick={(e) => this.returnLoanItem(e, this.props.listId)}>Return</button>
 			 <div>
 			 	<RenewLoanForm 
-			 	index ={this.props.listId}
+			 	//index ={this.props.listId}
 			 	onAdd= {(date) => this.renewLoan(date)} 
 			 	/>
 			 </div>
