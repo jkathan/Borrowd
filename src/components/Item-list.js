@@ -58,9 +58,10 @@ export class ItemList extends React.Component {
             </ul>
         )
     )
+            console.log(itemRepo)
 //loan form will be link after routers
         return (
-            <div className="lists">
+            <div >
                 <ul className="lists">
                     <li>
                         <h2>Your Borrowed Items</h2>                     
