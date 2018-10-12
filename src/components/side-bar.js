@@ -8,7 +8,7 @@ export class Sidebar extends React.Component {
   super(props)
   this.state = {
     listOpen: false,
-    headerTitle: Menu
+    headerTitle: "Menu"
   }
 }
 
