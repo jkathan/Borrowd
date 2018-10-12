@@ -13,3 +13,8 @@
 .flex-list {
 	display: flex;
 }
+
+.lists {
+	margin-right: 50px;
+	margin-left: 50px;
+}
