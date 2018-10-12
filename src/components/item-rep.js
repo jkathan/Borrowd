@@ -12,7 +12,7 @@ class ItemRepo extends React.Component {
         super(props);
         this.state = {
             editing: true,
-            itemType: props.itemType
+            itemType: props.itemType,
             item: props.item
         }
     }
