@@ -64,7 +64,7 @@ render() {
                             <option>Clothing</option>
                             <option>Electronics</option>
                             <option>Other</option>
-                        </select>
+                        </select><br />
                         <label>Item:</label>
                         <input name="item" type="text" ref={input => this.itemInput = input} />
                         <label>Loaner:</label>

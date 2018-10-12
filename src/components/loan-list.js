@@ -32,9 +32,11 @@ export class LoanList extends React.Component {
 
     render() {
         const loanlist = this.props.loansList.map((loan, index) => (
+            <ul className="list-wrapper"> 
                 <LoanCard 
                 listId={index}
                 {...loan} />
+            </ul>
         )
     )
         /*let loansList = this.props.loansList.filter(loan =>
@@ -46,19 +48,19 @@ export class LoanList extends React.Component {
 //loan form will be link after routers
         console.log(loanlist);
         return (
-            <ul className="list">
+            <div className="list">
                   <SearchBar onChange={searchTerm => this.props.dispatch(filterText({searchTerm}))} />
                     <select onChange={this.onChange} ref = {(input)=> this.menu = input}>
                         <option value="Due Date">Due Date</option>
                         <option value="Recently Added">Recently Added</option>
                     </select>
                    <div className="lists">
-                        <ul className="flex-list">
+                        <ul className="floats marginish">
                             <li className="floats"><LoanForm /></li>
                             <ul>{loanlist}</ul> 
                         </ul>
                     </div>
-                </ul>
+                </div>
         );
     };
 } 
