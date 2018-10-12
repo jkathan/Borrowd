@@ -11,10 +11,10 @@ export class RenewLoanForm extends React.Component {
             editing: false
         }
 
-        this.onSubmit = this.onSubmit.bind(this);
+        this.onSubmitNow = this.onSubmitNow.bind(this);
     }
 
-    onSubmit(event) {
+    onSubmitNow(event) {
         event.preventDefault();
         const index = this.props.index;
         console.log(index);
@@ -43,7 +43,7 @@ export class RenewLoanForm extends React.Component {
             );
         }
 		return (
-			<form onSubmit={this.onSubmit}>
+			<form onSubmit={this.onSubmitNow}>
 				<label>New Return Date:</label>
 				<input name="returnDate" type="date" ref={input => this.dateInputNow = input}/>
 	        	<button onClick={() => this.setEditing(false)}>Cancel</button>

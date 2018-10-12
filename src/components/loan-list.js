@@ -31,7 +31,7 @@ export class LoanList extends React.Component {
     }
 
     render() {
-        const loanlist = this.props.loansList.loanList.map((loan, index) => (
+        const loanlist = this.props.loansList.map((loan, index) => (
             <ul className="list-wrapper"> 
                 <LoanCard 
                 listId={index}
@@ -76,7 +76,7 @@ const mapStateToProps = state => ({
         state.loanList
     );*/
     //return {
-        loansList: state.loanList
+        loansList: getVisibleItem(state.loanList, state.filters)
     //};
 
 })
