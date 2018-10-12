@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import RenewLoanForm from './loan-renew-form';
 import {returnLoanItem} from '../actions/index';
-import {renewItem} from '../actions/index';
+//import {renewItem} from '../actions/index';
 import './card.css';
 
 //import {updateCheckoutStatus} from '../actions/index'

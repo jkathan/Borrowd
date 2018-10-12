@@ -48,7 +48,8 @@ export class LoanList extends React.Component {
 //loan form will be link after routers
         console.log(loanlist);
         return (
-            <div className="list">
+            <div>
+                <div className="list">
                   <SearchBar onChange={searchTerm => this.props.dispatch(filterText({searchTerm}))} />
                     <select onChange={this.onChange} ref = {(input)=> this.menu = input}>
                         <option value="Due Date">Due Date</option>
@@ -61,6 +62,7 @@ export class LoanList extends React.Component {
                         </ul>
                     </div>
                 </div>
+            </div>
         );
     };
 } 
@@ -74,7 +76,7 @@ const mapStateToProps = state => ({
         state.loanList
     );*/
     //return {
-        loansList: getVisibleItem(state.loanList, state.filters)
+        loansList: state.loanList
     //};
 
 })
