@@ -18,10 +18,10 @@ export class RenewLoanForm extends React.Component {
         event.preventDefault();
         const index = this.props.index;
         console.log(index);
-        const date = this.dateInput.value.trim();
+        const date = this.dateInputNow.value.trim();
         console.log(date);
         
-        this.dateInput.value = '';
+        this.dateInputNow.value = '';
          //this.props.dispatch(
         //addLoanCard(date, this.props.listId)
         //);
@@ -45,7 +45,7 @@ export class RenewLoanForm extends React.Component {
 		return (
 			<form onSubmit={this.onSubmit}>
 				<label>New Return Date:</label>
-				<input name="returnDate" type="date" ref={input => this.dateInput = input}/>
+				<input name="returnDate" type="date" ref={input => this.dateInputNow = input}/>
 	        	<button onClick={() => this.setEditing(false)}>Cancel</button>
 	        	<button>Submit</button>
 	        </form>
