@@ -38,7 +38,7 @@ export class RenewLoanForm extends React.Component {
 		if (!this.state.editing) {
             return (
             	<div>
-                	<button onClick={(this.onSubmit}>Renew</button>
+                	<button onClick={(this.onSubmit)}>Renew</button>
             	</div>
             );
         }
