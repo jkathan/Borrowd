@@ -57,11 +57,10 @@ export const removeItemFromList = (itemId) => ({
 });
 
 export const EDIT_ITEM = 'EDIT_ITEM';
-export const editItem = (itemType, item, condition, itemId) => ({
+export const editItem = (itemType, item, itemId) => ({
 	type: RENEW_ITEM,
 	itemType,
 	item,
-	condition,
     itemId
 });
 /*
