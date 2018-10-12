@@ -50,12 +50,9 @@ export const loanReducer = (state=initialState, action) => {
 
   else if (action.type === actions.EDIT_ITEM) {
     return Object.assign({}, state, {
-        loanList: state.loanList.map((i) => (
+        loanList: state.loanList.map((i) => 
         i.listId === action.itemId ? 
-        {...i, 
-          itemType: action.itemType, 
-
-          } : i))
+        {itemType: action.itemType, item: action.item} : i))
       })
   }
 
