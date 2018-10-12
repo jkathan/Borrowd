@@ -37,7 +37,7 @@ export const borrowReducer = (state=initialState, action) => {
     else if (action.type === actions.RENEW_ITEM) {
       return Object.assign({}, state, {
         borrowList: state.borrowList.map((i) => (
-        i.itemId === action.itemId ? 
+        i.listId === action.itemId ? 
         {...i, returnDate: action.returnDate} : i))
     })
   }
