@@ -26,8 +26,8 @@ toggleList(){
                 <div className="dd-header" onClick={() => this.toggleList()}>
                     <div className="dd-header-title">{headerTitle}</div>                
                             {listOpen
-              ? <text>&#10729;</text>
-              : <text>&#9710;</text>
+              ? <text>&#9710;</text>
+              : <text>&#10729;</text>
             }
             </div>
             {listOpen &&

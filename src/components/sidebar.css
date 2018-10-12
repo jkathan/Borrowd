@@ -32,6 +32,7 @@
   cursor: default;
   position: relative;
   background-color: #fff;
+  margin-right: 25px;
 }
 .dd-header span {
   margin-right: 20px;
