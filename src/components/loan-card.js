@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import RenewForm from './loan-renew-form';
+import RenewLoanForm from './loan-renew-form';
 import {returnLoanItem} from '../actions/index';
 import {renewLoanItem} from '../actions/index';
 import './card.css';
@@ -39,7 +39,7 @@ render() {
 			 <li>Return Date: {this.props.returnDate}</li>
 			 <button onClick={(e) => this.returnLoanItem(e, this.props.listId)}>Return</button>
 			 <div>
-			 	<RenewForm 
+			 	<RenewLoanForm 
 			 	index ={this.props.listId} 
 			 	onAdd={(date, index) => this.renewItem(date, index)}/>
 			 </div>

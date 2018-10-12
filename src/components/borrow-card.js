@@ -20,10 +20,7 @@ export class BorrowCard extends React.Component  {
     console.log(index);
    this.props.dispatch(returnBorrowItem(index));
 }
-	renewItem(date, index) {
-		console.log(index);
-		this.props.dispatch(renewBorrowItem(date, index))
-	}
+
 //would rather do handleclick in parent but cant specifiy button
 render() {    
     return (
@@ -37,8 +34,8 @@ render() {
 			 <button onClick={(e) => this.returnItem(e, this.props.listId)}>Return</button>
 			 <div>
 			 	<RenewBorrowForm 
-			 	
-			 	onAdd={(date, index) => this.renewItem(date, index)}/>
+			 	index ={this.props.listId} 
+			 	/>
 			 </div>
 		</ul>
     	);
@@ -49,6 +46,6 @@ render() {
 //  return {
 //    returnLoanItem: index =>dispatch(indexAction.returnLoanItem(index))
 //  } onAdd={(itemType, item, borrower, email, phone, date) => this.addCard(itemType, item, borrower, email, phone, date)}
-//};index ={this.props.listId} 
+//};
 
 export default connect()(BorrowCard);
