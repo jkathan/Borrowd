@@ -23,10 +23,9 @@ export class RenewBorrowForm extends React.Component {
         this.dateInput.value = '';
         
         this.props.dispatch(renewBorrowItem(date, index))
-        this.setEditing(false)}
+        this.setEditing(false)
     }
         //);
-    }
        setEditing(editing) {
         this.setState({
             editing
