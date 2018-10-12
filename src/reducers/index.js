@@ -67,19 +67,12 @@ export const loanReducer = (state=initialState, action) => {
     
     else if (action.type === actions.RENEW_ITEM) {
       return Object.assign({}, state, {
-        cosnt index = state.loanList.findIndex(item => item.listId === action.itemId)
-          return [...state.loanList.slice(0, index)
-          {...state.loanList[index], checkedOut: action.returnDate ? 1 : 0},
-          ...state.loanList(index +1),
-          ]})}
-
-
-        /*loanList: state.loanList.map((i) => (
+        loanList: state.loanList.map((i) => (
         i.listId === action.itemId ? 
         {...i, checkedOut: action.returnDate} : i))
     })
   }
-
+/*
   else if (action.type === actions.CURRENT_DATE) {
       return {
           ...state,
