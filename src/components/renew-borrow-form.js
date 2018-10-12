@@ -1,5 +1,6 @@
 import React from 'react';
 import './add-form.css';
+import {connect} from 'react-redux';
 //import {addLoanCard} from '../actions';
 
 export class RenewBorrowForm extends React.Component {
@@ -21,7 +22,7 @@ export class RenewBorrowForm extends React.Component {
         if ( date && index && this.props.onAdd) {
             this.props.onAdd(date, index);
         }
-
+        this.setEditing(false)}
         this.dateInput.value = '';
          //this.props.dispatch(
         //addLoanCard(date, this.props.listId)
@@ -46,7 +47,7 @@ export class RenewBorrowForm extends React.Component {
 				<label>New Return Date:</label>
 				<input name="returnDate" type="date" ref={input => this.dateInput = input}/>
 	        	<button onClick={() => this.setEditing(false)}>Cancel</button>
-	        	<button onClick={() => this.setEditing(false)}>Update</button>
+	        	<button >Update</button>
 	        </form>
 	    );
 	}

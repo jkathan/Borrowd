@@ -1,5 +1,6 @@
 import React from 'react';
 import './add-form.css';
+import {connect} from 'react-redux';
 //import {addLoanCard} from '../actions';
 
 export class RenewLoanForm extends React.Component {
