@@ -45,7 +45,6 @@ class ItemRepo extends React.Component {
 //edit button should be a link
 //new form form for borrow and forms
 	render() {
-		if 
 		return (
 			<li>
 				<div>
