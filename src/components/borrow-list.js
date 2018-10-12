@@ -45,7 +45,7 @@ export class BorrowList extends React.Component {
 
         )*/
 //loan form will be link after routers
-        console.log(borrowlist);
+        console.log(borrowlist.item);
         return (
             <div>
                   <SearchBar onChange={searchTerm => this.props.dispatch(filterText({searchTerm}))} />
