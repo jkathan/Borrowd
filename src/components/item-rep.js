@@ -34,11 +34,21 @@ class ItemRepo extends React.Component {
 	    e.preventDefault();
 	    console.log(index);
 	    this.props.dispatch(removeItemFromList(index));
-	}
+	}	
+
+	onItemInputChange(value){
+		
+		console.log(value);
+        this.setState({
+             item: value
+        });
+    }
 	editItem(e, index) {
 		e.preventDefault();
 		const itemType = this.state.itemType;
         const item = this.state.item;
+        const itemtest = this.itemInput.value.trim();
+        console.log(itemtest);
         console.log(item);
 	    console.log(index);
 	    this.props.dispatch(editItem(itemType, item, index))
@@ -51,11 +61,7 @@ class ItemRepo extends React.Component {
         });
     }
 
-	onItemInputChange(value){
-        this.setState({
-             item: value
-        });
-    }
+
 
 //edit button should be a link
 //new form form for borrow and forms
