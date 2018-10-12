@@ -20,13 +20,13 @@ export class RenewLoanForm extends React.Component {
         console.log(index);
         const date = this.dateInput.value.trim();
         console.log(date);
-        this.props.dispatch(renewLoanItem(date, index))
-        this.setEditing(false)
+        
         this.dateInput.value = '';
          //this.props.dispatch(
         //addLoanCard(date, this.props.listId)
         //);
-        
+        this.props.dispatch(renewLoanItem(date, index))
+        this.setEditing(false)
     }
        setEditing(editing) {
         this.setState({
@@ -38,12 +38,12 @@ export class RenewLoanForm extends React.Component {
 		if (!this.state.editing) {
             return (
             	<div>
-                	<button onClick={(this.onSubmit)}>Renew</button>
+                	<button onClick={() => this.setEditing(true)}>Renew</button>
             	</div>
             );
         }
 		return (
-			<form onSubmit={(e) => this.onSubmit(e)}>
+			<form onSubmit={this.onSubmit}>
 				<label>New Return Date:</label>
 				<input name="returnDate" type="date" ref={input => this.dateInput = input}/>
 	        	<button onClick={() => this.setEditing(false)}>Cancel</button>

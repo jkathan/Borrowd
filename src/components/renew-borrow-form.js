@@ -19,7 +19,7 @@ export class RenewBorrowForm extends React.Component {
         event.preventDefault();
         const index = this.props.index;
         console.log(index);
-        const date = this.dateInput.value.trim();
+        const date = this.dateInputLoan.value.trim();
         console.log(date);
         
         this.dateInput.value = '';
@@ -45,7 +45,7 @@ export class RenewBorrowForm extends React.Component {
 		return (
 			<form onSubmit={this.onSubmitThis}>
 				<label>New Return Date:</label>
-				<input name="returnDate" type="date" ref={input => this.dateInput = input}/>
+				<input name="returnDate" type="date" ref={input => this.dateInputLoan = input}/>
                 <button onClick={() => this.setEditing(false)}>Cancel</button>
 	        	<button >Submit</button>
 	        </form>
