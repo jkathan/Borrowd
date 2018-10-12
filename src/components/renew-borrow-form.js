@@ -10,7 +10,7 @@ export class RenewBorrowForm extends React.Component {
             editing: false
         }
 
-        this.onSubmit = this.onSubmit.bind(this);
+        this.onSubmitThis = this.onSubmitThis.bind(this);
     }
 
     onSubmitThis(event) {
@@ -45,7 +45,7 @@ export class RenewBorrowForm extends React.Component {
 			<form onSubmit={this.onSubmitThis}>
 				<label>New Return Date:</label>
 				<input name="returnDate" type="date" ref={input => this.dateInput = input}/>
-	        	<button onClick={() => this.setEditing(false)}>Cancel</button>
+
 	        	<button >Submit</button>
 	        </form>
 	    );
