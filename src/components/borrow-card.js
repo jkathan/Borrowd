@@ -37,7 +37,7 @@ render() {
 			 <button onClick={(e) => this.returnItem(e, this.props.listId)}>Return</button>
 			 <div>
 			 	<RenewBorrowForm 
-			 	index ={this.props.listId} 
+			 	
 			 	onAdd={(date, index) => this.renewItem(date, index)}/>
 			 </div>
 		</ul>
@@ -49,6 +49,6 @@ render() {
 //  return {
 //    returnLoanItem: index =>dispatch(indexAction.returnLoanItem(index))
 //  } onAdd={(itemType, item, borrower, email, phone, date) => this.addCard(itemType, item, borrower, email, phone, date)}
-//};
+//};index ={this.props.listId} 
 
 export default connect()(BorrowCard);
