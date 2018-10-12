@@ -62,7 +62,7 @@ class ItemRepo extends React.Component {
 					</form>
 					}
 
-					<button onClick={() => this.setState({editing : !this.state.editing})>&#9998;</button>
+					<button onClick={() => this.setState({editing : !this.state.editing})}>Edit</button>
 					<ItemLoanForm
 					index = {this.props.listId}
 					onAdd= {(borrower, email, phone, date) => this.addCard(borrower, email, phone, date)}
