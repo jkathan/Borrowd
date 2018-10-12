@@ -22,7 +22,7 @@ export class RenewBorrowForm extends React.Component {
         const date = this.dateInputLoan.value.trim();
         console.log(date);
         
-        this.dateInput.value = '';
+        this.dateInputLoan.value = '';
         
         this.props.dispatch(renewBorrowItem(date, index))
         this.setEditing(false)
