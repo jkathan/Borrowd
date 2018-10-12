@@ -2,7 +2,7 @@ import React from 'react';
 import './add-form.css';
 //import {addLoanCard} from '../actions';
 
-export default class RenewBorrowForm extends React.Component {
+export class RenewBorrowForm extends React.Component {
 	constructor(props) {
         super(props);
         this.state = {
@@ -51,3 +51,5 @@ export default class RenewBorrowForm extends React.Component {
 	    );
 	}
 }
+export default connect()(RenewBorrowForm);
+
