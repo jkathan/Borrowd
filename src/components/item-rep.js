@@ -39,6 +39,7 @@ class ItemRepo extends React.Component {
 		e.preventDefault();
 		const itemType = this.state.itemType;
         const item = this.state.item;
+        console.log(item);
 	    console.log(index);
 	    this.props.dispatch(editItem(itemType, item, index))
 	    this.setState({editing : !this.state.editing})

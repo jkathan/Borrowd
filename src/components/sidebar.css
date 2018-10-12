@@ -12,11 +12,10 @@
       -ms-user-select: none;
           user-select: none;
   position: relative;
-  right: 50px;
-  width: 222px;
+
 }
 .dd-header {
-	right: 50px;
+
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
