@@ -69,7 +69,7 @@ export const loanReducer = (state=initialState, action) => {
       return Object.assign({}, state, {
         loanList: state.loanList.map((i) => (
         i.listId === action.itemId ? 
-        {...i, checkedOut: action.returnDate} : i))
+        {...i, returnDate: action.returnDate} : i))
     })
   }
 /*
