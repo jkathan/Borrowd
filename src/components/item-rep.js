@@ -11,7 +11,9 @@ class ItemRepo extends React.Component {
 	constructor(props) {
         super(props);
         this.state = {
-            editing: false,
+            editing: true,
+            itemType: props.itemType
+            item: props.item
         }
     }
 //dont unders
@@ -35,12 +37,24 @@ class ItemRepo extends React.Component {
 	}
 	editItem(e, index) {
 		e.preventDefault();
-		const itemType = this.typeInput.value.trim();
-        const item = this.itemInput.value.trim();
+		const itemType = this.state.itemType;
+        const item = this.state.item;
 	    console.log(index);
 	    this.props.dispatch(editItem(itemType, item, index))
 	    this.setState({editing : !this.state.editing})
 	}
+
+	onItemTypeInputChange(value){
+        this.setState({
+             itemType: value
+        });
+    }
+
+	onItemInputChange(value){
+        this.setState({
+             item: value
+        });
+    }
 
 //edit button should be a link
 //new form form for borrow and forms
@@ -55,9 +69,9 @@ class ItemRepo extends React.Component {
 					</ul> :
 					<form>
 						<label>Type:</label>
-						<input type="text" ref={input => this.typeInput = input} value = {this.props.itemType} />
+						<input type="text" ref={input => this.typeInput = input} value = {this.state.itemType} onChange={e => this.onItemTypeTodoChange(e.target.value)} />
 						<label>Item:</label>
-						<input type="text" ref={input => this.itemInput = input} value = {this.props.item} />
+						<input type="text" ref={input => this.itemInput = input} value = {this.state.item} onChange={e => this.onItemTodoChange(e.target.value)}/>
 						<button onClick={(e) => this.editItem(e, this.props.listId)}>Submit</button>
 					</form>
 					}
