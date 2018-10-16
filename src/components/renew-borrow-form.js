@@ -20,7 +20,7 @@ export class RenewBorrowForm extends React.Component {
     onSubmitThis(event) {
         const index = this.props.index;
         console.log(index);
-        const date = value.returnDate;
+        const date = values.returnDate;
         console.log(date);      
         this.props.dispatch(renewBorrowItem(date, index))
         this.props.dispatch(reset('borrowRenew'));

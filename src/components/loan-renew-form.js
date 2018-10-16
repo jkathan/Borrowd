@@ -20,7 +20,7 @@ export class RenewLoanForm extends React.Component {
     onSubmitNow(values) {
         const index = this.props.index;
         console.log(index);
-        const date = value.returnDate;
+        const date = values.returnDate;
         console.log(date);
         if (date && this.props.onAdd) {
             this.props.onAdd(date);
