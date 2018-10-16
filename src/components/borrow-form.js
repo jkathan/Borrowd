@@ -4,7 +4,7 @@ import {reduxForm, Field, SubmissionError, focus} from 'redux-form';
 import moment from 'moment'
 import './add-form.css';
 import {addBorrowCard} from '../actions/index';
-import {required, reduxForm, nonEmpty, email} from '../validators';
+import {required, nonEmpty, email} from '../validators';
 //how do I 
 export class BorrowForm extends React.Component {
     constructor(props) {

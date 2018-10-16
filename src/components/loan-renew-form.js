@@ -2,7 +2,7 @@ import React from 'react';
 import './add-form.css';
 import {connect} from 'react-redux';
 import {reduxForm, Field, SubmissionError, focus} from 'redux-form';
-import {required, reduxForm, nonEmpty, email} from '../validators';
+import {required, nonEmpty, email} from '../validators';
 //import {renewLoanItem} from '../actions/index';
 //import {addLoanCard} from '../actions';
 

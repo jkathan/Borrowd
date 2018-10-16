@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import moment from 'moment'
 import './add-form.css';
 import {required, nonEmpty, email} from '../validators';
-import {reduxForm, reduxForm, Field, SubmissionError, focus} from 'redux-form';
+import {reduxForm, Field, SubmissionError, focus} from 'redux-form';
 import {addCard} from '../actions/index';
 //how do I 
 export class LoanForm extends React.Component {

@@ -6,7 +6,7 @@ import {BrowserRouter as  Link} from 'react-router-dom';
 import {removeItemFromList} from '../actions/index';
 import './add-form.css';
 import {reduxForm, Field, SubmissionError, focus} from 'redux-form';
-import {required, reduxForm, nonEmpty, email} from '../validators';
+import {required, nonEmpty, email} from '../validators';
 //how do I 
 export class ItemLoanForm extends React.Component {
     constructor(props) {
