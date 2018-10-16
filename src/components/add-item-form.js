@@ -25,7 +25,7 @@ export class AddItemForm extends React.Component {
         addItem(itemType, item, null)
 
         );
-        this.props.dispatch(reset(addItemForm));
+        this.props.dispatch(reset('addItemForm'));
     }
 
 render() {
