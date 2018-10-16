@@ -7,6 +7,7 @@ import {connect} from 'react-redux';
 import LoginForm from './login-form';
 import RegistrationPage from './registration-page';
 import {refreshAuthToken} from '../actions/auth';
+import LandingPage from './landing-page';
 
 export default class App extends React.Component {
       /*componentDidUpdate(prevProps) {
