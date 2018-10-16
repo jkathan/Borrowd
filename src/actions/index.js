@@ -1,7 +1,7 @@
 // neeed to import api base url
 
-import {API_BASE_URL} from '../config';
-import {normalizeResponseErrors} from './utils';
+//import {API_BASE_URL} from '../config';
+//import {normalizeResponseErrors} from './utils';
 /*
 export const FETCH_PROTECTED_SUCCESS = 'FETCH_PROTECTED_DATA_SUCCESS';
 export const fetchProtectedDataSuccess = data => ({
@@ -23,7 +23,7 @@ export const fetchBoard = () => dispatch => {
 };
 */
 export const ADD_USERNAME = 'ADD_USERNAME';
-export const addCard = (username) => ({
+export const addUsername = (username) => ({
     type: ADD_USERNAME,
     username
 })
