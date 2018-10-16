@@ -43,12 +43,11 @@ class ItemRepo extends React.Component {
              item: value
         });
     }
-	editItem(e, index) {
-		e.preventDefault();
-		const itemType = this.state.itemType.toString();
-        const item = this.state.item.toString();
-        const itemtest = this.itemInput.value.trim();
-        console.log(itemtest);
+	onSubmit() {
+        const itemType = this.itemInput.value.trim();        
+        const item = this.itemInput.value.trim();
+        const index = this.props.listId;
+        console.log(itemType);
         console.log(item);
 	    console.log(index);
 	    this.props.dispatch(editItem(itemType, item, index))
@@ -76,12 +75,12 @@ class ItemRepo extends React.Component {
 					 	<li className="card">Type: {this.props.itemType}</li>
 					 	<li>Item: {this.props.item}</li>
 					</ul> :
-					<form>
+					<form onSubmit={this.onSubmit}>
 						<label>Type:</label>
 						<input type="text" ref={input => this.typeInput = input} value = {this.state.itemType} onChange={e => this.onItemTypeInputChange(e.target.value)} />
 						<label>Item:</label>
 						<input type="text" ref={input => this.itemInput = input} value = {this.state.item} onChange={e => this.onItemInputChange(e.target.value)}/>
-						<button onClick={(e) => this.editItem(e, this.props.listId)}>Submit</button>
+						<button>Submit</button>
 					</form>
 					}
 

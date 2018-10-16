@@ -54,11 +54,6 @@ export class BorrowList extends React.Component {
             <div>
                 <div className="lists">
                   <SearchBar onChange={searchTerm => this.props.dispatch(filterText({searchTerm}))} />
-                    <label>Sort by:</label>
-                    <select onChange={this.onChange} ref = {(input)=> this.menu = input}>
-                        <option value="Due Date">Due Date</option>
-                        <option value="Recently Added">Recently Added</option>
-                    </select>
                 </div>
                    <div className="lists">
                         <ul className="floats marginish">
