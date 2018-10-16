@@ -30,10 +30,10 @@ export class AddItemForm extends React.Component {
 render() {
 
         return (
-            <div className="list-wrapper">
+
 
                         <form className="card add-form" onSubmit={this.props.handleSubmit(values =>
-                    this.onSubmit(values)>
+                    this.onSubmit(values))}>
                         
                             <Field 
                                 label="Item:"
@@ -43,16 +43,12 @@ render() {
                                 ref={input => this.input = input}
                                 validate={[required, nonEmpty]}
                              />
-                            <div>
                                 <button
-                                type="submit"
                                 disabled={this.props.pristine || this.props.submitting}
                                 >
                                 Submit
                                 </button>
-                            </div>
                 </form>
-            </div>
         );
     }
 }
