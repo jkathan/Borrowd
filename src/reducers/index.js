@@ -2,7 +2,7 @@ import * as actions from '../actions/index';
 
 const initialState = {
     loanList: [
-  {listId: 6, itemType: 'Tool', item: 'Wrench', borrower: 'Bob', email: 'fake@email.com', phone: '301-555-555', returnDate: '2019-09-10', dateAdded: '2018-06-14', checkedOut: true},
+  {listId: 6, itemType: 'Tool', item: 'Wrench', borrower: 'Bob', email: 'fake@email.com', phone: '301-555-555', returnDate: '2018-09-10', dateAdded: '2018-06-14', checkedOut: true},
   {listId: 7, itemType: 'Money', item: '$300', borrower: 'John', email: 'fake@email.com', phone: '301-555-555', returnDate: '2019-09-18', dateAdded: '2018-06-13', checkedOut: true},
   {listId: 8, itemType: 'Tool', item: 'Tablesaw', borrower: 'Bill', email: 'fake@email.com', phone: '301-555-555', returnDate: '2019-09-17', dateAdded: '2018-06-12', checkedOut: true},
   {listId: 9, itemType: 'Clothing', item: 'Jean Jacket', borrower: 'Ian', email: 'fake@email.com', phone: '301-555-555', returnDate: '2019-09-16', dateAdded: '2018-06-11', checkedOut: false},
@@ -26,6 +26,7 @@ const initialState = {
   {listId: 4, itemType: 'Electronic', item: 'Headphones', loaner: 'janet', email: 'fake@email.com', phone: '301-555-555', returnDate: '2019-09-15', dateAdded: '2018-06-10'},
   {listId: 5, itemType: 'Other', item: 'Bike', loaner: 'greta', email: 'fake@email.com', phone: '301-555-555', returnDate: '2019-09-14', dateAdded: '2018-06-09'}
 ]
+  username: ''
 };
 
 

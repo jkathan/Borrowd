@@ -60,7 +60,7 @@ export class ItemList extends React.Component {
             </ul>
             )               
         )
-            const borrowList = this.props.borrowlist.borrowList.map((item, index) => (
+            const borrowList = this.props.loanList.borrowList.map((item, index) => (
             <ul className="list-wrapper">    
                 <ItemBorrowCard 
                 listId={index}
@@ -107,7 +107,6 @@ const mapStateToProps = state => ({
         state.loanList
     );*/
     
-        borrowlist: state.borrowList,
         loanList: state.loanList
         //borrowsList: getVisibleBorrowItem(state.borrowList, state.filters)
     //};
