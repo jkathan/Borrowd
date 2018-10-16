@@ -121,7 +121,6 @@ render() {
         );
     }
 }
-}
 export default reduxForm({
     form: 'loanAdd',
     onSubmitFail: (errors, dispatch) =>
