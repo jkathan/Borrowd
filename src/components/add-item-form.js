@@ -69,4 +69,8 @@ render() {
     }
 }
 
-export default connect()(AddItemForm);
+export default reduxForm({
+    form: 'addItemForm',
+    onSubmitFail: (errors, dispatch) =>
+        dispatch(focus('addItemForm', Object.keys(errors)[0]))
+})(AddItemForm);

@@ -70,5 +70,8 @@ export class RenewBorrowForm extends React.Component {
 	}
 }
 }
-export default connect()(RenewBorrowForm);
-
+export default reduxForm({
+    form: 'borrowRenew',
+    onSubmitFail: (errors, dispatch) =>
+        dispatch(focus('borrowRenew', Object.keys(errors)[0]))
+})(RenewBorrowForm);

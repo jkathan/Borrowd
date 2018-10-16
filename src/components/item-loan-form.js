@@ -138,4 +138,8 @@ render() {
 }
 }
 
-export default connect()(ItemLoanForm);
+export default reduxForm({
+    form: 'itemLoanForm',
+    onSubmitFail: (errors, dispatch) =>
+        dispatch(focus('itemLoanForm', Object.keys(errors)[0]))
+})(itemLoanForm);

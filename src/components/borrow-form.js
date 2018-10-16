@@ -143,4 +143,8 @@ render() {
     }
 }
 
-export default connect()(BorrowForm);
+export default reduxForm({
+    form: 'borrowForm',
+    onSubmitFail: (errors, dispatch) =>
+        dispatch(focus('borrowForm', Object.keys(errors)[0]))
+})(BorrowForm);

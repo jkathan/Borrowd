@@ -74,4 +74,8 @@ export class RenewLoanForm extends React.Component {
 }
 }
 
-export default connect()(RenewLoanForm);
+export default reduxForm({
+    form: 'loanRenew',
+    onSubmitFail: (errors, dispatch) =>
+        dispatch(focus('loanRenew', Object.keys(errors)[0]))
+})(RenewLoanForm);

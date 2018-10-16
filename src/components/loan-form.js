@@ -146,12 +146,8 @@ render() {
     }
 }
 }
-export default connect()(LoanForm);
-/*                    <div>
-                        <LoanFormFromItem />}
-                    </div>
-                    <div>
-                        <AddItemLoanForm />}
-                    </div>
-
-                    */
+export default reduxForm({
+    form: 'LoanAdd',
+    onSubmitFail: (errors, dispatch) =>
+        dispatch(focus('registration', Object.keys(errors)[0]))
+})(LoanForm);
