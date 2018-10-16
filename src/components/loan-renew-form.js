@@ -59,7 +59,6 @@ export class RenewLoanForm extends React.Component {
 	    );
 	}
 }
-}
 
 export default reduxForm({
     form: 'loanRenew',

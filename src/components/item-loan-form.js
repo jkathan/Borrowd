@@ -125,7 +125,6 @@ render() {
         );
     }
 }
-}
 
 export default reduxForm({
     form: 'itemLoanForm',
