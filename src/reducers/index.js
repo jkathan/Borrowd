@@ -101,10 +101,11 @@ export const loanReducer = (state=initialState, action) => {
         {...i, returnDate: action.returnDate} : i))
     })
   }
-      else if (action.type === actions.UPDATE_USERNAME {
+      else if (action.type === actions.UPDATE_USERNAME) {
         return Object.assign({}, state, {
         username: action.username
-      }
+      })
+    }
 /*
   else if (action.type === actions.CURRENT_DATE) {
       return {
