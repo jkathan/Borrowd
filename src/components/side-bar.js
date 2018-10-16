@@ -96,5 +96,5 @@ const mapStateToProps = state => ({
 
 })
 
-export default connect(mapStateToProps)(Sidebar)         
+export default connect(mapStateToProps)(Sidebar);      
 
