@@ -14,7 +14,7 @@ export class AddItemForm extends React.Component {
     }
     //in order to communicate between the two, do i need to set state?
     onSubmit(values) {
-        event.preventDefault();
+        //event.preventDefault();
         console.log(values);
         //const itemType = this.typeInput.value.trim();
         //const item = this.itemInput.value.trim();
@@ -38,7 +38,7 @@ render() {
                             <Field 
                                 label="Item:"
                                 name="addItem" 
-                                component={input} 
+                                component={Input} 
                                 type="text" 
                                 ref={input => this.input = input}
                                 validate={[required, nonEmpty]}
