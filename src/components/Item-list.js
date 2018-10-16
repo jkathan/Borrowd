@@ -14,6 +14,7 @@ import ItemBorrowCard from './item-borrow-card'
 //import getVisibleListItem from '../selectors/items';
 import {filterDate} from '../actions/filter';
 import './lists.css';
+import moment from 'moment';
 
 export class ItemList extends React.Component {
     constructor(props) {
@@ -34,8 +35,14 @@ export class ItemList extends React.Component {
 
     render() {
         const dates = this.props.loanList.loanList.map(a => a.returnDate);
+        const currentDate = moment().format('YYYY-MM-DD');
         console.log(dates);
-        console.log(this.props.borrowlist.borrowList);
+        console.log(currentDate);
+        const overdueBooks = dates.filter(x => {
+            return x < currentDate
+        });
+        console.log(overdueBooks);
+        //console.log(this.props.borrowlist.borrowList);
         const itemCheckedOutList = this.props.loanList.loanList.map((item, index) => (
              <ul className="list-wrapper">   
                 <ItemCheckoutCard 
