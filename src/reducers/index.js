@@ -25,7 +25,7 @@ const initialState = {
   {listId: 3, itemType: 'Clothing', item: 'Jean Jacket', loaner: 'ian', email: 'fake@email.com', phone: '301-555-555', returnDate: '2019-09-16', dateAdded: '2018-06-11'},
   {listId: 4, itemType: 'Electronic', item: 'Headphones', loaner: 'janet', email: 'fake@email.com', phone: '301-555-555', returnDate: '2019-09-15', dateAdded: '2018-06-10'},
   {listId: 5, itemType: 'Other', item: 'Bike', loaner: 'greta', email: 'fake@email.com', phone: '301-555-555', returnDate: '2019-09-14', dateAdded: '2018-06-09'}
-]
+],
   username: ''
 };
 
