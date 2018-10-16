@@ -145,7 +145,7 @@ render() {
         );
     }
 }
-
+}
 export default connect()(LoanForm);
 /*                    <div>
                         <LoanFormFromItem />}
