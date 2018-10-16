@@ -50,7 +50,6 @@ render() {
                                 <option>Other</option>
                             </select>
                         </div>
-                        <br />
                         <Field 
                             label="Item:"
                             name="addItem" 
