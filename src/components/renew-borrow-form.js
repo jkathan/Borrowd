@@ -69,5 +69,6 @@ export class RenewBorrowForm extends React.Component {
 	    );
 	}
 }
+}
 export default connect()(RenewBorrowForm);
 

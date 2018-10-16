@@ -72,6 +72,6 @@ export class RenewLoanForm extends React.Component {
 	    );
 	}
 }
-
+}
 
 export default connect()(RenewLoanForm);
