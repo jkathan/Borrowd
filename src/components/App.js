@@ -4,7 +4,7 @@ import LoanPage from './loan-page';
 import BorrowPage from './borrow-page';
 import ItemPage from './item-page';
 import {connect} from 'react-redux';
-import LoginPage from './login-page';
+import LoginPage from './login-form';
 import RegistrationPage from './registration-page';
 import {refreshAuthToken} from '../actions/auth';
 
