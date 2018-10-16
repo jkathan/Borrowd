@@ -32,7 +32,7 @@ export class BorrowList extends React.Component {
 
     render() {
         //console.log(this.props.borrowList);
-        const borrowlist = this.props.borrowList.borrowList.map((borrow, index) => (
+        const borrowlist = this.props.borrowList.map((borrow, index) => (
             <ul className="list-wrapper">  
                 <BorrowCard 
                 listId={index}
