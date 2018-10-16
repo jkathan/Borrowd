@@ -24,7 +24,7 @@ export class AddItemForm extends React.Component {
         //const dateAdded = moment().format('YYYY-MM-DD');
         //this.props.dispatch(
         //addItem(itemType, item, null)
-        );
+        //);
     }
 
 render() {
