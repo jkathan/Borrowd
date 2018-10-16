@@ -39,15 +39,17 @@ render() {
                 <h2>Add New Item</h2>
                 <form className="card add-form" onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)>
-                        <label>Type:</label>
-                        <select ref={input => this.typeInput = input}>
-                            <option></option>
-                            <option>Tool</option>
-                            <option>Money</option>
-                            <option>Clothing</option>
-                            <option>Electronics</option>
-                            <option>Other</option>
-                        </select>
+                        <div>
+                            <label>Type:</label>
+                            <select ref={input => this.typeInput = input}>
+                                <option></option>
+                                <option>Tool</option>
+                                <option>Money</option>
+                                <option>Clothing</option>
+                                <option>Electronics</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
                         <br />
                         <Field 
                             label="Item:"
