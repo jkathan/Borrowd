@@ -37,8 +37,6 @@ render() {
         return (
             <div className="list-wrapper">
                 <h2>Add New Item</h2>
-                <form className="card add-form" onSubmit={this.props.handleSubmit(values =>
-                    this.onSubmit(values)>
                         <div>
                             <label>Type:</label>
                             <select ref={input => this.typeInput = input}>
@@ -50,20 +48,23 @@ render() {
                                 <option>Other</option>
                             </select>
                         </div>
-                        <Field 
-                            label="Item:"
-                            name="addItem" 
-                            component={input} 
-                            type="text" 
-                            ref={input => this.input = input}
-                            validate={[required, nonEmpty]}
-                         />
-                    <button
-                    type="submit"
-                    disabled={this.props.pristine || this.props.submitting}
-                    >
-                    Submit
-                    </button>
+                        <form className="card add-form" onSubmit={this.props.handleSubmit(values =>
+                    this.onSubmit(values)>
+                        
+                            <Field 
+                                label="Item:"
+                                name="addItem" 
+                                component={input} 
+                                type="text" 
+                                ref={input => this.input = input}
+                                validate={[required, nonEmpty]}
+                             />
+                        <button
+                        type="submit"
+                        disabled={this.props.pristine || this.props.submitting}
+                        >
+                        Submit
+                        </button>
                 </form>
             </div>
         );
