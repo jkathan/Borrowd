@@ -3,7 +3,7 @@ import './add-form.css';
 import {connect} from 'react-redux';
 import {required, nonEmpty, email} from '../validators';
 import {renewBorrowItem} from '../actions/index';
-import {reduxForm, Field, SubmissionError, focus. reset} from 'redux-form';
+import {reduxForm, Field, SubmissionError, focus, reset} from 'redux-form';
 import Input from './input';
 //import {addLoanCard} from '../actions';
 
