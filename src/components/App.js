@@ -4,7 +4,7 @@ import LoanPage from './loan-page';
 import BorrowPage from './borrow-page';
 import ItemPage from './item-page';
 import {connect} from 'react-redux';
-import LoginPage from './login-form';
+import LoginForm from './login-form';
 import RegistrationPage from './registration-page';
 import {refreshAuthToken} from '../actions/auth';
 
@@ -46,7 +46,7 @@ export default class App extends React.Component {
                     <Route exact path='/items/loans' component={LoanPage} />
                     <Route exact path = '/items/borrows' component={BorrowPage} />
                     <Route exact path = '/' component={LandingPage} />
-                    <Route exact path = '/login' component={LoginPage} />
+                    <Route exact path = '/login' component={LoginForm} />
                     <Route exact path = '/register' component={RegistrationPage} />
                   </Switch>
             </main>
