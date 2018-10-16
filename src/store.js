@@ -1,15 +1,31 @@
-import {createStore, combineReducers} from 'redux'
-
+import {createStore, applyMiddleware, combineReducers} from 'redux'
+import {reducer as formReducer} from 'redux-form';
 import {loanReducer} from './reducers/index';
 import {filtersReducer} from './reducers/filter';
 import {borrowReducer} from './reducers/borrow';
+import thunk from 'redux-thunk';
+import {loadAuthToken} from './local-storage';
+import authReducer from './reducers/auth';
+import protectedDataReducer from './reducers/protected-data';
+import {setAuthToken, refreshAuthToken} from './actions/auth';
 
-const rootReducer =
+const store = createStore (
         combineReducers({
+        	form: formReducer,
+        	auth: authReducer,
+        	protectedDate: protectedDataReducer,
             loanList: loanReducer,
             filters: filtersReducer,
             borrowList: borrowReducer
-        }
-    );
+        }),
+    	applyMiddleware(thunk)
+);    
 
-export default createStore(rootReducer);
+const authToken = loadAuthToken();
+if (authToken) {
+    const token = authToken;
+    store.dispatch(setAuthToken(token));
+    store.dispatch(refreshAuthToken());
+}
+
+export default store;

@@ -1,8 +1,10 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {reduxForm, Field, SubmissionError, focus} from 'redux-form';
 import moment from 'moment'
 import './add-form.css';
 import {addBorrowCard} from '../actions/index';
+import {required, nonEmpty, email} from '../validators';
 //how do I 
 export class BorrowForm extends React.Component {
     constructor(props) {
@@ -55,6 +57,12 @@ render() {
 //heres what i want to do here. once the element is chosen or added. I want the 
 //element to appear and buttons to disappear. maybe not necessary for the add, but
 //for the find in item list. maybe it just makes sense to item pag
+        const Element = this.props.element || 'input';
+
+        let error;
+        if (this.props.meta.touched && this.props.meta.error) {
+            error = <div className="form-error">{this.props.meta.error}</div>;
+        }
         return (
             <div className="list-wrapper">
                 <form className="card add-form" onSubmit={this.onSubmit}>
@@ -65,17 +73,67 @@ render() {
                             <option>Electronics</option>
                             <option>Other</option>
                         </select><br />
-                        <label>Item:</label>
-                        <input name="item" type="text" ref={input => this.itemInput = input} />
-                        <label>Loaner:</label>
-                        <input name="borrower" type="text" ref={input => this.loanerInput = input} />
-                        <label>Email:</label>
-                        <input name="email" type="email" ref={input => this.emailInput = input} />
-                        <label>Phone:</label>
-                        <input name="phone" type="tel" ref={input => this.phoneInput = input} />
-                        <label>Return Date:</label>
-                        <input name="returnDate" type="date" ref={input => this.dateInput = input} />
-                    <button>Submit</button>
+                        <label>
+                        Item:
+                        {error}
+                        </label>
+                        <Field 
+                            name="item" 
+                            component="input" 
+                            type="text" 
+                            ref={input => this.itemInput = input} 
+                            validate={[required, nonEmpty]}
+                        />
+                        <label>
+                        Loaner:
+                        {error}
+                        </label>
+                        <Field 
+                            name="borrower" 
+                            component="input" 
+                            type="text" 
+                            ref={input => this.loanerInput = input} 
+                            validate={[required, nonEmpty]}
+                        />
+                        <label>
+                        Email:
+                        {error}
+                        </label>
+                        <Field 
+                            name="email" 
+                            type="email" 
+                            component="input" 
+                            ref={input => this.emailInput = input} 
+                            validate={[required, nonEmpty, email]}
+                        />
+                        <label>
+                        Phone:
+                        {error}
+                        </label>
+                        <Field 
+                            name="phone" 
+                            type="tel" 
+                            component="input" 
+                            ref={input => this.phoneInput = input} 
+                            validate={[required, nonEmpty]}
+                        />
+                        <label>
+                        Return Date:
+                        {error}
+                        </label>
+                        <Field 
+                            name="returnDate" 
+                            type="date" 
+                            component="input" 
+                            ref={input => this.dateInput = input}
+                            validate={[required, nonEmpty]} 
+                        />
+                    <button
+                        type="submit"
+                        disabled={this.props.pristine || this.props.submitting}
+                    >
+                    Submit
+                    </button>
                     <button type="button" >
                         Cancel
                     </button>

@@ -3,6 +3,8 @@ import {connect} from 'react-redux';
 import moment from 'moment'
 import {addItem} from '../actions/index';
 import './add-form.css';
+import {required, nonEmpty, email} from '../validators';
+import {Field, SubmissionError, focus} from 'redux-form';
 //how do I 
 export class AddItemForm extends React.Component {
     constructor(props) {
@@ -24,12 +26,19 @@ export class AddItemForm extends React.Component {
     }
 
 render() {
+
+        let error;
+        if (this.props.meta.touched && this.props.meta.error) {
+            error = <div className="form-error">{this.props.meta.error}</div>;
+}
+
         return (
             <div className="list-wrapper">
                 <h2>Add New Item</h2>
                 <form className="card add-form" onSubmit={this.onSubmit}>
                         <label>Type:</label>
                         <select ref={input => this.typeInput = input}>
+                            <option></option>
                             <option>Tool</option>
                             <option>Money</option>
                             <option>Clothing</option>
@@ -37,9 +46,23 @@ render() {
                             <option>Other</option>
                         </select>
                         <br />
-                        <label>Item:</label>
-                        <input name="item" type="text" ref={input => this.itemInput = input} />
-                    <button>Submit</button>
+                        <label>
+                            Item:
+                            {error}
+                        </label>
+                        <Field 
+                            name="item" 
+                            component="input" 
+                            type="text" 
+                            ref={input => this.itemInput = input}
+                            validate={[required, nonEmpty]}
+                         />
+                    <button
+                    type="submit"
+                    disabled={this.props.pristine || this.props.submitting}
+                    >
+                    Submit
+                    </button>
                 </form>
             </div>
         );

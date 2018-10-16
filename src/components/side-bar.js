@@ -1,6 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
+import {clearAuth} from '../actions/auth';
+import {clearAuthToken} from '../local-storage';
 import './sidebar.css';
 
 export class Sidebar extends React.Component {
@@ -12,11 +14,17 @@ export class Sidebar extends React.Component {
   }
 }
 
-toggleList(){
-  this.setState(prevState => ({
+    logOut() {
+        this.props.dispatch(clearAuth());
+        clearAuthToken();
+    }
+
+    toggleList(){
+    this.setState(prevState => ({
     listOpen: !prevState.listOpen
-  }))
-}
+            })
+        )
+    }
     render () {
     const{list} = this.props
     const{listOpen, headerTitle} = this.state
@@ -46,6 +54,9 @@ toggleList(){
                             <Link to= '/items/borrows'>
                                 Borrows
                             </Link>
+                        </li>
+                        <li>
+                            <button onClick={() => this.logOut()}>Log out</button>
                         </li>
                     </ul>
                 }

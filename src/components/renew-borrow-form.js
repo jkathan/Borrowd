@@ -1,8 +1,9 @@
 import React from 'react';
 import './add-form.css';
 import {connect} from 'react-redux';
-
+import {required, nonEmpty, email} from '../validators';
 import {renewBorrowItem} from '../actions/index';
+import {reduxForm, Field, SubmissionError, focus} from 'redux-form';
 //import {addLoanCard} from '../actions';
 
 export class RenewBorrowForm extends React.Component {
@@ -42,13 +43,29 @@ export class RenewBorrowForm extends React.Component {
             	</div>
             );
         }
+        let error;
+        if (this.props.meta.touched && this.props.meta.error) {
+            error = <div className="form-error">{this.props.meta.error}</div>;
+    
 		return (
-			<form onSubmit={this.onSubmitThis}>
-				<label>New Return Date:</label>
-				<input name="returnDate" type="date" ref={input => this.dateInputLoan = input}/>
+            <form onSubmit={this.onSubmitNow}>
+                <label>
+                New Return Date:
+                {error}
+                </label>
+                <Field
+                    component="input"
+                    name="returnDate" 
+                    type="date" 
+                    ref={input => this.dateInputNow = input}
+                    validate={[required, nonEmpty]} 
+                />
                 <button onClick={() => this.setEditing(false)}>Cancel</button>
-	        	<button >Submit</button>
-	        </form>
+                <button
+                    type="submit"
+                    disabled={this.props.pristine || this.props.submitting}
+                >Submit</button>
+            </form>
 	    );
 	}
 }
