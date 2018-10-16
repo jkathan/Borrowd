@@ -76,7 +76,7 @@ render() {
                             validate={[required, nonEmpty]}
                         />
                         <Field 
-                            label={Email:}
+                            label="Email:"
                             component={Input} 
                             name="email" 
                             type="email" 
