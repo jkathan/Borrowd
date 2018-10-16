@@ -1,10 +1,11 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {reduxForm, Field, SubmissionError, focus} from 'redux-form';
+import {reduxForm, Field, SubmissionError, focus, reset} from 'redux-form';
 import moment from 'moment'
 import './add-form.css';
 import {addBorrowCard} from '../actions/index';
 import {required, nonEmpty, email} from '../validators';
+import Input from './input';
 //how do I 
 export class BorrowForm extends React.Component {
     constructor(props) {
@@ -12,26 +13,18 @@ export class BorrowForm extends React.Component {
         this.onSubmit = this.onSubmit.bind(this);
     }
     //in order to communicate between the two, do i need to set state?
-    onSubmit(event) {
-        event.preventDefault();
-        //console.log(typeInput.value.trim());
-        console.log(this.typeInput.value.trim());
+    onSubmit(values) {
         const itemType = this.typeInput.value.trim();
-        const item = this.itemInput.value.trim();
-        const loaner = this.loanerInput.value.trim();
-        const email = this.emailInput.value.trim();
-        const phone = this.phoneInput.value.trim();
-        const date = this.dateInput.value.trim();
+        const item = values.item;
+        const loaner = values.borrower;
+        const email = values.email;
+        const phone = values.phone;
+        const date = values.date;
         console.log(itemType);
         //if (itemType && item && borrower && email && phone && date && this.props.onAdd) {
             //this.props.onAdd(itemType, item, borrower, email, phone, date);
         //}
         this.typeInput.value = '';
-        this.itemInput.value = '';
-        this.loanerInput.value = '';
-        this.emailInput.value = '';
-        this.phoneInput.value = '';
-        this.dateInput.value = '';
         const dateAdded = moment().format('YYYY-MM-DD');
         //will have to put more info here depeding on the selection of item
         //also will have to add new item to item list. is this done in new 
@@ -40,32 +33,14 @@ export class BorrowForm extends React.Component {
             //wahat is boardID and why is it necessary?
         addBorrowCard(itemType, item, loaner, email, phone, date, dateAdded, null)
         );
-        //this.props.history.push(`/items/loans`);
+        this.props.dispatch(reset('borrowForm'));
+        //this is where a update board call can go
     }
-
-/*
-    goToLoansList(event) {
-        event.preventDefault();
-        this.props.history.push(`/items/loans`);
-    }*/
 render() {
-    //loan from list will have to be a search bar that shows values
-    //this will then autofill the item and on submit will update item as 
-    //checked out
-
-//within components i can render the buttons
-//heres what i want to do here. once the element is chosen or added. I want the 
-//element to appear and buttons to disappear. maybe not necessary for the add, but
-//for the find in item list. maybe it just makes sense to item pag
-        const Element = this.props.element || 'input';
-
-        let error;
-        if (this.props.meta.touched && this.props.meta.error) {
-            error = <div className="form-error">{this.props.meta.error}</div>;
-        }
         return (
             <div className="list-wrapper">
-                <form className="card add-form" onSubmit={this.onSubmit}>
+                <form className="card add-form" onSubmit={this.props.handleSubmit(values =>
+                    this.onSubmit(values))}>
                         <select ref={input => this.typeInput = input}>
                             <option>Tool</option>
                             <option>Money</option>
@@ -73,59 +48,44 @@ render() {
                             <option>Electronics</option>
                             <option>Other</option>
                         </select><br />
-                        <label>
-                        Item:
-                        {error}
-                        </label>
                         <Field 
+                            label="Item:"
                             name="item" 
-                            component="input" 
+                            component={Input} 
                             type="text" 
-                            ref={input => this.itemInput = input} 
+                            ref={input => this.input = input} 
                             validate={[required, nonEmpty]}
                         />
-                        <label>
-                        Loaner:
-                        {error}
-                        </label>
                         <Field 
+                            label="Loaner:"
                             name="borrower" 
-                            component="input" 
+                            component={Input}  
                             type="text" 
-                            ref={input => this.loanerInput = input} 
+                            ref={input => this.input = input}
                             validate={[required, nonEmpty]}
                         />
-                        <label>
-                        Email:
-                        {error}
-                        </label>
-                        <Field 
+                        <Field
+                            label="Email:" 
                             name="email" 
                             type="email" 
-                            component="input" 
-                            ref={input => this.emailInput = input} 
+                            component={Input}  
+                            ref={input => this.input = input} 
                             validate={[required, nonEmpty, email]}
                         />
-                        <label>
-                        Phone:
-                        {error}
-                        </label>
                         <Field 
+                            label="Phone:"
                             name="phone" 
                             type="tel" 
-                            component="input" 
-                            ref={input => this.phoneInput = input} 
+                            component={Input} 
+                            ref={input => this.input = input}
                             validate={[required, nonEmpty]}
                         />
-                        <label>
-                        Return Date:
-                        {error}
-                        </label>
-                        <Field 
+                        <Field
+                            label="Return Date:" 
                             name="returnDate" 
                             type="date" 
-                            component="input" 
-                            ref={input => this.dateInput = input}
+                            component={Input} 
+                            ref={input => this.input = input}
                             validate={[required, nonEmpty]} 
                         />
                     <button

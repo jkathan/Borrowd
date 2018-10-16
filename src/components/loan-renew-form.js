@@ -1,8 +1,9 @@
 import React from 'react';
 import './add-form.css';
 import {connect} from 'react-redux';
-import {reduxForm, Field, SubmissionError, focus} from 'redux-form';
+import {reduxForm, Field, SubmissionError, focus, reset} from 'redux-form';
 import {required, nonEmpty, email} from '../validators';
+import Input from './input';
 //import {renewLoanItem} from '../actions/index';
 //import {addLoanCard} from '../actions';
 
@@ -16,16 +17,15 @@ export class RenewLoanForm extends React.Component {
         this.onSubmitNow = this.onSubmitNow.bind(this);
     }
 
-    onSubmitNow(event) {
-        event.preventDefault();
+    onSubmitNow(values) {
         const index = this.props.index;
         console.log(index);
-        const date = this.dateInputNow.value.trim();
+        const date = value.returnDate;
         console.log(date);
         if (date && this.props.onAdd) {
             this.props.onAdd(date);
         }
-        this.dateInputNow.value = '';
+        this.props.dispatch(reset('loanRenew'));
          //this.props.dispatch(
         //addLoanCard(date, this.props.listId)
         //);
@@ -39,28 +39,15 @@ export class RenewLoanForm extends React.Component {
     }
 
 	render() {
-		if (!this.state.editing) {
-            return (
-            	<div>
-                	<button onClick={() => this.setEditing(true)}>Renew</button>
-            	</div>
-            );
-        }
-        let error;
-        if (this.props.meta.touched && this.props.meta.error) {
-            error = <div className="form-error">{this.props.meta.error}</div>;
-    
 		return (
-			<form onSubmit={this.onSubmitNow}>
-				<label>
-                New Return Date:
-                {error}
-                </label>
+			<form onSubmit={this.props.handleSubmit(values =>
+                    this.onSubmit(values))}>
 				<Field
-                    component="input"
+                    label="New Return Date:"
+                    component={Input}
                     name="returnDate" 
                     type="date" 
-                    ref={input => this.dateInputNow = input}
+                    ref={input => this.input = input}
                     validate={[required, nonEmpty]} 
                 />
 	        	<button onClick={() => this.setEditing(false)}>Cancel</button>

@@ -3,7 +3,8 @@ import './add-form.css';
 import {connect} from 'react-redux';
 import {required, nonEmpty, email} from '../validators';
 import {renewBorrowItem} from '../actions/index';
-import {reduxForm, Field, SubmissionError, focus} from 'redux-form';
+import {reduxForm, Field, SubmissionError, focus. reset} from 'redux-form';
+import Input from './input';
 //import {addLoanCard} from '../actions';
 
 export class RenewBorrowForm extends React.Component {
@@ -17,15 +18,12 @@ export class RenewBorrowForm extends React.Component {
     }
 
     onSubmitThis(event) {
-        event.preventDefault();
         const index = this.props.index;
         console.log(index);
-        const date = this.dateInputLoan.value.trim();
-        console.log(date);
-        
-        this.dateInputLoan.value = '';
-        
+        const date = value.returnDate;
+        console.log(date);      
         this.props.dispatch(renewBorrowItem(date, index))
+        this.props.dispatch(reset('borrowRenew'));
         this.setEditing(false)
     }
         //);
@@ -43,21 +41,15 @@ export class RenewBorrowForm extends React.Component {
             	</div>
             );
         }
-        let error;
-        if (this.props.meta.touched && this.props.meta.error) {
-            error = <div className="form-error">{this.props.meta.error}</div>;
-    
 		return (
-            <form onSubmit={this.onSubmitNow}>
-                <label>
-                New Return Date:
-                {error}
-                </label>
+            <form onSubmit={this.props.handleSubmit(values =>
+                    this.onSubmit(values))}>
                 <Field
-                    component="input"
+                    label="New Return Date:"
+                    component={Input}
                     name="returnDate" 
                     type="date" 
-                    ref={input => this.dateInputNow = input}
+                    ref={input => this.input = input}
                     validate={[required, nonEmpty]} 
                 />
                 <button onClick={() => this.setEditing(false)}>Cancel</button>

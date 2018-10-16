@@ -41,7 +41,8 @@ export class ItemList extends React.Component {
         const overdueBooks = dates.filter(x => {
             return x < currentDate
         });
-        console.log(overdueBooks);
+        const overdueLoans = overdueBooks.length;
+        console.log(overdueLoans);
         //console.log(this.props.borrowlist.borrowList);
         const itemCheckedOutList = this.props.loanList.loanList.map((item, index) => (
              <ul className="list-wrapper">   
@@ -72,6 +73,7 @@ export class ItemList extends React.Component {
 //loan form will be link after routers
         return (
             <div >
+                <h2>({overdueLoans} Loan Overdue</h2>
                 <ul className="lists">
                     <li className="floats">
                         <h2>Your Borrowed Items</h2>                     
