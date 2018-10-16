@@ -33,7 +33,8 @@ export class ItemList extends React.Component {
     }
 
     render() {
-        
+        const dates = this.props.loanList.loanList.map(a => a.returnDate);
+        console.log(dates);
         console.log(this.props.borrowlist.borrowList);
         const itemCheckedOutList = this.props.loanList.loanList.map((item, index) => (
              <ul className="list-wrapper">   
