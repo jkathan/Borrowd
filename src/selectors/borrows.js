@@ -1,5 +1,5 @@
 export default function getVisibleBorrowItem(borrowList, text) {
-	//console.log(sortFilter.sortFilter);
+	console.log(borrowList.borrowList);
 
     return borrowList.borrowList
 
