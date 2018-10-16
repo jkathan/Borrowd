@@ -15,6 +15,7 @@ class ItemRepo extends React.Component {
             itemType: props.itemType,
             item: props.item
         }
+        this.onSubmit = this.onSubmit.bind(this);
     }
 //dont unders
 /*	goToCheckoutBoard(event) {
@@ -43,7 +44,7 @@ class ItemRepo extends React.Component {
              item: value
         });
     }
-	onSubmit() {
+	onSubmit(props) {
         const itemType = this.itemInput.value.trim();        
         const item = this.itemInput.value.trim();
         const index = this.props.listId;
