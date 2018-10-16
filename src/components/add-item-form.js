@@ -14,11 +14,11 @@ export class AddItemForm extends React.Component {
     }
     //in order to communicate between the two, do i need to set state?
     onSubmit(values) {
-        //event.preventDefault();
-        console.log(values);
-        //const itemType = this.typeInput.value.trim();
+        event.preventDefault();
+        console.log(values.labelItem);
+        const itemType = this.typeInput.value.trim();
         //const item = this.itemInput.value.trim();
-        //console.log(itemType);
+        console.log(itemType);
         //this.typeInput.value = '';
         //this.itemInput.value = '';
         //const dateAdded = moment().format('YYYY-MM-DD');
@@ -28,27 +28,37 @@ export class AddItemForm extends React.Component {
     }
 
 render() {
-
         return (
-
-
-                        <form className="card add-form" onSubmit={this.props.handleSubmit(values =>
+            <div className="list-wrapper">
+                <h2>Add New Item</h2>
+                <form className="card add-form" onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values))}>
-                        
-                            <Field 
-                                label="Item:"
-                                name="addItem" 
-                                component={Input} 
-                                type="text" 
-                                ref={input => this.input = input}
-                                validate={[required, nonEmpty]}
-                             />
-                                <button
-                                disabled={this.props.pristine || this.props.submitting}
-                                >
-                                Submit
-                                </button>
+                        <label>Type:</label>
+                        <select ref={input => this.typeInput = input}>
+                            <option></option>
+                            <option>Tool</option>
+                            <option>Money</option>
+                            <option>Clothing</option>
+                            <option>Electronics</option>
+                            <option>Other</option>
+                        </select>
+                        <br />
+                        <Field 
+                            label="Item:"
+                            name="labelItem" 
+                            component={Input} 
+                            type="text" 
+                            ref={input => this.input = input}
+                            validate={[required, nonEmpty]}
+                         />
+                    <button
+                    type="submit"
+                    disabled={this.props.pristine || this.props.submitting}
+                    >
+                    Submit
+                    </button>
                 </form>
+            </div>
         );
     }
 }
@@ -57,18 +67,4 @@ export default reduxForm({
     form: 'addItemForm',
     onSubmitFail: (errors, dispatch) =>
         dispatch(focus('addItemForm', Object.keys(errors)[0]))
-})(AddItemForm);                
-
-
-/*<h2>Add New Item</h2>
-                        <div>
-                            <label>Type:</label>
-                            <select ref={input => this.typeInput = input}>
-                                <option></option>
-                                <option>Tool</option>
-                                <option>Money</option>
-                                <option>Clothing</option>
-                                <option>Electronics</option>
-                                <option>Other</option>
-                            </select>
-                        </div>*/
+})(AddItemForm);
