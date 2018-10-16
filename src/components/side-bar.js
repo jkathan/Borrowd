@@ -1,8 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
-import {clearAuth} from '../actions/auth';
-import {clearAuthToken} from '../local-storage';
+//import {clearAuth} from '../actions/auth';
+//import {clearAuthToken} from '../local-storage';
 import './sidebar.css';
 
 export class Sidebar extends React.Component {
@@ -14,10 +14,10 @@ export class Sidebar extends React.Component {
   }
 }
 
-    logOut() {
+    /*logOut() {
         this.props.dispatch(clearAuth());
         clearAuthToken();
-    }
+    }*/
 
     toggleList(){
     this.setState(prevState => ({
