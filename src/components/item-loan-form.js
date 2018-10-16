@@ -19,8 +19,7 @@ export class ItemLoanForm extends React.Component {
         this.onSubmit = this.onSubmit.bind(this);
     }
     //in order to communicate between the two, do i need to set state?
-    onSubmit(event) {
-        event.preventDefault();
+    onSubmit(values) {
         const borrower = values.borrower;
         const email = values.email;
         const phone = values.phone;
@@ -76,10 +75,9 @@ render() {
                             ref={input => this.input = input}
                             validate={[required, nonEmpty]}
                         />
-                        <label>Email:
-                        {error}</label>
                         <Field 
-                            component="input" 
+                            label={Email:}
+                            component={Input} 
                             name="email" 
                             type="email" 
                             ref={input => this.emailInput = input} 
