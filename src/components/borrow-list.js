@@ -78,7 +78,7 @@ const mapStateToProps = state => ({
         state.loanList
     );*/
     //return {
-        borrowList: getVisibleBorrowItem(state.borrowList, state.filters)
+        //borrowList: getVisibleBorrowItem(state.borrowList, state.filters)
     //};
 
 })
