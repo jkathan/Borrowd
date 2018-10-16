@@ -34,6 +34,7 @@ export class ItemList extends React.Component {
     }
 
     render() {
+        console.log(username);
         const dates = this.props.loanList.loanList.map(a => a.returnDate);
         const currentDate = moment().format('YYYY-MM-DD');
         console.log(dates);
@@ -117,7 +118,8 @@ const mapStateToProps = state => ({
         state.loanList
     );*/
     
-        loanList: state.loanList
+        loanList: state.loanList,
+        username: state.username,
         //borrowsList: getVisibleBorrowItem(state.borrowList, state.filters)
     //};
 

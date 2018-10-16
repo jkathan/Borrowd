@@ -101,6 +101,12 @@ export const editItem = (itemType, item, itemId) => ({
 	item,
     itemId
 });
+
+export const UPDATE_USERNAME = 'UPDATE_USERNAME';
+export const updateUsername = (username) => ({
+    type: UPDATE_USERNAME,
+    username
+})
 /*
 export const FETCH_BOARD_SUCCESS = 'FETCH_BOARD_SUCCESS';
 export const fetchBoardSuccess = board => ({

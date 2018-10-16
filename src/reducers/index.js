@@ -60,17 +60,6 @@ export const loanReducer = (state=initialState, action) => {
       })
     }
 
-  else if (action.type === actions.EDIT_ITEM) {
-    return Object.assign({}, state, {
-        items: state.loanList.map((i) => (
-        i.listId === action.itemId ? 
-        {...i, 
-          itemType: action.itemType, 
-          item: action.item,
-          } : i))
-      })
-  }
-
    else if (action.type === actions.RETURN_ITEM) {
       return Object.assign({}, state, {
         loanList: state.loanList.filter((id) => id.listId !== action.itemId)
@@ -112,6 +101,10 @@ export const loanReducer = (state=initialState, action) => {
         {...i, returnDate: action.returnDate} : i))
     })
   }
+      else if (action.type === actions.UPDATE_USERNAME {
+        return Object.assign({}, state, {
+        username: action.username
+      }
 /*
   else if (action.type === actions.CURRENT_DATE) {
       return {

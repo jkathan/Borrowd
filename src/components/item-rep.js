@@ -71,21 +71,10 @@ class ItemRepo extends React.Component {
 		return (
 			<li>
 				<div>
-					{ this.state.editing ?
 					<ul>
 					 	<li className="card">Type: {this.props.itemType}</li>
 					 	<li>Item: {this.props.item}</li>
-					</ul> :
-					<form onSubmit={this.onSubmit}>
-						<label>Type:</label>
-						<input type="text" ref={input => this.typeInput = input} value = {this.state.itemType} onChange={e => this.onItemTypeInputChange(e.target.value)} />
-						<label>Item:</label>
-						<input type="text" ref={input => this.itemInput = input} value = {this.state.item} onChange={e => this.onItemInputChange(e.target.value)}/>
-						<button>Submit</button>
-					</form>
-					}
-
-					<button onClick={() => this.setState({editing : !this.state.editing})}>Edit</button>
+					</ul> 
 					<ItemLoanForm
 					index = {this.props.listId}
 					onAdd= {(borrower, email, phone, date) => this.addCard(borrower, email, phone, date)}
