@@ -66,8 +66,8 @@ class ItemRepo extends React.Component {
 //edit button should be a link
 //new form form for borrow and forms
 	render() {
-		console.log(this.props.itemType);
-		console.log(this.props);
+		//console.log(this.props.itemType);
+		//console.log(this.props);
 		return (
 			<li>
 				<div>
