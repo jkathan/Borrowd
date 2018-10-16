@@ -136,5 +136,6 @@ render() {
         );
     }
 }
+}
 
 export default connect()(ItemLoanForm);
