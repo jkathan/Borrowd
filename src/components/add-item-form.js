@@ -17,14 +17,14 @@ export class AddItemForm extends React.Component {
         //event.preventDefault();
         console.log(values.labelItem);
         const itemType = this.typeInput.value.trim();
-        //const item = this.itemInput.value.trim();
+        const item = values.labelItem;
         console.log(itemType);
-        //this.typeInput.value = '';
-        //this.itemInput.value = '';
-        //const dateAdded = moment().format('YYYY-MM-DD');
-        //this.props.dispatch(
-        //addItem(itemType, item, null)
-        //);
+        this.typeInput.value = '';
+        this.input.value = '';
+        const dateAdded = moment().format('YYYY-MM-DD');
+        this.props.dispatch(
+        addItem(itemType, item, null)
+        );
     }
 
 render() {
