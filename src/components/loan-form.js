@@ -117,7 +117,6 @@ render() {
                         Cancel
                     </button>
                 </form>
-                </form>
             </div>
         );
     }
