@@ -20,10 +20,10 @@ export class AddItemForm extends React.Component {
         const item = values.labelItem;
         console.log(itemType);
         this.typeInput.value = '';
-        this.input.value = '';
         const dateAdded = moment().format('YYYY-MM-DD');
         this.props.dispatch(
         addItem(itemType, item, null)
+        this.props.resetForm();
         );
     }
 
