@@ -4,7 +4,7 @@ import moment from 'moment'
 import {addItem} from '../actions/index';
 import './add-form.css';
 import {required, nonEmpty, email} from '../validators';
-import {Field, SubmissionError, focus} from 'redux-form';
+import {Field, reduxForm, SubmissionError, focus} from 'redux-form';
 //how do I 
 export class AddItemForm extends React.Component {
     constructor(props) {
