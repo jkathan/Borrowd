@@ -31,7 +31,8 @@ export class LoanList extends React.Component {
     }
 
     render() {
-        const loanlist = this.props.loansList.map((loan, index) => (
+        const sortedList = this.props.loanList.sort((a, b) => (a.returnDate > b.returnDate) ? 1 : ((b.returnDate > a.returnDate) ? -1 : 0));
+        const loanlist = sortedList.map((loan, index) => (
             <ul className="list-wrapper"> 
                 <LoanCard 
                 listId={index}
@@ -51,10 +52,6 @@ export class LoanList extends React.Component {
             <div>
                 <div className="list">
                   <SearchBar onChange={searchTerm => this.props.dispatch(filterText({searchTerm}))} />
-                    <select onChange={this.onChange} ref = {(input)=> this.menu = input}>
-                        <option value="Due Date">Due Date</option>
-                        <option value="Recently Added">Recently Added</option>
-                    </select>
                    <div className="lists">
                         <ul className="floats marginish">
                             <li className="floats"><LoanForm /></li>

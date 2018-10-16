@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 //import {clearAuth} from '../actions/auth';
 //import {clearAuthToken} from '../local-storage';
+import moment from 'moment';
 import './sidebar.css';
 
 export class Sidebar extends React.Component {
@@ -26,6 +27,20 @@ export class Sidebar extends React.Component {
         )
     }
     render () {
+        const dates = this.props.loanList.loanList.map(a => a.returnDate);
+        const currentDate = moment().format('YYYY-MM-DD');
+        console.log(dates);
+        console.log(currentDate);
+        const overdueLoansDate = dates.filter(x => {
+            return x < currentDate
+        });
+        const overdueLoans = overdueLoansDate.length;
+        const borrowDates = this.props.loanList.borrowList.map(b => b.returnDate)
+        const overdueBorrowsDate = borrowDates.filter(z => {
+            return z < currentDate
+        });
+        const overdueBorrows = overdueBorrowsDate.length
+        console.log(overdueLoans);
     const{list} = this.props
     const{listOpen, headerTitle} = this.state
     return (
@@ -47,12 +62,12 @@ export class Sidebar extends React.Component {
                         </li>                                
                         <li className=" .dd-list-itemfolder-menu-list-item">
                             <Link to= '/items/loans'>
-                                Loans
+                                Loans ({overdueLoans})
                             </Link>
                         </li>
                         <li className=" .dd-list-item folder-menu-list-item">
                             <Link to= '/items/borrows'>
-                                Borrows
+                                Borrows ({overdueBorrows})
                             </Link>
                         </li>
                         <li>
@@ -66,5 +81,20 @@ export class Sidebar extends React.Component {
     }
 }
 
+const mapStateToProps = state => ({
+/*    const loansList = Object.assign(
+        {},
+        {
+            loanList: []
+        },
+        state.loanList
+    );*/
+    
+        loanList: state.loanList
+        //borrowsList: getVisibleBorrowItem(state.borrowList, state.filters)
+    //};
 
-export default connect()(Sidebar);
+})
+
+export default connect(mapStateToProps)(Sidebar)         
+
