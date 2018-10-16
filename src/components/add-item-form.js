@@ -4,7 +4,7 @@ import moment from 'moment'
 import {addItem} from '../actions/index';
 import './add-form.css';
 import {required, nonEmpty, email} from '../validators';
-import {Field, reduxForm, SubmissionError, focus} from 'redux-form';
+import {Field, reduxForm, SubmissionError, focus, reset} from 'redux-form';
 import Input from './input';
 //how do I 
 export class AddItemForm extends React.Component {
@@ -25,7 +25,7 @@ export class AddItemForm extends React.Component {
         addItem(itemType, item, null)
 
         );
-
+        this.props.dispatch(reset(addItemForm));
     }
 
 render() {
