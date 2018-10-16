@@ -17,7 +17,7 @@ export class RenewBorrowForm extends React.Component {
         this.onSubmitThis = this.onSubmitThis.bind(this);
     }
 
-    onSubmitThis(event) {
+    onSubmitThis(values) {
         const index = this.props.index;
         console.log(index);
         const date = values.returnDate;
