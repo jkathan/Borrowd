@@ -29,11 +29,6 @@ export class AddItemForm extends React.Component {
 
 render() {
 
-        let error;
-        if (this.props.meta.touched && this.props.meta.error) {
-            error = <div className="form-error">{this.props.meta.error}</div>;
-}
-
         return (
             <div className="list-wrapper">
                 <h2>Add New Item</h2>
@@ -59,12 +54,14 @@ render() {
                                 ref={input => this.input = input}
                                 validate={[required, nonEmpty]}
                              />
+                    <div>
                         <button
                         type="submit"
                         disabled={this.props.pristine || this.props.submitting}
                         >
                         Submit
                         </button>
+                    </div>
                 </form>
             </div>
         );
