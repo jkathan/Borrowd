@@ -31,18 +31,7 @@ render() {
 
         return (
             <div className="list-wrapper">
-                <h2>Add New Item</h2>
-                        <div>
-                            <label>Type:</label>
-                            <select ref={input => this.typeInput = input}>
-                                <option></option>
-                                <option>Tool</option>
-                                <option>Money</option>
-                                <option>Clothing</option>
-                                <option>Electronics</option>
-                                <option>Other</option>
-                            </select>
-                        </div>
+
                         <form className="card add-form" onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)>
                         
@@ -54,14 +43,14 @@ render() {
                                 ref={input => this.input = input}
                                 validate={[required, nonEmpty]}
                              />
-                    <div>
-                        <button
-                        type="submit"
-                        disabled={this.props.pristine || this.props.submitting}
-                        >
-                        Submit
-                        </button>
-                    </div>
+                            <div>
+                                <button
+                                type="submit"
+                                disabled={this.props.pristine || this.props.submitting}
+                                >
+                                Submit
+                                </button>
+                            </div>
                 </form>
             </div>
         );
@@ -72,4 +61,18 @@ export default reduxForm({
     form: 'addItemForm',
     onSubmitFail: (errors, dispatch) =>
         dispatch(focus('addItemForm', Object.keys(errors)[0]))
-})(AddItemForm);
+})(AddItemForm);                
+
+
+/*<h2>Add New Item</h2>
+                        <div>
+                            <label>Type:</label>
+                            <select ref={input => this.typeInput = input}>
+                                <option></option>
+                                <option>Tool</option>
+                                <option>Money</option>
+                                <option>Clothing</option>
+                                <option>Electronics</option>
+                                <option>Other</option>
+                            </select>
+                        </div>*/
