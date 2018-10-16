@@ -61,8 +61,8 @@ export class ItemLoanForm extends React.Component {
 render() {
 
         let error;
-        if (this.props.touched && this.props.error) {
-            error = <div className="form-error">{this.props.error}</div>;
+        if (this.props.meta.touched && this.props.meta.error) {
+            error = <div className="form-error">{this.props.meta.error}</div>;
     
             if (!this.state.editing) {
             return (

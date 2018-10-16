@@ -5,6 +5,7 @@ import {addItem} from '../actions/index';
 import './add-form.css';
 import {required, nonEmpty, email} from '../validators';
 import {Field, reduxForm, SubmissionError, focus} from 'redux-form';
+import Input from './input';
 //how do I 
 export class AddItemForm extends React.Component {
     constructor(props) {
@@ -12,30 +13,32 @@ export class AddItemForm extends React.Component {
         this.onSubmit = this.onSubmit.bind(this);
     }
     //in order to communicate between the two, do i need to set state?
-    onSubmit(event) {
+    onSubmit(values) {
         event.preventDefault();
-        const itemType = this.typeInput.value.trim();
-        const item = this.itemInput.value.trim();
-        console.log(itemType);
-        this.typeInput.value = '';
-        this.itemInput.value = '';
+        console.log(values);
+        //const itemType = this.typeInput.value.trim();
+        //const item = this.itemInput.value.trim();
+        //console.log(itemType);
+        //this.typeInput.value = '';
+        //this.itemInput.value = '';
         //const dateAdded = moment().format('YYYY-MM-DD');
-        this.props.dispatch(
-        addItem(itemType, item, null)
+        //this.props.dispatch(
+        //addItem(itemType, item, null)
         );
     }
 
 render() {
 
         let error;
-        if (this.props.touched && this.props.error) {
-            error = <div className="form-error">{this.props.error}</div>;
+        if (this.props.meta.touched && this.props.meta.error) {
+            error = <div className="form-error">{this.props.meta.error}</div>;
 }
 
         return (
             <div className="list-wrapper">
                 <h2>Add New Item</h2>
-                <form className="card add-form" onSubmit={this.onSubmit}>
+                <form className="card add-form" onSubmit={this.props.handleSubmit(values =>
+                    this.onSubmit(values)>
                         <label>Type:</label>
                         <select ref={input => this.typeInput = input}>
                             <option></option>
@@ -46,15 +49,12 @@ render() {
                             <option>Other</option>
                         </select>
                         <br />
-                        <label>
-                            Item:
-                            {error}
-                        </label>
                         <Field 
-                            name="item" 
-                            component="input" 
+                            label="Item:"
+                            name="addItem" 
+                            component={input} 
                             type="text" 
-                            ref={input => this.itemInput = input}
+                            ref={input => this.input = input}
                             validate={[required, nonEmpty]}
                          />
                     <button

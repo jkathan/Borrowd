@@ -47,8 +47,8 @@ export class RenewLoanForm extends React.Component {
             );
         }
         let error;
-        if (this.props.touched && this.props.error) {
-            error = <div className="form-error">{this.props.error}</div>;
+        if (this.props.meta.touched && this.props.meta.error) {
+            error = <div className="form-error">{this.props.meta.error}</div>;
     
 		return (
 			<form onSubmit={this.onSubmitNow}>
