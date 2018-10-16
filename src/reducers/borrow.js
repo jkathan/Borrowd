@@ -1,4 +1,4 @@
-import * as actions from '../actions/index';
+/*import * as actions from '../actions/index';
 
 const initialState = {
 
@@ -47,6 +47,6 @@ export const borrowReducer = (state=initialState, action) => {
           ...state,
         currentDate: action.currentDate 
         }
-    }*/
+    }
     return state;
-  }
+  }*/
