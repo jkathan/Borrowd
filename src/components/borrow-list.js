@@ -31,8 +31,8 @@ export class BorrowList extends React.Component {
     }
 
     render() {
-        //console.log(this.props.borrowList);
-        sortedList = this.props.borrowList.sort((a, b) => (a.returnDate > b.returnDate) ? 1 : ((b.returnDate > a.returnDate) ? -1 : 0));
+        console.log(this.props.borrowList);
+        const sortedList = this.props.borrowList.sort((a, b) => (a.returnDate > b.returnDate) ? 1 : ((b.returnDate > a.returnDate) ? -1 : 0));
         console.log(sortedList);
         const borrowlist = this.props.borrowList.map((borrow, index) => (
             <ul className="list-wrapper">  
