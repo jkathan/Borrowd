@@ -27,7 +27,7 @@ export class Sidebar extends React.Component {
         )
     }
     render () {
-        const dates = this.props.loanList.loanList.map(a => a.returnDate);
+        /*const dates = this.props.loanList.loanList.map(a => a.returnDate);
         const currentDate = moment().format('YYYY-MM-DD');
         console.log(dates);
         console.log(currentDate);
@@ -40,7 +40,7 @@ export class Sidebar extends React.Component {
             return z < currentDate
         });
         const overdueBorrows = overdueBorrowsDate.length
-        console.log(overdueLoans);
+        console.log(overdueLoans);*/
     const{list} = this.props
     const{listOpen, headerTitle} = this.state
     return (
@@ -62,12 +62,12 @@ export class Sidebar extends React.Component {
                         </li>                                
                         <li className=" .dd-list-itemfolder-menu-list-item">
                             <Link to= '/items/loans'>
-                                Loans ({overdueLoans})
+                                Loans 
                             </Link>
                         </li>
                         <li className=" .dd-list-item folder-menu-list-item">
                             <Link to= '/items/borrows'>
-                                Borrows ({overdueBorrows})
+                                Borrows 
                             </Link>
                         </li>
                         <li>

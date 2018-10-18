@@ -1,6 +1,6 @@
 // neeed to import api base url
 
-//import {API_BASE_URL} from '../config';
+import {API_BASE_URL} from '../config';
 //import {normalizeResponseErrors} from './utils';
 /*
 export const FETCH_PROTECTED_SUCCESS = 'FETCH_PROTECTED_DATA_SUCCESS';
@@ -107,15 +107,43 @@ export const updateUsername = (username) => ({
     type: UPDATE_USERNAME,
     username
 })
+
 /*
+export const updateBoard = () => (dispatch, getState) => {
+    const username = getState().username;
+    const board = getState().board;
+    return fetch(`${API_BASE_URL}/put/`+ {username}, {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(board)
+    })
+        .then(res => res.json())
+        .catch(err => {
+            const {reason, message, location} = err;
+            if (reason === 'ValidationError') {
+                // Convert ValidationErrors into SubmissionErrors for Redux Form
+                return Promise.reject(
+                    new SubmissionError({
+                        [location]: message
+                    })
+                );
+            }
+        });
+};
+*/
+
 export const FETCH_BOARD_SUCCESS = 'FETCH_BOARD_SUCCESS';
 export const fetchBoardSuccess = board => ({
     type: FETCH_BOARD_SUCCESS,
     board
 });
 
-export const fetchBoard = () => dispatch => {
-    fetch(`${API_BASE_URL}/board`)
+
+export const fetchBoard = () => (dispatch, getState) => {
+        const username = getState().username;
+    fetch(`${API_BASE_URL}/api/get`)
         .then(res => {
             if (!res.ok) {
                 return Promise.reject(res.statusText);
@@ -124,13 +152,5 @@ export const fetchBoard = () => dispatch => {
         })
         .then(board => {
             dispatch(fetchBoardSuccess(board));
-        }).catch(err => {
-            dispatch(fetchBoardError(err));
     });
 };
-
-export const CURRENT_DATE = 'CURRENT_DATE';
-export const currentDate = (currentDate) => ({
-	type: CURRENT_DATE,
-	currentDate
-})*/

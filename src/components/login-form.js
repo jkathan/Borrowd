@@ -7,7 +7,7 @@ import {updateUsername} from '../actions/index';
 
 export class LoginForm extends React.Component {
     onSubmit(values) {
-        //return this.props.dispatch(login(values.username, values.password));\
+        return this.props.dispatch(login(values.username, values.password));
         console.log(values.username);
         this.props.dispatch(updateUsername(values.username));
         this.props.history.push(`/items/items`);

@@ -1,32 +1,14 @@
 import * as actions from '../actions/index';
 
 const initialState = {
-    loanList: [
-  {listId: 6, itemType: 'Tool', item: 'Wrench', borrower: 'Bob', email: 'fake@email.com', phone: '301-555-555', returnDate: '2018-09-10', dateAdded: '2018-06-14', checkedOut: true},
-  {listId: 7, itemType: 'Money', item: '$300', borrower: 'John', email: 'fake@email.com', phone: '301-555-555', returnDate: '2019-09-18', dateAdded: '2018-06-13', checkedOut: true},
-  {listId: 8, itemType: 'Tool', item: 'Tablesaw', borrower: 'Bill', email: 'fake@email.com', phone: '301-555-555', returnDate: '2019-09-17', dateAdded: '2018-06-12', checkedOut: true},
-  {listId: 9, itemType: 'Clothing', item: 'Jean Jacket', borrower: 'Ian', email: 'fake@email.com', phone: '301-555-555', returnDate: '2019-09-16', dateAdded: '2018-06-11', checkedOut: false},
-  {listId: 10, itemType: 'Electronic', item: 'Headphones', borrower: 'Janet', email: 'fake@email.com', phone: '301-555-555', returnDate: '2019-09-15', dateAdded: '2018-06-10', checkedOut: true},
-  {listId: 11, itemType: 'Other', item: 'Bike', borrower: 'Greta', email: 'fake@email.com', phone: '301-555-555', returnDate: '2019-09-14', dateAdded: '2018-06-09', checkedOut: true}
-],
-  items: [
-  {listId: 12, itemType: 'Tool', item: 'Socket Wrench'},
-  {listId: 13, itemType: 'Money', item: '$800'},
-  {listId: 14, itemType: 'Tool', item: 'Large Hammer'},
-  {listId: 15, itemType: 'Clothing', item: 'Turquise Buttondown'},
-  {listId: 16, itemType: 'Electronic', item: 'Old Cellphone'},
-  {listId: 17, itemType: 'Other', item: 'Inflatable Raft'}
-  ],
-
-  borrowList: [
-  {listId: 0, itemType: 'Tool', item: 'Wrench', loaner: 'Bob', email: 'fake@email.com', phone: '301-555-555', returnDate: '2019-09-10', dateAdded: '2018-06-14'},
-  {listId: 1, itemType: 'Money', item: '$300', loaner: 'john', email: 'fake@email.com', phone: '301-555-555', returnDate: '2019-09-18', dateAdded: '2018-06-13'},
-  {listId: 2, itemType: 'Tool', item: 'Tablesaw', loaner: 'bill', email: 'fake@email.com', phone: '301-555-555', returnDate: '2019-09-17', dateAdded: '2018-06-12'},
-  {listId: 3, itemType: 'Clothing', item: 'Jean Jacket', loaner: 'ian', email: 'fake@email.com', phone: '301-555-555', returnDate: '2019-09-16', dateAdded: '2018-06-11'},
-  {listId: 4, itemType: 'Electronic', item: 'Headphones', loaner: 'janet', email: 'fake@email.com', phone: '301-555-555', returnDate: '2019-09-15', dateAdded: '2018-06-10'},
-  {listId: 5, itemType: 'Other', item: 'Bike', loaner: 'greta', email: 'fake@email.com', phone: '301-555-555', returnDate: '2019-09-14', dateAdded: '2018-06-09'}
-],
-  username: ''
+  board: [
+     {
+      board:  [
+     { loanList: [{listId: 6, itemType: "Tool", item: "Wrench", borrower: "Bob", email: "fake@email.com", phone: "301-555-555", returnDate: "2018-09-10", dateAdded: "2018-06-14"}],
+        borrowList: [{listId: 6, itemType: "Tool", item: "Wrench", loaner: "Bob", email: "fake@email.com", phone: "301-555-555", returnDate: "2018-09-10", dateAdded: "2018-06-14"}],
+        items: [{listId: 12, itemType: "Tool", item: "Socket Wrench"}] }
+      ]}],
+  username: "demo"
 };
 
 
@@ -34,7 +16,7 @@ const initialState = {
 export const loanReducer = (state=initialState, action) => {
     if (action.type === actions.ADD_CARD) {
         return Object.assign({}, state, {
-            loanList: [...state.loanList, {
+            loanList: [...state.board.loanList, {
                   itemType: action.itemType,
                   item: action.item,
                   borrower: action.borrower, 
@@ -48,10 +30,11 @@ export const loanReducer = (state=initialState, action) => {
 
   else if (action.type === actions.ADD_ITEM) {
     return Object.assign({}, state, {
+      ...state.board, board: {...state.board, 
       items: [...state.loanList, {
         itemType: action.itemType,
         item: action.item
-      }]
+      }]}
     })
   } 
      else if (action.type === actions.REMOVE_ITEM_FROM_LIST) {
@@ -75,7 +58,7 @@ export const loanReducer = (state=initialState, action) => {
   }
       if (action.type === actions.ADD_BORROW_CARD) {
         return Object.assign({}, state, {
-            borrowList: [...state.loanList, {
+            borrowList: [...state.board.board.loanList, {
                   itemType: action.itemType,
                   item: action.item,
                   loaner: action.loaner, 
@@ -89,14 +72,14 @@ export const loanReducer = (state=initialState, action) => {
 
    else if (action.type === actions.RETURN_BORROW_ITEM) {
       return Object.assign({}, state, {
-        borrowList: state.borrowList.filter((id) => id.listId !== action.itemId)
+        borrowList: state.board.board.borrowList.filter((id) => id.listId !== action.itemId)
       })
     }
     
 
     else if (action.type === actions.RENEW_BORROW_ITEM) {
       return Object.assign({}, state, {
-        borrowList: state.borrowList.map((i) => (
+        borrowList: state.board.borrowList.map((i) => (
         i.listId === action.itemId ? 
         {...i, returnDate: action.returnDate} : i))
     })
@@ -106,6 +89,11 @@ export const loanReducer = (state=initialState, action) => {
         username: action.username
       })
     }
+        else if (action.type === actions.FETCH_BOARD_SUCCESS) {
+        return Object.assign({}, state, {
+          board: action.board
+        })
+      }
 /*
   else if (action.type === actions.CURRENT_DATE) {
       return {

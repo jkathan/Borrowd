@@ -1,6 +1,7 @@
 import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
 import {registerUser} from '../actions/users';
+import {updateUsername} from '../actions/index';
 import {login} from '../actions/auth';
 import Input from './input';
 import {required, nonEmpty, matches, length, isTrimmed} from '../validators';
@@ -13,7 +14,8 @@ export class RegistrationForm extends React.Component {
         const user = {username, password, firstName, lastName};
         console.log(username);
         return this.props
-            //.dispatch(registerUser(user))
+            .dispatch(registerUser(user))
+            .then(() => this.props.dispatch(updateUsername(username)))
             //.then(() => this.props.dispatch(login(username, password)));
             console.log(username);
     }

@@ -1,4 +1,4 @@
-/*export const normalizeResponseErrors = res => {
+export const normalizeResponseErrors = res => {
     if (!res.ok) {
         if (
             res.headers.has('content-type') &&
@@ -15,4 +15,3 @@
     }
     return res;
 };
-*/

@@ -1,4 +1,4 @@
-/*import {
+import {
     SET_AUTH_TOKEN,
     CLEAR_AUTH,
     AUTH_REQUEST,
@@ -41,4 +41,3 @@ export default function reducer(state = initialState, action) {
     }
     return state;
 }
-*/
