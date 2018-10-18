@@ -30,11 +30,10 @@ export const loanReducer = (state=initialState, action) => {
 
   else if (action.type === actions.ADD_ITEM) {
     return Object.assign({}, state, {
-      ...state.board, board: {...state.board, 
       items: [...state.loanList, {
         itemType: action.itemType,
         item: action.item
-      }]}
+      }]
     })
   } 
      else if (action.type === actions.REMOVE_ITEM_FROM_LIST) {

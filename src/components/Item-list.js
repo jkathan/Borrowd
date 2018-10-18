@@ -37,8 +37,8 @@ export class ItemList extends React.Component {
     }
 
     render() {
-        console.log(this.props.loanList[0].board[0].loanList);
-        const dates = this.props.loanList[0].board[0].loanList.map(a => a.returnDate);
+        console.log(this.props.loanList);
+        const dates = this.props.loanList.loanList.map(a => a.returnDate);
         const currentDate = moment().format('YYYY-MM-DD');
         console.log(dates);
         console.log(currentDate);

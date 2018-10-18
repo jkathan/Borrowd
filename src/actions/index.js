@@ -1,6 +1,7 @@
 // neeed to import api base url
 
 import {API_BASE_URL} from '../config';
+console.log(API_BASE_URL);
 //import {normalizeResponseErrors} from './utils';
 /*
 export const FETCH_PROTECTED_SUCCESS = 'FETCH_PROTECTED_DATA_SUCCESS';
@@ -143,7 +144,7 @@ export const fetchBoardSuccess = board => ({
 
 export const fetchBoard = () => (dispatch, getState) => {
         const username = getState().username;
-    fetch(`${API_BASE_URL}/api/get`)
+    fetch(`${API_BASE_URL}/get`)
         .then(res => {
             if (!res.ok) {
                 return Promise.reject(res.statusText);
@@ -151,6 +152,7 @@ export const fetchBoard = () => (dispatch, getState) => {
             return res.json();
         })
         .then(board => {
+            console.log(board);
             dispatch(fetchBoardSuccess(board));
     });
 };
