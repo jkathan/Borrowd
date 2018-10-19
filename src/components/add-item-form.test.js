@@ -29,7 +29,7 @@ describe('<AddItemForm />', () => {
         const item = 'banana';
         const itemType = 'tool';
         const wrapper = shallow(
-            <AddItemForm index={index} dispatch={dispatch} />
+            <AddItemForm dispatch={dispatch} />
         );
         const instance = wrapper.instance();
         instance.addItem(itemType, item);

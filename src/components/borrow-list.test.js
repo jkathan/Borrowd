@@ -40,3 +40,4 @@ describe('<BorrowList />', () => {
         expect(firstCard.prop('returnDate')).toEqual(seedCards[0].returnDate);
         expect(firstCard.prop('listId')).toEqual(seedCards[0].listId);
 });
+});
