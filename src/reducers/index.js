@@ -1,14 +1,12 @@
 import * as actions from '../actions/index';
 
 const initialState = {
-  board: [
-     {
-      board:  [
-     { loanList: [{listId: 6, itemType: "Tool", item: "Wrench", borrower: "Bob", email: "fake@email.com", phone: "301-555-555", returnDate: "2018-09-10", dateAdded: "2018-06-14"}],
-        borrowList: [{listId: 6, itemType: "Tool", item: "Wrench", loaner: "Bob", email: "fake@email.com", phone: "301-555-555", returnDate: "2018-09-10", dateAdded: "2018-06-14"}],
-        items: [{listId: 12, itemType: "Tool", item: "Socket Wrench"}] }
-      ]}],
-  username: "demo"
+  board: {
+        loanList: [],
+        borrowList: [],
+        items: [] 
+      },
+  newId: ''
 };
 
 
@@ -16,25 +14,36 @@ const initialState = {
 export const loanReducer = (state=initialState, action) => {
     if (action.type === actions.ADD_CARD) {
         return Object.assign({}, state, {
-            loanList: [...state.board.loanList, {
-                  itemType: action.itemType,
-                  item: action.item,
-                  borrower: action.borrower, 
-                  email: action.email, 
-                  phone: action.phone, 
-                  returnDate: action.date.toString(),
-                  dateAdded: action.dateAdded
-            }]
+          board: {
+                  loanList: [...state.board.loanList, {
+                    itemType: action.itemType,
+                    item: action.item,
+                    borrower: action.borrower, 
+                    email: action.email, 
+                    phone: action.phone, 
+                    returnDate: action.date,
+                    dateAdded: action.dateAdded,
+                    listId: action.itemType+action.item+action.borrower
+                  }],
+                  borrowList: state.board.borrowList,
+                  items: state.board.items
+              }
             });
     }
 
   else if (action.type === actions.ADD_ITEM) {
+    //if (board.loanList.length === 0 && board.borrowList.length === 0) {
+     // return 
+    //}
     return Object.assign({}, state, {
-      items: [...state.loanList, {
-        itemType: action.itemType,
-        item: action.item
-      }]
-    })
+      board: { 
+        loanList: state.board.loanList,
+        borrowList: state.board.borrowList,
+        items: [...state.board.items, {
+          itemType: action.itemType,
+          item: action.item
+      }],
+    }})
   } 
      else if (action.type === actions.REMOVE_ITEM_FROM_LIST) {
       return Object.assign({}, state, {
@@ -43,54 +52,70 @@ export const loanReducer = (state=initialState, action) => {
     }
 
    else if (action.type === actions.RETURN_ITEM) {
-      return Object.assign({}, state, {
-        loanList: state.loanList.filter((id) => id.listId !== action.itemId)
+      return Object.assign({}, {
+        board: {loanList: state.board.loanList.filter((id) => id.listId !== action.itemId),
+                borrowList: state.board.borrowList,
+                items: state.board.items}
       })
     }
-    
+    //remove state
     else if (action.type === actions.RENEW_ITEM) {
       return Object.assign({}, state, {
-        loanList: state.loanList.map((i) => (
-        i.listId === action.itemId ? 
-        {...i, returnDate: action.returnDate} : i))
+        board: { loanList: state.board.loanList.map((i) => (
+                  i.listId === action.itemId ? 
+                {...i, returnDate: action.returnDate} : i)),
+                borrowList: state.board.borrowList,
+                items: state.board.items}
     })
   }
       if (action.type === actions.ADD_BORROW_CARD) {
         return Object.assign({}, state, {
-            borrowList: [...state.board.board.loanList, {
+          board: {
+            borrowList: [...state.board.borrowList, {
                   itemType: action.itemType,
                   item: action.item,
                   loaner: action.loaner, 
                   email: action.email, 
                   phone: action.phone, 
-                  returnDate: action.date.toString(),
-                  dateAdded: action.dateAdded
-            }]
-            });
+                  returnDate: action.date,
+                  dateAdded: action.dateAdded,
+                  listId: action.itemType+action.item+action.loaner
+            }],                  
+            items: state.board.items,
+            loanList: state.board.loanList
+            }});
     }
 
    else if (action.type === actions.RETURN_BORROW_ITEM) {
       return Object.assign({}, state, {
-        borrowList: state.board.board.borrowList.filter((id) => id.listId !== action.itemId)
+        board: {borrowList: state.board.borrowList.filter((id) => id.listId !== action.itemId),
+                loanList: state.board.loanList,
+                items: state.board.items
+        }
       })
     }
     
 
     else if (action.type === actions.RENEW_BORROW_ITEM) {
       return Object.assign({}, state, {
-        borrowList: state.board.borrowList.map((i) => (
+        board: {borrowList: state.board.borrowList.map((i) => (
         i.listId === action.itemId ? 
-        {...i, returnDate: action.returnDate} : i))
+        {...i, returnDate: action.returnDate} : i)),
+                loanList: state.board.loanList,
+                items: state.board.items}
     })
   }
       else if (action.type === actions.UPDATE_USERNAME) {
         return Object.assign({}, state, {
-        username: action.username
+        newId: action.username
       })
     }
         else if (action.type === actions.FETCH_BOARD_SUCCESS) {
         return Object.assign({}, state, {
-          board: action.board
+          board: 
+              {loanList: action.loanList, 
+              items: action.items, 
+              borrowList: action.borrowList} 
         })
       }
 /*

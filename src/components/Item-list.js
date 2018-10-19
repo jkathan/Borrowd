@@ -37,23 +37,23 @@ export class ItemList extends React.Component {
     }
 
     render() {
-        console.log(this.props.loanList);
+        console.log(this.props.loanList.loanList);
         const dates = this.props.loanList.loanList.map(a => a.returnDate);
         const currentDate = moment().format('YYYY-MM-DD');
-        console.log(dates);
-        console.log(currentDate);
+        //console.log(dates);
+        //console.log(currentDate);
         const overdueLoansDate = dates.filter(x => {
             return x < currentDate
         });
         const overdueLoans = overdueLoansDate.length;
-        const borrowDates = this.props.loanList[0].board[0].borrowList.map(b => b.returnDate)
+        const borrowDates = this.props.loanList.borrowList.map(b => b.returnDate)
         const overdueBorrowsDate = borrowDates.filter(z => {
             return z < currentDate
         });
         const overdueBorrows = overdueBorrowsDate.length
-        console.log(overdueLoans);
+        //console.log(overdueLoans);
         //console.log(this.props.borrowlist.borrowList);
-        const itemCheckedOutList = this.props.loanList[0].board[0].loanList.map((item, index) => (
+        const itemCheckedOutList = this.props.loanList.loanList.map((item, index) => (
              <ul className="list-wrapper">   
                 <ItemCheckoutCard 
                 listId={index}
@@ -62,7 +62,7 @@ export class ItemList extends React.Component {
         )
     )
 
-        const itemRepo = this.props.loanList[0].board[0].items.map((item, index) => (
+        const itemRepo = this.props.loanList.items.map((item, index) => (
             <ul className="list-wrapper">   
                 <ItemRepo
                 listId={index}
@@ -70,7 +70,7 @@ export class ItemList extends React.Component {
             </ul>
             )               
         )
-            const borrowList = this.props.loanList[0].board[0].borrowList.map((item, index) => (
+            const borrowList = this.props.loanList.borrowList.map((item, index) => (
             <ul className="list-wrapper">    
                 <ItemBorrowCard 
                 listId={index}

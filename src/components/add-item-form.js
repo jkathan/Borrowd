@@ -6,6 +6,7 @@ import './add-form.css';
 import {required, nonEmpty, email} from '../validators';
 import {Field, reduxForm, SubmissionError, focus, reset} from 'redux-form';
 import Input from './input';
+import {updateBoard} from '../actions/index';
 //how do I 
 export class AddItemForm extends React.Component {
     constructor(props) {
@@ -26,6 +27,7 @@ export class AddItemForm extends React.Component {
 
         );
         this.props.dispatch(reset('addItemForm'));
+        this.props.dispatch(updateBoard());
     }
 
 render() {

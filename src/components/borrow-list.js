@@ -31,13 +31,13 @@ export class BorrowList extends React.Component {
     }
 
     render() {
-        //console.log(this.props.borrowList);
-        const sortedList = this.props.borrowList.sort((a, b) => (a.returnDate > b.returnDate) ? 1 : ((b.returnDate > a.returnDate) ? -1 : 0));
+        console.log(this.props.borrowList);
+        const sortedList = this.props.borrowList.borrowList.sort((a, b) => (a.returnDate > b.returnDate) ? 1 : ((b.returnDate > a.returnDate) ? -1 : 0));
         //console.log(sortedList);
         const borrowlist = sortedList.map((borrow, index) => (
             <ul className="list-wrapper">  
                 <BorrowCard 
-                listId={index}
+                listId={borrow.listId}
                 {...borrow} />
             </ul>
         )
@@ -52,9 +52,6 @@ export class BorrowList extends React.Component {
         console.log(borrowlist);
         return (
             <div>
-                <div className="lists">
-                  <SearchBar onChange={searchTerm => this.props.dispatch(filterText({searchTerm}))} />
-                </div>
                    <div className="lists">
                         <ul className="floats marginish">
                             <li className="floats"><BorrowForm /></li>
@@ -75,7 +72,7 @@ const mapStateToProps = state => ({
         state.loanList
     );*/
     //return {
-        borrowList: getVisibleBorrowItem(state.loanList, state.filters)
+        borrowList: state.loanList.board
     //};
 
 })

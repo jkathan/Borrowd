@@ -1,7 +1,7 @@
 export default function getVisibleBorrowItem(borrowList, text) {
 	console.log(borrowList.borrowList);
 
-    return borrowList.borrowList
+    return borrowList[0].borrowList
 
     .filter(item => {
         const textMatch =

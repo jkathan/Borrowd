@@ -2,8 +2,8 @@
 
 export default function getVisibleItem(loanList, text) {
 	//console.log(sortFilter.sortFilter);
-console.log(loanList.loanList);
-    return loanList.loanList
+console.log(loanList);
+    return loanList[0].loanList
     
     .filter(item => {
         const textMatch =

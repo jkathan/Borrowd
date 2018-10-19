@@ -2,6 +2,7 @@ import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
 import {registerUser} from '../actions/users';
 import {updateUsername} from '../actions/index';
+import {initialBoardAdd} from '../actions/index';
 import {login} from '../actions/auth';
 import Input from './input';
 import {required, nonEmpty, matches, length, isTrimmed} from '../validators';
@@ -12,12 +13,10 @@ export class RegistrationForm extends React.Component {
     onSubmit(values) {
         const {username, password, firstName, lastName} = values;
         const user = {username, password, firstName, lastName};
-        console.log(username);
-        return this.props
-            .dispatch(registerUser(user))
-            .then(() => this.props.dispatch(updateUsername(username)))
+        //console.log(user.username);
+        this.props.dispatch(registerUser(user)).then(() => this.props.dispatch(updateUsername(user.username)))
+        .then(() => this.props.dispatch(initialBoardAdd()))
             //.then(() => this.props.dispatch(login(username, password)));
-            console.log(username);
     }
 
     render() {

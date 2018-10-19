@@ -15,10 +15,9 @@ export class Sidebar extends React.Component {
   }
 }
 
-    /*logOut() {
-        this.props.dispatch(clearAuth());
-        clearAuthToken();
-    }*/
+    logOut() {
+        this.props.history.push(`/`);
+    }
 
     toggleList(){
     this.setState(prevState => ({
@@ -27,7 +26,7 @@ export class Sidebar extends React.Component {
         )
     }
     render () {
-        /*const dates = this.props.loanList.loanList.map(a => a.returnDate);
+        const dates = this.props.loanList.loanList.map(a => a.returnDate);
         const currentDate = moment().format('YYYY-MM-DD');
         console.log(dates);
         console.log(currentDate);
@@ -40,7 +39,7 @@ export class Sidebar extends React.Component {
             return z < currentDate
         });
         const overdueBorrows = overdueBorrowsDate.length
-        console.log(overdueLoans);*/
+        console.log(overdueLoans);
     const{list} = this.props
     const{listOpen, headerTitle} = this.state
     return (
@@ -56,18 +55,18 @@ export class Sidebar extends React.Component {
             {listOpen &&
                     <ul className="folder-menu-list">
                         <li className=" .dd-list-item folder-menu-list-item">
-                            <Link to= '/'>
-                                Dashboard
+                            <Link to= '/items/items'>
+                                Dashboard 
                             </Link>
                         </li>                                
                         <li className=" .dd-list-itemfolder-menu-list-item">
                             <Link to= '/items/loans'>
-                                Loans 
+                                Loans ({overdueLoans})
                             </Link>
                         </li>
                         <li className=" .dd-list-item folder-menu-list-item">
                             <Link to= '/items/borrows'>
-                                Borrows 
+                                Borrows ({overdueBorrows})
                             </Link>
                         </li>
                         <li>
@@ -90,7 +89,7 @@ const mapStateToProps = state => ({
         state.loanList
     );*/
     
-        loanList: state.loanList
+        loanList: state.loanList.board
         //borrowsList: getVisibleBorrowItem(state.borrowList, state.filters)
     //};
 

@@ -22,12 +22,13 @@ export class BorrowCard extends React.Component  {
 }
 
 //would rather do handleclick in parent but cant specifiy button
-render() {    
+render() {
+		console.log(this.props.loaner);    
     return (
         <ul key={this.props.listId} className="card">
         	 <li>Type: {this.props.itemType}</li>
 			 <li>Item: {this.props.item}</li>
-			 <li>Loaner: {this.props.borrower}</li>
+			 <li>Loaner: {this.props.loaner}</li>
 			 <li>Email: {this.props.email}</li>
 			 <li>Phone: {this.props.phone}</li>
 			 <li>Return Date: {this.props.returnDate}</li>

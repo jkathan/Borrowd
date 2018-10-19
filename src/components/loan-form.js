@@ -6,6 +6,7 @@ import {required, nonEmpty, email} from '../validators';
 import {reduxForm, Field, SubmissionError, focus, reset} from 'redux-form';
 import {addCard} from '../actions/index';
 import Input from './input';
+import {updateBoard} from '../actions/index';
 
 //how do I 
 export class LoanForm extends React.Component {
@@ -23,7 +24,7 @@ export class LoanForm extends React.Component {
         const borrower = values.borrower;
         const email = values.email;
         const phone = values.phone;
-        const date = values.date;
+        const date = values.returnDate;
         console.log(itemType);
         //if (itemType && item && borrower && email && phone && date && this.props.onAdd) {
             //this.props.onAdd(itemType, item, borrower, email, phone, date);
@@ -38,6 +39,7 @@ export class LoanForm extends React.Component {
         addCard(itemType, item, borrower, email, phone, date, dateAdded, null)
         );
         this.props.dispatch(reset('loanAdd'));
+        this.props.dispatch(updateBoard());
         //this.props.history.push(`/items/loans`);
     }
 

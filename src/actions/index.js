@@ -134,25 +134,63 @@ export const updateBoard = () => (dispatch, getState) => {
         });
 };
 */
+export const updateBoard = () => (dispatch, getState) => {
+    const boardState = getState().loanList;
+    console.log(boardState);
+    const username = getState().loanList.newId;
+    console.log(username);
+    fetch(`${API_BASE_URL}/put/${username}`,
+    {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(boardState)
+    })
+};
+
+export const initialBoardAdd = () => (dispatch, getState) => {
+    const firstState = getState().loanList;
+    console.log(firstState);
+    fetch(`${API_BASE_URL}/post`, {    
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(firstState)
+    })
+    .then(res => {console.log(res)})
+};
+
 
 export const FETCH_BOARD_SUCCESS = 'FETCH_BOARD_SUCCESS';
-export const fetchBoardSuccess = board => ({
+export const fetchBoardSuccess = (loanList, items, borrowList) => ({
     type: FETCH_BOARD_SUCCESS,
-    board
+    loanList,
+    items,
+    borrowList
 });
 
 
 export const fetchBoard = () => (dispatch, getState) => {
-        const username = getState().username;
-    fetch(`${API_BASE_URL}/get`)
+    const username = getState().loanList.newId;
+    console.log(username);
+        const boardState = getState().loanList;
+    console.log(boardState);
+    fetch(`${API_BASE_URL}/get/${username}`)
         .then(res => {
+            //console.log(res);
             if (!res.ok) {
                 return Promise.reject(res.statusText);
             }
             return res.json();
         })
         .then(board => {
-            console.log(board);
-            dispatch(fetchBoardSuccess(board));
+            //console.log(board.board[0].borrowList);
+            const loanList = board.board[0].loanList;
+            //console.log(loanList);
+            const items = board.board[1].items;
+            const borrowList= board.board[2].borrowList;
+            dispatch(fetchBoardSuccess(loanList, items, borrowList));
     });
 };

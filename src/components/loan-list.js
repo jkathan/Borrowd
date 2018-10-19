@@ -31,15 +31,18 @@ export class LoanList extends React.Component {
     }
 
     render() {
-        const sortedList = this.props.loanList.sort((a, b) => (a.returnDate > b.returnDate) ? 1 : ((b.returnDate > a.returnDate) ? -1 : 0));
-        const loanlist = sortedList.map((loan, index) => (
+            console.log(this.props.loansList);
+            const sortedList = this.props.loansList.loanList.sort((a, b) => (a.returnDate > b.returnDate) ? 1 : ((b.returnDate > a.returnDate) ? -1 : 0));
+            const loanlist = sortedList.map((loan, index) => (
             <ul className="list-wrapper"> 
                 <LoanCard 
-                listId={index}
+                listId={loan.listId}
                 {...loan} />
             </ul>
         )
     )
+        
+        
         /*let loansList = this.props.loansList.filter(loan =>
             loan.item.toString().toLowerCase().includes(
                 this.state.searchTerm.toString().toLowerCase()
@@ -51,8 +54,7 @@ export class LoanList extends React.Component {
         return (
             <div>
                 <div className="list">
-                  <SearchBar onChange={searchTerm => this.props.dispatch(filterText({searchTerm}))} />
-                   <div className="lists">
+                  <div className="lists">
                         <ul className="floats marginish">
                             <li className="floats"><LoanForm /></li>
                             <ul>{loanlist}</ul> 
@@ -73,7 +75,7 @@ const mapStateToProps = state => ({
         state.loanList
     );*/
     //return {
-        loansList: getVisibleItem(state.loanList, state.filters)
+        loansList: state.loanList.board
     //};
 
 })

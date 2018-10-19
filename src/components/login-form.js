@@ -7,9 +7,12 @@ import {updateUsername} from '../actions/index';
 
 export class LoginForm extends React.Component {
     onSubmit(values) {
-        return this.props.dispatch(login(values.username, values.password));
+        console.log(values);
+        const username = values.username;
+        console.log(username);
+        this.props.dispatch(updateUsername(username));
+        this.props.dispatch(login(values.username, values.password));
         console.log(values.username);
-        this.props.dispatch(updateUsername(values.username));
         this.props.history.push(`/items/items`);
     }
 
@@ -25,9 +28,7 @@ export class LoginForm extends React.Component {
         return (
             <form
                 className="login-form"
-                onSubmit={this.props.handleSubmit(values =>
-                    this.onSubmit(values)
-                )}>
+                >
                 {error}
                 <label htmlFor="username">Username</label>
                 <Field
@@ -45,7 +46,11 @@ export class LoginForm extends React.Component {
                     id="password"
                     validate={[required, nonEmpty]}
                 />
-                <button disabled={this.props.pristine || this.props.submitting}>
+                <button 
+                onClick={this.props.handleSubmit(values =>
+                    this.onSubmit(values)
+                )}
+                disabled={this.props.pristine || this.props.submitting}>
                     Log in
                 </button>
             </form>

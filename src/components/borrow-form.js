@@ -6,6 +6,7 @@ import './add-form.css';
 import {addBorrowCard} from '../actions/index';
 import {required, nonEmpty, email} from '../validators';
 import Input from './input';
+import {updateBoard} from '../actions/index';
 //how do I 
 export class BorrowForm extends React.Component {
     constructor(props) {
@@ -16,11 +17,11 @@ export class BorrowForm extends React.Component {
     onSubmit(values) {
         const itemType = this.typeInput.value.trim();
         const item = values.item;
-        const loaner = values.borrower;
+        const loaner = values.loaner;
         const email = values.email;
         const phone = values.phone;
-        const date = values.date;
-        console.log(itemType);
+        const date = values.returnDate;
+        console.log(loaner);
         //if (itemType && item && borrower && email && phone && date && this.props.onAdd) {
             //this.props.onAdd(itemType, item, borrower, email, phone, date);
         //}
@@ -34,6 +35,7 @@ export class BorrowForm extends React.Component {
         addBorrowCard(itemType, item, loaner, email, phone, date, dateAdded, null)
         );
         this.props.dispatch(reset('borrowForm'));
+        this.props.dispatch(updateBoard());
         //this is where a update board call can go
     }
 render() {
@@ -58,7 +60,7 @@ render() {
                         />
                         <Field 
                             label="Loaner:"
-                            name="borrower" 
+                            name="loaner" 
                             component={Input}  
                             type="text" 
                             ref={input => this.input = input}

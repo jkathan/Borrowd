@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import {reduxForm, Field, SubmissionError, focus, reset} from 'redux-form';
 import {required, nonEmpty, email} from '../validators';
 import Input from './input';
+import {updateBoard} from '../actions/index';
 //import {renewLoanItem} from '../actions/index';
 //import {addLoanCard} from '../actions';
 
@@ -31,6 +32,7 @@ export class RenewLoanForm extends React.Component {
         //);
        //this.props.dispatch(renewLoanItem(date, index))
         this.setEditing(false)
+        this.props.dispatch(updateBoard());
     }
        setEditing(editing) {
         this.setState({
@@ -39,9 +41,16 @@ export class RenewLoanForm extends React.Component {
     }
 
 	render() {
+        if (!this.state.editing) {
+            return (
+                <div>
+                    <button onClick={() => this.setEditing(true)}>Renew</button>
+                </div>
+            );
+        }
 		return (
 			<form onSubmit={this.props.handleSubmit(values =>
-                    this.onSubmit(values))}>
+                    this.onSubmitNow(values))}>
 				<Field
                     label="New Return Date:"
                     component={Input}
@@ -62,6 +71,6 @@ export class RenewLoanForm extends React.Component {
 
 export default reduxForm({
     form: 'loanRenew',
-    onSubmitFail: (errors, dispatch) =>
-        dispatch(focus('loanRenew', Object.keys(errors)[0]))
+    //onSubmitFail: (errors, dispatch) =>
+        //dispatch(focus('loanRenew', Object.keys(errors)[0]))
 })(RenewLoanForm);

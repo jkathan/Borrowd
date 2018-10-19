@@ -5,6 +5,7 @@ import {required, nonEmpty, email} from '../validators';
 import {renewBorrowItem} from '../actions/index';
 import {reduxForm, Field, SubmissionError, focus, reset} from 'redux-form';
 import Input from './input';
+import {updateBoard} from '../actions/index';
 //import {addLoanCard} from '../actions';
 
 export class RenewBorrowForm extends React.Component {
@@ -25,6 +26,7 @@ export class RenewBorrowForm extends React.Component {
         this.props.dispatch(renewBorrowItem(date, index))
         this.props.dispatch(reset('borrowRenew'));
         this.setEditing(false)
+        this.props.dispatch(updateBoard());
     }
         //);
        setEditing(editing) {
@@ -43,7 +45,7 @@ export class RenewBorrowForm extends React.Component {
         }
 		return (
             <form onSubmit={this.props.handleSubmit(values =>
-                    this.onSubmit(values))}>
+                    this.onSubmitThis(values))}>
                 <Field
                     label="New Return Date:"
                     component={Input}
@@ -63,6 +65,6 @@ export class RenewBorrowForm extends React.Component {
 }
 export default reduxForm({
     form: 'borrowRenew',
-    onSubmitFail: (errors, dispatch) =>
-        dispatch(focus('borrowRenew', Object.keys(errors)[0]))
+    //onSubmitFail: (errors, dispatch) =>
+        //dispatch(focus('borrowRenew', Object.keys(errors)[0]))
 })(RenewBorrowForm);

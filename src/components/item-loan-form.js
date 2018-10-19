@@ -8,6 +8,7 @@ import './add-form.css';
 import {reduxForm, Field, SubmissionError, focus, reset} from 'redux-form';
 import {required, nonEmpty, email} from '../validators';
 import Input from './input';
+import {updateBoard} from '../actions/index';
 //how do I 
 export class ItemLoanForm extends React.Component {
     constructor(props) {
@@ -33,6 +34,7 @@ export class ItemLoanForm extends React.Component {
         this.props.dispatch(removeItemFromList(listId));
         this.setEditing(false);
         this.props.dispatch(reset('itemLoanForm'));
+        this.props.dispatch(updateBoard());
     }
        setEditing(editing) {
         //this.props.history.push(`/items/loans`);
