@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import RenewLoanForm from './loan-renew-form';
 import {returnLoanItem} from '../actions/index';
 import {renewLoanItem} from '../actions/index';
+import {addItem} from '../actions/index';
 import './card.css';
 
 //import {updateCheckoutStatus} from '../actions/index'
@@ -19,8 +20,11 @@ export class LoanCard extends React.Component  {
 //listens to onsubmit and sets state to that new state 
   returnLoanItem(e, index){
     e.preventDefault();
+    const itemType= this.props.itemType;
+	const item = this.props.item;
     console.log(index);
-   this.props.dispatch(returnLoanItem(index));
+   	this.props.dispatch(returnLoanItem(index));
+   	this.props.dispatch(addItem(itemType, item));
   //this.props.dispatch(updateCheckoutStatus());
 }
 

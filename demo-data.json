@@ -1,0 +1,27 @@
+  {"board": 
+  [{ "loanList": [
+  {"listId": 6, "itemType": "Tool", "item": "Wrench", "borrower": "Bob", "email": "fake@email.com", "phone": "301-555-555", "returnDate": "2018-09-10", "dateAdded": "2018-06-14"},
+  {"listId": 7, "itemType": "Money", "item": "$300", "borrower": "John", "email": "fake@email.com", "phone": "301-555-555", "returnDate": "2019-09-18", "dateAdded": "2018-06-13"},
+  {"listId": 8, "itemType": "Tool", "item": "Tablesaw", "borrower": "Bill", "email": "fake@email.com", "phone": "301-555-555", "returnDate": "2019-09-17", "dateAdded": "2018-06-12"},
+  {"listId": 9, "itemType": "Clothing", "item": "Jean Jacket", "borrower": "Ian", "email": "fake@email.com", "phone": "301-555-555", "returnDate": "2019-09-16", "dateAdded": "2018-06-11"},
+  {"listId": 10, "itemType": "Electronic", "item": "Headphones", "borrower": "Janet", "email": "fake@email.com", "phone": "301-555-555", "returnDate": "2019-09-15", "dateAdded": "2018-06-10"},
+  {"listId": 11, "itemType": "Other", "item": "Bike", "borrower": "Greta", "email": "fake@email.com", "phone": "301-555-555", "returnDate": "2019-09-14", "dateAdded": "2018-06-09"}
+]},
+  {"items": [
+  {"listId": 12, "itemType": "Tool", "item": "Socket Wrench"},
+  {"listId": 13, "itemType": "Money", "item": "$800"},
+  {"listId": 14, "itemType": "Tool", "item": "Large Hammer"},
+  {"listId": 15, "itemType": "Clothing", "item": "Turquise Buttondown"},
+  {"listId": 16, "itemType": "Electronic", "item": "Old Cellphone"},
+  {"listId": 17, "itemType": "Other", "item": "Inflatable Raft"}
+  ]},
+  {"borrowList": [
+  {"listId": 0, "itemType": "Tool", "item": "Wrench", "loaner": "Bob", "email": "fake@email.com", "phone": "301-555-555", "returnDate": "2019-09-10", "dateAdded": "2018-06-14"},
+  {"listId": 1, "itemType": "Money", "item": "$300", "loaner": "john", "email": "fake@email.com", "phone": "301-555-555", "returnDate": "2019-09-18", "dateAdded": "2018-06-13"},
+  {"listId": 2, "itemType": "Tool", "item": "Tablesaw", "loaner": "bill", "email": "fake@email.com", "phone": "301-555-555", "returnDate": "2019-09-17", "dateAdded": "2018-06-12"},
+  {"listId": 3, "itemType": "Clothing", "item": "Jean Jacket", "loaner": "ian", "email": "fake@email.com", "phone": "301-555-555", "returnDate": "2019-09-16", "dateAdded": "2018-06-11"},
+  {"listId": 4, "itemType": "Electronic", "item": "Headphones", "loaner": "janet", "email": "fake@email.com", "phone": "301-555-555", "returnDate": "2019-09-15", "dateAdded": "2018-06-10"},
+  {"listId": 5, "itemType": "Other", "item": "Bike", "loaner": "greta", "email": "fake@email.com", "phone": "301-555-555", "returnDate": "2019-09-14", "dateAdded": "2018-06-09"}
+]}],
+  "newId": "demo"
+}

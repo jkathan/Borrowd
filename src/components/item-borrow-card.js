@@ -2,6 +2,7 @@ import {connect} from 'react-redux';
 import React from 'react';
 import {returnBorrowItem} from '../actions/index';
 import './card.css';
+import {updateBoard} from '../actions/index';
 
 
 class ItemBorrowCard extends React.Component {
@@ -13,7 +14,8 @@ class ItemBorrowCard extends React.Component {
 	returnItem(e, index){
 	    e.preventDefault();
 	    console.log(index);
-	   this.props.dispatch(returnBorrowItem(index));
+	   	this.props.dispatch(returnBorrowItem(index));
+	    this.props.dispatch(updateBoard());
 }
 //edit button should be a link
 //new form form for borrow and forms

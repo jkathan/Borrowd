@@ -10,13 +10,31 @@ const passwordLength = length({min: 10, max: 72});
 const matchesPassword = matches('password');
 
 export class RegistrationForm extends React.Component {
+    constructor(props) {
+        super(props);
+        //this.state = {
+        //    searchTerm: ''
+        //}
+                this.onClick = this.onClick.bind(this);
+
+    }
+
+
+
     onSubmit(values) {
         const {username, password, firstName, lastName} = values;
         const user = {username, password, firstName, lastName};
         //console.log(user.username);
         this.props.dispatch(registerUser(user)).then(() => this.props.dispatch(updateUsername(user.username)))
-        .then(() => this.props.dispatch(initialBoardAdd()))
-            //.then(() => this.props.dispatch(login(username, password)));
+        .then(() => this.props.dispatch(initialBoardAdd()));
+        if (this.props.onAdd) {
+            this.props.onAdd();
+        }
+        
+    }
+
+    onClick() {
+        this.props.history.push(`/items/items`);
     }
 
     render() {
@@ -52,6 +70,7 @@ export class RegistrationForm extends React.Component {
                     validate={[required, nonEmpty, matchesPassword]}
                 />
                 <button
+                    onClick={this.onClick}
                     type="submit"
                     disabled={this.props.pristine || this.props.submitting}>
                     Register

@@ -69,9 +69,9 @@ export class Sidebar extends React.Component {
                                 Borrows ({overdueBorrows})
                             </Link>
                         </li>
-                        <li>
-                            <button onClick={() => this.logOut()}>Log out</button>
-                        </li>
+                        <Link to= '/'>
+                                Log Out
+                            </Link>
                     </ul>
                 }
                 </div>

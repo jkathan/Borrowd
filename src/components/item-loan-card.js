@@ -1,7 +1,9 @@
 import React from 'react';
 import {returnLoanItem} from '../actions/index';
+import {addItem} from '../actions/index';
 import {connect} from 'react-redux';
 import './card.css';
+import {updateBoard} from '../actions/index';
 
 
 class ItemCheckoutCard extends React.Component {
@@ -13,9 +15,13 @@ class ItemCheckoutCard extends React.Component {
     }
 //dont unders
 	returnItem(e, index){
+		const itemType= this.props.itemType;
+		const item = this.props.item;
 	    e.preventDefault();
 	    console.log(index);
 	   this.props.dispatch(returnLoanItem(index));
+	   this.props.dispatch(addItem(itemType, item));
+	   this.props.dispatch(updateBoard());
 }
 //edit button should be a link
 //new form form for borrow and forms
