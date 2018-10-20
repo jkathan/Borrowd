@@ -36,7 +36,7 @@ render() {
 				 <li>Email: {this.props.email}</li>
 				 <li>Phone: {this.props.phone}</li>
 				 <li>Return Date: {this.props.returnDate}</li>
-				 <button onClick={(e) => this.returnItem(e, this.props.listId)}>Return</button>
+				 <button className="formButtons" onClick={(e) => this.returnItem(e, this.props.listId)}>Return</button>
 				 <div>
 				 	<RenewBorrowForm 
 				 	index ={this.props.listId} 

@@ -188,3 +188,151 @@
 	margin-right: auto;
 	margin-left: auto;
 }
+
+
+@media (min-width: 470px) and (max-width: 980px) {
+.banner {
+	background-image: url('https://i.imgur.com/nTiLEgR.png');
+	background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100%;
+	display: flex;
+}
+
+.logoBanner {
+	width:	25%;
+	}
+
+.bannerRight {
+	text-align: left;
+	padding: 0;
+	margin: 0;
+	}
+.bannerRight {
+	margin-left: 0;
+}
+
+.bannerLeft {
+	margin-left: 0;
+
+
+}
+
+.bannerLeft h1 {
+	font-family: 'Arvo', serif;
+	color: #0950a0;
+	font-size: 40px;
+	margin-left: 0;
+	margin-top: 5px;
+	}
+
+.bannerLeft h2 {
+	color: #0950a0;
+	font-size: 20px;
+	padding-bottom: 0px;
+	margin-bottom: 0;
+	}
+
+	.homescreenLink {
+	padding-top: 10px;
+	color: black;
+	padding-left: 0px;
+	color: #0950a0;
+
+}
+}
+
+@media only screen and (max-width: 470px) {
+
+.mobile {
+	display: flex;
+	background: #91A1B2;
+	padding: 0;
+	-webkit-box-shadow: 0px 3px 5px rgba(100, 100, 100, 0.49);
+ 	-moz-box-shadow:    0px 3px 5px rgba(100, 100, 100, 0.49);
+ 	box-shadow:         0px 3px 5px rgba(100, 100, 100, 0.49);
+}
+
+.pageContent {
+	margin-top: 80px;
+	margin-left: auto;
+	margin-right: auto;
+	left:0;
+}
+
+.banner {
+	background-image: url('https://i.imgur.com/nTiLEgR.png');
+	background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100%;
+	display: flex;
+}
+
+.logoBanner {
+	display: none;
+	}
+
+.bannerRight {
+	text-align: left;
+	}
+
+.bannerLeft {
+	margin-left: 10px;
+	margin-right: auto;
+	}
+
+.bannerRight {
+	float: right;
+	margin-left: 5px;
+	}
+
+.bannerLeft h1 {
+	font-family: 'Arvo', serif;
+	color: #0950a0;
+	padding-top: 0px;
+	font-size: 40px;
+	margin-bottom: 15px;
+	}
+
+.bannerLeft h2 {
+	display: none;
+	color: #0950a0;
+	font-size: 25px;
+	padding-bottom: 0px;
+	padding-left: 13px;
+	}
+.navBar {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+
+}
+
+.navbarLeft {
+	display: flex;
+	float: left;
+
+}
+.navLeft {
+	float: left;
+	padding-left: 15px;
+	width: 75px;
+	height: auto;
+	padding-left: 15;
+}
+
+.floatRight {
+	float: right;
+}
+
+.floatLeftNav {
+	font-family: 'Arvo', serif;
+	padding-left: 20px;
+	margin-top: 23px;
+	color: white;
+	float: left;
+	font-size: 30px;
+	text-decoration: none !important;
+}
+}

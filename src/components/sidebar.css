@@ -76,11 +76,10 @@
 }
 .folder-menu-list-item {
 	margin-left: 25px;
-		margin-top: 33px;
-	float: right;
+	margin-top: 33px;
+
 	display: flex;
 	text-decoration: none !important;
-
 	position: right;
 }
 

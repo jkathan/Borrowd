@@ -110,4 +110,7 @@ form input {
     border: none;
     cursor: pointer;
     width: 30%;
+    margin-right: auto;
+    margin-left: auto;
+    
 }

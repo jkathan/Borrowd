@@ -43,25 +43,20 @@ export default class LandingPageHeader extends React.Component {
                  </div>
 
         <div className="mobile">
-            <div className="dd-wrapper" >
-                <div className="dd-header" onClick={() => this.toggleList()}>
-                    <div className="dd-header-title">
-                        {headerTitle}
-                    </div>                
-                        {listOpen ? <text>&#9710;</text> : <text>&#10729;</text>}
-                </div>
-            {listOpen &&
+            <div className="navbarLeft" >
                     <ul className="folder-menu-list">
-                        <li className=" .dd-list-item folder-menu-list-item">
+                        <li><img src={'https://i.imgur.com/Z4XP0V8.png'} className='navLeft'/></li>
+                        <li><Link to="/" className='floatLeftNav'>Borrowd</Link></li>
+                        <li className="folder-menu-list-item">
                             <Link to= '/login' className='link headerLink'>
                                 Login
                             </Link>
                         </li>
+                        <li className=" folder-menu-list-item">
                         <Link to= '/register' className='link headerLink'>
                                 Register
-                        </Link>
+                        </Link></li>
                     </ul>
-                }
                 </div>
             </div>
         </div>

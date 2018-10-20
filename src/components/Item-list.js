@@ -2,8 +2,6 @@ import React from 'react';
 import {connect} from 'react-redux';
 import AddItemForm from './add-item-form';
 import ItemRepo from './item-rep';
-import ItemCheckoutCard from './item-loan-card';
-import ItemBorrowCard from './item-borrow-card'
 import {fetchBoard} from '../actions/index';
 import moment from 'moment';
 import './lists.css';
@@ -75,8 +73,9 @@ export class ItemList extends React.Component {
                     <AddItemForm />
                 </div>
                 <ul className="lists">
-                        <h2 className='sectionHeader'>Previously Loaned Items</h2>
-                        {itemRepo}
+                        <h2 className='sectionHeader'>Previously Loaned Items:</h2>
+                            <div className='listFormat'>{itemRepo}</div>
+
                 </ul>
             </div>
         );

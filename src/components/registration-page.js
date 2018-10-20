@@ -10,9 +10,9 @@ export default function RegistrationPage(props) {
     // is successful) redirect to the user's dashboard
     return (
         <div>
-                                <div className="navBar">
-                        <LandingPageHeader />
-                    </div>
+            <div className="navBar">
+                <LandingPageHeader />
+            </div>
             <div className="home">
                 <h2>Register for Borrowd</h2>
                 <img src='https://i.imgur.com/u3pf8gs.png' className='loginImage'/>

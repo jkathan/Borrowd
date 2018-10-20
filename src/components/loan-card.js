@@ -43,10 +43,9 @@ render() {
 			 <li>Email: {this.props.email}</li>
 			 <li>Phone: {this.props.phone}</li>
 			 <li>Return Date: {this.props.returnDate}</li>
-			 <button onClick={(e) => this.returnLoanItem(e, this.props.listId)}>Return</button>
+			 <button className="formButtons"onClick={(e) => this.returnLoanItem(e, this.props.listId)}>Return</button>
 			 <div>
 			 	<RenewLoanForm 
-			 	//index ={this.props.listId}
 			 	onAdd= {(date) => this.renewLoan(date)} 
 			 	/>
 			 </div>
@@ -54,12 +53,6 @@ render() {
     	);
 	};
 }
-
-//const mapDispatchToProps = (dispatch) => {
-//  return {
-//    returnLoanItem: index =>dispatch(indexAction.returnLoanItem(index))
-//  } onAdd={(itemType, item, borrower, email, phone, date) => this.addCard(itemType, item, borrower, email, phone, date)}
-//};
 
 export default connect()(LoanCard);
 

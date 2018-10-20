@@ -43,7 +43,7 @@ export class ItemLoanForm extends React.Component {
         if (!this.state.editing) {
             return (
                 <div>
-                    <button onClick={() => this.setEditing(true)}>Checkout</button>
+                    <button onClick={() => this.setEditing(true)} className="formButtons">Checkout</button>
                 </div>
             );
         };
@@ -92,12 +92,14 @@ export class ItemLoanForm extends React.Component {
                             validate={[required, nonEmpty]} 
                         />
                     <button 
+                        className="formButtons"
                         type="submit"
                         disabled={this.props.pristine || this.props.submitting}
                         >
                         Submit
                     </button>
                     <button 
+                        className="formButtons"
                         onClick={() => this.setEditing(false)} 
                         >
                         Cancel

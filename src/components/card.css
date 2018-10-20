@@ -2,6 +2,9 @@
     background: #FAFAFA;
     margin-bottom: 8px;
     padding: 8px 20px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .card li {

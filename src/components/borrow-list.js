@@ -34,7 +34,7 @@ export class BorrowList extends React.Component {
                         <h2>{overdueBorrows}</h2> 
                         <h3>Borrow(s) Overdue</h3>
                     </div>
-                </div>
+                 </div>
                 <div className='forms'>
                     <BorrowForm />
                 </div>

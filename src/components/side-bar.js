@@ -45,11 +45,9 @@ export class Sidebar extends React.Component {
     return (
             <div>
                  <div className="desktop">
-                    <div className='navbarLeft'>
+                    <ul className="navbarLeft">
                         <li><img src={'https://i.imgur.com/Z4XP0V8.png'} className='navLeft'/></li>
                         <li><Link to="/items/items" className='floatLeftNav'>Borrowd</Link></li>
-                    </div>
-                    <ul className="folder-menu-list">
                         <li className="folder-menu-list-item">
                             <Link to= '/items/items' className='link headerLink'>
                                 Dashboard 
@@ -65,9 +63,11 @@ export class Sidebar extends React.Component {
                                 Borrows ({overdueBorrows})
                             </Link>
                         </li>
-                        <Link to= '/' className='link headerLink'>
-                                Log Out
-                        </Link>
+                        <li className="folder-menu-list-item">
+                            <Link to= '/' className='link headerLink'>
+                                    Log Out
+                            </Link>
+                        </li>
                     </ul>
                  </div>
 

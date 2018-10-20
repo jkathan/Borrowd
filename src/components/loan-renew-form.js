@@ -44,7 +44,7 @@ export class RenewLoanForm extends React.Component {
         if (!this.state.editing) {
             return (
                 <div>
-                    <button onClick={() => this.setEditing(true)}>Renew</button>
+                    <button onClick={() => this.setEditing(true)} className="formButtons">Renew</button>
                 </div>
             );
         }
@@ -59,8 +59,8 @@ export class RenewLoanForm extends React.Component {
                     ref={input => this.input = input}
                     validate={[required, nonEmpty]} 
                 />
-	        	<button onClick={() => this.setEditing(false)}>Cancel</button>
 	        	<button
+                    className="formButtons"
                     type="submit"
                     disabled={this.props.pristine || this.props.submitting}
                 >Submit</button>
