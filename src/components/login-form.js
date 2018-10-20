@@ -4,8 +4,11 @@ import Input from './input';
 import {login} from '../actions/auth';
 import {required, nonEmpty} from '../validators';
 import {updateUsername} from '../actions/index';
+import LandingPageHeader from './landing-page-header';
+import './login-form.css';
 
 export class LoginForm extends React.Component {
+
     onSubmit(values) {
         console.log(values);
         const username = values.username;
@@ -26,34 +29,49 @@ export class LoginForm extends React.Component {
             );
         }
         return (
-            <form
-                className="login-form"
-                >
-                {error}
-                <label htmlFor="username">Username</label>
-                <Field
-                    component={Input}
-                    type="text"
-                    name="username"
-                    id="username"
-                    validate={[required, nonEmpty]}
-                />
-                <label htmlFor="password">Password</label>
-                <Field
-                    component={Input}
-                    type="password"
-                    name="password"
-                    id="password"
-                    validate={[required, nonEmpty]}
-                />
-                <button 
-                onClick={this.props.handleSubmit(values =>
-                    this.onSubmit(values)
-                )}
-                disabled={this.props.pristine || this.props.submitting}>
-                    Log in
-                </button>
-            </form>
+            <div className='loginForm'>
+                    <div className="navBar">
+                        <LandingPageHeader />
+                    </div>
+                <div className='form'>
+                    <h2>Login</h2>
+                    <img src='https://i.imgur.com/u3pf8gs.png' className='loginImage'/>
+                    <div className='demo'>
+                        <h3>Demo User:</h3>
+                        <p>Username: Demo</p>
+                        <p>Password: password12324</p>
+                    </div>
+                    <form
+                        className="login-form"
+                        >
+                        {error}
+                        <label htmlFor="username">Username:</label>
+                        <Field
+                            component={Input}
+                            type="text"
+                            name="username"
+                            id="username"
+                            validate={[required, nonEmpty]}
+                        />
+                        <label htmlFor="password">Password:</label>
+                        <Field
+                            component={Input}
+                            type="password"
+                            name="password"
+                            id="password"
+                            validate={[required, nonEmpty]}
+                        />
+                        <button 
+                        className ='entranceButtons'
+                        onClick={this.props.handleSubmit(values =>
+                            this.onSubmit(values)
+                        )}
+                        disabled={this.props.pristine || this.props.submitting}>
+                            Log in
+                        </button>
+                    </form>
+                </div>
+            </div>
         );
     }
 }

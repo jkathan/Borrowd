@@ -9,23 +9,20 @@ import {reduxForm, Field, SubmissionError, focus, reset} from 'redux-form';
 import {required, nonEmpty, email} from '../validators';
 import Input from './input';
 import {updateBoard} from '../actions/index';
-//how do I 
+
 export class ItemLoanForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             editing: false
         }
-
         this.onSubmit = this.onSubmit.bind(this);
     }
-    //in order to communicate between the two, do i need to set state?
     onSubmit(values) {
         const borrower = values.borrower;
         const email = values.email;
         const phone = values.phone;
-        const date = values.date;
-
+        const date = values.date
         if (borrower && email && phone && date && this.props.onAdd) {
             this.props.onAdd(borrower, email, phone, date);
         }
@@ -37,34 +34,19 @@ export class ItemLoanForm extends React.Component {
         this.props.dispatch(updateBoard());
     }
        setEditing(editing) {
-        //this.props.history.push(`/items/loans`);
         this.setState({
             editing
         });
     }
 
-/*
-    goToLoansList(event) {
-        event.preventDefault();
-        this.props.history.push(`/items/loans`);
-    }*/
-render() {
-            if (!this.state.editing) {
+    render() {
+        if (!this.state.editing) {
             return (
                 <div>
                     <button onClick={() => this.setEditing(true)}>Checkout</button>
                 </div>
             );
         };
-
-    //loan from list will have to be a search bar that shows values
-    //this will then autofill the item and on submit will update item as 
-    //checked out
-
-//within components i can render the buttons
-//heres what i want to do here. once the element is chosen or added. I want the 
-//element to appear and buttons to disappear. maybe not necessary for the add, but
-//for the find in item list. maybe it just makes sense to item pag
         return (
             <div>
                 <form className="card add-form" onSubmit={this.props.handleSubmit(values =>

@@ -1,37 +1,24 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import SearchBar from './loan-search-bar';
-//import LoanCard from './loan-card';
 import LoanForm from './loan-form';
-//import LoanSearchList from './loan-searchable-cards-list';
 import LoanCard from './loan-card';
-//import {addLoanCard} from '../actions/index';
 import {returnItem} from '../actions/index';
-import {searchList} from '../actions/index';
-import {filterText} from '../actions/filter';
-import getVisibleItem from '../selectors/lists';
-import {filterDate} from '../actions/filter';
+import moment from 'moment';
+import './sidebar.css';
 
 
 export class LoanList extends React.Component {
     constructor(props) {
         super(props);
-        //this.state = {
-        //    searchTerm: ''
-        //}
-                this.onChange = this.onChange.bind(this);
-
-    }
-
-    onChange(event) {
-        const sortFilter = this.menu.value;
-        console.log(sortFilter);
-        this.props.dispatch(
-            filterDate(sortFilter));
     }
 
     render() {
-            console.log(this.props.loansList);
+        const dates = this.props.loansList.loanList.map(a => a.returnDate);
+        const currentDate = moment().format('YYYY-MM-DD');
+        const overdueLoansDate = dates.filter(x => {
+            return x < currentDate
+        });
+        const overdueLoans = overdueLoansDate.length;
             const sortedList = this.props.loansList.loanList.sort((a, b) => (a.returnDate > b.returnDate) ? 1 : ((b.returnDate > a.returnDate) ? -1 : 0));
             const loanlist = sortedList.map((loan, index) => (
             <ul className="list-wrapper"> 
@@ -41,54 +28,29 @@ export class LoanList extends React.Component {
             </ul>
         )
     )
-        
-        
-        /*let loansList = this.props.loansList.filter(loan =>
-            loan.item.toString().toLowerCase().includes(
-                this.state.searchTerm.toString().toLowerCase()
-            )                    />
-
-        )*/
-//loan form will be link after routers
-        console.log(loanlist);
         return (
             <div>
-                <div className="list">
-                  <div className="lists">
-                        <ul className="floats marginish">
-                            <li className="floats"><LoanForm /></li>
-                            <ul>{loanlist}</ul> 
-                        </ul>
+                <div className='notifications'>
+                    <div className = 'borrowNotificationPage'>
+                        <h3>You have:</h3> 
+                        <h2>{overdueLoans}</h2> 
+                        <h3>Borrow(s) Overdue</h3>
                     </div>
                 </div>
-            </div>
+                <div className='forms'>
+                    <LoanForm />
+                </div>
+                  <div className="lists">
+                        <h2 className='sectionHeader'>Loaned Items</h2>
+                        {loanlist}
+                    </div>
+                </div>
         );
     };
 } 
 
 const mapStateToProps = state => ({
-/*    const loansList = Object.assign(
-        {},
-        {
-            loanList: []
-        },
-        state.loanList
-    );*/
-    //return {
         loansList: state.loanList.board
-    //};
-
 })
 
 export default connect(mapStateToProps)(LoanList);
-/*onAdd={(itemType, item, borrower, email, phone, date) => this.addCard(itemType, item, borrower, email, phone, date)}
-                            <SearchBar onChange={searchTerm => this.setState({searchTerm})} />
-                <LoanSearchList loansList = {loansList} />
-
-                <li>
-                        <h2><link to = {`/items/loanform`} >Loan out an item</link></h2>
-                    </li>
-
-                          filteredList: state.loanList.filter((search) => search.item.toLowerCase().includes(state.searchTerm)))
-
-                    */

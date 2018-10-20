@@ -1,33 +1,4 @@
-// neeed to import api base url
-
 import {API_BASE_URL} from '../config';
-console.log(API_BASE_URL);
-//import {normalizeResponseErrors} from './utils';
-/*
-export const FETCH_PROTECTED_SUCCESS = 'FETCH_PROTECTED_DATA_SUCCESS';
-export const fetchProtectedDataSuccess = data => ({
-    type: FETCH_PROTECTED_DATA_SUCCESS,
-    data
-});
-
-export const fetchBoard = () => dispatch => {
-    fetch(`${API_BASE_URL}/get/:newId`)
-        .then(res => {
-            if (!res.ok) {
-                return Promise.reject(res.statusText);
-            }
-            return res.json();
-        })
-        .then(board => {
-            dispatch(fetchBoardSuccess(board));
-        });
-};
-*/
-export const ADD_USERNAME = 'ADD_USERNAME';
-export const addUsername = (username) => ({
-    type: ADD_USERNAME,
-    username
-})
 
 export const ADD_CARD = 'ADD_CARD';
 export const addCard = (itemType, item, borrower, email, phone, date, dateAdded, listId) => ({
@@ -43,7 +14,7 @@ export const addCard = (itemType, item, borrower, email, phone, date, dateAdded,
 });
 
 export const ADD_BORROW_CARD = 'ADD_BORROW_CARD';
-export const addBorrowCard = (itemType, item, loaner, email, phone, date, dateAdded, listId) => ({
+export const addBorrowCard = (itemType, item, loaner, email, phone, date, dateAdded, image, listId) => ({
     type: ADD_BORROW_CARD,
     itemType,
     item,
@@ -95,50 +66,15 @@ export const removeItemFromList = (itemId) => ({
 	itemId
 });
 
-export const EDIT_ITEM = 'EDIT_ITEM';
-export const editItem = (itemType, item, itemId) => ({
-	type: RENEW_ITEM,
-	itemType,
-	item,
-    itemId
-});
-
 export const UPDATE_USERNAME = 'UPDATE_USERNAME';
 export const updateUsername = (username) => ({
     type: UPDATE_USERNAME,
     username
 })
 
-/*
-export const updateBoard = () => (dispatch, getState) => {
-    const username = getState().username;
-    const board = getState().board;
-    return fetch(`${API_BASE_URL}/put/`+ {username}, {
-        method: 'POST',
-        headers: {
-            'content-type': 'application/json'
-        },
-        body: JSON.stringify(board)
-    })
-        .then(res => res.json())
-        .catch(err => {
-            const {reason, message, location} = err;
-            if (reason === 'ValidationError') {
-                // Convert ValidationErrors into SubmissionErrors for Redux Form
-                return Promise.reject(
-                    new SubmissionError({
-                        [location]: message
-                    })
-                );
-            }
-        });
-};
-*/
 export const updateBoard = () => (dispatch, getState) => {
     const boardState = getState().loanList;
-    console.log(boardState);
     const username = getState().loanList.newId;
-    console.log(username);
     fetch(`${API_BASE_URL}/put/${username}`,
     {
         method: 'PUT',
@@ -151,7 +87,6 @@ export const updateBoard = () => (dispatch, getState) => {
 
 export const initialBoardAdd = () => (dispatch, getState) => {
     const firstState = getState().loanList;
-    console.log(firstState);
     fetch(`${API_BASE_URL}/post`, {    
     method: 'POST',
     headers: {
@@ -174,21 +109,16 @@ export const fetchBoardSuccess = (loanList, items, borrowList) => ({
 
 export const fetchBoard = () => (dispatch, getState) => {
     const username = getState().loanList.newId;
-    console.log(username);
-        const boardState = getState().loanList;
-    console.log(boardState);
+    const boardState = getState().loanList;
     fetch(`${API_BASE_URL}/get/${username}`)
         .then(res => {
-            //console.log(res);
             if (!res.ok) {
                 return Promise.reject(res.statusText);
             }
             return res.json();
         })
         .then(board => {
-            //console.log(board.board[0].borrowList);
             const loanList = board.board[0].loanList;
-            //console.log(loanList);
             const items = board.board[1].items;
             const borrowList= board.board[2].borrowList;
             dispatch(fetchBoardSuccess(loanList, items, borrowList));

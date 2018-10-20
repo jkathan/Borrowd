@@ -7,7 +7,7 @@ import './sidebar.css';
 
 const LoanPage = () => (
     <div className='listPage'>
-    	<div className="sidebar">
+    	<div className="navBar">
         	<Sidebar />
         </div>	
         <ItemList />

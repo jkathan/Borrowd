@@ -1,47 +1,32 @@
 import React from 'react';
 import {connect} from 'react-redux';
-//import SearchBar from './loan-search-bar';
-//import LoanCard from './loan-card';
 import AddItemForm from './add-item-form';
-//import LoanSearchList from './loan-searchable-cards-list';
 import ItemRepo from './item-rep';
 import ItemCheckoutCard from './item-loan-card';
 import ItemBorrowCard from './item-borrow-card'
-//import {borrowList} from '../actions/index';
-//import {returnBorrowItem} from '../actions/index';
-//import {loanList} from '../actions/index';
-//import {filterText} from '../actions/filter';
-//import getVisibleListItem from '../selectors/items';
-import {filterDate} from '../actions/filter';
 import {fetchBoard} from '../actions/index';
-import './lists.css';
 import moment from 'moment';
+import './lists.css';
+import BorrowForm from './borrow-form';
+import LoanForm from './loan-form';
+import {Link} from 'react-router-dom';
+
 
 export class ItemList extends React.Component {
     constructor(props) {
         super(props);
-        //this.state = {
-        //    searchTerm: ''
-        //}
-                this.onChange = this.onChange.bind(this);
-
+        this.state = {
+            editing: false
+        }
     }
+
     componentDidMount() {
         this.props.dispatch(fetchBoard())
     }
-    onChange(event) {
-        const sortFilter = this.menu.value;
-        console.log(sortFilter);
-        this.props.dispatch(
-            filterDate(sortFilter));
-    }
 
     render() {
-        console.log(this.props.loanList.loanList);
         const dates = this.props.loanList.loanList.map(a => a.returnDate);
         const currentDate = moment().format('YYYY-MM-DD');
-        //console.log(dates);
-        //console.log(currentDate);
         const overdueLoansDate = dates.filter(x => {
             return x < currentDate
         });
@@ -51,16 +36,14 @@ export class ItemList extends React.Component {
             return z < currentDate
         });
         const overdueBorrows = overdueBorrowsDate.length
-        //console.log(overdueLoans);
-        //console.log(this.props.borrowlist.borrowList);
-        const itemCheckedOutList = this.props.loanList.loanList.map((item, index) => (
+        /*const itemCheckedOutList = this.props.loanList.loanList.map((item, index) => (
              <ul className="list-wrapper">   
                 <ItemCheckoutCard 
                 listId={index}
                 {...item} />
             </ul>
-        )
-    )
+            )
+        )*/
 
         const itemRepo = this.props.loanList.items.map((item, index) => (
             <ul className="list-wrapper">   
@@ -70,42 +53,30 @@ export class ItemList extends React.Component {
             </ul>
             )               
         )
-            const borrowList = this.props.loanList.borrowList.map((item, index) => (
-            <ul className="list-wrapper">    
-                <ItemBorrowCard 
-                listId={index}
-                {...item} />
-            </ul>
-        )
-    )
-            console.log(itemRepo)
-//loan form will be link after routers
         return (
             <div >
-                <div>
-                    <h2>{overdueLoans} Loan Overdue</h2>
-                    <h2> {overdueBorrows} Borrows Overdue</h2>
+                <div className='notifications'>
+                    <div className="loanNotification">
+                        <h3>You have:</h3> 
+                        <h2>{overdueLoans}</h2> 
+                        <h3>Loan(s) Overdue</h3>
+                        <Link to= '/items/loans' className="notificationRight">Go to Page</Link>
+                    </div>
+                    <div className = 'borrowNotification'>
+                        <h3>You have:</h3> 
+                        <h2>{overdueBorrows}</h2> 
+                        <h3>Borrow(s) Overdue</h3>
+                        <Link to = '/items/borrows' className="notificationRight">Go to Page</Link>
+                    </div>
+                </div>
+                <div className="forms">                    
+                    <BorrowForm />
+                    <LoanForm />
+                    <AddItemForm />
                 </div>
                 <ul className="lists">
-                    <li className="floats">
-                        <h2>Your Borrowed Items</h2>                     
-                        <div className="flex-list">
-                            {borrowList}
-                        </div>
-                    </li>
-                    <li className="floats">
-                        <h2>Your Loaned Items</h2> 
-                        <div className="flex-list">                    
-                            {itemCheckedOutList}
-                        </div>
-                    </li>
-                    <li className="floats">
-                    <h2>Your Available Items</h2>
-                    <div>
-                        <li className="floats"><AddItemForm /></li>
-                        <ul className="flex-list">{itemRepo}</ul>
-                    </div>
-                    </li>
+                        <h2 className='sectionHeader'>Previously Loaned Items</h2>
+                        {itemRepo}
                 </ul>
             </div>
         );
@@ -113,19 +84,8 @@ export class ItemList extends React.Component {
 } 
 
 const mapStateToProps = state => ({
-/*    const loansList = Object.assign(
-        {},
-        {
-            loanList: []
-        },
-        state.loanList
-    );*/
-    
         loanList: state.loanList.board,
         username: state.loanList.username
-        //borrowsList: getVisibleBorrowItem(state.borrowList, state.filters)
-    //};
-
 })
 
 export default connect(mapStateToProps)(ItemList);

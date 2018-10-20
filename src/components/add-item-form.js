@@ -12,6 +12,9 @@ export class AddItemForm extends React.Component {
     constructor(props) {
         super(props);
         this.onSubmit = this.onSubmit.bind(this);
+        this.state = {
+            editing: false
+        }
     }
     //in order to communicate between the two, do i need to set state?
     onSubmit(values) {
@@ -28,39 +31,58 @@ export class AddItemForm extends React.Component {
         );
         this.props.dispatch(reset('addItemForm'));
         this.props.dispatch(updateBoard());
+        this.setEditing(false);
+    }
+    setEditing(editing) {
+        this.setState({
+            editing
+        });
     }
 
+
 render() {
+        if (!this.state.editing) {
+            return (
+                <div className='buttonCenter'>
+                    <button onClick={() => this.setEditing(true)} className='dashboardButton'>Add an item to your library +</button>
+                </div>
+            );
+        }
         return (
-            <div className="list-wrapper">
-                <h2>Add New Item</h2>
-                <form className="card add-form" onSubmit={this.props.handleSubmit(values =>
-                    this.onSubmit(values))}>
-                        <label>Type:</label>
-                        <select ref={input => this.typeInput = input}>
-                            <option></option>
-                            <option>Tool</option>
-                            <option>Money</option>
-                            <option>Clothing</option>
-                            <option>Electronics</option>
-                            <option>Other</option>
-                        </select>
-                        <br />
-                        <Field 
-                            label="Item:"
-                            name="labelItem" 
-                            component={Input} 
-                            type="text" 
-                            ref={input => this.input = input}
-                            validate={[required, nonEmpty]}
-                         />
-                    <button
-                    type="submit"
-                    disabled={this.props.pristine || this.props.submitting}
-                    >
-                    Submit
-                    </button>
-                </form>
+            <div>
+                <div className='buttonCenter'>
+                    <button onClick={() => this.setEditing()} className='dashboardButton'>Add a Borrow  +</button>
+                </div>
+                <div className="list-wrapper">
+                    <form className="card add-form" onSubmit={this.props.handleSubmit(values =>
+                        this.onSubmit(values))}>
+                            <label>Item Type:  </label>
+                            <select ref={input => this.typeInput = input}>
+                                <option></option>
+                                <option>Tool</option>
+                                <option>Money</option>
+                                <option>Clothing</option>
+                                <option>Electronics</option>
+                                <option>Other</option>
+                            </select>
+                            <br />
+                            <Field 
+                                label="Item:  "
+                                name="labelItem" 
+                                component={Input} 
+                                type="text" 
+                                ref={input => this.input = input}
+                                validate={[required, nonEmpty]}
+                             />
+                        <button
+                        className="formButtons"
+                        type="submit"
+                        disabled={this.props.pristine || this.props.submitting}
+                        >
+                        Submit
+                        </button>
+                    </form>
+                </div>
             </div>
         );
     }

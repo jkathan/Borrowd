@@ -31,8 +31,7 @@ describe('<AddItemForm />', () => {
         const wrapper = shallow(
             <AddItemForm dispatch={dispatch} />
         );
-        const instance = wrapper.instance();
-        instance.addItem(itemType, item);
+        wrapper.simulate('submit');
         expect(dispatch).toHaveBeenCalledWith(addItem(itemType, item));
     });
 });

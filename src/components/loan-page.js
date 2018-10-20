@@ -7,7 +7,7 @@ export default class LoanPage extends React.Component {
     return (
 
     <div className='listPage'>
-        <div className="sidebar">
+        <div className="navBar">
         	<Sidebar />
         </div>	
         <LoanList />

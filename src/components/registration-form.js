@@ -4,7 +4,9 @@ import {registerUser} from '../actions/users';
 import {updateUsername} from '../actions/index';
 import {initialBoardAdd} from '../actions/index';
 import {login} from '../actions/auth';
+import { push } from 'react-router-redux';
 import Input from './input';
+import './login-form.css';
 import {required, nonEmpty, matches, length, isTrimmed} from '../validators';
 const passwordLength = length({min: 10, max: 72});
 const matchesPassword = matches('password');
@@ -12,30 +14,15 @@ const matchesPassword = matches('password');
 export class RegistrationForm extends React.Component {
     constructor(props) {
         super(props);
-        //this.state = {
-        //    searchTerm: ''
-        //}
-                this.onClick = this.onClick.bind(this);
-
+        //this.onClick = this.onClick.bind(this);
     }
-
-
 
     onSubmit(values) {
         const {username, password, firstName, lastName} = values;
         const user = {username, password, firstName, lastName};
-        //console.log(user.username);
         this.props.dispatch(registerUser(user)).then(() => this.props.dispatch(updateUsername(user.username)))
         .then(() => this.props.dispatch(initialBoardAdd()));
-        if (this.props.onAdd) {
-            this.props.onAdd();
-        }
-        
-    }
-
-    onClick() {
-        this.props.history.push(`/items/items`);
-    }
+        }     
 
     render() {
         return (
@@ -70,7 +57,7 @@ export class RegistrationForm extends React.Component {
                     validate={[required, nonEmpty, matchesPassword]}
                 />
                 <button
-                    onClick={this.onClick}
+                    className ='entranceButtons'
                     type="submit"
                     disabled={this.props.pristine || this.props.submitting}>
                     Register

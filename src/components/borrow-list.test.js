@@ -1,6 +1,6 @@
 
 import React from 'react';
-import {shallow} from 'enzyme';
+import {shallow, mount} from 'enzyme';
 import {BorrowList} from './borrow-list';
 import BorrowCard from './borrow-card';
 import BorrowForm from './borrow-form';
@@ -28,7 +28,7 @@ describe('<BorrowList />', () => {
     });
 
     it('Renders the cards', () => {
-        const wrapper = shallow(<BorrowList cards={seedCards} />);
+        const wrapper = mount(<BorrowList cards={seedCards} />);
         const cards = wrapper.find(Card);
         expect(cards.length).toEqual(seedCards.length);
         const firstCard = cards.first();
@@ -39,5 +39,5 @@ describe('<BorrowList />', () => {
         expect(firstCard.prop('phone')).toEqual(seedCards[0].phone);
         expect(firstCard.prop('returnDate')).toEqual(seedCards[0].returnDate);
         expect(firstCard.prop('listId')).toEqual(seedCards[0].listId);
-});
+    });
 });

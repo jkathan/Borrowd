@@ -43,7 +43,39 @@ export class Sidebar extends React.Component {
     const{list} = this.props
     const{listOpen, headerTitle} = this.state
     return (
-        <nav>
+            <div>
+                 <div className="desktop">
+                    <div className='navbarLeft'>
+                        <li><img src={'https://i.imgur.com/Z4XP0V8.png'} className='navLeft'/></li>
+                        <li><Link to="/items/items" className='floatLeftNav'>Borrowd</Link></li>
+                    </div>
+                    <ul className="folder-menu-list">
+                        <li className="folder-menu-list-item">
+                            <Link to= '/items/items' className='link headerLink'>
+                                Dashboard 
+                            </Link>
+                        </li>                                
+                        <li className="folder-menu-list-item">
+                            <Link to= '/items/loans' className='link headerLink'>
+                                Loans ({overdueLoans})
+                            </Link>
+                        </li>
+                        <li className="folder-menu-list-item">
+                            <Link to= '/items/borrows' className='link headerLink'>
+                                Borrows ({overdueBorrows})
+                            </Link>
+                        </li>
+                        <Link to= '/' className='link headerLink'>
+                                Log Out
+                        </Link>
+                    </ul>
+                 </div>
+
+        <div className="mobile">
+            <div className='navbarLeft'>
+                <img src={'https://i.imgur.com/J1nsguo.png'} className='logo'/>
+                <h2>Borrowd</h2>
+            </div>
             <div className="dd-wrapper" >
                 <div className="dd-header" onClick={() => this.toggleList()}>
                     <div className="dd-header-title">{headerTitle}</div>                
@@ -71,11 +103,12 @@ export class Sidebar extends React.Component {
                         </li>
                         <Link to= '/'>
                                 Log Out
-                            </Link>
+                        </Link>
                     </ul>
                 }
                 </div>
-            </nav>
+            </div>
+        </div>
         );
     }
 }

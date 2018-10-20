@@ -1,10 +1,10 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 
-import BorrowPage from './borrow-page';
+import LoanPage from './loan-page';
 
-describe('<BorrowPage />', () => {
+describe('<LoanPage />', () => {
     it('Renders without crashing', () => {
-        shallow(<BorrowPage />);
+        shallow(<LoanPage />);
     });
 });

@@ -4,6 +4,30 @@ import {addBorrowCard} from '../actions/index';
 import {BorrowForm} from './borrow-form';
 
 describe('<BorrowForm />', () => {
+    let subject = null
+    let submitting, touched, error, handleSubmit
+    beforeEach(() => {
+        submitting = false
+        touched = false
+        error = null
+        handleSubmit = fn => fn
+    })
+    const buildSubject = () => {
+        onSave = jest.fn().returns(onSaveResponse)
+        const props = {
+            submitting: submitting,
+            fields: {
+                firstName: {
+                    value: '',
+                    touched: touched,
+                    error: error
+                }
+            },
+            handleSubmit,
+        }
+        return shallow(<ContactFormComponent {...props}/>)
+}
+
     it('Renders without crashing', () => {
         shallow(<BorrowForm />);
     });
@@ -24,9 +48,10 @@ describe('<BorrowForm />', () => {
         wrapper.simulate('submit');
         expect(callback).not.toHaveBeenCalled();
 });
+
     it('Dispatches addItem from onSubmit', () => {
         const dispatch = jest.fn();
-       const itemType = 'tool';
+        const itemType = 'tool';
         const item = 'foo';
         const loaner = 'foo';
         const email = 'foo@foo.com';
@@ -35,8 +60,7 @@ describe('<BorrowForm />', () => {
         const wrapper = shallow(
             <BorrowForm dispatch={dispatch} />
         );
-        const instance = wrapper.instance();
-        instance.addBorrowCard(itemType, item, loaner, email, phone, date, dateAdded);
-        expect(dispatch).toHaveBeenCalledWith(addBorrowCard(itemType, item));
+        wrapper.simulate('submit');
+        expect(dispatch).toHaveBeenCalledWith(addBorrowCard(itemType, item, loaner, email, phone, date, dateAdded));
     });
 });

@@ -25,20 +25,25 @@ export class BorrowCard extends React.Component  {
 render() {
 		console.log(this.props.loaner);    
     return (
-        <ul key={this.props.listId} className="card">
-        	 <li>Type: {this.props.itemType}</li>
-			 <li>Item: {this.props.item}</li>
-			 <li>Loaner: {this.props.loaner}</li>
-			 <li>Email: {this.props.email}</li>
-			 <li>Phone: {this.props.phone}</li>
-			 <li>Return Date: {this.props.returnDate}</li>
-			 <button onClick={(e) => this.returnItem(e, this.props.listId)}>Return</button>
-			 <div>
-			 	<RenewBorrowForm 
-			 	index ={this.props.listId} 
-			 	/>
-			 </div>
-		</ul>
+    	<div>
+	    	<div>
+	    		<img src={this.props.image} className='iconImage'/>
+	    	</div>
+	        <ul key={this.props.listId} className="card">
+	        	 <li>Type: {this.props.itemType}</li>
+				 <li>Item: {this.props.item}</li>
+				 <li>Loaner: {this.props.loaner}</li>
+				 <li>Email: {this.props.email}</li>
+				 <li>Phone: {this.props.phone}</li>
+				 <li>Return Date: {this.props.returnDate}</li>
+				 <button onClick={(e) => this.returnItem(e, this.props.listId)}>Return</button>
+				 <div>
+				 	<RenewBorrowForm 
+				 	index ={this.props.listId} 
+				 	/>
+				 </div>
+			</ul>
+		</div>
     	);
 	};
 }

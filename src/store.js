@@ -1,8 +1,6 @@
 import {createStore, applyMiddleware, combineReducers} from 'redux'
 import {reducer as formReducer} from 'redux-form';
 import {loanReducer} from './reducers/index';
-import {filtersReducer} from './reducers/filter';
-import {borrowReducer} from './reducers/borrow';
 import thunk from 'redux-thunk';
 //import {loadAuthToken} from './local-storage';
 //import authReducer from './reducers/auth';
@@ -15,8 +13,6 @@ const store = createStore (
         	//auth: authReducer,
         	//protectedDate: protectedDataReducer,
             loanList: loanReducer,
-            filters: filtersReducer,
-            borrowList: borrowReducer
         }),
     	applyMiddleware(thunk)
 );    

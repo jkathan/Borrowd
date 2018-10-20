@@ -31,7 +31,7 @@ export class RenewLoanForm extends React.Component {
         //addLoanCard(date, this.props.listId)
         //);
        //this.props.dispatch(renewLoanItem(date, index))
-        this.setEditing(false)
+        this.setEditing(false);
         this.props.dispatch(updateBoard());
     }
        setEditing(editing) {
