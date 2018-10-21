@@ -87,6 +87,7 @@ export const updateBoard = () => (dispatch, getState) => {
 
 export const initialBoardAdd = () => (dispatch, getState) => {
     const firstState = getState().loanList;
+    console.log(firstState);
     fetch(`${API_BASE_URL}/post`, {    
     method: 'POST',
     headers: {
@@ -112,15 +113,17 @@ export const fetchBoard = () => (dispatch, getState) => {
     const boardState = getState().loanList;
     fetch(`${API_BASE_URL}/get/${username}`)
         .then(res => {
+            console.log(res);
             if (!res.ok) {
                 return Promise.reject(res.statusText);
             }
             return res.json();
+
         })
         .then(board => {
             const loanList = board.board[0].loanList;
-            const items = board.board[1].items;
-            const borrowList= board.board[2].borrowList;
+            const items = board.board[0].items;
+            const borrowList= board.board[0].borrowList;
             dispatch(fetchBoardSuccess(loanList, items, borrowList));
     });
 };
