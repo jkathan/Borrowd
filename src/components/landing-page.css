@@ -99,7 +99,7 @@
 
 .appImages {
 	width: 70%;
-	height: 300px;
+	height: auto;
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;
