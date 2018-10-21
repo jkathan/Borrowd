@@ -6,6 +6,10 @@
 
 }
 
+.navbuttons {
+	display: none;
+}
+
 .navbarLeft {
 	display: flex;
 	float: left;
@@ -76,7 +80,7 @@
 }
 .folder-menu-list-item {
 	margin-left: 25px;
-		margin-top: 33px;
+	margin-top: 33px;
 	float: right;
 	display: flex;
 
@@ -93,8 +97,19 @@
 	display: flex;
 }
 
+.appImages {
+	width: 70%;
+	height: 300px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
 
-
+.landingPageImages {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
 .logoBanner {
 
 	width: 300px;
@@ -190,6 +205,31 @@
 
 
 @media (min-width: 470px) and (max-width: 980px) {
+
+.homescreenLink {
+	display: none;
+}
+
+.loginButton {
+	display: none;
+}
+
+.hide {
+	display: none;
+}
+
+.sectionDescriber {
+	display: inline;
+}
+
+.section {
+  background-color: #ddd;
+  width: 90%;
+  display: inline-block;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
 .banner {
 	background-image: url('https://i.imgur.com/nTiLEgR.png');
 	background-repeat: no-repeat;
@@ -199,64 +239,130 @@
 }
 
 .logoBanner {
-	width:	25%;
-	}
 
-.bannerRight {
-	text-align: left;
-	padding: 0;
-	margin: 0;
-	}
-.bannerRight {
-	margin-left: 0;
-}
-
-.bannerLeft {
-	margin-left: 0;
-
+	width: 300px;
 
 }
 
-.bannerLeft h1 {
+.bannerRight {
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.bannerRight h1 {
+
+	font-size: 70px;	
 	font-family: 'Arvo', serif;
 	color: #0950a0;
-	font-size: 40px;
-	margin-left: 0;
-	margin-top: 5px;
+	padding-top: 0px;
+
 	}
+
+.bannerLeft {
+	margin-left: auto;
+	margin-right: auto;
+}
+
 
 .bannerLeft h2 {
-	color: #0950a0;
-	font-size: 20px;
-	padding-bottom: 0px;
-	margin-bottom: 0;
 	}
 
-	.homescreenLink {
+
+
+.navbuttons {
+	padding-top: 10px;
+	margin-top: 20px;
+}
+
+.navigateButtons {
+	padding-top: 10px;
+	padding-bottom: 10px;
+
+	margin-right: auto;
+	margin-left: auto;
+	display: inline-block;
+	text-decoration: none !important;
+	color: white;
+	width: 100%;
+}
+
+.RegisterButton {
+	background-color: #0950a0;
+    border: none;
+    cursor: pointer;
+
+}
+.logoBanner {
+	display: none;
+	}
+
+.homescreenLink {
 	padding-top: 10px;
 	color: black;
 	padding-left: 0px;
 	color: #0950a0;
-
-}
+	}
 }
 
 @media only screen and (max-width: 470px) {
 
-.mobile {
-	display: flex;
-	background: #91A1B2;
-	padding: 0;
-	-webkit-box-shadow: 0px 3px 5px rgba(100, 100, 100, 0.49);
- 	-moz-box-shadow:    0px 3px 5px rgba(100, 100, 100, 0.49);
- 	box-shadow:         0px 3px 5px rgba(100, 100, 100, 0.49);
+.sectionLong {
+  margin-top: 15px;
+  min-height: 100px;
 }
 
+
+.navbuttons {
+	display: inline;	
+	padding-top: 40px;
+	margin-top: 30px;
+}
+
+.navigateButtons {
+	padding-top: 10px;
+	padding-bottom: 10px;
+
+	margin-right: auto;
+	margin-left: auto;
+	display: inline-block;
+	text-decoration: none !important;
+	color: white;
+	width: 100%;
+}
+
+.loginButton {
+	margin-bottom: 10px;
+	background-color: #0950a0;
+    border: none;
+    cursor: pointer;
+
+}
+.RegisterButton {
+	background-color: #0950a0;
+    border: none;
+    cursor: pointer;
+
+}
+
+.sectionDescriber {
+	display: inline;
+}
+
+.section {
+  background-color: #ddd;
+  width: 90%;
+  display: inline-block;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+
 .pageContent {
-	margin-top: 80px;
 	margin-left: auto;
 	margin-right: auto;
 	left:0;
+	margin-top: 0;
 }
 
 .banner {
@@ -267,71 +373,47 @@
 	display: flex;
 }
 
+.hide {
+	display: none;
+}
+
 .logoBanner {
 	display: none;
-	}
-
-.bannerRight {
-	text-align: left;
-	}
-
-.bannerLeft {
-	margin-left: 10px;
+	margin-left: auto;
 	margin-right: auto;
+	width: 25%;
 	}
 
 .bannerRight {
-	float: right;
-	margin-left: 5px;
-	}
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+}
 
-.bannerLeft h1 {
+.bannerRight h1 {
+
+	font-size: 50px;	
 	font-family: 'Arvo', serif;
 	color: #0950a0;
 	padding-top: 0px;
-	font-size: 40px;
-	margin-bottom: 15px;
+	margin-bottom: 30px;
 	}
+
+.bannerLeft {
+	margin-left: auto;
+	margin-right: auto;
+}
+
 
 .bannerLeft h2 {
 	display: none;
-	color: #0950a0;
-	font-size: 25px;
-	padding-bottom: 0px;
-	padding-left: 13px;
 	}
 .navBar {
-	position: fixed;
-	width: 100%;
-	top: 0;
-	left: 0;
-
+	display: none;
 }
 
-.navbarLeft {
-	display: flex;
-	float: left;
-
-}
-.navLeft {
-	float: left;
-	padding-left: 15px;
-	width: 75px;
-	height: auto;
-	padding-left: 15;
+.desktop {
+	display: none;
 }
 
-.floatRight {
-	float: right;
-}
-
-.floatLeftNav {
-	font-family: 'Arvo', serif;
-	padding-left: 20px;
-	margin-top: 23px;
-	color: white;
-	float: left;
-	font-size: 30px;
-	text-decoration: none !important;
-}
 }

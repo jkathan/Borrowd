@@ -1,13 +1,11 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import moment from 'moment'
 import {addItem} from '../actions/index';
 import './add-form.css';
-import {required, nonEmpty, email} from '../validators';
-import {Field, reduxForm, SubmissionError, focus, reset} from 'redux-form';
+import {required, nonEmpty} from '../validators';
+import {Field, reduxForm, focus, reset} from 'redux-form';
 import Input from './input';
 import {updateBoard} from '../actions/index';
-//how do I 
+
 export class AddItemForm extends React.Component {
     constructor(props) {
         super(props);
@@ -16,21 +14,16 @@ export class AddItemForm extends React.Component {
             editing: false
         }
     }
-    //in order to communicate between the two, do i need to set state?
     onSubmit(values) {
-        //event.preventDefault();
-        console.log(values.labelItem);
         const itemType = this.typeInput.value.trim();
         const item = values.labelItem;
-        console.log(itemType);
         this.typeInput.value = '';
-        const dateAdded = moment().format('YYYY-MM-DD');
         this.props.dispatch(
-        addItem(itemType, item, null)
-
-        );
-        this.props.dispatch(reset('addItemForm'));
-        this.props.dispatch(updateBoard());
+            addItem(itemType, item, null));
+        this.props.dispatch(
+            reset('addItemForm'));
+        this.props.dispatch(
+            updateBoard());
         this.setEditing(false);
     }
     setEditing(editing) {
@@ -38,7 +31,6 @@ export class AddItemForm extends React.Component {
             editing
         });
     }
-
 
 render() {
         if (!this.state.editing) {
@@ -51,7 +43,7 @@ render() {
         return (
             <div>
                 <div className='buttonCenter'>
-                    <button onClick={() => this.setEditing()} className='dashboardButton'>Add a Borrow  +</button>
+                    <button onClick={() => this.setEditing()} className='dashboardButton'>Add an item to your library +</button>
                 </div>
                 <div className="list-wrapper">
                     <form className="card add-form" onSubmit={this.props.handleSubmit(values =>

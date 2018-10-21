@@ -14,7 +14,7 @@ export const addCard = (itemType, item, borrower, email, phone, date, dateAdded,
 });
 
 export const ADD_BORROW_CARD = 'ADD_BORROW_CARD';
-export const addBorrowCard = (itemType, item, loaner, email, phone, date, dateAdded, image, listId) => ({
+export const addBorrowCard = (itemType, item, loaner, email, phone, date, dateAdded, listId) => ({
     type: ADD_BORROW_CARD,
     itemType,
     item,
@@ -80,22 +80,21 @@ export const updateBoard = () => (dispatch, getState) => {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(boardState)
+        },
+        body: JSON.stringify(boardState)
     })
 };
 
 export const initialBoardAdd = () => (dispatch, getState) => {
     const firstState = getState().loanList;
-    console.log(firstState);
-    fetch(`${API_BASE_URL}/post`, {    
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(firstState)
-    })
-    .then(res => {console.log(res)})
+    fetch(`${API_BASE_URL}/post`,
+    {    
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(firstState)
+        })
 };
 
 
@@ -110,10 +109,8 @@ export const fetchBoardSuccess = (loanList, items, borrowList) => ({
 
 export const fetchBoard = () => (dispatch, getState) => {
     const username = getState().loanList.newId;
-    const boardState = getState().loanList;
     fetch(`${API_BASE_URL}/get/${username}`)
         .then(res => {
-            console.log(res);
             if (!res.ok) {
                 return Promise.reject(res.statusText);
             }
@@ -124,6 +121,7 @@ export const fetchBoard = () => (dispatch, getState) => {
             const loanList = board.board[0].loanList;
             const items = board.board[0].items;
             const borrowList= board.board[0].borrowList;
-            dispatch(fetchBoardSuccess(loanList, items, borrowList));
+            dispatch(
+                fetchBoardSuccess(loanList, items, borrowList));
     });
 };

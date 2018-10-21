@@ -7,12 +7,12 @@ import {RegisterationForm} from './registration-form';
 
 describe('<RegisterationForm />', () => {
     it('Renders without crashing', () => {
-        shallow(<RegistrationForm />);
+        mount(<RegistrationForm />);
     });
 
     it('Should fire the onSubmit functon when the form is submitted', () => {
         const callback = jest.fn();
-        const wrapper = mount(<RegisterationForm onSubmit={callback} />);
+        const wrapper = shallow(<RegisterationForm onSubmit={callback} />);
         const value = 'Foobar';
         wrapper.update();
         wrapper.find('input[type="text"]').instance().value = value;
@@ -22,7 +22,7 @@ describe('<RegisterationForm />', () => {
 
     it('Should not fire if the input is empty', () => {
         const callback = jest.fn();
-        const wrapper = mount(<RegisterationForm />);
+        const wrapper = shallow(<RegisterationForm />);
         wrapper.simulate('submit');
         expect(callback).not.toHaveBeenCalled();
 });

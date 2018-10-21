@@ -9,8 +9,6 @@ const initialState = {
   newId: ''
 };
 
-
-
 export const loanReducer = (state=initialState, action) => {
     if (action.type === actions.ADD_CARD) {
         return Object.assign({}, state, {
@@ -32,9 +30,6 @@ export const loanReducer = (state=initialState, action) => {
     }
 
   else if (action.type === actions.ADD_ITEM) {
-    //if (board.loanList.length === 0 && board.borrowList.length === 0) {
-     // return 
-    //}
     return Object.assign({}, state, {
       board: { 
         loanList: state.board.loanList,
@@ -121,13 +116,7 @@ export const loanReducer = (state=initialState, action) => {
               borrowList: action.borrowList} 
         })
       }
-/*
-  else if (action.type === actions.CURRENT_DATE) {
-      return {
-          ...state,
-        currentDate: action.currentDate 
-        }
-    }*/
+
     return state;
   }
 

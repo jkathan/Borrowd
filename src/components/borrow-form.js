@@ -1,6 +1,5 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import {reduxForm, Field, SubmissionError, focus, reset} from 'redux-form';
+import {reduxForm, Field, focus, reset} from 'redux-form';
 import moment from 'moment'
 import './add-form.css';
 import {addBorrowCard} from '../actions/index';
@@ -26,10 +25,12 @@ export class BorrowForm extends React.Component {
         this.typeInput.value = '';
         const dateAdded = moment().format('YYYY-MM-DD');
         this.props.dispatch(
-        addBorrowCard(itemType, item, loaner, email, phone, date, dateAdded, null)
+            addBorrowCard(itemType, item, loaner, email, phone, date, dateAdded, null)
         );
-        this.props.dispatch(reset('borrowForm'));
-        this.props.dispatch(updateBoard());
+        this.props.dispatch(
+            reset('borrowForm'));
+        this.props.dispatch(
+            updateBoard());
         this.setEditing(false);
     }
 

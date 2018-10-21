@@ -2,16 +2,11 @@ import React from 'react';
 import {connect} from 'react-redux';
 import LoanForm from './loan-form';
 import LoanCard from './loan-card';
-import {returnItem} from '../actions/index';
 import moment from 'moment';
 import './sidebar.css';
 
 
 export class LoanList extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         const dates = this.props.loansList.loanList.map(a => a.returnDate);
         const currentDate = moment().format('YYYY-MM-DD');
@@ -21,7 +16,7 @@ export class LoanList extends React.Component {
         const overdueLoans = overdueLoansDate.length;
             const sortedList = this.props.loansList.loanList.sort((a, b) => (a.returnDate > b.returnDate) ? 1 : ((b.returnDate > a.returnDate) ? -1 : 0));
             const loanlist = sortedList.map((loan, index) => (
-            <ul className="list-wrapper"> 
+            <ul className="list-wrapper-plus"> 
                 <LoanCard 
                 listId={loan.listId}
                 {...loan} />
@@ -29,7 +24,7 @@ export class LoanList extends React.Component {
         )
     )
         return (
-            <div>
+            <div className="responsivePage">
                 <div className='notifications'>
                     <div className = 'borrowNotificationPage'>
                         <h3>You have:</h3> 
@@ -42,7 +37,9 @@ export class LoanList extends React.Component {
                 </div>
                   <div className="lists">
                         <h2 className='sectionHeader'>Loaned Items</h2>
-                        {loanlist}
+                        <div className='listFormat'>
+                            {loanlist}
+                        </div>
                     </div>
                 </div>
         );

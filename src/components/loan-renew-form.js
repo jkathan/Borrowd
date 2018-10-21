@@ -1,12 +1,9 @@
 import React from 'react';
 import './add-form.css';
-import {connect} from 'react-redux';
-import {reduxForm, Field, SubmissionError, focus, reset} from 'redux-form';
-import {required, nonEmpty, email} from '../validators';
+import {reduxForm, Field, reset} from 'redux-form';
+import {required, nonEmpty} from '../validators';
 import Input from './input';
 import {updateBoard} from '../actions/index';
-//import {renewLoanItem} from '../actions/index';
-//import {addLoanCard} from '../actions';
 
 export class RenewLoanForm extends React.Component {
 	constructor(props) {
@@ -17,22 +14,16 @@ export class RenewLoanForm extends React.Component {
 
         this.onSubmitNow = this.onSubmitNow.bind(this);
     }
-
     onSubmitNow(values) {
-        const index = this.props.index;
-        console.log(index);
         const date = values.returnDate;
-        console.log(date);
         if (date && this.props.onAdd) {
             this.props.onAdd(date);
         }
-        this.props.dispatch(reset('loanRenew'));
-         //this.props.dispatch(
-        //addLoanCard(date, this.props.listId)
-        //);
-       //this.props.dispatch(renewLoanItem(date, index))
+        this.props.dispatch(
+            reset('loanRenew'));
         this.setEditing(false);
-        this.props.dispatch(updateBoard());
+        this.props.dispatch(
+            updateBoard());
     }
        setEditing(editing) {
         this.setState({
@@ -71,6 +62,4 @@ export class RenewLoanForm extends React.Component {
 
 export default reduxForm({
     form: 'loanRenew',
-    //onSubmitFail: (errors, dispatch) =>
-        //dispatch(focus('loanRenew', Object.keys(errors)[0]))
 })(RenewLoanForm);

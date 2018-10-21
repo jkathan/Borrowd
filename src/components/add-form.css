@@ -1,10 +1,29 @@
 .add-form {
     text-align: center;
-    	padding-right: 20px;
+    padding-right: 20px;
 	padding-left: 20px;
+
 }
 
 .addForm button {
 	padding-right: 20px;
 	padding-left: 20px;
+	margin-left: 10px;
+}
+
+.formButton {
+	background-color: #0950a0;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+
+.savingSpace {
+	display: flex; 
 }

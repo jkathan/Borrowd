@@ -1,14 +1,12 @@
 import React from 'react';
-import {connect} from 'react-redux';
 import moment from 'moment'
 import './add-form.css';
 import {required, nonEmpty, email} from '../validators';
-import {reduxForm, Field, SubmissionError, focus, reset} from 'redux-form';
+import {reduxForm, Field, focus, reset} from 'redux-form';
 import {addCard} from '../actions/index';
 import Input from './input';
 import {updateBoard} from '../actions/index';
 
-//how do I 
 export class LoanForm extends React.Component {
     constructor(props) {
         super(props);
@@ -22,42 +20,25 @@ export class LoanForm extends React.Component {
             editing
         });
     }
-
-    //in order to communicate between the two, do i need to set state?
     onSubmit(values) {
-
-        //console.log(typeInput.value.trim());
-        console.log(this.typeInput.value.trim());
         const itemType = this.typeInput.value.trim();
         const item = values.item;
         const borrower = values.borrower;
         const email = values.email;
         const phone = values.phone;
         const date = values.returnDate;
-        console.log(itemType);
-        //if (itemType && item && borrower && email && phone && date && this.props.onAdd) {
-            //this.props.onAdd(itemType, item, borrower, email, phone, date);
-        //}
         this.typeInput.value = '';
         const dateAdded = moment().format('YYYY-MM-DD');
-        //will have to put more info here depeding on the selection of item
-        //also will have to add new item to item list. is this done in new 
-        //on submit?
         this.props.dispatch(
-            //wahat is boardID and why is it necessary?
-        addCard(itemType, item, borrower, email, phone, date, dateAdded, null)
+            addCard(itemType, item, borrower, email, phone, date, dateAdded, null)
         );
-        this.props.dispatch(reset('loanAdd'));
-        this.props.dispatch(updateBoard());
+        this.props.dispatch(
+            reset('loanAdd'));
+        this.props.dispatch(
+            updateBoard());
         this.setEditing(false);
-        //this.props.history.push(`/items/loans`);
     }
 
-/*
-    goToLoansList(event) {
-        event.preventDefault();
-        this.props.history.push(`/items/loans`);
-    }*/
 render() {
         if (!this.state.editing) {
             return (
@@ -66,15 +47,6 @@ render() {
                 </div>
             );
         }
-
-    /////loan from list will have to be a search bar that shows values
-    //this will then autofill the item and on submit will update item as 
-    //checked out
-
-//within components i can render the buttons
-//heres what i want to do here. once the element is chosen or added. I want the 
-//element to appear and buttons to disappear. maybe not necessary for the add, but
-//for the find in item list. maybe it just makes sense to item pag
         return (
             <div className='buttonCenter'>
                 <div>

@@ -6,10 +6,6 @@ import moment from 'moment';
 import './sidebar.css';
 
 export class BorrowList extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         const borrowDates = this.props.borrowList.borrowList.map(b => b.returnDate)
         const currentDate = moment().format('YYYY-MM-DD');
@@ -19,7 +15,7 @@ export class BorrowList extends React.Component {
         const overdueBorrows = overdueBorrowsDate.length
         const sortedList = this.props.borrowList.borrowList.sort((a, b) => (a.returnDate > b.returnDate) ? 1 : ((b.returnDate > a.returnDate) ? -1 : 0));
         const borrowlist = sortedList.map((borrow, index) => (
-            <ul className="list-wrapper">  
+            <ul className="list-wrapper-plus">  
                 <BorrowCard 
                 listId={borrow.listId}
                 {...borrow} />
@@ -27,7 +23,7 @@ export class BorrowList extends React.Component {
         )
     )
         return (
-                <div>
+                <div className="responsivePage">
                  <div className='notifications'>
                     <div className = 'borrowNotificationPage'>
                         <h3>You have:</h3> 
@@ -40,7 +36,9 @@ export class BorrowList extends React.Component {
                 </div>
                    <div className="lists">
                         <h2 className='sectionHeader'>Borrowed Items</h2>
-                        {borrowlist}
+                        <div className='listFormat'>
+                            {borrowlist}
+                        </div>
                     </div>
                 </div>
         );

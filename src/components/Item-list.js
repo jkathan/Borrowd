@@ -34,17 +34,8 @@ export class ItemList extends React.Component {
             return z < currentDate
         });
         const overdueBorrows = overdueBorrowsDate.length
-        /*const itemCheckedOutList = this.props.loanList.loanList.map((item, index) => (
-             <ul className="list-wrapper">   
-                <ItemCheckoutCard 
-                listId={index}
-                {...item} />
-            </ul>
-            )
-        )*/
-
         const itemRepo = this.props.loanList.items.map((item, index) => (
-            <ul className="list-wrapper">   
+            <ul className="list-wrapper-plus">   
                 <ItemRepo
                 listId={item.listId}
                 {...item} />
@@ -52,7 +43,7 @@ export class ItemList extends React.Component {
             )               
         )
         return (
-            <div >
+            <div className="responsivePage">
                 <div className='notifications'>
                     <div className="loanNotification">
                         <h3>You have:</h3> 
@@ -73,9 +64,10 @@ export class ItemList extends React.Component {
                     <AddItemForm />
                 </div>
                 <ul className="lists">
-                        <h2 className='sectionHeader'>Previously Loaned Items:</h2>
-                            <div className='listFormat'>{itemRepo}</div>
-
+                    <h2 className='sectionHeader'>Previously Loaned Items:</h2>
+                    <div className='listFormat'>
+                        {itemRepo}
+                    </div>
                 </ul>
             </div>
         );

@@ -6,7 +6,7 @@ import {LoginForm} from './login-form';
 
 describe('<LoginForm />', () => {
     it('Renders without crashing', () => {
-        shallow(<RenewLoanForm />);
+        shallow(<LoginForm />);
     });
 
     it('Should fire the onSubmit functon when the form is submitted', () => {

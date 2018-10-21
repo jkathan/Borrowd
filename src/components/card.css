@@ -11,3 +11,24 @@
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
+
+.formButton {
+	background-color: #0950a0;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    
+}
+
+.centerButtons {
+	margin-right: auto;    
+    margin-left: auto;
+   	text-align: center;
+    
+}

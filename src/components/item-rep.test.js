@@ -26,6 +26,7 @@ describe('<ItemRepo />', () => {
         const email = 'foo@foo.com';
         const phone = '1234567891';
         const date = '2018-10-08';
+        const dateAdded = '2018-10-08';
         const wrapper = shallow(
             <ItemLoanForm dispatch={dispatch} />
         );

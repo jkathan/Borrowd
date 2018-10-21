@@ -1,11 +1,7 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import moment from 'moment'
-import {addCard} from '../actions/index';
-import {BrowserRouter as  Link} from 'react-router-dom';
 import {removeItemFromList} from '../actions/index';
 import './add-form.css';
-import {reduxForm, Field, SubmissionError, focus, reset} from 'redux-form';
+import {reduxForm, Field, focus, reset} from 'redux-form';
 import {required, nonEmpty, email} from '../validators';
 import Input from './input';
 import {updateBoard} from '../actions/index';
@@ -25,15 +21,17 @@ export class ItemLoanForm extends React.Component {
         const date = values.returnDate;
         if (borrower && email && phone && date && this.props.onAdd) {
             this.props.onAdd(borrower, email, phone, date);
-        }
-        const dateAdded = moment().format('YYYY-MM-DD');
+            }
         const listId = this.props.index;
-        this.props.dispatch(removeItemFromList(listId));
+        this.props.dispatch(
+            removeItemFromList(listId));
         this.setEditing(false);
-        this.props.dispatch(reset('itemLoanForm'));
-        this.props.dispatch(updateBoard());
+        this.props.dispatch(
+            reset('itemLoanForm'));
+        this.props.dispatch(
+            updateBoard());
     }
-       setEditing(editing) {
+    setEditing(editing) {
         this.setState({
             editing
         });
@@ -43,7 +41,7 @@ export class ItemLoanForm extends React.Component {
         if (!this.state.editing) {
             return (
                 <div>
-                    <button onClick={() => this.setEditing(true)} className="formButtons">Checkout</button>
+                    <button onClick={() => this.setEditing(true)} className="formButton">Checkout</button>
                 </div>
             );
         };
@@ -83,19 +81,21 @@ export class ItemLoanForm extends React.Component {
                             ref={input => this.input = input}
                             validate={[required, nonEmpty]} 
                         />
-                    <button 
-                        className="formButtons"
-                        type="submit"
-                        disabled={this.props.pristine || this.props.submitting}
-                        >
-                        Submit
-                    </button>
-                    <button 
-                        className="formButtons"
-                        onClick={() => this.setEditing(false)} 
-                        >
-                        Cancel
-                    </button>
+                        <div className='savingSpace'>
+                            <button
+                                className="formButton"
+                                type="submit"
+                                disabled={this.props.pristine || this.props.submitting}
+                            >
+                                Submit
+                            </button>
+                            <button 
+                                className="formButton"
+                                onClick={() => this.setEditing(false)} 
+                                >
+                                Cancel
+                            </button>
+                        </div>
                 </form>
             </div>
         );

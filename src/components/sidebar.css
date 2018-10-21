@@ -1,17 +1,20 @@
-.navBar {
+.navBar2 {
 	position: fixed;
 	width: 100%;
 	top: 0;
 	left: 0;
 
 }
+.banner2 {
+	display: none;
+}
 
-.navbarLeft {
+.navbarLeft2 {
 	display: flex;
 	float: left;
 	
 }
-.navLeft {
+.navLeft2 {
 	float: left;
 	padding-left: 15px;
 	width: 75px;
@@ -19,11 +22,11 @@
 	padding-left: 15;
 }
 
-.floatRight {
+.floatRight2 {
 	float: right;
 }
 
-.floatLeftNav {
+.floatLeftNav2 {
 	font-family: 'Arvo', serif;
 	padding-left: 20px;
 	margin-top: 23px;
@@ -33,14 +36,14 @@
 	text-decoration: none !important;
 }
 
-.pageContent {
+.pageContent2 {
 	margin-top: 110px;
 	margin-left: auto;
 	margin-right: auto;
 	left:0;
 }
 
-.folder-menu-list {
+.folder-menu-list2 {
 	margin-top: 28px;
 	float: right;
 	display: flex;
@@ -48,7 +51,7 @@
 	text-decoration: none; 	
 	position: right;
 }
-.desktop {
+.desktop2 {
 	display: flex;
 	background: #91A1B2;
 	padding: 0;
@@ -67,14 +70,14 @@
 	color: white; 
 }
 
-.headerLink {
+.headerLink2 {
 	float: right;
 }
 
-.headerLink:hover {
+.headerLink2:hover {
   color: green;
 }
-.folder-menu-list-item {
+.folder-menu-list-item2 {
 	margin-left: 25px;
 	margin-top: 33px;
 
@@ -145,3 +148,137 @@
 	text-align: center;
 }
 
+
+@media only screen and (max-width: 582px) {
+
+.notifications {
+	margin-top: 20px;
+}
+
+.navBar2 {
+	position: relative;
+	width: 100%;
+	top: 0;
+	left: 0;
+
+}
+
+.sectionLong2 {
+  margin-top: 15px;
+  min-height: 100px;
+}
+
+
+.navbuttons2 {
+	padding-top: 10px;
+	margin-top: 20px;
+}
+
+.navigateButtons2 {
+	padding-top: 10px;
+	padding-bottom: 10px;
+
+	margin-right: auto;
+	margin-left: auto;
+	display: inline-block;
+	text-decoration: none !important;
+	color: white;
+	width: 100%;
+}
+
+.dashboarButton2 {
+	margin-bottom: 10px;
+	background-color: #0950a0;
+    border: none;
+    cursor: pointer;
+
+}
+
+.loanedButton2 {
+	margin-bottom: 10px;
+	background-color: #0950a0;
+    border: none;
+    cursor: pointer;
+
+}
+.BorrowsButton2 {
+	margin-bottom: 10px;
+	background-color: #0950a0;
+    border: none;
+    cursor: pointer;
+
+}
+.logoutButton2 {
+	background-color: #0950a0;
+    border: none;
+    cursor: pointer;
+
+}
+
+.sectionDescriber2 {
+	display: inline;
+}
+
+.section2 {
+  background-color: #ddd;
+  width: 90%;
+  display: inline-block;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+
+.pageContent2 {
+	margin-left: auto;
+	margin-right: auto;
+	left:0;
+	margin-top: 0;
+}
+
+.banner2 {
+	background-image: url('https://i.imgur.com/nTiLEgR.png');
+	background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100%;
+    height: auto;
+	display: flex;
+	position: static;	
+}
+
+.logoBanner2 {
+	display
+	margin-left: auto;
+	margin-right: auto;
+	width: 25%;
+	}
+
+.bannerRight2 {
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.bannerRight2 h1 {
+	font-size: 50px;	
+	font-family: 'Arvo', serif;
+	color: #0950a0;
+	padding-top: 0px;
+	}
+
+.bannerLeft2 {
+	display: inline;	
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.desktop2 ul {
+	display: none;
+}
+
+.navbarLeft2 {
+	display: none;
+}
+
+
+
+}

@@ -3,8 +3,6 @@ import {Field, reduxForm, focus} from 'redux-form';
 import {registerUser} from '../actions/users';
 import {updateUsername} from '../actions/index';
 import {initialBoardAdd} from '../actions/index';
-import {login} from '../actions/auth';
-import { push } from 'react-router-redux';
 import Input from './input';
 import './login-form.css';
 import {Link} from 'react-router-dom';
@@ -14,11 +12,6 @@ const passwordLength = length({min: 10, max: 72});
 const matchesPassword = matches('password');
 
 export class RegistrationForm extends React.Component {
-    constructor(props) {
-        super(props);
-        //this.onClick = this.onClick.bind(this);
-    }
-
     onSubmit(values) {
         const {username, password, firstName, lastName} = values;
         const user = {username, password, firstName, lastName};
@@ -35,7 +28,7 @@ export class RegistrationForm extends React.Component {
                 </div>
             <div className='form'>
                 <h2>Register for Borrowd</h2>
-                <img src='https://i.imgur.com/u3pf8gs.png' className='loginImage'/>
+                <img src='https://i.imgur.com/u3pf8gs.png' className='loginImage' alt='person symbol'/>
                 <form
                     className="login-form"
                     onSubmit={this.props.handleSubmit(values =>

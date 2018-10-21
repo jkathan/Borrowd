@@ -1,7 +1,7 @@
 import React from 'react';
 import {shallow, mount} from 'enzyme';
 
-import {itemLoanForm} from './item-loan-form';
+import {ItemLoanForm} from './item-loan-form';
 import {updateBoard} from '../actions/index';
 import {removeItemFromList} from '../actions/index';
 
@@ -15,7 +15,7 @@ describe('<ItemLoanForm />', () => {
         const wrapper = mount(<ItemLoanForm onAdd={callback} />);
         const value = 'Foobar';
         wrapper.update();
-        wrapper.find('input[type="text"]').instance().value = value;
+        wrapper.find('input[type="text"]').value = value;
         wrapper.simulate('submit');
         expect(callback).toHaveBeenCalledWith(value);
     });

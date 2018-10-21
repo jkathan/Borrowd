@@ -16,34 +16,35 @@ class ItemRepo extends React.Component {
         }
     }
     addCard(borrower, email, phone, date) {
-    	console.log(borrower);
     	var itemType = this.props.itemType;
     	var item = this.props.item;
     	const dateAdded = moment().format('YYYY-MM-DD');
     	this.props.dispatch(
-        addCard(itemType, item, borrower, email, phone, date, dateAdded, null)
+        	addCard(itemType, item, borrower, email, phone, date, dateAdded, null)
         );
     }
     returnItem(e, index){
 	    e.preventDefault();
 	    console.log(index);
-	    this.props.dispatch(removeItemFromList(index));
+	    this.props.dispatch(
+	    	removeItemFromList(index));
 	}	
 	render() {
 		return (
 			<li>
-				<div>
+				<div className='centerButtons'>
 					<ul className="card">
 					 	<li>Type: {this.props.itemType}</li>
 					 	<li>Item: {this.props.item}</li>
 					</ul> 
 					<ItemLoanForm
-					index = {this.props.listId}
-					onAdd= {(borrower, email, phone, date) => this.addCard(borrower, email, phone, date)}
+						index = {this.props.listId}
+						onAdd= {(borrower, email, phone, date) => this.addCard(borrower, email, phone, date)}
 					/>
 					<button 
-					className="formButtons"
-					onClick={(e) => this.returnItem(e, this.props.listId)}>Delete</button>
+						className="formButton"
+						onClick={(e) => this.returnItem(e, this.props.listId)}>Delete
+					</button>
 				</div>
 			</li>
 		);

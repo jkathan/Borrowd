@@ -4,7 +4,7 @@ import Sidebar from './side-bar';
 
 const BorrowPage = () => (
     <div className='listPage'>
-    	<div className="navBar">
+    	<div className="navBar2">
         	<Sidebar />
         </div>	
         <BorrowList />

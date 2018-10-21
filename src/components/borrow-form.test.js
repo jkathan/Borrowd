@@ -13,7 +13,7 @@ describe('<BorrowForm />', () => {
         const wrapper = mount(<BorrowForm onSubmit={callback} />);
         const value = 'Foobar';
         wrapper.update();
-        wrapper.find('input[type="text"]').instance().value = value;
+        wrapper.find('input[type="text"]').value = value;
         wrapper.simulate('submit');
         expect(callback).toHaveBeenCalledWith(value);
     });
@@ -33,6 +33,7 @@ describe('<BorrowForm />', () => {
         const email = 'foo@foo.com';
         const phone = '1234567891';
         const date = '2018-10-08';
+        const dateAdded = '2018-10-08';
         const wrapper = shallow(
             <BorrowForm dispatch={dispatch} />
         );

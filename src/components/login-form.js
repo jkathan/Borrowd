@@ -10,12 +10,9 @@ import './login-form.css';
 export class LoginForm extends React.Component {
 
     onSubmit(values) {
-        console.log(values);
         const username = values.username;
-        console.log(username);
         this.props.dispatch(updateUsername(username));
         this.props.dispatch(login(values.username, values.password));
-        console.log(values.username);
         this.props.history.push(`/items/items`);
     }
 
@@ -35,7 +32,7 @@ export class LoginForm extends React.Component {
                     </div>
                 <div className='form'>
                     <h2>Login</h2>
-                    <img src='https://i.imgur.com/u3pf8gs.png' className='loginImage'/>
+                    <img src='https://i.imgur.com/u3pf8gs.png' className='loginImage' alt='person symbol'/>
                     <div className='demo'>
                         <h3>Demo User:</h3>
                         <p>Username: demo</p>
