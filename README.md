@@ -12,19 +12,19 @@ API Github: https://github.com/jkathan/borrowd-api-final
 
 # Screenshots
 Borrowd landing page:
-![](screencaps/landing page1.PNG)
+![landingpage](screenshots/landing page1.PNG)
 Borrowd landing page (cont):
-![](screencaps/landing page2.PNG)
+![landingpage](screenshots/landing page2.PNG)
 Login Page:
-![](screencaps/login page.PNG)
+![login](screenshots/login page.PNG)
 Registration Page:
-![](screencaps/register page.PNG)
+![register](screenshots/register page.PNG)
 Dashboard:
-![](screencaps/dashboard.PNG)
+![dashboard](screenshots/dashboard.PNG)
 Loan Page:
-![](screencaps/loanpage.PNG)
+![loans](screenshots/loanpage.PNG)
 Borrow Page:
-![](screencaps/borrowpage.PNG)
+![borrows](screenshots/borrowpage.PNG)
 
 
 # Technologies Used
