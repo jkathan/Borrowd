@@ -5,7 +5,7 @@ import './sidebar.css';
 
 
 
-const LoanPage = () => (
+const ItemPage = () => (
     <div className='listPage'>
     	<div className="navBar">
         	<Sidebar />
@@ -14,4 +14,4 @@ const LoanPage = () => (
     </div>
 );
 
-export default LoanPage;
+export default ItemPage;

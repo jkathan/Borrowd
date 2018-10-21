@@ -132,10 +132,9 @@
 }
 .homescreenLink {
 	padding-top: 25px;
-	color: black;
 	padding-left: 13px;
 	color: #0950a0;
-
+	font-weight: bold;
 }
 .sectionDescriber {
 	display: flex;

@@ -17,11 +17,11 @@ describe('<ItemList />', () => {
     });
 
     it('Renders without crashing', () => {
-        shallow(<ItemList cards={[]} />);
+        mount(<ItemList cards={[]} />);
     });
 
     it('Renders the cards', () => {
-        const wrapper = mount(<ItemList cards={seedCards} />);
+        const wrapper = shallow(<ItemList cards={seedCards} />).dive();
         const cards = wrapper.find(Card);
         expect(cards.length).toEqual(seedCards.length);
         const firstCard = cards.first();

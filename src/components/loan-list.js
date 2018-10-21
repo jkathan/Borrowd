@@ -34,7 +34,7 @@ export class LoanList extends React.Component {
                     <div className = 'borrowNotificationPage'>
                         <h3>You have:</h3> 
                         <h2>{overdueLoans}</h2> 
-                        <h3>Borrow(s) Overdue</h3>
+                        <h3>Loan(s) Overdue</h3>
                     </div>
                 </div>
                 <div className='forms'>

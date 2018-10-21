@@ -22,7 +22,7 @@ export class ItemLoanForm extends React.Component {
         const borrower = values.borrower;
         const email = values.email;
         const phone = values.phone;
-        const date = values.date
+        const date = values.returnDate;
         if (borrower && email && phone && date && this.props.onAdd) {
             this.props.onAdd(borrower, email, phone, date);
         }
@@ -65,14 +65,6 @@ export class ItemLoanForm extends React.Component {
                             name="email" 
                             type="email" 
                             ref={input => this.emailInput = input} 
-                            validate={[required, nonEmpty, email]}
-                        />
-                        <Field
-                            label="Email:" 
-                            name="email" 
-                            type="email" 
-                            component={Input}  
-                            ref={input => this.input = input} 
                             validate={[required, nonEmpty, email]}
                         />
                         <Field 

@@ -38,7 +38,7 @@ export class LoginForm extends React.Component {
                     <img src='https://i.imgur.com/u3pf8gs.png' className='loginImage'/>
                     <div className='demo'>
                         <h3>Demo User:</h3>
-                        <p>Username: Demo</p>
+                        <p>Username: demo</p>
                         <p>Password: password12324</p>
                     </div>
                     <form

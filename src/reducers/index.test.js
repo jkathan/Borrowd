@@ -105,15 +105,9 @@ const borrowListItem2 = {itemType: 'tool', item: 'banana', loaner: 'turtle', ema
                 items: [itemItemarray] 
                     },
                 newId: ''};
+            expect(state.board.items[0].listId).toEqual(itemlistId1);
             state = loanReducer(state, removeItemFromList(itemlistId1));
-            expect(state).toEqual({
-              board: {
-                loanList: [],
-                borrowList: [],
-                items: [] 
-                    },
-                newId: ''
-            });
+            expect(state.board.items.length).toEqual(0);
         });
     });
     describe('returnItem', () => {
@@ -126,14 +120,7 @@ const borrowListItem2 = {itemType: 'tool', item: 'banana', loaner: 'turtle', ema
                     },
                 newId: ''};
             state = loanReducer(state, returnLoanItem(loanlistId1));
-            expect(state).toEqual({
-              board: {
-                loanList: [],
-                borrowList: [],
-                items: [] 
-                    },
-                newId: ''
-            });
+            expect(state.board.loanList.length).toEqual(0);
         });
     });
     describe('returnBorrowItem', () => {
@@ -145,15 +132,8 @@ const borrowListItem2 = {itemType: 'tool', item: 'banana', loaner: 'turtle', ema
                 items: [] 
                     },
                 newId: ''};
-            state = loanReducer(state, returnLoanItem(borrowlistId1));
-            expect(state).toEqual({
-              board: {
-                loanList: [],
-                borrowList: [],
-                items: [] 
-                    },
-                newId: ''
-            });
+            state = loanReducer(state, returnBorrowItem(borrowlistId1));
+            expect(state.board.borrowList.length).toEqual(0);
         });
     });
     describe('renewLoanItem', () => {

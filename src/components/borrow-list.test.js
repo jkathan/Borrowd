@@ -1,10 +1,8 @@
-
 import React from 'react';
 import {shallow, mount} from 'enzyme';
 import {BorrowList} from './borrow-list';
 import BorrowCard from './borrow-card';
 import BorrowForm from './borrow-form';
-import {addCard} from '../actions';
 
 
 describe('<BorrowList />', () => {

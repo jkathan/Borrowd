@@ -46,7 +46,7 @@ export class ItemList extends React.Component {
         const itemRepo = this.props.loanList.items.map((item, index) => (
             <ul className="list-wrapper">   
                 <ItemRepo
-                listId={index}
+                listId={item.listId}
                 {...item} />
             </ul>
             )               

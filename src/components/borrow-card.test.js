@@ -15,7 +15,7 @@ describe('<BorrowCard />', () => {
         const email = 'foo@foo.org';
         const phone = '1234567891';
         const returnDate = '2018-10-08';
-        const listId = 2
+        const listId = 2;
         const wrapper = shallow(<BorrowCard itemType = {itemType} item ={item} loaner ={loaner} email = {email} phone ={phone} returnDate = {returnDate} />);
         expect(wrapper.itemType()).toEqual(itemType);
         expect(wrapper.item()).toEqual(item);
@@ -34,5 +34,6 @@ describe('<BorrowCard />', () => {
         );
         const instance = wrapper.instance();
         instance.returnBorrowItem(index);
-        expect(dispatch).toHaveBeenCalledWith(returnBorrowCard(index));
+        expect(dispatch).toHaveBeenCalledWith(returnBorrowItem(index));
+    });
 });

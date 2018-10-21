@@ -1,16 +1,16 @@
 import React from 'react';
 import {shallow, mount} from 'enzyme';
-import {addBorrowCard} from '../actions/index';
-import {BorrowForm} from './borrow-form';
+import {addCard} from '../actions/index';
+import {LoanForm} from './loan-form';
 
-describe('<BorrowForm />', () => {
+describe('<LoanForm />', () => {
     it('Renders without crashing', () => {
-        shallow(<BorrowForm />);
+        shallow(<LoanForm />);
     });
 
     it('Should fire the onSubmit functon when the form is submitted', () => {
         const callback = jest.fn();
-        const wrapper = mount(<BorrowForm onSubmit={callback} />);
+        const wrapper = mount(<LoanForm onSubmit={callback} />);
         const value = 'Foobar';
         wrapper.update();
         wrapper.find('input[type="text"]').instance().value = value;
@@ -20,23 +20,26 @@ describe('<BorrowForm />', () => {
 
     it('Should not fire if the input is empty', () => {
         const callback = jest.fn();
-        const wrapper = mount(<BorrowForm />);
+        const wrapper = mount(<LoanForm />);
         wrapper.simulate('submit');
         expect(callback).not.toHaveBeenCalled();
 });
 
-    it('Dispatches addItem from onSubmit', () => {
+    it('Dispatches remove item from list from onSubmit', () => {
         const dispatch = jest.fn();
-        const itemType = 'tool';
-        const item = 'foo';
-        const loaner = 'foo';
-        const email = 'foo@foo.com';
-        const phone = '1234567891';
-        const date = '2018-10-08';
+        const listId = 1;
         const wrapper = shallow(
-            <BorrowForm dispatch={dispatch} />
+            <LoanForm dispatch={dispatch} />
         );
         wrapper.simulate('submit');
-        expect(dispatch).toHaveBeenCalledWith(addBorrowCard(itemType, item, loaner, email, phone, date, dateAdded));
+        expect(dispatch).toHaveBeenCalledWith(removeItemFromList(itemId));
+    });
+    it('dispatches update board from on submit', () => {
+        const dispatch = jest.fn();
+        const wrapper = shallow(
+            <LoanForm dispatch={dispatch} />
+        );
+        wrapper.simulate('submit');
+        expect(dispatch).toHaveBeenCalledWith(updateBoard());
     });
 });

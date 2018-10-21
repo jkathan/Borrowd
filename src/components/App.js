@@ -8,6 +8,7 @@ import LoginForm from './login-form';
 import RegistrationPage from './registration-page';
 import {refreshAuthToken} from '../actions/auth';
 import LandingPage from './landing-page';
+import RegistrationForm from './registration-form';
 
 export default class App extends React.Component {
       /*componentDidUpdate(prevProps) {
@@ -49,7 +50,7 @@ export default class App extends React.Component {
                     <Route exact path = '/items/borrows' component={BorrowPage} />
                     <Route exact path = '/' component={LandingPage} />
                     <Route exact path = '/login' component={LoginForm} />
-                    <Route exact path = '/register' component={RegistrationPage} />
+                    <Route exact path = '/register' component={RegistrationForm} />
                   </Switch>
             </main>
         </Router>

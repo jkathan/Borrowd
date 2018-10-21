@@ -46,8 +46,11 @@ export const loanReducer = (state=initialState, action) => {
     }})
   } 
      else if (action.type === actions.REMOVE_ITEM_FROM_LIST) {
-      return Object.assign({}, state, {
-        items: state.items.filter((id) => id.listId !== action.itemId)
+      return Object.assign({}, {
+        board: {loanList: state.board.loanList,
+                borrowList: state.board.borrowList,
+                items: state.board.items.filter((id) => id.listId !== action.itemId)}
+        
       })
     }
 
@@ -58,7 +61,7 @@ export const loanReducer = (state=initialState, action) => {
                 items: state.board.items}
       })
     }
-    //remove state
+
     else if (action.type === actions.RENEW_ITEM) {
       return Object.assign({}, state, {
         board: { loanList: state.board.loanList.map((i) => (
@@ -87,7 +90,7 @@ export const loanReducer = (state=initialState, action) => {
     }
 
    else if (action.type === actions.RETURN_BORROW_ITEM) {
-      return Object.assign({}, state, {
+      return Object.assign({}, {
         board: {borrowList: state.board.borrowList.filter((id) => id.listId !== action.itemId),
                 loanList: state.board.loanList,
                 items: state.board.items

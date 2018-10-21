@@ -14,19 +14,13 @@ class ItemRepo extends React.Component {
             itemType: props.itemType,
             item: props.item
         }
-        this.onSubmit = this.onSubmit.bind(this);
     }
-//dont unders
-/*	goToCheckoutBoard(event) {
-        event.preventDefault();
-        this.props.history.push(`/items/itemedit`);
-    }*/
     addCard(borrower, email, phone, date) {
+    	console.log(borrower);
     	var itemType = this.props.itemType;
     	var item = this.props.item;
     	const dateAdded = moment().format('YYYY-MM-DD');
     	this.props.dispatch(
-            //wahat is boardID and why is it necessary?
         addCard(itemType, item, borrower, email, phone, date, dateAdded, null)
         );
     }
@@ -35,34 +29,7 @@ class ItemRepo extends React.Component {
 	    console.log(index);
 	    this.props.dispatch(removeItemFromList(index));
 	}	
-
-	onItemInputChange(value){
-		
-		console.log(value);
-        this.setState({
-             item: value
-        });
-    }
-	onSubmit(props) {
-        const itemType = this.itemInput.value.trim();        
-        const item = this.itemInput.value.trim();
-        const index = this.props.listId;
-	    this.setState({editing : !this.state.editing})
-	}
-
-	onItemTypeInputChange(value){
-        this.setState({
-             itemType: value
-        });
-    }
-
-
-
-//edit button should be a link
-//new form form for borrow and forms
 	render() {
-		//console.log(this.props.itemType);
-		//console.log(this.props);
 		return (
 			<li>
 				<div>
