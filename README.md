@@ -33,7 +33,7 @@ React, Node, Express, JQuery, JavaScript, MongoDB, Mongoose, Mocha, Chai, REST A
 # Restful API
 
 ## GET
-- /get/newId -> Retrieves userboard by id
+- /get/:newId -> Retrieves userboard by id
 - /auth/login -> ensures user is in user database upon login
 
 ## POST
@@ -41,7 +41,7 @@ React, Node, Express, JQuery, JavaScript, MongoDB, Mongoose, Mocha, Chai, REST A
  -/users -> Post new user to user database
 
 ## PUT
-- /put/:id -> Updates user board
+- /put/:newId -> Updates user board
 
 
 # Future Enhancements
