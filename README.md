@@ -6,9 +6,9 @@ Do you ever lend something out and then a week later need that item and don't re
 
 
 # Demo
-Live app: https://infinite-river-85875.herokuapp.com/
-Live API: https://whispering-brook-49128.herokuapp.com/
-API Github: https://github.com/jkathan/borrowd-api-final
+Live app: https://infinite-river-85875.herokuapp.com/  
+Live API: https://whispering-brook-49128.herokuapp.com/  
+API Github: https://github.com/jkathan/borrowd-api-final  
 
 # Screenshots
 Borrowd landing page:
