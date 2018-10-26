@@ -45,7 +45,8 @@ React, Node, Express, JQuery, JavaScript, MongoDB, Mongoose, Mocha, Chai, REST A
 
 
 # Future Enhancements
-- Updating testing. Due to some pecularities between my API and react, my data came in a way that made it challenging for me to test. I will be working with my mentor to update these tests in the coming weeks. 
+- Updating testing. Due to some pecularities between my API and react, my data came in a way that made it challenging for me to test. I will be working with my mentor to update these tests in the coming weeks.
+- Implement a more robust authorization process
 - Allow for searches by other  parameters
 - Allow for search of all pages
 - Integrate push notifications on a react native app. Integrate calender notifications. 
